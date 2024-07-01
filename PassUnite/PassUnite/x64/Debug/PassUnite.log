@@ -1,0 +1,4 @@
+﻿  Program.cpp
+C:\Users\15617\source\repos\PassUnite\PassUnite\Program.cpp(10,6): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
+  AddProfiles.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  PassUnite.vcxproj -> C:\Users\15617\source\repos\PassUnite\x64\Debug\PassUnite.exe
