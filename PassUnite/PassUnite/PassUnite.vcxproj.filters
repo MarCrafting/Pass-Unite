@@ -59,13 +59,16 @@
     <ClInclude Include="User.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Profiles.h">
+    <ClInclude Include="ProfilesForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ChangePassword.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ClearProfiles.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Profiles.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

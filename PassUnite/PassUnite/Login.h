@@ -1,4 +1,6 @@
 #pragma once
+#include "User.h"
+#include "PageProperties.h"
 
 namespace PassUnite {
 
@@ -59,7 +61,7 @@ namespace PassUnite {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -199,28 +201,69 @@ namespace PassUnite {
 
 		}
 #pragma endregion
-private: System::Void buttonOK_Click(System::Object^ sender, System::EventArgs^ e) {
-	// check if either textbox is empty
-	String^ username = textBoxUser->Text;
-	String^ password = textBoxPass->Text;
+	public: User^ user = nullptr;
 
-	if (username == "" || password == "")
-	{
-		MessageBox::Show("Please enter both a username and password",
-			"Username or Password Empty", MessageBoxButtons::OK);
+	public: PageProperties pageProps;
 
-		// exit function
-		return;
+	private: System::Void buttonOK_Click(System::Object^ sender, System::EventArgs^ e) {
+		// check if either textbox is empty
+		String^ username = textBoxUser->Text;
+		String^ password = textBoxPass->Text;
+
+		if (username == "" || password == "")
+		{
+			MessageBox::Show("Please enter both a username and password",
+				"Username or Password Empty", MessageBoxButtons::OK);
+
+			// exit function
+			return;
+		}
+		try
+		{
+			// connect to database
+			String^ connString = "Data Source=localhost;Initial Catalog=passuniteusers;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+			SqlConnection sqlConn(connString);
+			sqlConn.Open();
+
+			// create SQL query, with placeholders
+			String^ sqlQuery = "SELECT * FROM accountUsers WHERE username=@user AND password=@pass;";
+
+			// swap placeholders with appropriate variables
+			SqlCommand command(sqlQuery, % sqlConn);
+			command.Parameters->AddWithValue("user", username);
+			command.Parameters->AddWithValue("pass", password);
+
+			// read and save the output
+			SqlDataReader^ reader = command.ExecuteReader();
+			if (reader->Read())		// if query finds possible match (readable), then read it
+			{
+				user = gcnew User();
+				user->id = reader->GetInt32(0);
+				user->username = reader->GetString(1);
+				user->password = reader->GetString(2);
+
+				// redirect to homepage
+				pageProps.page = 1;
+
+				// close login to proceed
+				this->Close();
+			}
+			else
+			{
+				MessageBox::Show("Username of password is incorrect",
+					"Username or Password Error", MessageBoxButtons::OK);
+			}
+
+		}
+		catch (Exception^ ex)
+		{
+			MessageBox::Show("Failed to connect to database",
+				"Database Connection Error", MessageBoxButtons::OK);
+		}
 	}
-	else
-	{
-		// connect to database
-		String^ connString = "";
+	private: System::Void buttonCancel_Click(System::Object^ sender, System::EventArgs^ e) {
+		// close app
+		this->Close();
 	}
-}
-private: System::Void buttonCancel_Click(System::Object^ sender, System::EventArgs^ e) {
-	// close app
-	this->Close();
-}
-};
+	};
 }

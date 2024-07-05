@@ -1,7 +1,8 @@
 #pragma once
 #include "PageProperties.h"
-#include "User.h"
+#include "Profiles.h"
 #include "Settings.h"
+#include "ProfilesForm.h"
 
 namespace PassUnite {
 
@@ -343,6 +344,7 @@ namespace PassUnite {
 			// 
 			// AddProfiles
 			// 
+			this->AcceptButton = this->buttonAdd;
 			this->AutoScaleDimensions = System::Drawing::SizeF(16, 31);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(78)), static_cast<System::Int32>(static_cast<System::Byte>(95)),
@@ -384,7 +386,7 @@ namespace PassUnite {
 #pragma endregion
 	public: PageProperties pageProps;
 
-	public: User user;
+	public: Profiles profile;
 
 	private: System::Void labelAppName_Click(System::Object^ sender, System::EventArgs^ e) {
 		// redirect to "Home"
@@ -414,8 +416,6 @@ namespace PassUnite {
 		textBoxPassword->UseSystemPasswordChar = true;
 	}
 	private: System::Void buttonAdd_Click(System::Object^ sender, System::EventArgs^ e) {
-		// prevent redirecting
-		pageProps.page = 2;
 
 		// check if all fields are empty
 		if (textBoxWebsite->Text == "" && textBoxUsername->Text == "" && textBoxPassword->Text == "")
@@ -429,14 +429,17 @@ namespace PassUnite {
 		}
 
 		// save user input
-		user.website = textBoxWebsite->Text;
-		user.username = textBoxUsername->Text;
-		user.password = textBoxPassword->Text;
+		profile.website = textBoxWebsite->Text;
+		profile.username = textBoxUsername->Text;
+		profile.password = textBoxPassword->Text;
 
 		// clear textboxes
 		textBoxWebsite->Text = "";
 		textBoxUsername->Text = "";
 		textBoxPassword->Text = "";
+
+		// prevent redirecting
+		pageProps.page = 2;
 
 		// simulate refreshing the screen
 		this->Close();

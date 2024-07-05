@@ -1,8 +1,9 @@
 #include "Login.h"
 #include "Home.h"
 #include "AddProfiles.h"
-#include "Profiles.h"
+#include "ProfilesForm.h"
 #include "User.h"
+#include "Profiles.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -17,19 +18,19 @@ void main(array<String^>^ args)
 	{
 		loginPage.ShowDialog();
 
-		// setup user verification before opening the app
-
-		//
+		if (loginPage.pageProps.page != 1)
+			break;
 
 		// amount of saved profiles
-		int profileCount = 1;
+		int profileCount = 0;
 
 		// initialize pages
-		PageProperties pageProps;
 		PassUnite::Home homePage;			// Page 1
 		PassUnite::AddProfiles addProfilesPage;	// Page 2
-		PassUnite::Profiles profilesPage(profileCount);	// Page 3
-
+		PassUnite::ProfilesForm profilesPage(profileCount);	// Page 3
+		// set starting screen
+		PageProperties pageProps;
+		pageProps.page = 1;
 
 		// run application until logout or close
 		while (true)
@@ -50,7 +51,7 @@ void main(array<String^>^ args)
 				addProfilesPage.ShowDialog();
 
 				// check if proile was saved
-				if (addProfilesPage.user.website != "" || addProfilesPage.user.username != "" || addProfilesPage.user.password != "")
+				if (addProfilesPage.profile.website != "" || addProfilesPage.profile.username != "" || addProfilesPage.profile.password != "")
 				{
 					profileCount++;
 				}

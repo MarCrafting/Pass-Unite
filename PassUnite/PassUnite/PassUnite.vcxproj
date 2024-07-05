@@ -146,7 +146,8 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PageProperties.h" />
-    <ClInclude Include="Profiles.h">
+    <ClInclude Include="Profiles.h" />
+    <ClInclude Include="ProfilesForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Settings.h">
@@ -170,8 +171,8 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Profiles.resx">
-      <DependentUpon>Profiles.h</DependentUpon>
+    <EmbeddedResource Include="ProfilesForm.resx">
+      <DependentUpon>ProfilesForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.h</DependentUpon>

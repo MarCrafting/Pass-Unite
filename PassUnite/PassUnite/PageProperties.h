@@ -5,7 +5,7 @@ using namespace System;
 public ref class PageProperties {
 public:
 
-	int page = 1;					// number to navigate to user requested page
+	int page = -1;					// number to navigate to user requested page
 
 	//System::Windows::Forms::FormWindowState windowState = System::Windows::Forms::FormWindowState::Normal;	// fullscreen check
 	//int width = 1000;				// length of window width
