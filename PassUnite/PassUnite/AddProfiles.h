@@ -3,6 +3,7 @@
 #include "Profiles.h"
 #include "Settings.h"
 #include "ProfilesForm.h"
+#include "User.h"
 
 namespace PassUnite {
 
@@ -12,6 +13,7 @@ namespace PassUnite {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SqlClient;
 
 	/// <summary>
 	/// Summary for AddProfiles
@@ -19,12 +21,13 @@ namespace PassUnite {
 	public ref class AddProfiles : public System::Windows::Forms::Form
 	{
 	public:
-		AddProfiles(void)
+		AddProfiles(User^ user)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+			this->user = user;
 		}
 
 	protected:
@@ -386,7 +389,9 @@ namespace PassUnite {
 #pragma endregion
 	public: PageProperties pageProps;
 
-	public: Profiles profile;
+	public: User^ user = nullptr;
+
+	public: Profiles^ profile = nullptr;
 
 	private: System::Void labelAppName_Click(System::Object^ sender, System::EventArgs^ e) {
 		// redirect to "Home"
@@ -428,15 +433,61 @@ namespace PassUnite {
 			return;
 		}
 
-		// save user input
-		profile.website = textBoxWebsite->Text;
-		profile.username = textBoxUsername->Text;
-		profile.password = textBoxPassword->Text;
+		// save user input into dynamic memory
+		profile = gcnew Profiles();
+		profile->website = textBoxWebsite->Text;
+		profile->username = textBoxUsername->Text;
+		profile->password = textBoxPassword->Text;
 
 		// clear textboxes
 		textBoxWebsite->Text = "";
 		textBoxUsername->Text = "";
 		textBoxPassword->Text = "";
+
+		// insert new profile in profiles table
+		try
+		{
+			// connect to database
+			String^ connString = "Data Source=localhost;Initial Catalog=passuniteusers;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+			SqlConnection sqlConn(connString);
+			sqlConn.Open();
+
+			// create sql query with placeholders
+			String^ sqlQuery = "INSERT INTO profiles " +
+				"(accountid, website, profileUser, profilePass) VALUES " +
+				"(@id, @web, @user, @pass);";
+
+			// swap placeholders with variables
+			SqlCommand command(sqlQuery, % sqlConn);
+			command.Parameters->AddWithValue("@id", user->id);
+			command.Parameters->AddWithValue("@web", profile->website);
+			command.Parameters->AddWithValue("@user", profile->username);
+			command.Parameters->AddWithValue("@pass", profile->password);
+
+			// confirm added profile
+			sqlQuery = "SELECT * FROM profiles WHERE accountid=@userid AND website=@profileweb AND profileUser=@profileuser AND profilePass=@profilepass;";
+			command.Parameters->AddWithValue("@userid", user->id);
+			command.Parameters->AddWithValue("@profileweb", profile->website);
+			command.Parameters->AddWithValue("@profileuser", profile->username);
+			command.Parameters->AddWithValue("@profilepass", profile->password);
+
+			SqlDataReader^ reader = command.ExecuteReader();
+			if (reader->Read())
+			{
+				MessageBox::Show("Profile successfully added",
+					"Added Profile", MessageBoxButtons::OK);
+			}
+			else
+			{
+				MessageBox::Show("Profile add failed \nProfile: " + user->id + " " + profile->website + " " + profile->username + " " + profile->password,
+					"Failed to Add Profile", MessageBoxButtons::OK);
+			}
+		}
+		catch (Exception^ ex)
+		{
+			MessageBox::Show("Failed to connect to database",
+				"Database Connection Error", MessageBoxButtons::OK);
+		}
 
 		// prevent redirecting
 		pageProps.page = 2;
@@ -451,20 +502,20 @@ namespace PassUnite {
 		// close this window
 		this->Close();
 	}
-private: System::Void pictureBoxSettings_Click(System::Object^ sender, System::EventArgs^ e) {
-	// show "Settings" overlay
-	PassUnite::Settings settingsOverlay;
-	settingsOverlay.ShowDialog();
+	private: System::Void pictureBoxSettings_Click(System::Object^ sender, System::EventArgs^ e) {
+		// show "Settings" overlay
+		PassUnite::Settings settingsOverlay;
+		settingsOverlay.ShowDialog();
 
-	// check if user wants to sign out
-	if (settingsOverlay.logUserOut)
-	{
-		// redirect to login screen
-		pageProps.page = 0;
+		// check if user wants to sign out
+		if (settingsOverlay.logUserOut)
+		{
+			// redirect to login screen
+			pageProps.page = 0;
 
-		// close window
-		this->Close();
+			// close window
+			this->Close();
+		}
 	}
-}
-};
+	};
 }
