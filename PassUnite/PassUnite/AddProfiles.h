@@ -464,24 +464,7 @@ namespace PassUnite {
 			command.Parameters->AddWithValue("@user", profile->username);
 			command.Parameters->AddWithValue("@pass", profile->password);
 
-			// confirm added profile
-			sqlQuery = "SELECT * FROM profiles WHERE accountid=@userid AND website=@profileweb AND profileUser=@profileuser AND profilePass=@profilepass;";
-			command.Parameters->AddWithValue("@userid", user->id);
-			command.Parameters->AddWithValue("@profileweb", profile->website);
-			command.Parameters->AddWithValue("@profileuser", profile->username);
-			command.Parameters->AddWithValue("@profilepass", profile->password);
-
-			SqlDataReader^ reader = command.ExecuteReader();
-			if (reader->Read())
-			{
-				MessageBox::Show("Profile successfully added",
-					"Added Profile", MessageBoxButtons::OK);
-			}
-			else
-			{
-				MessageBox::Show("Profile add failed \nProfile: " + user->id + " " + profile->website + " " + profile->username + " " + profile->password,
-					"Failed to Add Profile", MessageBoxButtons::OK);
-			}
+			command.ExecuteNonQuery();
 		}
 		catch (Exception^ ex)
 		{
