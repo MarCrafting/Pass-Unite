@@ -3,6 +3,7 @@
 #include "User.h"
 #include "Settings.h"
 #include "Profiles.h"
+#include <vector>
 
 namespace PassUnite {
 
@@ -19,40 +20,33 @@ namespace PassUnite {
 	public ref class ProfilesForm : public System::Windows::Forms::Form
 	{
 	public:
-		ProfilesForm(int _profileCount)
+		ProfilesForm(User^ _user, Profiles^ _profile, int _profileCount)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
 
-			// iterate through the vector and set the page values here
-			// check for profiles list
-			for (int i = 0; i < _profileCount; i++)
+			profile = _profile;
+
+			// while there's an unchecked profile, continue
+			while (profile->prev != nullptr)
 			{
-				// for the first profile, update the existing textboxes
-				if (i == 0)
+				// if this is the first check, just update the existing labels
+				if (profile->next == nullptr)
 				{
-					// update website label
-					labelProfileWebsite1->Text = "empty1";
-
-					// update username label
-					labelProfileUsername1->Text = "empty1";
-
-					// update password label
-					labelProfilePassword1->Text = "empty1";
-
-					// skip remainder
-					continue;
+					labelProfileWebsite1->Text = profile->website;
+					labelProfileUsername1->Text = profile->username;
+					labelProfilePassword1->Text = profile->password;
+				}
+				else
+				{
+					// move existing slots down
+					
 				}
 
-				// build and color panel
-
-				// create profile website textBox
-
-				// create profile username textBox
-
-				// create profile password textBox
+				// move back one profile
+				profile = profile->prev;
 			}
 		}
 
@@ -354,7 +348,7 @@ namespace PassUnite {
 			this->labelProfileWebsite1->Text = L"empty";
 			this->labelProfileWebsite1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
-			// Profiles
+			// ProfilesForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(16, 31);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -372,7 +366,7 @@ namespace PassUnite {
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
-			this->Name = L"Profiles";
+			this->Name = L"ProfilesForm";
 			this->Text = L"Profiles";
 			this->panelSidebar->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->EndInit();

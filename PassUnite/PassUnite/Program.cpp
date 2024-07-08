@@ -21,13 +21,10 @@ void main(array<String^>^ args)
 		if (loginPage.pageProps.page != 1)
 			break;
 
-		// amount of saved profiles
-		int profileCount = 0;
-
 		// initialize pages
 		PassUnite::Home homePage;			// Page 1
-		PassUnite::AddProfiles addProfilesPage;	// Page 2
-		PassUnite::ProfilesForm profilesPage(profileCount);	// Page 3
+		PassUnite::AddProfiles addProfilesPage(loginPage.user);	// Page 2
+		PassUnite::ProfilesForm profilesPage(loginPage.user, addProfilesPage.profile, addProfilesPage.profileCount);	// Page 3
 		// set starting screen
 		PageProperties pageProps;
 		pageProps.page = 1;
@@ -49,12 +46,6 @@ void main(array<String^>^ args)
 			case 2:
 				// display page
 				addProfilesPage.ShowDialog();
-
-				// check if proile was saved
-				if (addProfilesPage.profile.website != "" || addProfilesPage.profile.username != "" || addProfilesPage.profile.password != "")
-				{
-					profileCount++;
-				}
 
 				// save next page
 				pageProps.page = addProfilesPage.pageProps.page;

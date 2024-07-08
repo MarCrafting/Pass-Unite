@@ -27,7 +27,71 @@ namespace PassUnite {
 			//
 			//TODO: Add the constructor code here
 			//
-			this->user = user;
+			this->user = user;		// user holding logged in user's id
+
+			profileCount = 0;
+
+			// create profile node list based on database
+			try
+			{
+				String^ connString = "Data Source=localhost;Initial Catalog=passuniteusers;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+				SqlConnection sqlConn(connString);
+				sqlConn.Open();
+
+				// first read
+				String^ sqlQuery = "SELECT * FROM profiles " +
+					"WHERE accountid=@id";
+
+				SqlCommand command(sqlQuery, % sqlConn);
+				command.Parameters->AddWithValue("@id", user->id);
+
+				SqlDataReader^ reader = command.ExecuteReader();
+				if (reader->Read())
+				{
+					profile = gcnew Profiles();
+					profile->website = reader->GetString(1);
+					profile->username = reader->GetString(2);
+					profile->password = reader->GetString(3);
+
+					profileCount++;
+				}
+				else		// no saved profiles
+					return;
+
+				// nth read after first			// adjust this loop: duplicate websites, usernames, passwords allowed BUT all 3 must not be true
+												// don't have to check password if website & username are the same (websites don't allow duplicate users)
+												// if website & username are empty, check the password
+				while (true)
+				{
+					sqlQuery += " AND NOT website='" + profile->website + "'" +
+						" AND NOT profileUser='" + profile->username + "'" +
+						" AND NOT profilePass='" + profile->password + "'";
+
+					if (reader->Read())
+					{
+						nextProfile = gcnew Profiles();
+						nextProfile->website = reader->GetString(1);
+						nextProfile->username = reader->GetString(2);
+						nextProfile->password = reader->GetString(3);
+
+						profileCount++;
+					}
+					else
+					{
+						break;
+					}
+
+					// assign connection
+					profile->next = nextProfile;
+					nextProfile->prev = profile;
+					// move to last saved profile
+					profile = profile->next;
+				}
+			}
+			catch (Exception^ ex)
+			{
+				MessageBox::Show(ex->Message);		// for troubleshooting
+			}
 		}
 
 	protected:
@@ -391,7 +455,13 @@ namespace PassUnite {
 
 	public: User^ user = nullptr;
 
+	public: int profileCount;
 	public: Profiles^ profile = nullptr;
+		  Profiles^ nextProfile = nullptr;
+
+		  String^ website;
+		  String^ username;
+		  String^ password;
 
 	private: System::Void labelAppName_Click(System::Object^ sender, System::EventArgs^ e) {
 		// redirect to "Home"
@@ -433,11 +503,10 @@ namespace PassUnite {
 			return;
 		}
 
-		// save user input into dynamic memory
-		profile = gcnew Profiles();
-		profile->website = textBoxWebsite->Text;
-		profile->username = textBoxUsername->Text;
-		profile->password = textBoxPassword->Text;
+		// save user input
+		website = textBoxWebsite->Text;
+		username = textBoxUsername->Text;
+		password = textBoxPassword->Text;
 
 		// clear textboxes
 		textBoxWebsite->Text = "";
@@ -460,16 +529,43 @@ namespace PassUnite {
 			// swap placeholders with variables
 			SqlCommand command(sqlQuery, % sqlConn);
 			command.Parameters->AddWithValue("@id", user->id);
-			command.Parameters->AddWithValue("@web", profile->website);
-			command.Parameters->AddWithValue("@user", profile->username);
-			command.Parameters->AddWithValue("@pass", profile->password);
+			command.Parameters->AddWithValue("@web", website);
+			command.Parameters->AddWithValue("@user", username);
+			command.Parameters->AddWithValue("@pass", password);
 
 			command.ExecuteNonQuery();
 		}
 		catch (Exception^ ex)
 		{
+			//MessageBox::Show(ex->Message);		// for troubleshooting
 			MessageBox::Show("Failed to connect to database",
 				"Database Connection Error", MessageBoxButtons::OK);
+		}
+
+		// check if this is first profile in node
+		if (profile == nullptr)
+		{
+			// assign values to first profile
+			profile = gcnew Profiles();
+			profile->website = website;
+			profile->username = username;
+			profile->password = password;
+		}
+		else
+		{
+			// create next profile
+			nextProfile = gcnew Profiles();
+			// assign values to next profile
+			nextProfile->website = website;
+			nextProfile->username = username;
+			nextProfile->password = password;
+
+			// set node connections
+			profile->next = nextProfile;
+			nextProfile->prev = profile;
+
+			// move to last saved profile
+			profile = profile->next;
 		}
 
 		// prevent redirecting
