@@ -146,6 +146,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PageProperties.h" />
+    <ClInclude Include="Panels.h" />
     <ClInclude Include="Profiles.h" />
     <ClInclude Include="ProfilesForm.h">
       <FileType>CppForm</FileType>

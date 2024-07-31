@@ -3,7 +3,7 @@
 #include "User.h"
 #include "Settings.h"
 #include "Profiles.h"
-#include <vector>
+#include "Panels.h"
 
 namespace PassUnite {
 
@@ -29,24 +29,103 @@ namespace PassUnite {
 
 			profile = _profile;
 
-			// while there's an unchecked profile, continue
-			while (profile->prev != nullptr)
-			{
-				// if this is the first check, just update the existing labels
-				if (profile->next == nullptr)
-				{
-					labelProfileWebsite1->Text = profile->website;
-					labelProfileUsername1->Text = profile->username;
-					labelProfilePassword1->Text = profile->password;
-				}
-				else
-				{
-					// move existing slots down
-					
-				}
+			// save panels into a list in order to access them
+			Panels^ panel = gcnew Panels();							// create pointer
+			panel->panel = panel1;									// assign pointer to panel1
+			panel->labelProfileWebsite = labelProfileWebsite1;		// assign website label
+			panel->labelProfileUsername = labelProfileUsername1;	// assign username label
+			panel->labelProfilePassword = labelProfilePassword1;	// assign password label
+			Panels^ nextPanel = gcnew Panels();						// create pointer
+			nextPanel->panel = panel2;								// assign pointer to panel2
+			nextPanel->panel->Visible = false;
+			nextPanel->labelProfileWebsite = labelProfileWebsite2;	// assign website label
+			nextPanel->labelProfileUsername = labelProfileUsername2;// assign username label
+			nextPanel->labelProfilePassword = labelProfilePassword2;// assign password label
 
-				// move back one profile
-				profile = profile->prev;
+			panel->next = nextPanel;								// create link between pointers
+			nextPanel->prev = panel;
+
+			panel = nextPanel;										// traverse through node list
+			nextPanel = gcnew Panels();								// create pointer
+			nextPanel->panel = panel3;								// assign pointer to panel3
+			nextPanel->panel->Visible = false;
+			nextPanel->labelProfileWebsite = labelProfileWebsite3;	// assign website label
+			nextPanel->labelProfileUsername = labelProfileUsername3;// assign username label
+			nextPanel->labelProfilePassword = labelProfilePassword3;// assign password label
+
+			panel->next = nextPanel;
+			nextPanel->prev = panel;								// create link between pointers
+
+			// set panel pointer to first node
+			while (panel->prev != nullptr)
+			{
+				panel = panel->prev;
+			}
+			// traversal node
+			Panels^ currPanel = panel;
+
+			// while there's a valid profile
+			if (profile != nullptr)
+			{
+				// while there's an unchecked profile, continue
+				while (true)
+				{
+					// (profile pointer starts at the end of the node list, traversing backwards)
+					// if next profile isn't null
+					if (profile->next != nullptr)
+					{
+						// make next panel visible
+						currPanel->next->panel->Visible = true;
+
+						// copy label values into next panel
+						currPanel->next->labelProfileWebsite->Text = currPanel->labelProfileWebsite->Text;
+						currPanel->next->labelProfileUsername->Text = currPanel->labelProfileUsername->Text;
+						currPanel->next->labelProfilePassword->Text = currPanel->labelProfilePassword->Text;
+
+						if (currPanel != panel)
+						{
+							// copy previous panels to their next panel
+							int i = 0;						// back jump counter
+							while (currPanel->prev != panel)
+							{
+								currPanel = currPanel->prev;	// back jump
+								i++;							// increment back jump
+
+								// assigns next slot to the current slot values
+								currPanel->next->labelProfileWebsite->Text = currPanel->labelProfileWebsite->Text;
+								currPanel->next->labelProfileUsername->Text = currPanel->labelProfileUsername->Text;
+								currPanel->next->labelProfilePassword->Text = currPanel->labelProfilePassword->Text;
+							}
+
+							if (currPanel->prev == panel)
+							{
+								// assigns current slot to the previous slot values
+								currPanel->labelProfileWebsite->Text = currPanel->prev->labelProfileWebsite->Text;
+								currPanel->labelProfileUsername->Text = currPanel->prev->labelProfileUsername->Text;
+								currPanel->labelProfilePassword->Text = currPanel->prev->labelProfilePassword->Text;
+							}
+
+							// jump forward to correct position
+							for (int j = 0; j < i; j++)
+								currPanel = currPanel->next;
+						}
+
+						if (currPanel->next != nullptr)
+							currPanel = currPanel->next;
+
+					}
+					
+					// update first panel labels
+					panel->labelProfileWebsite->Text = profile->website;
+					panel->labelProfileUsername->Text = profile->username;
+					panel->labelProfilePassword->Text = profile->password;
+
+					if (profile->prev == nullptr)
+						break;
+
+					// move back one profile
+					profile = profile->prev;
+				}
 			}
 		}
 
@@ -81,6 +160,17 @@ namespace PassUnite {
 	private: System::Windows::Forms::Label^ labelProfileUsername1;
 
 	private: System::Windows::Forms::Label^ labelProfileWebsite1;
+	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::Label^ labelProfilePassword2;
+
+	private: System::Windows::Forms::Label^ labelProfileUsername2;
+
+	private: System::Windows::Forms::Label^ labelProfileWebsite2;
+	private: System::Windows::Forms::Panel^ panel3;
+	private: System::Windows::Forms::Label^ labelProfilePassword3;
+	private: System::Windows::Forms::Label^ labelProfileUsername3;
+	private: System::Windows::Forms::Label^ labelProfileWebsite3;
+
 
 
 
@@ -129,6 +219,14 @@ namespace PassUnite {
 			this->labelProfilePassword1 = (gcnew System::Windows::Forms::Label());
 			this->labelProfileUsername1 = (gcnew System::Windows::Forms::Label());
 			this->labelProfileWebsite1 = (gcnew System::Windows::Forms::Label());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->labelProfilePassword2 = (gcnew System::Windows::Forms::Label());
+			this->labelProfileUsername2 = (gcnew System::Windows::Forms::Label());
+			this->labelProfileWebsite2 = (gcnew System::Windows::Forms::Label());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->labelProfilePassword3 = (gcnew System::Windows::Forms::Label());
+			this->labelProfileUsername3 = (gcnew System::Windows::Forms::Label());
+			this->labelProfileWebsite3 = (gcnew System::Windows::Forms::Label());
 			this->panelSidebar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxProfiles))->BeginInit();
@@ -137,6 +235,8 @@ namespace PassUnite {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxAddProfile))->BeginInit();
 			this->panelTopbar->SuspendLayout();
 			this->panel1->SuspendLayout();
+			this->panel2->SuspendLayout();
+			this->panel3->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panelSidebar
@@ -315,12 +415,12 @@ namespace PassUnite {
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->labelProfilePassword1->ForeColor = System::Drawing::Color::White;
-			this->labelProfilePassword1->Location = System::Drawing::Point(597, 0);
+			this->labelProfilePassword1->Location = System::Drawing::Point(625, 0);
 			this->labelProfilePassword1->Name = L"labelProfilePassword1";
 			this->labelProfilePassword1->Size = System::Drawing::Size(262, 48);
 			this->labelProfilePassword1->TabIndex = 0;
-			this->labelProfilePassword1->Text = L"empty";
-			this->labelProfilePassword1->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->labelProfilePassword1->Text = L"-";
+			this->labelProfilePassword1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// labelProfileUsername1
 			// 
@@ -332,7 +432,7 @@ namespace PassUnite {
 			this->labelProfileUsername1->Name = L"labelProfileUsername1";
 			this->labelProfileUsername1->Size = System::Drawing::Size(288, 48);
 			this->labelProfileUsername1->TabIndex = 0;
-			this->labelProfileUsername1->Text = L"empty";
+			this->labelProfileUsername1->Text = L"-";
 			this->labelProfileUsername1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// labelProfileWebsite1
@@ -341,12 +441,114 @@ namespace PassUnite {
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->labelProfileWebsite1->ForeColor = System::Drawing::Color::White;
-			this->labelProfileWebsite1->Location = System::Drawing::Point(13, 0);
+			this->labelProfileWebsite1->Location = System::Drawing::Point(1, 0);
 			this->labelProfileWebsite1->Name = L"labelProfileWebsite1";
 			this->labelProfileWebsite1->Size = System::Drawing::Size(284, 48);
 			this->labelProfileWebsite1->TabIndex = 0;
-			this->labelProfileWebsite1->Text = L"empty";
-			this->labelProfileWebsite1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->labelProfileWebsite1->Text = L"-";
+			this->labelProfileWebsite1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// panel2
+			// 
+			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
+				static_cast<System::Int32>(static_cast<System::Byte>(114)));
+			this->panel2->Controls->Add(this->labelProfilePassword2);
+			this->panel2->Controls->Add(this->labelProfileUsername2);
+			this->panel2->Controls->Add(this->labelProfileWebsite2);
+			this->panel2->Location = System::Drawing::Point(83, 296);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(888, 48);
+			this->panel2->TabIndex = 13;
+			// 
+			// labelProfilePassword2
+			// 
+			this->labelProfilePassword2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfilePassword2->ForeColor = System::Drawing::Color::White;
+			this->labelProfilePassword2->Location = System::Drawing::Point(625, 0);
+			this->labelProfilePassword2->Name = L"labelProfilePassword2";
+			this->labelProfilePassword2->Size = System::Drawing::Size(262, 48);
+			this->labelProfilePassword2->TabIndex = 0;
+			this->labelProfilePassword2->Text = L"-";
+			this->labelProfilePassword2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileUsername2
+			// 
+			this->labelProfileUsername2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfileUsername2->ForeColor = System::Drawing::Color::White;
+			this->labelProfileUsername2->Location = System::Drawing::Point(303, 0);
+			this->labelProfileUsername2->Name = L"labelProfileUsername2";
+			this->labelProfileUsername2->Size = System::Drawing::Size(288, 48);
+			this->labelProfileUsername2->TabIndex = 0;
+			this->labelProfileUsername2->Text = L"-";
+			this->labelProfileUsername2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileWebsite2
+			// 
+			this->labelProfileWebsite2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfileWebsite2->ForeColor = System::Drawing::Color::White;
+			this->labelProfileWebsite2->Location = System::Drawing::Point(1, 0);
+			this->labelProfileWebsite2->Name = L"labelProfileWebsite2";
+			this->labelProfileWebsite2->Size = System::Drawing::Size(284, 48);
+			this->labelProfileWebsite2->TabIndex = 0;
+			this->labelProfileWebsite2->Text = L"-";
+			this->labelProfileWebsite2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// panel3
+			// 
+			this->panel3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
+				static_cast<System::Int32>(static_cast<System::Byte>(114)));
+			this->panel3->Controls->Add(this->labelProfilePassword3);
+			this->panel3->Controls->Add(this->labelProfileUsername3);
+			this->panel3->Controls->Add(this->labelProfileWebsite3);
+			this->panel3->Location = System::Drawing::Point(83, 356);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(888, 48);
+			this->panel3->TabIndex = 14;
+			// 
+			// labelProfilePassword3
+			// 
+			this->labelProfilePassword3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfilePassword3->ForeColor = System::Drawing::Color::White;
+			this->labelProfilePassword3->Location = System::Drawing::Point(625, 0);
+			this->labelProfilePassword3->Name = L"labelProfilePassword3";
+			this->labelProfilePassword3->Size = System::Drawing::Size(262, 48);
+			this->labelProfilePassword3->TabIndex = 0;
+			this->labelProfilePassword3->Text = L"-";
+			this->labelProfilePassword3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileUsername3
+			// 
+			this->labelProfileUsername3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfileUsername3->ForeColor = System::Drawing::Color::White;
+			this->labelProfileUsername3->Location = System::Drawing::Point(303, 0);
+			this->labelProfileUsername3->Name = L"labelProfileUsername3";
+			this->labelProfileUsername3->Size = System::Drawing::Size(288, 48);
+			this->labelProfileUsername3->TabIndex = 0;
+			this->labelProfileUsername3->Text = L"-";
+			this->labelProfileUsername3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileWebsite3
+			// 
+			this->labelProfileWebsite3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfileWebsite3->ForeColor = System::Drawing::Color::White;
+			this->labelProfileWebsite3->Location = System::Drawing::Point(1, 0);
+			this->labelProfileWebsite3->Name = L"labelProfileWebsite3";
+			this->labelProfileWebsite3->Size = System::Drawing::Size(284, 48);
+			this->labelProfileWebsite3->TabIndex = 0;
+			this->labelProfileWebsite3->Text = L"-";
+			this->labelProfileWebsite3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// ProfilesForm
 			// 
@@ -355,6 +557,8 @@ namespace PassUnite {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(49)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(82)));
 			this->ClientSize = System::Drawing::Size(984, 511);
+			this->Controls->Add(this->panel3);
+			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->labelColumnPasswords);
 			this->Controls->Add(this->labelColumnUsernames);
@@ -377,11 +581,15 @@ namespace PassUnite {
 			this->panelTopbar->ResumeLayout(false);
 			this->panelTopbar->PerformLayout();
 			this->panel1->ResumeLayout(false);
+			this->panel2->ResumeLayout(false);
+			this->panel3->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
+	private:  System::Drawing::Point firstPanelPoint;
+
 	public: PageProperties pageProps;
 
 	public: Profiles^ profile = nullptr;
