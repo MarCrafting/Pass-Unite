@@ -48,10 +48,39 @@ namespace PassUnite {
 				SqlDataReader^ reader = command.ExecuteReader();
 				if (reader->Read())
 				{
+					// create blank profile
 					profile = gcnew Profiles();
-					profile->website = reader->GetString(1);
-					profile->username = reader->GetString(2);
-					profile->password = reader->GetString(3);
+					
+					// Website
+					try
+					{
+						profile->website = reader->GetString(1);			// assign read value for website
+					}
+					catch (System::Data::SqlTypes::SqlNullValueException^)
+					{
+						// leave blank (do nothing) " - "
+						profile->website = "-";								// if null, assign " - "
+					}
+					// Username
+					try
+					{
+						profile->username = reader->GetString(2);			// assign read value for username
+					}
+					catch (System::Data::SqlTypes::SqlNullValueException^)
+					{
+						// leave blank
+						profile->username = "-";
+					}
+					// Password
+					try
+					{
+						profile->password = reader->GetString(3);			// assign read value for password
+					}
+					catch (System::Data::SqlTypes::SqlNullValueException^)
+					{
+						// leave blank
+						profile->password = "-";
+					}
 
 					profileCount++;
 				}
@@ -69,10 +98,39 @@ namespace PassUnite {
 
 					if (reader->Read())
 					{
+						// create blank profile
 						nextProfile = gcnew Profiles();
-						nextProfile->website = reader->GetString(1);
-						nextProfile->username = reader->GetString(2);
-						nextProfile->password = reader->GetString(3);
+						
+						// Website
+						try
+						{
+							nextProfile->website = reader->GetString(1);			// assign read value for website
+						}
+						catch (System::Data::SqlTypes::SqlNullValueException^)
+						{
+							// leave blank (do nothing) " - "
+							nextProfile->website = "-";								// if null, assign " - "
+						}
+						// Username
+						try
+						{
+							nextProfile->username = reader->GetString(2);			// assign read value for username
+						}
+						catch (System::Data::SqlTypes::SqlNullValueException^)
+						{
+							// leave blank
+							nextProfile->username = "-";
+						}
+						// Password
+						try
+						{
+							nextProfile->password = reader->GetString(3);			// assign read value for password
+						}
+						catch (System::Data::SqlTypes::SqlNullValueException^)
+						{
+							// leave blank
+							nextProfile->password = "-";
+						}
 
 						profileCount++;
 					}
