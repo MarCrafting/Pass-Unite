@@ -641,7 +641,7 @@ namespace PassUnite {
 	}
 	private: System::Void pictureBoxSettings_Click(System::Object^ sender, System::EventArgs^ e) {
 		// show "Settings" overlay
-		PassUnite::Settings settingsOverlay;
+		PassUnite::Settings settingsOverlay(user);
 		settingsOverlay.ShowDialog();
 
 		// check if user wants to sign out

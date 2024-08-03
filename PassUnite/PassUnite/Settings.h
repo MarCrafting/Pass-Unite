@@ -2,6 +2,7 @@
 #include "ChangePassword.h"
 #include "ClearProfiles.h"
 #include "PageProperties.h"
+#include "User.h"
 
 namespace PassUnite {
 
@@ -18,12 +19,13 @@ namespace PassUnite {
 	public ref class Settings : public System::Windows::Forms::Form
 	{
 	public:
-		Settings(void)
+		Settings(User^ _user)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+			labelLoggedUser->Text = _user->username;
 		}
 
 	protected:
@@ -110,9 +112,9 @@ namespace PassUnite {
 				static_cast<System::Int32>(static_cast<System::Byte>(171)));
 			this->labelLoggedUser->Location = System::Drawing::Point(798, 21);
 			this->labelLoggedUser->Name = L"labelLoggedUser";
-			this->labelLoggedUser->Size = System::Drawing::Size(142, 31);
+			this->labelLoggedUser->Size = System::Drawing::Size(149, 31);
 			this->labelLoggedUser->TabIndex = 3;
-			this->labelLoggedUser->Text = L"username";
+			this->labelLoggedUser->Text = L"user_error";
 			// 
 			// labelChangePass
 			// 

@@ -22,7 +22,7 @@ void main(array<String^>^ args)
 			break;
 
 		// initialize pages
-		PassUnite::Home homePage;			// Page 1
+		PassUnite::Home homePage(loginPage.user);			// Page 1
 		PassUnite::AddProfiles addProfilesPage(loginPage.user);	// Page 2
 		PassUnite::ProfilesForm profilesPage(loginPage.user, addProfilesPage.profile, addProfilesPage.profileCount);	// Page 3
 		// set starting screen
