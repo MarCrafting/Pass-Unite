@@ -1,6 +1,7 @@
 #pragma once
 #include "PageProperties.h"
 #include "User.h"
+#include "Generator.h"
 #include "Settings.h"
 #include "Profiles.h"
 #include "Panels.h"
@@ -500,6 +501,7 @@ namespace PassUnite {
 			this->pictureBoxGeneratePassword->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxGeneratePassword->TabIndex = 0;
 			this->pictureBoxGeneratePassword->TabStop = false;
+			this->pictureBoxGeneratePassword->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxGeneratePassword_Click);
 			// 
 			// pictureBoxAddProfile
 			// 
@@ -1222,5 +1224,10 @@ namespace PassUnite {
 		// close window
 		this->Close();
 	}
-	};
+	private: System::Void pictureBoxGeneratePassword_Click(System::Object^ sender, System::EventArgs^ e) {
+		// open Generator overlay
+		PassUnite::Generator generatorOverlay;
+		generatorOverlay.ShowDialog();
+	}
+};
 }

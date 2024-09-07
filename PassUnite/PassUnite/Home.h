@@ -1,7 +1,9 @@
 #pragma once
 
 #include "PageProperties.h"
+#include "Generator.h"
 #include "Settings.h"
+#include "User.h"
 
 namespace PassUnite {
 
@@ -18,12 +20,13 @@ namespace PassUnite {
 	public ref class Home : public System::Windows::Forms::Form
 	{
 	public:
-		Home(void)
+		Home(User^ _user)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+			user = _user;
 		}
 
 	protected:
@@ -40,8 +43,8 @@ namespace PassUnite {
 	private: System::Windows::Forms::Panel^ panelSidebar;
 	private: System::Windows::Forms::Panel^ panelTopbar;
 	private: System::Windows::Forms::Label^ labelAppName;
-	private: System::Windows::Forms::Label^ labelTitle;
-	private: System::Windows::Forms::Panel^ panel1;
+
+
 	private: System::Windows::Forms::PictureBox^ pictureBoxMenu;
 	private: System::Windows::Forms::PictureBox^ pictureBoxProfiles;
 
@@ -51,6 +54,10 @@ namespace PassUnite {
 	private: System::Windows::Forms::PictureBox^ pictureBoxGeneratePassword;
 
 	private: System::Windows::Forms::PictureBox^ pictureBoxAddProfile;
+	private: System::Windows::Forms::Panel^ panelContent;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Label^ labelTitle;
+	private: System::Windows::Forms::Panel^ panel2;
 
 	protected:
 
@@ -81,8 +88,10 @@ namespace PassUnite {
 			this->pictureBoxAddProfile = (gcnew System::Windows::Forms::PictureBox());
 			this->panelTopbar = (gcnew System::Windows::Forms::Panel());
 			this->labelAppName = (gcnew System::Windows::Forms::Label());
-			this->labelTitle = (gcnew System::Windows::Forms::Label());
+			this->panelContent = (gcnew System::Windows::Forms::Panel());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->labelTitle = (gcnew System::Windows::Forms::Label());
 			this->panelSidebar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxProfiles))->BeginInit();
@@ -90,6 +99,7 @@ namespace PassUnite {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxGeneratePassword))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxAddProfile))->BeginInit();
 			this->panelTopbar->SuspendLayout();
+			this->panelContent->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panelSidebar
@@ -149,6 +159,7 @@ namespace PassUnite {
 			this->pictureBoxGeneratePassword->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxGeneratePassword->TabIndex = 0;
 			this->pictureBoxGeneratePassword->TabStop = false;
+			this->pictureBoxGeneratePassword->Click += gcnew System::EventHandler(this, &Home::pictureBoxGeneratePassword_Click);
 			// 
 			// pictureBoxAddProfile
 			// 
@@ -186,29 +197,46 @@ namespace PassUnite {
 			this->labelAppName->TabIndex = 0;
 			this->labelAppName->Text = L"Pass Unite";
 			// 
-			// labelTitle
+			// panelContent
 			// 
-			this->labelTitle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelTitle->Font = (gcnew System::Drawing::Font(L"MoeumT R", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(129)));
-			this->labelTitle->Location = System::Drawing::Point(75, 78);
-			this->labelTitle->Name = L"labelTitle";
-			this->labelTitle->Size = System::Drawing::Size(910, 124);
-			this->labelTitle->TabIndex = 1;
-			this->labelTitle->Text = L"Welcome to Pass Unite";
-			this->labelTitle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->panelContent->AutoScroll = true;
+			this->panelContent->Controls->Add(this->panel2);
+			this->panelContent->Controls->Add(this->panel1);
+			this->panelContent->Controls->Add(this->labelTitle);
+			this->panelContent->Location = System::Drawing::Point(74, 70);
+			this->panelContent->Name = L"panelContent";
+			this->panelContent->Size = System::Drawing::Size(909, 441);
+			this->panelContent->TabIndex = 3;
+			// 
+			// panel2
+			// 
+			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(200)), static_cast<System::Int32>(static_cast<System::Byte>(200)),
+				static_cast<System::Int32>(static_cast<System::Byte>(200)));
+			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel2->Location = System::Drawing::Point(75, 160);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(763, 371);
+			this->panel2->TabIndex = 5;
 			// 
 			// panel1
 			// 
-			this->panel1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(48)), static_cast<System::Int32>(static_cast<System::Byte>(48)),
 				static_cast<System::Int32>(static_cast<System::Byte>(48)));
-			this->panel1->Location = System::Drawing::Point(179, 205);
+			this->panel1->Location = System::Drawing::Point(75, 127);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(715, 2);
-			this->panel1->TabIndex = 2;
+			this->panel1->Size = System::Drawing::Size(746, 2);
+			this->panel1->TabIndex = 4;
+			// 
+			// labelTitle
+			// 
+			this->labelTitle->Font = (gcnew System::Drawing::Font(L"MoeumT R", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(129)));
+			this->labelTitle->Location = System::Drawing::Point(6, 0);
+			this->labelTitle->Name = L"labelTitle";
+			this->labelTitle->Size = System::Drawing::Size(885, 124);
+			this->labelTitle->TabIndex = 3;
+			this->labelTitle->Text = L"Welcome to Pass Unite";
+			this->labelTitle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Home
 			// 
@@ -217,8 +245,7 @@ namespace PassUnite {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(69)), static_cast<System::Int32>(static_cast<System::Byte>(85)),
 				static_cast<System::Int32>(static_cast<System::Byte>(76)));
 			this->ClientSize = System::Drawing::Size(984, 511);
-			this->Controls->Add(this->panel1);
-			this->Controls->Add(this->labelTitle);
+			this->Controls->Add(this->panelContent);
 			this->Controls->Add(this->panelSidebar);
 			this->Controls->Add(this->panelTopbar);
 			this->Name = L"Home";
@@ -232,11 +259,14 @@ namespace PassUnite {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxAddProfile))->EndInit();
 			this->panelTopbar->ResumeLayout(false);
 			this->panelTopbar->PerformLayout();
+			this->panelContent->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 	public: PageProperties pageProps;
+
+		  public: User^ user = nullptr;
 
 	private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
 		// redirect to "Add Profile" page
@@ -254,7 +284,7 @@ namespace PassUnite {
 	}
 	private: System::Void pictureBoxSettings_Click(System::Object^ sender, System::EventArgs^ e) {
 		// open Settings overlay
-		PassUnite::Settings settingsOverlay;
+		PassUnite::Settings settingsOverlay(user);
 		settingsOverlay.ShowDialog();
 
 		// check if user wants to sign out
@@ -267,5 +297,10 @@ namespace PassUnite {
 			this->Close();
 		}
 	}
+private: System::Void pictureBoxGeneratePassword_Click(System::Object^ sender, System::EventArgs^ e) {
+	// open Generator overlay
+	PassUnite::Generator generatorOverlay;
+	generatorOverlay.ShowDialog();
+}
 };
 }

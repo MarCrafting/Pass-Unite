@@ -123,6 +123,7 @@
     <ClCompile Include="AddProfiles.cpp" />
     <ClCompile Include="ChangePassword.cpp" />
     <ClCompile Include="ClearProfiles.cpp" />
+    <ClCompile Include="Generator.cpp" />
     <ClCompile Include="Home.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="Profiles.cpp" />
@@ -137,6 +138,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ClearProfiles.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Generator.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Home.h">
@@ -165,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClearProfiles.resx">
       <DependentUpon>ClearProfiles.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generator.resx">
+      <DependentUpon>Generator.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.h</DependentUpon>
