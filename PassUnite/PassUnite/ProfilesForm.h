@@ -29,6 +29,7 @@ namespace PassUnite {
 			//
 			user = _user;
 			profile = _profile;
+			profileCount = _profileCount;
 
 			// save panels into a list in order to access them
 			// Panel 1
@@ -283,6 +284,17 @@ namespace PassUnite {
 	private: System::Windows::Forms::Label^ labelProfilePassword4;
 	private: System::Windows::Forms::Label^ labelProfileUsername4;
 	private: System::Windows::Forms::Label^ labelProfileWebsite4;
+	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf1;
+	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf2;
+	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf3;
+	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf4;
+	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf5;
+	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf6;
+	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf7;
+	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf8;
+	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf9;
+	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf10;
+
 
 
 
@@ -379,6 +391,16 @@ namespace PassUnite {
 			this->panelTopbar = (gcnew System::Windows::Forms::Panel());
 			this->labelAppName = (gcnew System::Windows::Forms::Label());
 			this->panelContent = (gcnew System::Windows::Forms::Panel());
+			this->pictureBoxDelProf1 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxDelProf2 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxDelProf3 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxDelProf4 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxDelProf5 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxDelProf6 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxDelProf10 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxDelProf9 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxDelProf8 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxDelProf7 = (gcnew System::Windows::Forms::PictureBox());
 			this->labelTitle = (gcnew System::Windows::Forms::Label());
 			this->labelColumnWebsite = (gcnew System::Windows::Forms::Label());
 			this->labelColumnUsernames = (gcnew System::Windows::Forms::Label());
@@ -432,6 +454,16 @@ namespace PassUnite {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxAddProfile))->BeginInit();
 			this->panelTopbar->SuspendLayout();
 			this->panelContent->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf5))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf6))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf10))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf9))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf8))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf7))->BeginInit();
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->panel3->SuspendLayout();
@@ -546,6 +578,16 @@ namespace PassUnite {
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->panelContent->AutoScroll = true;
+			this->panelContent->Controls->Add(this->pictureBoxDelProf1);
+			this->panelContent->Controls->Add(this->pictureBoxDelProf2);
+			this->panelContent->Controls->Add(this->pictureBoxDelProf3);
+			this->panelContent->Controls->Add(this->pictureBoxDelProf4);
+			this->panelContent->Controls->Add(this->pictureBoxDelProf5);
+			this->panelContent->Controls->Add(this->pictureBoxDelProf6);
+			this->panelContent->Controls->Add(this->pictureBoxDelProf10);
+			this->panelContent->Controls->Add(this->pictureBoxDelProf9);
+			this->panelContent->Controls->Add(this->pictureBoxDelProf8);
+			this->panelContent->Controls->Add(this->pictureBoxDelProf7);
 			this->panelContent->Controls->Add(this->labelTitle);
 			this->panelContent->Controls->Add(this->labelColumnWebsite);
 			this->panelContent->Controls->Add(this->labelColumnUsernames);
@@ -565,6 +607,116 @@ namespace PassUnite {
 			this->panelContent->Name = L"panelContent";
 			this->panelContent->Size = System::Drawing::Size(909, 441);
 			this->panelContent->TabIndex = 9;
+			// 
+			// pictureBoxDelProf1
+			// 
+			this->pictureBoxDelProf1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf1.Image")));
+			this->pictureBoxDelProf1->Location = System::Drawing::Point(3, 177);
+			this->pictureBoxDelProf1->Name = L"pictureBoxDelProf1";
+			this->pictureBoxDelProf1->Size = System::Drawing::Size(19, 18);
+			this->pictureBoxDelProf1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxDelProf1->TabIndex = 1;
+			this->pictureBoxDelProf1->TabStop = false;
+			this->pictureBoxDelProf1->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf1_Click);
+			// 
+			// pictureBoxDelProf2
+			// 
+			this->pictureBoxDelProf2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf2.Image")));
+			this->pictureBoxDelProf2->Location = System::Drawing::Point(3, 238);
+			this->pictureBoxDelProf2->Name = L"pictureBoxDelProf2";
+			this->pictureBoxDelProf2->Size = System::Drawing::Size(19, 18);
+			this->pictureBoxDelProf2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxDelProf2->TabIndex = 1;
+			this->pictureBoxDelProf2->TabStop = false;
+			this->pictureBoxDelProf2->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf2_Click);
+			// 
+			// pictureBoxDelProf3
+			// 
+			this->pictureBoxDelProf3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf3.Image")));
+			this->pictureBoxDelProf3->Location = System::Drawing::Point(3, 302);
+			this->pictureBoxDelProf3->Name = L"pictureBoxDelProf3";
+			this->pictureBoxDelProf3->Size = System::Drawing::Size(19, 18);
+			this->pictureBoxDelProf3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxDelProf3->TabIndex = 1;
+			this->pictureBoxDelProf3->TabStop = false;
+			this->pictureBoxDelProf3->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf3_Click);
+			// 
+			// pictureBoxDelProf4
+			// 
+			this->pictureBoxDelProf4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf4.Image")));
+			this->pictureBoxDelProf4->Location = System::Drawing::Point(3, 361);
+			this->pictureBoxDelProf4->Name = L"pictureBoxDelProf4";
+			this->pictureBoxDelProf4->Size = System::Drawing::Size(19, 18);
+			this->pictureBoxDelProf4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxDelProf4->TabIndex = 1;
+			this->pictureBoxDelProf4->TabStop = false;
+			this->pictureBoxDelProf4->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf4_Click);
+			// 
+			// pictureBoxDelProf5
+			// 
+			this->pictureBoxDelProf5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf5.Image")));
+			this->pictureBoxDelProf5->Location = System::Drawing::Point(3, 420);
+			this->pictureBoxDelProf5->Name = L"pictureBoxDelProf5";
+			this->pictureBoxDelProf5->Size = System::Drawing::Size(19, 18);
+			this->pictureBoxDelProf5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxDelProf5->TabIndex = 1;
+			this->pictureBoxDelProf5->TabStop = false;
+			this->pictureBoxDelProf5->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf5_Click);
+			// 
+			// pictureBoxDelProf6
+			// 
+			this->pictureBoxDelProf6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf6.Image")));
+			this->pictureBoxDelProf6->Location = System::Drawing::Point(3, 479);
+			this->pictureBoxDelProf6->Name = L"pictureBoxDelProf6";
+			this->pictureBoxDelProf6->Size = System::Drawing::Size(19, 18);
+			this->pictureBoxDelProf6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxDelProf6->TabIndex = 1;
+			this->pictureBoxDelProf6->TabStop = false;
+			this->pictureBoxDelProf6->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf6_Click);
+			// 
+			// pictureBoxDelProf10
+			// 
+			this->pictureBoxDelProf10->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf10.Image")));
+			this->pictureBoxDelProf10->Location = System::Drawing::Point(3, 716);
+			this->pictureBoxDelProf10->Name = L"pictureBoxDelProf10";
+			this->pictureBoxDelProf10->Size = System::Drawing::Size(19, 18);
+			this->pictureBoxDelProf10->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxDelProf10->TabIndex = 1;
+			this->pictureBoxDelProf10->TabStop = false;
+			this->pictureBoxDelProf10->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf10_Click);
+			// 
+			// pictureBoxDelProf9
+			// 
+			this->pictureBoxDelProf9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf9.Image")));
+			this->pictureBoxDelProf9->Location = System::Drawing::Point(3, 661);
+			this->pictureBoxDelProf9->Name = L"pictureBoxDelProf9";
+			this->pictureBoxDelProf9->Size = System::Drawing::Size(19, 18);
+			this->pictureBoxDelProf9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxDelProf9->TabIndex = 1;
+			this->pictureBoxDelProf9->TabStop = false;
+			this->pictureBoxDelProf9->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf9_Click);
+			// 
+			// pictureBoxDelProf8
+			// 
+			this->pictureBoxDelProf8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf8.Image")));
+			this->pictureBoxDelProf8->Location = System::Drawing::Point(3, 601);
+			this->pictureBoxDelProf8->Name = L"pictureBoxDelProf8";
+			this->pictureBoxDelProf8->Size = System::Drawing::Size(19, 18);
+			this->pictureBoxDelProf8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxDelProf8->TabIndex = 1;
+			this->pictureBoxDelProf8->TabStop = false;
+			this->pictureBoxDelProf8->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf8_Click);
+			// 
+			// pictureBoxDelProf7
+			// 
+			this->pictureBoxDelProf7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf7.Image")));
+			this->pictureBoxDelProf7->Location = System::Drawing::Point(3, 539);
+			this->pictureBoxDelProf7->Name = L"pictureBoxDelProf7";
+			this->pictureBoxDelProf7->Size = System::Drawing::Size(19, 18);
+			this->pictureBoxDelProf7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxDelProf7->TabIndex = 1;
+			this->pictureBoxDelProf7->TabStop = false;
+			this->pictureBoxDelProf7->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf7_Click);
 			// 
 			// labelTitle
 			// 
@@ -1166,6 +1318,16 @@ namespace PassUnite {
 			this->panelTopbar->PerformLayout();
 			this->panelContent->ResumeLayout(false);
 			this->panelContent->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf5))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf6))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf10))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf9))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf8))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf7))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel2->ResumeLayout(false);
 			this->panel3->ResumeLayout(false);
@@ -1181,6 +1343,8 @@ namespace PassUnite {
 		}
 #pragma endregion
 	private:  System::Drawing::Point firstPanelPoint;
+
+	public: int profileCount;
 
 	public: PageProperties pageProps;
 
@@ -1229,5 +1393,187 @@ namespace PassUnite {
 		PassUnite::Generator generatorOverlay;
 		generatorOverlay.ShowDialog();
 	}
-};
+	private: System::Void pictureBoxDelProf1_Click(System::Object^ sender, System::EventArgs^ e) {
+		// if slot not empty
+		if (labelProfileWebsite1->Text != "-" && labelProfileUsername1->Text != "-" && labelProfilePassword1->Text != "-")
+		{
+			// grab credentials
+			String^ website = labelProfileWebsite1->Text;
+			String^ username = labelProfileUsername1->Text;
+			String^ password = labelProfilePassword1->Text;
+
+			labelProfileWebsite1->Text = "-";
+			labelProfileUsername1->Text = "-";
+			labelProfilePassword1->Text = "-";
+
+			// search database for matching data
+
+			// reinitialize page
+			this->Update();
+			this->Refresh();
+		}
+	}
+	private: System::Void pictureBoxDelProf2_Click(System::Object^ sender, System::EventArgs^ e) {
+		// if slot not empty
+		if (labelProfileWebsite2->Text != "-" && labelProfileUsername2->Text != "-" && labelProfilePassword2->Text != "-")
+		{
+			// grab credentials
+			String^ website = labelProfileWebsite2->Text;
+			String^ username = labelProfileUsername2->Text;
+			String^ password = labelProfilePassword2->Text;
+
+			labelProfileWebsite2->Text = "-";
+			labelProfileUsername2->Text = "-";
+			labelProfilePassword2->Text = "-";
+
+			// search database for matching data
+
+			// reinitialize page
+		}
+	}
+	private: System::Void pictureBoxDelProf3_Click(System::Object^ sender, System::EventArgs^ e) {
+		// if slot not empty
+		if (labelProfileWebsite3->Text != "-" && labelProfileUsername3->Text != "-" && labelProfilePassword3->Text != "-")
+		{
+			// grab credentials
+			String^ website = labelProfileWebsite3->Text;
+			String^ username = labelProfileUsername3->Text;
+			String^ password = labelProfilePassword3->Text;
+
+			labelProfileWebsite3->Text = "-";
+			labelProfileUsername3->Text = "-";
+			labelProfilePassword3->Text = "-";
+
+			// search database for matching data
+
+			// reinitialize page
+		}
+	}
+	private: System::Void pictureBoxDelProf4_Click(System::Object^ sender, System::EventArgs^ e) {
+		// if slot not empty
+		if (labelProfileWebsite4->Text != "-" && labelProfileUsername4->Text != "-" && labelProfilePassword4->Text != "-")
+		{
+			// grab credentials
+			String^ website = labelProfileWebsite4->Text;
+			String^ username = labelProfileUsername4->Text;
+			String^ password = labelProfilePassword4->Text;
+
+			labelProfileWebsite4->Text = "-";
+			labelProfileUsername4->Text = "-";
+			labelProfilePassword4->Text = "-";
+
+			// search database for matching data
+
+			// reinitialize page
+		}
+	}
+	private: System::Void pictureBoxDelProf5_Click(System::Object^ sender, System::EventArgs^ e) {
+		// if slot not empty
+		if (labelProfileWebsite5->Text != "-" && labelProfileUsername5->Text != "-" && labelProfilePassword5->Text != "-")
+		{
+			// grab credentials
+			String^ website = labelProfileWebsite5->Text;
+			String^ username = labelProfileUsername5->Text;
+			String^ password = labelProfilePassword5->Text;
+
+			labelProfileWebsite5->Text = "-";
+			labelProfileUsername5->Text = "-";
+			labelProfilePassword5->Text = "-";
+
+			// search database for matching data
+
+			// reinitialize page
+		}
+	}
+	private: System::Void pictureBoxDelProf6_Click(System::Object^ sender, System::EventArgs^ e) {
+		// if slot not empty
+		if (labelProfileWebsite6->Text != "-" && labelProfileUsername6->Text != "-" && labelProfilePassword6->Text != "-")
+		{
+			// grab credentials
+			String^ website = labelProfileWebsite6->Text;
+			String^ username = labelProfileUsername6->Text;
+			String^ password = labelProfilePassword6->Text;
+
+			labelProfileWebsite6->Text = "-";
+			labelProfileUsername6->Text = "-";
+			labelProfilePassword6->Text = "-";
+
+			// search database for matching data
+
+			// reinitialize page
+		}
+	}
+	private: System::Void pictureBoxDelProf7_Click(System::Object^ sender, System::EventArgs^ e) {
+		// if slot not empty
+		if (labelProfileWebsite7->Text != "-" && labelProfileUsername7->Text != "-" && labelProfilePassword7->Text != "-")
+		{
+			// grab credentials
+			String^ website = labelProfileWebsite7->Text;
+			String^ username = labelProfileUsername7->Text;
+			String^ password = labelProfilePassword7->Text;
+
+			labelProfileWebsite7->Text = "-";
+			labelProfileUsername7->Text = "-";
+			labelProfilePassword7->Text = "-";
+
+			// search database for matching data
+
+			// reinitialize page
+		}
+	}
+	private: System::Void pictureBoxDelProf8_Click(System::Object^ sender, System::EventArgs^ e) {
+		// if slot not empty
+		if (labelProfileWebsite8->Text != "-" && labelProfileUsername8->Text != "-" && labelProfilePassword8->Text != "-")
+		{
+			// grab credentials
+			String^ website = labelProfileWebsite8->Text;
+			String^ username = labelProfileUsername8->Text;
+			String^ password = labelProfilePassword8->Text;
+
+			labelProfileWebsite8->Text = "-";
+			labelProfileUsername8->Text = "-";
+			labelProfilePassword8->Text = "-";
+
+			// search database for matching data
+
+			// reinitialize page
+		}
+	}
+	private: System::Void pictureBoxDelProf9_Click(System::Object^ sender, System::EventArgs^ e) {
+		// if slot not empty
+		if (labelProfileWebsite9->Text != "-" && labelProfileUsername9->Text != "-" && labelProfilePassword9->Text != "-")
+		{
+			// grab credentials
+			String^ website = labelProfileWebsite9->Text;
+			String^ username = labelProfileUsername9->Text;
+			String^ password = labelProfilePassword9->Text;
+
+			labelProfileWebsite9->Text = "-";
+			labelProfileUsername9->Text = "-";
+			labelProfilePassword9->Text = "-";
+
+			// search database for matching data
+
+			// reinitialize page
+		}
+	}
+	private: System::Void pictureBoxDelProf10_Click(System::Object^ sender, System::EventArgs^ e) {
+		// if slot not empty
+		if (labelProfileWebsite10->Text != "-" && labelProfileUsername10->Text != "-" && labelProfilePassword10->Text != "-")
+		{
+			// grab credentials
+			String^ website = labelProfileWebsite10->Text;
+			String^ username = labelProfileUsername10->Text;
+			String^ password = labelProfilePassword10->Text;
+
+			labelProfileWebsite10->Text = "-";
+			labelProfileUsername10->Text = "-";
+			labelProfilePassword10->Text = "-";
+
+			// search database for matching data
+
+			// reinitialize page
+		}
+	}
+	};
 }
