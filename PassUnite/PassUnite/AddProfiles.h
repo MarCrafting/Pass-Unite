@@ -146,6 +146,9 @@ namespace PassUnite {
 					// move to last saved profile
 					profile = profile->next;
 				}
+
+				// close connection
+				sqlConn.Close();
 			}
 			catch (Exception^ ex)
 			{
@@ -581,10 +584,36 @@ namespace PassUnite {
 			SqlConnection sqlConn(connString);
 			sqlConn.Open();
 
-			// create sql query with placeholders
+			// build sql query
 			String^ sqlQuery = "INSERT INTO profiles " +
-				"(accountid, website, profileUser, profilePass) VALUES " +
-				"(@id, @web, @user, @pass);";
+				"(accountid";
+
+			// columns and values
+			{
+				// COLUMNS
+				if (website != "")
+					sqlQuery += ", website";
+
+				if (username != "")
+					sqlQuery += ", profileUser";
+
+				if (password != "")
+					sqlQuery += ", profilePass) VALUES (@id";
+				else
+					sqlQuery += ") VALUES (@id";
+
+				// VALUES
+				if (website != "")
+					sqlQuery += ", @web";
+
+				if (username != "")
+					sqlQuery += ", @user";
+
+				if (password != "")
+					sqlQuery += ", @pass);";
+				else
+					sqlQuery += ");";
+			}
 
 			// swap placeholders with variables
 			SqlCommand command(sqlQuery, % sqlConn);
@@ -594,6 +623,9 @@ namespace PassUnite {
 			command.Parameters->AddWithValue("@pass", password);
 
 			command.ExecuteNonQuery();
+
+			// close connection
+			sqlConn.Close();
 		}
 		catch (Exception^ ex)
 		{

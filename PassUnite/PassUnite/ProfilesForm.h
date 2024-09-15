@@ -14,6 +14,7 @@ namespace PassUnite {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SqlClient;
 
 	/// <summary>
 	/// Summary for Profiles
@@ -1395,27 +1396,68 @@ namespace PassUnite {
 	}
 	private: System::Void pictureBoxDelProf1_Click(System::Object^ sender, System::EventArgs^ e) {
 		// if slot not empty
-		if (labelProfileWebsite1->Text != "-" && labelProfileUsername1->Text != "-" && labelProfilePassword1->Text != "-")
+		if (labelProfileWebsite1->Text != "-" || labelProfileUsername1->Text != "-" || labelProfilePassword1->Text != "-")
 		{
 			// grab credentials
 			String^ website = labelProfileWebsite1->Text;
 			String^ username = labelProfileUsername1->Text;
 			String^ password = labelProfilePassword1->Text;
 
-			labelProfileWebsite1->Text = "-";
+			/*labelProfileWebsite1->Text = "-";
 			labelProfileUsername1->Text = "-";
-			labelProfilePassword1->Text = "-";
+			labelProfilePassword1->Text = "-";*/
 
-			// search database for matching data
+			// establish connection to database
+			try
+			{
+				String^ connString = "Data Source=localhost;Initial Catalog=passuniteusers;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+				SqlConnection sqlConn(connString);
+				sqlConn.Open();
+
+				// build sql query
+				String^ sqlQuery = "DELETE FROM profiles " +
+					"WHERE ";
+				// website
+				{
+					if (website == "-")
+						sqlQuery += "website IS NULL AND ";
+					else
+						sqlQuery += "website=\'" + website + "\' AND ";
+				}
+				// username
+				{
+					if (username == "-")
+						sqlQuery += "profileUser IS NULL AND ";
+					else
+						sqlQuery += "profileUser=\'" + username + "\' AND ";
+				}
+				// password
+				{
+					if (password == "-")
+						sqlQuery += "profilePass IS NULL";
+					else
+						sqlQuery += "profilePass=\'" + password + "\'";
+				}
+
+				SqlCommand command(sqlQuery, % sqlConn);
+
+				// execute
+				command.ExecuteNonQuery();
+
+				// close connection
+				sqlConn.Close();
+			}
+			catch (Exception^ ex)
+			{
+				MessageBox::Show(ex->Message);		// for troubleshooting
+			}
 
 			// reinitialize page
-			this->Update();
-			this->Refresh();
 		}
 	}
 	private: System::Void pictureBoxDelProf2_Click(System::Object^ sender, System::EventArgs^ e) {
 		// if slot not empty
-		if (labelProfileWebsite2->Text != "-" && labelProfileUsername2->Text != "-" && labelProfilePassword2->Text != "-")
+		if (labelProfileWebsite2->Text != "-" || labelProfileUsername2->Text != "-" || labelProfilePassword2->Text != "-")
 		{
 			// grab credentials
 			String^ website = labelProfileWebsite2->Text;
@@ -1426,14 +1468,41 @@ namespace PassUnite {
 			labelProfileUsername2->Text = "-";
 			labelProfilePassword2->Text = "-";
 
-			// search database for matching data
+			// establish connection to database
+			try
+			{
+				String^ connString = "Data Source=localhost;Initial Catalog=passuniteusers;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+				SqlConnection sqlConn(connString);
+				sqlConn.Open();
+
+				// set up sql query
+				String^ sqlQuery = "DELETE FROM profiles " +
+					"WHERE website=@website " +
+					"AND profileUser=@username " +
+					"AND profilepass=@password";
+
+				SqlCommand command(sqlQuery, % sqlConn);
+				command.Parameters->AddWithValue("@website", website);
+				command.Parameters->AddWithValue("@username", username);
+				command.Parameters->AddWithValue("@password", password);
+
+				// execute
+				command.ExecuteNonQuery();
+
+				// close connection
+				sqlConn.Close();
+			}
+			catch (Exception^ ex)
+			{
+				MessageBox::Show(ex->Message);		// for troubleshooting
+			}
 
 			// reinitialize page
 		}
 	}
 	private: System::Void pictureBoxDelProf3_Click(System::Object^ sender, System::EventArgs^ e) {
 		// if slot not empty
-		if (labelProfileWebsite3->Text != "-" && labelProfileUsername3->Text != "-" && labelProfilePassword3->Text != "-")
+		if (labelProfileWebsite3->Text != "-" || labelProfileUsername3->Text != "-" || labelProfilePassword3->Text != "-")
 		{
 			// grab credentials
 			String^ website = labelProfileWebsite3->Text;
@@ -1451,7 +1520,7 @@ namespace PassUnite {
 	}
 	private: System::Void pictureBoxDelProf4_Click(System::Object^ sender, System::EventArgs^ e) {
 		// if slot not empty
-		if (labelProfileWebsite4->Text != "-" && labelProfileUsername4->Text != "-" && labelProfilePassword4->Text != "-")
+		if (labelProfileWebsite4->Text != "-" || labelProfileUsername4->Text != "-" || labelProfilePassword4->Text != "-")
 		{
 			// grab credentials
 			String^ website = labelProfileWebsite4->Text;
@@ -1469,7 +1538,7 @@ namespace PassUnite {
 	}
 	private: System::Void pictureBoxDelProf5_Click(System::Object^ sender, System::EventArgs^ e) {
 		// if slot not empty
-		if (labelProfileWebsite5->Text != "-" && labelProfileUsername5->Text != "-" && labelProfilePassword5->Text != "-")
+		if (labelProfileWebsite5->Text != "-" || labelProfileUsername5->Text != "-" || labelProfilePassword5->Text != "-")
 		{
 			// grab credentials
 			String^ website = labelProfileWebsite5->Text;
@@ -1487,7 +1556,7 @@ namespace PassUnite {
 	}
 	private: System::Void pictureBoxDelProf6_Click(System::Object^ sender, System::EventArgs^ e) {
 		// if slot not empty
-		if (labelProfileWebsite6->Text != "-" && labelProfileUsername6->Text != "-" && labelProfilePassword6->Text != "-")
+		if (labelProfileWebsite6->Text != "-" || labelProfileUsername6->Text != "-" || labelProfilePassword6->Text != "-")
 		{
 			// grab credentials
 			String^ website = labelProfileWebsite6->Text;
@@ -1505,7 +1574,7 @@ namespace PassUnite {
 	}
 	private: System::Void pictureBoxDelProf7_Click(System::Object^ sender, System::EventArgs^ e) {
 		// if slot not empty
-		if (labelProfileWebsite7->Text != "-" && labelProfileUsername7->Text != "-" && labelProfilePassword7->Text != "-")
+		if (labelProfileWebsite7->Text != "-" || labelProfileUsername7->Text != "-" || labelProfilePassword7->Text != "-")
 		{
 			// grab credentials
 			String^ website = labelProfileWebsite7->Text;
@@ -1523,7 +1592,7 @@ namespace PassUnite {
 	}
 	private: System::Void pictureBoxDelProf8_Click(System::Object^ sender, System::EventArgs^ e) {
 		// if slot not empty
-		if (labelProfileWebsite8->Text != "-" && labelProfileUsername8->Text != "-" && labelProfilePassword8->Text != "-")
+		if (labelProfileWebsite8->Text != "-" || labelProfileUsername8->Text != "-" || labelProfilePassword8->Text != "-")
 		{
 			// grab credentials
 			String^ website = labelProfileWebsite8->Text;
@@ -1541,7 +1610,7 @@ namespace PassUnite {
 	}
 	private: System::Void pictureBoxDelProf9_Click(System::Object^ sender, System::EventArgs^ e) {
 		// if slot not empty
-		if (labelProfileWebsite9->Text != "-" && labelProfileUsername9->Text != "-" && labelProfilePassword9->Text != "-")
+		if (labelProfileWebsite9->Text != "-" || labelProfileUsername9->Text != "-" || labelProfilePassword9->Text != "-")
 		{
 			// grab credentials
 			String^ website = labelProfileWebsite9->Text;
@@ -1559,7 +1628,7 @@ namespace PassUnite {
 	}
 	private: System::Void pictureBoxDelProf10_Click(System::Object^ sender, System::EventArgs^ e) {
 		// if slot not empty
-		if (labelProfileWebsite10->Text != "-" && labelProfileUsername10->Text != "-" && labelProfilePassword10->Text != "-")
+		if (labelProfileWebsite10->Text != "-" || labelProfileUsername10->Text != "-" || labelProfilePassword10->Text != "-")
 		{
 			// grab credentials
 			String^ website = labelProfileWebsite10->Text;
