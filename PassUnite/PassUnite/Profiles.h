@@ -4,8 +4,11 @@ using namespace System;
 
 public ref class Profiles {
 public:
+	int id;
+	String^ website = "-";
+	String^ username = "-";
+	String^ password = "-";
 
-	String^ website = "empty";
-	String^ username = "empty";
-	String^ password = "empty";
+	Profiles^ next = nullptr;
+	Profiles^ prev = nullptr;
 };

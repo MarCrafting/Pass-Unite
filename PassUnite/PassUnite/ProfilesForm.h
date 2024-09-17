@@ -32,16 +32,25 @@ namespace PassUnite {
 			profile = _profile;
 			profileCount = _profileCount;
 
+			// profile dump
+			trashProfile = gcnew Profiles();
+			trashProfile->id = 0;
+			trashProfile->website = "-";
+			trashProfile->username = "-";
+			trashProfile->password = "-";
+
 			// save panels into a list in order to access them
 			// Panel 1
-			Panels^ panel = gcnew Panels();							// create pointer
+			panel = gcnew Panels();							// create pointer
 			panel->panel = panel1;									// assign pointer to panel1
+			panel->id = 1;											// ID
 			panel->labelProfileWebsite = labelProfileWebsite1;		// assign website label
 			panel->labelProfileUsername = labelProfileUsername1;	// assign username label
 			panel->labelProfilePassword = labelProfilePassword1;	// assign password label
 			// Panel 2
 			Panels^ nextPanel = gcnew Panels();						// create pointer
 			nextPanel->panel = panel2;								// assign pointer to panel2
+			nextPanel->id = 2;										// ID
 			nextPanel->panel->Visible = false;						// hide panel by default
 			nextPanel->labelProfileWebsite = labelProfileWebsite2;	// assign website label
 			nextPanel->labelProfileUsername = labelProfileUsername2;// assign username label
@@ -54,6 +63,7 @@ namespace PassUnite {
 			// Panel 3
 			nextPanel = gcnew Panels();								// create pointer
 			nextPanel->panel = panel3;								// assign pointer to panel3
+			nextPanel->id = 3;										// ID
 			nextPanel->panel->Visible = false;						// hide panel by default
 			nextPanel->labelProfileWebsite = labelProfileWebsite3;	// assign website label
 			nextPanel->labelProfileUsername = labelProfileUsername3;// assign username label
@@ -66,6 +76,7 @@ namespace PassUnite {
 			// Panel 4
 			nextPanel = gcnew Panels();								// create a pointer
 			nextPanel->panel = panel4;								// assign pointer to panel4
+			nextPanel->id = 4;										// ID
 			nextPanel->panel->Visible = false;						// hide panel by default
 			nextPanel->labelProfileWebsite = labelProfileWebsite4;	// assign website label
 			nextPanel->labelProfileUsername = labelProfileUsername4;// assign username label
@@ -78,6 +89,7 @@ namespace PassUnite {
 			// Panel 5
 			nextPanel = gcnew Panels();								// create pointer
 			nextPanel->panel = panel5;								// assign pointer to panel5
+			nextPanel->id = 5;										// ID
 			nextPanel->panel->Visible = false;						// hide by default
 			nextPanel->labelProfileWebsite = labelProfileWebsite5;	// assign website label
 			nextPanel->labelProfileUsername = labelProfileUsername5;// assign username label
@@ -90,6 +102,7 @@ namespace PassUnite {
 			// Panel 6
 			nextPanel = gcnew Panels();								// create pointer
 			nextPanel->panel = panel6;								// assign pointer to panel6
+			nextPanel->id = 6;										// ID
 			nextPanel->panel->Visible = false;						// hide panel by default
 			nextPanel->labelProfileWebsite = labelProfileWebsite6;	// assign website label
 			nextPanel->labelProfileUsername = labelProfileUsername6;// assign username label
@@ -102,6 +115,7 @@ namespace PassUnite {
 			// Panel 7
 			nextPanel = gcnew Panels();								// create pointer
 			nextPanel->panel = panel7;								// assign pointer to panel7
+			nextPanel->id = 7;										// ID
 			nextPanel->panel->Visible = false;						// hide by default
 			nextPanel->labelProfileWebsite = labelProfileWebsite7;	// assign website label
 			nextPanel->labelProfileUsername = labelProfileUsername7;// assign username label
@@ -114,6 +128,7 @@ namespace PassUnite {
 			// Panel 8
 			nextPanel = gcnew Panels();								// create pointer
 			nextPanel->panel = panel8;								// assign pointer to panel8
+			nextPanel->id = 8;										// ID
 			nextPanel->panel->Visible = false;						// hide by default
 			nextPanel->labelProfileWebsite = labelProfileWebsite8;	// assign website label
 			nextPanel->labelProfileUsername = labelProfileUsername8;// assign username label
@@ -126,6 +141,7 @@ namespace PassUnite {
 			// Panel 9
 			nextPanel = gcnew Panels();								// create pointer
 			nextPanel->panel = panel9;								// assign pointer to panel9
+			nextPanel->id = 9;										// ID
 			nextPanel->panel->Visible = false;						// hide by default
 			nextPanel->labelProfileWebsite = labelProfileWebsite9;	// assign website label
 			nextPanel->labelProfileUsername = labelProfileUsername9;// assign username label
@@ -138,6 +154,7 @@ namespace PassUnite {
 			// Panel 10
 			nextPanel = gcnew Panels();								// create pointer
 			nextPanel->panel = panel10;								// assign pointer to panel10
+			nextPanel->id = 10;										// ID
 			nextPanel->panel->Visible = false;						// hide by default
 			nextPanel->labelProfileWebsite = labelProfileWebsite10;	// assign website label
 			nextPanel->labelProfileUsername = labelProfileUsername10;// assign username label
@@ -145,6 +162,9 @@ namespace PassUnite {
 			// Link Panel 9 & 10
 			panel->next = nextPanel;
 			nextPanel->prev = panel;
+			
+			// LAST PANEL
+			nextPanel->next = nullptr;
 
 			// set panel pointer to first node
 			while (panel->prev != nullptr)
@@ -301,71 +321,7 @@ namespace PassUnite {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	protected:
-
-
-
-
-
 
 
 
@@ -1352,6 +1308,9 @@ namespace PassUnite {
 	public: User^ user = nullptr;
 
 	public: Profiles^ profile = nullptr;
+	public: Profiles^ trashProfile = nullptr;
+
+	private: Panels^ panel = nullptr;
 
 	private: System::Void labelAppName_Click(System::Object^ sender, System::EventArgs^ e) {
 		// redirect to "Home" page
@@ -1398,250 +1357,452 @@ namespace PassUnite {
 		// if slot not empty
 		if (labelProfileWebsite1->Text != "-" || labelProfileUsername1->Text != "-" || labelProfilePassword1->Text != "-")
 		{
-			// grab credentials
-			String^ website = labelProfileWebsite1->Text;
-			String^ username = labelProfileUsername1->Text;
-			String^ password = labelProfilePassword1->Text;
+			// current slot
+			int slot = 1;
+			// traversal profile
+			Profiles^ currProfile = profile;
 
-			/*labelProfileWebsite1->Text = "-";
-			labelProfileUsername1->Text = "-";
-			labelProfilePassword1->Text = "-";*/
-
-			// establish connection to database
-			try
+			// go to current profile
+			while (currProfile->id != slot)
 			{
-				String^ connString = "Data Source=localhost;Initial Catalog=passuniteusers;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
-				SqlConnection sqlConn(connString);
-				sqlConn.Open();
-
-				// build sql query
-				String^ sqlQuery = "DELETE FROM profiles " +
-					"WHERE ";
-				// website
-				{
-					if (website == "-")
-						sqlQuery += "website IS NULL AND ";
-					else
-						sqlQuery += "website=\'" + website + "\' AND ";
-				}
-				// username
-				{
-					if (username == "-")
-						sqlQuery += "profileUser IS NULL AND ";
-					else
-						sqlQuery += "profileUser=\'" + username + "\' AND ";
-				}
-				// password
-				{
-					if (password == "-")
-						sqlQuery += "profilePass IS NULL";
-					else
-						sqlQuery += "profilePass=\'" + password + "\'";
-				}
-
-				SqlCommand command(sqlQuery, % sqlConn);
-
-				// execute
-				command.ExecuteNonQuery();
-
-				// close connection
-				sqlConn.Close();
-			}
-			catch (Exception^ ex)
-			{
-				MessageBox::Show(ex->Message);		// for troubleshooting
+				if (currProfile->id < slot)
+					currProfile = currProfile->next;
+				else
+					currProfile = currProfile->prev;
 			}
 
-			// reinitialize page
+			// remove profile from database
+			RemoveProfile(currProfile->website, currProfile->username, currProfile->password);
+
+			// go to current slot
+			while (panel->id != slot)
+			{
+				if (panel->id < slot)
+					panel = panel->next;
+				else
+					panel = panel->prev;
+			}
+			// refresh slot labels
+			RefreshLabels(panel);
+
+			// hide slot
+			//panel->panel->Visible = false;
 		}
 	}
 	private: System::Void pictureBoxDelProf2_Click(System::Object^ sender, System::EventArgs^ e) {
 		// if slot not empty
 		if (labelProfileWebsite2->Text != "-" || labelProfileUsername2->Text != "-" || labelProfilePassword2->Text != "-")
 		{
-			// grab credentials
-			String^ website = labelProfileWebsite2->Text;
-			String^ username = labelProfileUsername2->Text;
-			String^ password = labelProfilePassword2->Text;
+			// current slot
+			int slot = 2;
+			// traversal profile
+			Profiles^ currProfile = profile;
 
-			labelProfileWebsite2->Text = "-";
-			labelProfileUsername2->Text = "-";
-			labelProfilePassword2->Text = "-";
-
-			// establish connection to database
-			try
+			// go to current profile
+			while (currProfile->id != slot)
 			{
-				String^ connString = "Data Source=localhost;Initial Catalog=passuniteusers;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
-				SqlConnection sqlConn(connString);
-				sqlConn.Open();
-
-				// set up sql query
-				String^ sqlQuery = "DELETE FROM profiles " +
-					"WHERE website=@website " +
-					"AND profileUser=@username " +
-					"AND profilepass=@password";
-
-				SqlCommand command(sqlQuery, % sqlConn);
-				command.Parameters->AddWithValue("@website", website);
-				command.Parameters->AddWithValue("@username", username);
-				command.Parameters->AddWithValue("@password", password);
-
-				// execute
-				command.ExecuteNonQuery();
-
-				// close connection
-				sqlConn.Close();
-			}
-			catch (Exception^ ex)
-			{
-				MessageBox::Show(ex->Message);		// for troubleshooting
+				if (currProfile->id < slot)
+					currProfile = currProfile->next;
+				else
+					currProfile = currProfile->prev;
 			}
 
-			// reinitialize page
+			// remove profile from database
+			RemoveProfile(currProfile->website, currProfile->username, currProfile->password);
+
+			// go to current slot
+			while (panel->id != slot)
+			{
+				if (panel->id < slot)
+					panel = panel->next;
+				else
+					panel = panel->prev;
+			}
+			// refresh slot labels
+			RefreshLabels(panel);
+
+			// hide slot
+			//panel->panel->Visible = false;
 		}
 	}
 	private: System::Void pictureBoxDelProf3_Click(System::Object^ sender, System::EventArgs^ e) {
 		// if slot not empty
 		if (labelProfileWebsite3->Text != "-" || labelProfileUsername3->Text != "-" || labelProfilePassword3->Text != "-")
 		{
-			// grab credentials
-			String^ website = labelProfileWebsite3->Text;
-			String^ username = labelProfileUsername3->Text;
-			String^ password = labelProfilePassword3->Text;
+			// current slot
+			int slot = 3;
+			// traversal profile
+			Profiles^ currProfile = profile;
 
-			labelProfileWebsite3->Text = "-";
-			labelProfileUsername3->Text = "-";
-			labelProfilePassword3->Text = "-";
+			// go to current profile
+			while (currProfile->id != slot)
+			{
+				if (currProfile->id < slot)
+					currProfile = currProfile->next;
+				else
+					currProfile = currProfile->prev;
+			}
 
-			// search database for matching data
+			// remove profile from database
+			RemoveProfile(currProfile->website, currProfile->username, currProfile->password);
 
-			// reinitialize page
+			// go to current slot
+			while (panel->id != slot)
+			{
+				if (panel->id < slot)
+					panel = panel->next;
+				else
+					panel = panel->prev;
+			}
+			// refresh slot labels
+			RefreshLabels(panel);
+
+			// hide slot
+			//panel->panel->Visible = false;
 		}
 	}
 	private: System::Void pictureBoxDelProf4_Click(System::Object^ sender, System::EventArgs^ e) {
 		// if slot not empty
 		if (labelProfileWebsite4->Text != "-" || labelProfileUsername4->Text != "-" || labelProfilePassword4->Text != "-")
 		{
-			// grab credentials
-			String^ website = labelProfileWebsite4->Text;
-			String^ username = labelProfileUsername4->Text;
-			String^ password = labelProfilePassword4->Text;
+			// current slot
+			int slot = 4;
+			// traversal profile
+			Profiles^ currProfile = profile;
 
-			labelProfileWebsite4->Text = "-";
-			labelProfileUsername4->Text = "-";
-			labelProfilePassword4->Text = "-";
+			// go to current profile
+			while (currProfile->id != slot)
+			{
+				if (currProfile->id < slot)
+					currProfile = currProfile->next;
+				else
+					currProfile = currProfile->prev;
+			}
 
-			// search database for matching data
+			// remove profile from database
+			RemoveProfile(currProfile->website, currProfile->username, currProfile->password);
 
-			// reinitialize page
+			// go to current slot
+			while (panel->id != slot)
+			{
+				if (panel->id < slot)
+					panel = panel->next;
+				else
+					panel = panel->prev;
+			}
+			// refresh slot labels
+			RefreshLabels(panel);
+
+			// hide slot
+			//panel->panel->Visible = false;
 		}
 	}
 	private: System::Void pictureBoxDelProf5_Click(System::Object^ sender, System::EventArgs^ e) {
 		// if slot not empty
 		if (labelProfileWebsite5->Text != "-" || labelProfileUsername5->Text != "-" || labelProfilePassword5->Text != "-")
 		{
-			// grab credentials
-			String^ website = labelProfileWebsite5->Text;
-			String^ username = labelProfileUsername5->Text;
-			String^ password = labelProfilePassword5->Text;
+			// current slot
+			int slot = 5;
+			// traversal profile
+			Profiles^ currProfile = profile;
 
-			labelProfileWebsite5->Text = "-";
-			labelProfileUsername5->Text = "-";
-			labelProfilePassword5->Text = "-";
+			// go to current profile
+			while (currProfile->id != slot)
+			{
+				if (currProfile->id < slot)
+					currProfile = currProfile->next;
+				else
+					currProfile = currProfile->prev;
+			}
 
-			// search database for matching data
+			// remove profile from database
+			RemoveProfile(currProfile->website, currProfile->username, currProfile->password);
 
-			// reinitialize page
+			// go to current slot
+			while (panel->id != slot)
+			{
+				if (panel->id < slot)
+					panel = panel->next;
+				else
+					panel = panel->prev;
+			}
+			// refresh slot labels
+			RefreshLabels(panel);
+
+			// hide slot
+			//panel->panel->Visible = false;
 		}
 	}
 	private: System::Void pictureBoxDelProf6_Click(System::Object^ sender, System::EventArgs^ e) {
 		// if slot not empty
 		if (labelProfileWebsite6->Text != "-" || labelProfileUsername6->Text != "-" || labelProfilePassword6->Text != "-")
 		{
-			// grab credentials
-			String^ website = labelProfileWebsite6->Text;
-			String^ username = labelProfileUsername6->Text;
-			String^ password = labelProfilePassword6->Text;
+			// current slot
+			int slot = 6;
+			// traversal profile
+			Profiles^ currProfile = profile;
 
-			labelProfileWebsite6->Text = "-";
-			labelProfileUsername6->Text = "-";
-			labelProfilePassword6->Text = "-";
+			// go to current profile
+			while (currProfile->id != slot)
+			{
+				if (currProfile->id < slot)
+					currProfile = currProfile->next;
+				else
+					currProfile = currProfile->prev;
+			}
 
-			// search database for matching data
+			// remove profile from database
+			RemoveProfile(currProfile->website, currProfile->username, currProfile->password);
 
-			// reinitialize page
+			// go to current slot
+			while (panel->id != slot)
+			{
+				if (panel->id < slot)
+					panel = panel->next;
+				else
+					panel = panel->prev;
+			}
+			// refresh slot labels
+			RefreshLabels(panel);
+
+			// hide slot
+			//panel->panel->Visible = false;
 		}
 	}
 	private: System::Void pictureBoxDelProf7_Click(System::Object^ sender, System::EventArgs^ e) {
 		// if slot not empty
 		if (labelProfileWebsite7->Text != "-" || labelProfileUsername7->Text != "-" || labelProfilePassword7->Text != "-")
 		{
-			// grab credentials
-			String^ website = labelProfileWebsite7->Text;
-			String^ username = labelProfileUsername7->Text;
-			String^ password = labelProfilePassword7->Text;
+			// current slot
+			int slot = 7;
+			// traversal profile
+			Profiles^ currProfile = profile;
 
-			labelProfileWebsite7->Text = "-";
-			labelProfileUsername7->Text = "-";
-			labelProfilePassword7->Text = "-";
+			// go to current profile
+			while (currProfile->id != slot)
+			{
+				if (currProfile->id < slot)
+					currProfile = currProfile->next;
+				else
+					currProfile = currProfile->prev;
+			}
 
-			// search database for matching data
+			// remove profile from database
+			RemoveProfile(currProfile->website, currProfile->username, currProfile->password);
 
-			// reinitialize page
+			// go to current slot
+			while (panel->id != slot)
+			{
+				if (panel->id < slot)
+					panel = panel->next;
+				else
+					panel = panel->prev;
+			}
+			// refresh slot labels
+			RefreshLabels(panel);
+
+			// hide slot
+			//panel->panel->Visible = false;
 		}
 	}
 	private: System::Void pictureBoxDelProf8_Click(System::Object^ sender, System::EventArgs^ e) {
 		// if slot not empty
 		if (labelProfileWebsite8->Text != "-" || labelProfileUsername8->Text != "-" || labelProfilePassword8->Text != "-")
 		{
-			// grab credentials
-			String^ website = labelProfileWebsite8->Text;
-			String^ username = labelProfileUsername8->Text;
-			String^ password = labelProfilePassword8->Text;
+			// current slot
+			int slot = 8;
+			// traversal profile
+			Profiles^ currProfile = profile;
 
-			labelProfileWebsite8->Text = "-";
-			labelProfileUsername8->Text = "-";
-			labelProfilePassword8->Text = "-";
+			// go to current profile
+			while (currProfile->id != slot)
+			{
+				if (currProfile->id < slot)
+					currProfile = currProfile->next;
+				else
+					currProfile = currProfile->prev;
+			}
 
-			// search database for matching data
+			// remove profile from database
+			RemoveProfile(currProfile->website, currProfile->username, currProfile->password);
 
-			// reinitialize page
+			// go to current slot
+			while (panel->id != slot)
+			{
+				if (panel->id < slot)
+					panel = panel->next;
+				else
+					panel = panel->prev;
+			}
+			// refresh slot labels
+			RefreshLabels(panel);
+
+			// hide slot
+			//panel->panel->Visible = false;
 		}
 	}
 	private: System::Void pictureBoxDelProf9_Click(System::Object^ sender, System::EventArgs^ e) {
 		// if slot not empty
 		if (labelProfileWebsite9->Text != "-" || labelProfileUsername9->Text != "-" || labelProfilePassword9->Text != "-")
 		{
-			// grab credentials
-			String^ website = labelProfileWebsite9->Text;
-			String^ username = labelProfileUsername9->Text;
-			String^ password = labelProfilePassword9->Text;
+			// current slot
+			int slot = 9;
+			// traversal profile
+			Profiles^ currProfile = profile;
 
-			labelProfileWebsite9->Text = "-";
-			labelProfileUsername9->Text = "-";
-			labelProfilePassword9->Text = "-";
+			// go to current profile
+			while (currProfile->id != slot)
+			{
+				if (currProfile->id < slot)
+					currProfile = currProfile->next;
+				else
+					currProfile = currProfile->prev;
+			}
 
-			// search database for matching data
+			// remove profile from database
+			RemoveProfile(currProfile->website, currProfile->username, currProfile->password);
 
-			// reinitialize page
+			// go to current slot
+			while (panel->id != slot)
+			{
+				if (panel->id < slot)
+					panel = panel->next;
+				else
+					panel = panel->prev;
+			}
+			// refresh slot labels
+			RefreshLabels(panel);
+
+			// hide slot
+			//panel->panel->Visible = false;
 		}
 	}
 	private: System::Void pictureBoxDelProf10_Click(System::Object^ sender, System::EventArgs^ e) {
 		// if slot not empty
 		if (labelProfileWebsite10->Text != "-" || labelProfileUsername10->Text != "-" || labelProfilePassword10->Text != "-")
 		{
-			// grab credentials
-			String^ website = labelProfileWebsite10->Text;
-			String^ username = labelProfileUsername10->Text;
-			String^ password = labelProfilePassword10->Text;
+			// current slot
+			int slot = 10;
+			// traversal profile
+			Profiles^ currProfile = profile;
 
-			labelProfileWebsite10->Text = "-";
-			labelProfileUsername10->Text = "-";
-			labelProfilePassword10->Text = "-";
+			// go to current profile
+			while (currProfile->id != slot)
+			{
+				if (currProfile->id < slot)
+					currProfile = currProfile->next;
+				else
+					currProfile = currProfile->prev;
+			}
 
-			// search database for matching data
+			// remove profile from database
+			RemoveProfile(currProfile->website, currProfile->username, currProfile->password);
 
-			// reinitialize page
+			// go to current slot
+			while (panel->id != slot)
+			{
+				if (panel->id < slot)
+					panel = panel->next;
+				else
+					panel = panel->prev;
+			}
+			// refresh slot labels
+			RefreshLabels(panel);
+
+			// hide slot
+			//panel->panel->Visible = false;
+		}
+	}
+
+	private: void RemoveProfile(String^ _web, String^ _user, String^ _pass) {
+		// establish connection to database
+		try
+		{
+			String^ connString = "Data Source=localhost;Initial Catalog=passuniteusers;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+			SqlConnection sqlConn(connString);
+			sqlConn.Open();
+
+			// build sql query
+			String^ sqlQuery = "DELETE FROM profiles " +
+				"WHERE ";
+			// website
+			{
+				if (_web == "-")
+					sqlQuery += "website IS NULL AND ";
+				else
+					sqlQuery += "website=\'" + _web + "\' AND ";
+			}
+			// username
+			{
+				if (_user == "-")
+					sqlQuery += "profileUser IS NULL AND ";
+				else
+					sqlQuery += "profileUser=\'" + _user + "\' AND ";
+			}
+			// password
+			{
+				if (_pass == "-")
+					sqlQuery += "profilePass IS NULL";
+				else
+					sqlQuery += "profilePass=\'" + _pass + "\'";
+			}
+
+			SqlCommand command(sqlQuery, % sqlConn);
+
+			// execute
+			command.ExecuteNonQuery();
+
+			// close connection
+			sqlConn.Close();
+		}
+		catch (Exception^ ex)
+		{
+			MessageBox::Show(ex->Message);		// for troubleshooting
+		}
+
+		// decrement profile count
+		profileCount--;
+	}
+
+	//private: void RefreshProfiles(Profiles^% _profile) {
+
+	//}
+
+	//private: void CleanupProfiles()
+	//{
+	//	// loop from first to last profile
+	//	while (profile->prev != nullptr)
+	//		profile = profile->prev;
+
+	//	while (true)
+	//	{
+	//		// verify next node's id = 1 + curr->id
+	//		if (profile->next == nullptr)
+	//			break;
+	//	}
+	//}
+
+	private: void RefreshLabels(Panels^ %_panel)
+	{
+		while (true)
+		{
+			if (panel->id <= profileCount)
+			{
+				panel->labelProfileWebsite->Text = panel->next->labelProfileWebsite->Text;
+				panel->labelProfileUsername->Text = panel->next->labelProfileUsername->Text;
+				panel->labelProfilePassword->Text = panel->next->labelProfilePassword->Text;
+			}
+			else
+			{
+				panel->labelProfileWebsite->Text = "-";
+				panel->labelProfileUsername->Text = "-";
+				panel->labelProfilePassword->Text = "-";
+			}
+
+			if (panel->next == nullptr)
+				break;
+			else
+				panel = panel->next;
 		}
 	}
 	};

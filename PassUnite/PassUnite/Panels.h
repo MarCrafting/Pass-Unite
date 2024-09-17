@@ -4,6 +4,7 @@ using namespace System;
 
 public ref class Panels {
 public:
+	int id;
 	System::Windows::Forms::Panel^ panel = nullptr;
 	System::Windows::Forms::Label^ labelProfileWebsite = nullptr;
 	System::Windows::Forms::Label^ labelProfileUsername = nullptr;

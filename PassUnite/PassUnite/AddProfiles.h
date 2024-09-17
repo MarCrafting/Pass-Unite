@@ -30,7 +30,7 @@ namespace PassUnite {
 			//
 			this->user = user;		// user holding logged in user's id
 
-			profileCount = 0;
+			profileCount = 0;		// number of saved profiles
 
 			// create profile node list based on database
 			try
@@ -51,6 +51,8 @@ namespace PassUnite {
 				{
 					// create blank profile
 					profile = gcnew Profiles();
+
+					profile->id = profileCount + 1;
 					
 					// Website
 					try
@@ -101,6 +103,8 @@ namespace PassUnite {
 					{
 						// create blank profile
 						nextProfile = gcnew Profiles();
+
+						nextProfile->id = profileCount + 1;
 						
 						// Website
 						try
