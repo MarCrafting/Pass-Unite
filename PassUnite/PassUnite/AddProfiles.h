@@ -664,11 +664,10 @@ namespace PassUnite {
 			profile = profile->next;
 		}
 
-		// prevent redirecting
-		pageProps.page = 2;
-
 		// simulate refreshing the screen
-		this->Close();
+		textBoxWebsite->Text = "";
+		textBoxUsername->Text = "";
+		textBoxPassword->Text = "";
 	}
 	private: System::Void pictureBoxProfiles_Click(System::Object^ sender, System::EventArgs^ e) {
 		// redirect to "Profiles" page
