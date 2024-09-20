@@ -1264,6 +1264,7 @@ namespace PassUnite {
 				static_cast<System::Byte>(0)));
 			this->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->Name = L"ProfilesForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Profiles";
 			this->panelSidebar->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->EndInit();

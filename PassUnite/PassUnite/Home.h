@@ -249,7 +249,7 @@ namespace PassUnite {
 			this->Controls->Add(this->panelSidebar);
 			this->Controls->Add(this->panelTopbar);
 			this->Name = L"Home";
-			this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Pass Unite";
 			this->panelSidebar->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->EndInit();

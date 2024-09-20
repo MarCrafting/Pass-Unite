@@ -228,6 +228,7 @@ namespace PassUnite {
 				static_cast<System::Byte>(0)));
 			this->Margin = System::Windows::Forms::Padding(6);
 			this->Name = L"ChangePassword";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"ChangePassword";
 			this->TopMost = true;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxReturn))->EndInit();

@@ -35,7 +35,7 @@ namespace PassUnite {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ labelRandomText;
+
 	private: System::Windows::Forms::Button^ buttonGenerator;
 	private: System::Windows::Forms::CheckBox^ checkBoxNumbers;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDownStringLength;
@@ -43,6 +43,8 @@ namespace PassUnite {
 	private: System::Windows::Forms::CheckBox^ checkBoxSpecialChars;
 	private: System::Windows::Forms::CheckBox^ checkBoxUppercase;
 	private: System::Windows::Forms::CheckBox^ checkBoxLowercase;
+	private: System::Windows::Forms::TextBox^ textBoxRandomText;
+	private: System::Windows::Forms::Button^ buttonSave;
 
 	protected:
 
@@ -62,7 +64,6 @@ namespace PassUnite {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->labelRandomText = (gcnew System::Windows::Forms::Label());
 			this->buttonGenerator = (gcnew System::Windows::Forms::Button());
 			this->checkBoxNumbers = (gcnew System::Windows::Forms::CheckBox());
 			this->numericUpDownStringLength = (gcnew System::Windows::Forms::NumericUpDown());
@@ -70,27 +71,16 @@ namespace PassUnite {
 			this->checkBoxSpecialChars = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBoxUppercase = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBoxLowercase = (gcnew System::Windows::Forms::CheckBox());
+			this->textBoxRandomText = (gcnew System::Windows::Forms::TextBox());
+			this->buttonSave = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownStringLength))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// labelRandomText
-			// 
-			this->labelRandomText->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelRandomText->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelRandomText->Location = System::Drawing::Point(-1, 26);
-			this->labelRandomText->Name = L"labelRandomText";
-			this->labelRandomText->Size = System::Drawing::Size(966, 52);
-			this->labelRandomText->TabIndex = 0;
-			this->labelRandomText->Text = L"...";
-			this->labelRandomText->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// buttonGenerator
 			// 
 			this->buttonGenerator->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->buttonGenerator->Location = System::Drawing::Point(161, 81);
+			this->buttonGenerator->Location = System::Drawing::Point(181, 80);
 			this->buttonGenerator->Name = L"buttonGenerator";
 			this->buttonGenerator->Size = System::Drawing::Size(608, 48);
 			this->buttonGenerator->TabIndex = 1;
@@ -111,6 +101,7 @@ namespace PassUnite {
 			// numericUpDownStringLength
 			// 
 			this->numericUpDownStringLength->Location = System::Drawing::Point(273, 182);
+			this->numericUpDownStringLength->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 55, 0, 0, 0 });
 			this->numericUpDownStringLength->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 4, 0, 0, 0 });
 			this->numericUpDownStringLength->Name = L"numericUpDownStringLength";
 			this->numericUpDownStringLength->Size = System::Drawing::Size(60, 20);
@@ -158,11 +149,40 @@ namespace PassUnite {
 			this->checkBoxLowercase->Text = L"Include Lowercase Letters";
 			this->checkBoxLowercase->UseVisualStyleBackColor = true;
 			// 
+			// textBoxRandomText
+			// 
+			this->textBoxRandomText->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->textBoxRandomText->BackColor = System::Drawing::SystemColors::Control;
+			this->textBoxRandomText->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->textBoxRandomText->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->textBoxRandomText->Location = System::Drawing::Point(12, 37);
+			this->textBoxRandomText->Name = L"textBoxRandomText";
+			this->textBoxRandomText->Size = System::Drawing::Size(941, 31);
+			this->textBoxRandomText->TabIndex = 8;
+			this->textBoxRandomText->Text = L"...";
+			this->textBoxRandomText->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// buttonSave
+			// 
+			this->buttonSave->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->buttonSave->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->buttonSave->Location = System::Drawing::Point(796, 255);
+			this->buttonSave->Name = L"buttonSave";
+			this->buttonSave->Size = System::Drawing::Size(107, 23);
+			this->buttonSave->TabIndex = 9;
+			this->buttonSave->Text = L"Save";
+			this->buttonSave->UseVisualStyleBackColor = false;
+			this->buttonSave->Click += gcnew System::EventHandler(this, &Generator::buttonSave_Click);
+			// 
 			// Generator
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(965, 297);
+			this->Controls->Add(this->buttonSave);
+			this->Controls->Add(this->textBoxRandomText);
 			this->Controls->Add(this->checkBoxLowercase);
 			this->Controls->Add(this->checkBoxUppercase);
 			this->Controls->Add(this->checkBoxSpecialChars);
@@ -170,8 +190,8 @@ namespace PassUnite {
 			this->Controls->Add(this->numericUpDownStringLength);
 			this->Controls->Add(this->checkBoxNumbers);
 			this->Controls->Add(this->buttonGenerator);
-			this->Controls->Add(this->labelRandomText);
 			this->Name = L"Generator";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"Generator";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownStringLength))->EndInit();
 			this->ResumeLayout(false);
@@ -223,8 +243,16 @@ namespace PassUnite {
 				randString += characters[randNum];
 			}
 			String^ rString = gcnew String(randString.c_str());
-			labelRandomText->Text = rString;
+			textBoxRandomText->Text = rString;
 		}
 	}
-	};
+	private: System::Void buttonSave_Click(System::Object^ sender, System::EventArgs^ e) {
+		// save generated string to clipboard
+		//Clipboard::SetText(textBoxRandomText-Text);
+		//Clipboard::SetData(System::Windows::Forms::Control::Text, textBoxRandomText->Text);
+
+		// close popup
+		this->Close();
+	}
+};
 }

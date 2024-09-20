@@ -189,7 +189,7 @@ namespace PassUnite {
 				static_cast<System::Byte>(0)));
 			this->Margin = System::Windows::Forms::Padding(12, 10, 12, 10);
 			this->Name = L"Settings";
-			this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"Pass Unite";
 			this->TopMost = true;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxReturn))->EndInit();

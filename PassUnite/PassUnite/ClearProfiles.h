@@ -187,6 +187,7 @@ namespace PassUnite {
 				static_cast<System::Byte>(0)));
 			this->Margin = System::Windows::Forms::Padding(6);
 			this->Name = L"ClearProfiles";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"ClearProfiles";
 			this->TopMost = true;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxReturn))->EndInit();
