@@ -25,7 +25,8 @@ namespace PassUnite {
 			//
 			//TODO: Add the constructor code here
 			//
-			labelLoggedUser->Text = _user->username;
+			user = _user;
+			labelLoggedUser->Text = user->username;
 		}
 
 	protected:
@@ -200,6 +201,8 @@ namespace PassUnite {
 #pragma endregion
 	public: PageProperties pageProps;
 
+	public: User^ user;
+
 	public: bool logUserOut = false;
 
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -213,7 +216,7 @@ namespace PassUnite {
 	}
 	private: System::Void labelClearProfiles_Click(System::Object^ sender, System::EventArgs^ e) {
 		// open "ClearProfiles" overlay
-		PassUnite::ClearProfiles clearProfilesOverlay;
+		PassUnite::ClearProfiles clearProfilesOverlay(user);
 		clearProfilesOverlay.ShowDialog();
 	}
 	private: System::Void labelLogout_Click(System::Object^ sender, System::EventArgs^ e) {

@@ -1,4 +1,5 @@
 #pragma once
+#include "User.h"
 
 namespace PassUnite {
 
@@ -8,6 +9,7 @@ namespace PassUnite {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SqlClient;
 
 	/// <summary>
 	/// Summary for ClearProfiles
@@ -15,12 +17,13 @@ namespace PassUnite {
 	public ref class ClearProfiles : public System::Windows::Forms::Form
 	{
 	public:
-		ClearProfiles(void)
+		ClearProfiles(User^ _user)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+			user = _user;
 		}
 
 	protected:
@@ -40,10 +43,12 @@ namespace PassUnite {
 	private: System::Windows::Forms::PictureBox^ pictureBoxReturn;
 	private: System::Windows::Forms::Label^ labelTitle;
 	private: System::Windows::Forms::Label^ labelPassword;
-	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ textBoxPassword;
+
 	private: System::Windows::Forms::Label^ labelPrompt;
 	private: System::Windows::Forms::Button^ buttonYes;
 	private: System::Windows::Forms::Button^ buttonNo;
+	private: System::Windows::Forms::Label^ labelPassIncorrect;
 
 
 
@@ -59,7 +64,7 @@ namespace PassUnite {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -72,10 +77,11 @@ namespace PassUnite {
 			this->pictureBoxReturn = (gcnew System::Windows::Forms::PictureBox());
 			this->labelTitle = (gcnew System::Windows::Forms::Label());
 			this->labelPassword = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxPassword = (gcnew System::Windows::Forms::TextBox());
 			this->labelPrompt = (gcnew System::Windows::Forms::Label());
 			this->buttonYes = (gcnew System::Windows::Forms::Button());
 			this->buttonNo = (gcnew System::Windows::Forms::Button());
+			this->labelPassIncorrect = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxReturn))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -116,16 +122,16 @@ namespace PassUnite {
 			this->labelPassword->TabIndex = 13;
 			this->labelPassword->Text = L"Password:";
 			// 
-			// textBox1
+			// textBoxPassword
 			// 
-			this->textBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(34)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+			this->textBoxPassword->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(34)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
 				static_cast<System::Int32>(static_cast<System::Byte>(97)));
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox1->Location = System::Drawing::Point(320, 117);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(282, 31);
-			this->textBox1->TabIndex = 14;
-			this->textBox1->UseSystemPasswordChar = true;
+			this->textBoxPassword->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->textBoxPassword->Location = System::Drawing::Point(320, 117);
+			this->textBoxPassword->Name = L"textBoxPassword";
+			this->textBoxPassword->Size = System::Drawing::Size(282, 31);
+			this->textBoxPassword->TabIndex = 14;
+			this->textBoxPassword->UseSystemPasswordChar = true;
 			// 
 			// labelPrompt
 			// 
@@ -153,6 +159,7 @@ namespace PassUnite {
 			this->buttonYes->Text = L"YES";
 			this->buttonYes->UseVisualStyleBackColor = false;
 			this->buttonYes->Click += gcnew System::EventHandler(this, &ClearProfiles::buttonYes_Click);
+			this->buttonYes->Enter += gcnew System::EventHandler(this, &ClearProfiles::buttonYes_Click);
 			// 
 			// buttonNo
 			// 
@@ -169,6 +176,17 @@ namespace PassUnite {
 			this->buttonNo->UseVisualStyleBackColor = false;
 			this->buttonNo->Click += gcnew System::EventHandler(this, &ClearProfiles::buttonNo_Click);
 			// 
+			// labelPassIncorrect
+			// 
+			this->labelPassIncorrect->AutoSize = true;
+			this->labelPassIncorrect->ForeColor = System::Drawing::Color::Red;
+			this->labelPassIncorrect->Location = System::Drawing::Point(315, 89);
+			this->labelPassIncorrect->Name = L"labelPassIncorrect";
+			this->labelPassIncorrect->Size = System::Drawing::Size(201, 25);
+			this->labelPassIncorrect->TabIndex = 16;
+			this->labelPassIncorrect->Text = L"Password Incorrect.";
+			this->labelPassIncorrect->Visible = false;
+			// 
 			// ClearProfiles
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
@@ -176,9 +194,10 @@ namespace PassUnite {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(170)), static_cast<System::Int32>(static_cast<System::Byte>(188)),
 				static_cast<System::Int32>(static_cast<System::Byte>(205)));
 			this->ClientSize = System::Drawing::Size(707, 365);
+			this->Controls->Add(this->labelPassIncorrect);
 			this->Controls->Add(this->buttonNo);
 			this->Controls->Add(this->buttonYes);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->textBoxPassword);
 			this->Controls->Add(this->labelPrompt);
 			this->Controls->Add(this->labelPassword);
 			this->Controls->Add(this->pictureBoxReturn);
@@ -196,19 +215,60 @@ namespace PassUnite {
 
 		}
 #pragma endregion
-private: System::Void buttonYes_Click(System::Object^ sender, System::EventArgs^ e) {
-	// clear each profile saved
+	private: User^ user;
 
-	// close overlay
-	this->Close();
-}
-private: System::Void buttonNo_Click(System::Object^ sender, System::EventArgs^ e) {
-	// close overlay
-	this->Close();
-}
-private: System::Void pictureBoxReturn_Click(System::Object^ sender, System::EventArgs^ e) {
-	// close overlay
-	this->Close();
-}
-};
+	private: System::Void buttonYes_Click(System::Object^ sender, System::EventArgs^ e) {
+		// if the password is correct
+		if (textBoxPassword->Text == user->password)
+		{
+			// clear each profile saved
+			DeleteProfiles();
+
+			// clear profile slots
+
+			// close overlay
+			this->Close();
+		}
+		else
+			labelPassIncorrect->Visible = true;
+	}
+	private: System::Void buttonNo_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		// close overlay
+		this->Close();
+	}
+	private: System::Void pictureBoxReturn_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		// close overlay
+		this->Close();
+	}
+
+	private: void DeleteProfiles()
+	{
+		try
+		{
+			// open connection
+			String^ connString = "Data Source=localhost;Initial Catalog=passuniteusers;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+			SqlConnection sqlConn(connString);
+			sqlConn.Open();
+
+			// build sql query
+			String^ sqlQuery = "DELETE FROM profiles WHERE accountId=@id";
+
+			// replace placeholder(s)
+			SqlCommand command(sqlQuery, % sqlConn);
+			command.Parameters->AddWithValue("@id", user->id);
+
+			// execute
+			command.ExecuteNonQuery();
+
+			// close connection
+			sqlConn.Close();
+		}
+		catch (Exception^ ex)
+		{
+			MessageBox::Show(ex->Message);			// for troubleshooting
+		}
+	}
+	};
 }
