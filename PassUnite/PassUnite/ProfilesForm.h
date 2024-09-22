@@ -259,62 +259,62 @@ namespace PassUnite {
 
 
 
-	private: System::Windows::Forms::Panel^ panelContent;
-	private: System::Windows::Forms::Panel^ panel10;
-	private: System::Windows::Forms::Label^ labelProfilePassword10;
-	private: System::Windows::Forms::Label^ labelProfileUsername10;
-	private: System::Windows::Forms::Label^ labelProfileWebsite10;
-	private: System::Windows::Forms::Panel^ panel8;
-	private: System::Windows::Forms::Label^ labelProfilePassword8;
-	private: System::Windows::Forms::Label^ labelProfileUsername8;
-	private: System::Windows::Forms::Label^ labelProfileWebsite8;
-	private: System::Windows::Forms::Panel^ panel6;
-	private: System::Windows::Forms::Label^ labelProfilePassword6;
-	private: System::Windows::Forms::Label^ labelProfileUsername6;
-	private: System::Windows::Forms::Label^ labelProfileWebsite6;
-	private: System::Windows::Forms::Panel^ panel9;
-	private: System::Windows::Forms::Label^ labelProfilePassword9;
-	private: System::Windows::Forms::Label^ labelProfileUsername9;
-	private: System::Windows::Forms::Label^ labelProfileWebsite9;
-	private: System::Windows::Forms::Panel^ panel7;
-	private: System::Windows::Forms::Label^ labelProfilePassword7;
-	private: System::Windows::Forms::Label^ labelProfileUsername7;
-	private: System::Windows::Forms::Label^ labelProfileWebsite7;
-	private: System::Windows::Forms::Panel^ panel5;
-	private: System::Windows::Forms::Label^ labelProfilePassword5;
-	private: System::Windows::Forms::Label^ labelProfileUsername5;
-	private: System::Windows::Forms::Label^ labelProfileWebsite5;
-	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::Label^ labelProfilePassword1;
-	private: System::Windows::Forms::Label^ labelProfileUsername1;
-	private: System::Windows::Forms::Label^ labelProfileWebsite1;
-	private: System::Windows::Forms::Label^ labelColumnPasswords;
-	private: System::Windows::Forms::Label^ labelColumnUsernames;
-	private: System::Windows::Forms::Label^ labelColumnWebsite;
-	private: System::Windows::Forms::Panel^ panelSeperationLine1;
-	private: System::Windows::Forms::Label^ labelTitle;
-	private: System::Windows::Forms::Panel^ panel2;
-	private: System::Windows::Forms::Label^ labelProfilePassword2;
-	private: System::Windows::Forms::Label^ labelProfileUsername2;
-	private: System::Windows::Forms::Label^ labelProfileWebsite2;
-	private: System::Windows::Forms::Panel^ panel3;
-	private: System::Windows::Forms::Label^ labelProfilePassword3;
-	private: System::Windows::Forms::Label^ labelProfileUsername3;
-	private: System::Windows::Forms::Label^ labelProfileWebsite3;
-	private: System::Windows::Forms::Panel^ panel4;
-	private: System::Windows::Forms::Label^ labelProfilePassword4;
-	private: System::Windows::Forms::Label^ labelProfileUsername4;
-	private: System::Windows::Forms::Label^ labelProfileWebsite4;
-	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf1;
-	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf2;
-	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf3;
-	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf4;
-	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf5;
-	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf6;
-	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf7;
-	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf8;
-	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf9;
-	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf10;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 private: System::Windows::Forms::Panel^ panelSidebar;
 private: System::Windows::Forms::PictureBox^ pictureBoxProfiles;
 private: System::Windows::Forms::PictureBox^ pictureBoxSettings;
@@ -323,6 +323,118 @@ private: System::Windows::Forms::PictureBox^ pictureBoxAddProfile;
 private: System::Windows::Forms::Panel^ panelTopbar;
 private: System::Windows::Forms::PictureBox^ pictureBoxMenu;
 private: System::Windows::Forms::Label^ labelAppName;
+private: System::Windows::Forms::Panel^ panelContent;
+private: System::Windows::Forms::PictureBox^ pictureBoxDelProf1;
+private: System::Windows::Forms::PictureBox^ pictureBoxDelProf2;
+private: System::Windows::Forms::PictureBox^ pictureBoxDelProf3;
+private: System::Windows::Forms::PictureBox^ pictureBoxDelProf4;
+private: System::Windows::Forms::PictureBox^ pictureBoxDelProf5;
+private: System::Windows::Forms::PictureBox^ pictureBoxDelProf6;
+private: System::Windows::Forms::PictureBox^ pictureBoxDelProf10;
+private: System::Windows::Forms::PictureBox^ pictureBoxDelProf9;
+private: System::Windows::Forms::PictureBox^ pictureBoxDelProf8;
+private: System::Windows::Forms::PictureBox^ pictureBoxDelProf7;
+private: System::Windows::Forms::Label^ labelTitle;
+private: System::Windows::Forms::Label^ labelColumnWebsite;
+private: System::Windows::Forms::Label^ labelColumnUsernames;
+private: System::Windows::Forms::Label^ labelColumnPasswords;
+private: System::Windows::Forms::Panel^ panelSeperationLine1;
+private: System::Windows::Forms::Panel^ panel1;
+private: System::Windows::Forms::Label^ labelProfilePassword1;
+private: System::Windows::Forms::Label^ labelProfileUsername1;
+private: System::Windows::Forms::Label^ labelProfileWebsite1;
+private: System::Windows::Forms::Panel^ panel2;
+private: System::Windows::Forms::Label^ labelProfilePassword2;
+private: System::Windows::Forms::Label^ labelProfileUsername2;
+private: System::Windows::Forms::Label^ labelProfileWebsite2;
+private: System::Windows::Forms::Panel^ panel3;
+private: System::Windows::Forms::Label^ labelProfilePassword3;
+private: System::Windows::Forms::Label^ labelProfileUsername3;
+private: System::Windows::Forms::Label^ labelProfileWebsite3;
+private: System::Windows::Forms::Panel^ panel4;
+private: System::Windows::Forms::Label^ labelProfilePassword4;
+private: System::Windows::Forms::Label^ labelProfileUsername4;
+private: System::Windows::Forms::Label^ labelProfileWebsite4;
+private: System::Windows::Forms::Panel^ panel5;
+private: System::Windows::Forms::Label^ labelProfilePassword5;
+private: System::Windows::Forms::Label^ labelProfileUsername5;
+private: System::Windows::Forms::Label^ labelProfileWebsite5;
+private: System::Windows::Forms::Panel^ panel6;
+private: System::Windows::Forms::Label^ labelProfilePassword6;
+private: System::Windows::Forms::Label^ labelProfileUsername6;
+private: System::Windows::Forms::Label^ labelProfileWebsite6;
+private: System::Windows::Forms::Panel^ panel7;
+private: System::Windows::Forms::Label^ labelProfilePassword7;
+private: System::Windows::Forms::Label^ labelProfileUsername7;
+private: System::Windows::Forms::Label^ labelProfileWebsite7;
+private: System::Windows::Forms::Panel^ panel8;
+private: System::Windows::Forms::Label^ labelProfilePassword8;
+private: System::Windows::Forms::Label^ labelProfileUsername8;
+private: System::Windows::Forms::Label^ labelProfileWebsite8;
+private: System::Windows::Forms::Panel^ panel9;
+private: System::Windows::Forms::Label^ labelProfilePassword9;
+private: System::Windows::Forms::Label^ labelProfileUsername9;
+private: System::Windows::Forms::Label^ labelProfileWebsite9;
+private: System::Windows::Forms::Panel^ panel10;
+private: System::Windows::Forms::Label^ labelProfilePassword10;
+private: System::Windows::Forms::Label^ labelProfileUsername10;
+private: System::Windows::Forms::Label^ labelProfileWebsite10;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -355,6 +467,14 @@ private: System::Windows::Forms::Label^ labelAppName;
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ProfilesForm::typeid));
+			this->panelSidebar = (gcnew System::Windows::Forms::Panel());
+			this->pictureBoxProfiles = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxSettings = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxGeneratePassword = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxAddProfile = (gcnew System::Windows::Forms::PictureBox());
+			this->panelTopbar = (gcnew System::Windows::Forms::Panel());
+			this->pictureBoxMenu = (gcnew System::Windows::Forms::PictureBox());
+			this->labelAppName = (gcnew System::Windows::Forms::Label());
 			this->panelContent = (gcnew System::Windows::Forms::Panel());
 			this->pictureBoxDelProf1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBoxDelProf2 = (gcnew System::Windows::Forms::PictureBox());
@@ -411,14 +531,13 @@ private: System::Windows::Forms::Label^ labelAppName;
 			this->labelProfilePassword10 = (gcnew System::Windows::Forms::Label());
 			this->labelProfileUsername10 = (gcnew System::Windows::Forms::Label());
 			this->labelProfileWebsite10 = (gcnew System::Windows::Forms::Label());
-			this->panelSidebar = (gcnew System::Windows::Forms::Panel());
-			this->pictureBoxProfiles = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxSettings = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxGeneratePassword = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxAddProfile = (gcnew System::Windows::Forms::PictureBox());
-			this->panelTopbar = (gcnew System::Windows::Forms::Panel());
-			this->pictureBoxMenu = (gcnew System::Windows::Forms::PictureBox());
-			this->labelAppName = (gcnew System::Windows::Forms::Label());
+			this->panelSidebar->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxProfiles))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxSettings))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxGeneratePassword))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxAddProfile))->BeginInit();
+			this->panelTopbar->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->BeginInit();
 			this->panelContent->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf2))->BeginInit();
@@ -440,735 +559,7 @@ private: System::Windows::Forms::Label^ labelAppName;
 			this->panel8->SuspendLayout();
 			this->panel9->SuspendLayout();
 			this->panel10->SuspendLayout();
-			this->panelSidebar->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxProfiles))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxSettings))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxGeneratePassword))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxAddProfile))->BeginInit();
-			this->panelTopbar->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// panelContent
-			// 
-			this->panelContent->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->panelContent->AutoScroll = true;
-			this->panelContent->Controls->Add(this->pictureBoxDelProf1);
-			this->panelContent->Controls->Add(this->pictureBoxDelProf2);
-			this->panelContent->Controls->Add(this->pictureBoxDelProf3);
-			this->panelContent->Controls->Add(this->pictureBoxDelProf4);
-			this->panelContent->Controls->Add(this->pictureBoxDelProf5);
-			this->panelContent->Controls->Add(this->pictureBoxDelProf6);
-			this->panelContent->Controls->Add(this->pictureBoxDelProf10);
-			this->panelContent->Controls->Add(this->pictureBoxDelProf9);
-			this->panelContent->Controls->Add(this->pictureBoxDelProf8);
-			this->panelContent->Controls->Add(this->pictureBoxDelProf7);
-			this->panelContent->Controls->Add(this->labelTitle);
-			this->panelContent->Controls->Add(this->labelColumnWebsite);
-			this->panelContent->Controls->Add(this->labelColumnUsernames);
-			this->panelContent->Controls->Add(this->labelColumnPasswords);
-			this->panelContent->Controls->Add(this->panelSeperationLine1);
-			this->panelContent->Controls->Add(this->panel1);
-			this->panelContent->Controls->Add(this->panel2);
-			this->panelContent->Controls->Add(this->panel3);
-			this->panelContent->Controls->Add(this->panel4);
-			this->panelContent->Controls->Add(this->panel5);
-			this->panelContent->Controls->Add(this->panel6);
-			this->panelContent->Controls->Add(this->panel7);
-			this->panelContent->Controls->Add(this->panel8);
-			this->panelContent->Controls->Add(this->panel9);
-			this->panelContent->Controls->Add(this->panel10);
-			this->panelContent->Location = System::Drawing::Point(74, 70);
-			this->panelContent->Name = L"panelContent";
-			this->panelContent->Size = System::Drawing::Size(909, 441);
-			this->panelContent->TabIndex = 9;
-			// 
-			// pictureBoxDelProf1
-			// 
-			this->pictureBoxDelProf1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf1.Image")));
-			this->pictureBoxDelProf1->Location = System::Drawing::Point(3, 177);
-			this->pictureBoxDelProf1->Name = L"pictureBoxDelProf1";
-			this->pictureBoxDelProf1->Size = System::Drawing::Size(19, 18);
-			this->pictureBoxDelProf1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxDelProf1->TabIndex = 1;
-			this->pictureBoxDelProf1->TabStop = false;
-			this->pictureBoxDelProf1->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf1_Click);
-			// 
-			// pictureBoxDelProf2
-			// 
-			this->pictureBoxDelProf2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf2.Image")));
-			this->pictureBoxDelProf2->Location = System::Drawing::Point(3, 238);
-			this->pictureBoxDelProf2->Name = L"pictureBoxDelProf2";
-			this->pictureBoxDelProf2->Size = System::Drawing::Size(19, 18);
-			this->pictureBoxDelProf2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxDelProf2->TabIndex = 1;
-			this->pictureBoxDelProf2->TabStop = false;
-			this->pictureBoxDelProf2->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf2_Click);
-			// 
-			// pictureBoxDelProf3
-			// 
-			this->pictureBoxDelProf3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf3.Image")));
-			this->pictureBoxDelProf3->Location = System::Drawing::Point(3, 302);
-			this->pictureBoxDelProf3->Name = L"pictureBoxDelProf3";
-			this->pictureBoxDelProf3->Size = System::Drawing::Size(19, 18);
-			this->pictureBoxDelProf3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxDelProf3->TabIndex = 1;
-			this->pictureBoxDelProf3->TabStop = false;
-			this->pictureBoxDelProf3->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf3_Click);
-			// 
-			// pictureBoxDelProf4
-			// 
-			this->pictureBoxDelProf4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf4.Image")));
-			this->pictureBoxDelProf4->Location = System::Drawing::Point(3, 361);
-			this->pictureBoxDelProf4->Name = L"pictureBoxDelProf4";
-			this->pictureBoxDelProf4->Size = System::Drawing::Size(19, 18);
-			this->pictureBoxDelProf4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxDelProf4->TabIndex = 1;
-			this->pictureBoxDelProf4->TabStop = false;
-			this->pictureBoxDelProf4->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf4_Click);
-			// 
-			// pictureBoxDelProf5
-			// 
-			this->pictureBoxDelProf5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf5.Image")));
-			this->pictureBoxDelProf5->Location = System::Drawing::Point(3, 420);
-			this->pictureBoxDelProf5->Name = L"pictureBoxDelProf5";
-			this->pictureBoxDelProf5->Size = System::Drawing::Size(19, 18);
-			this->pictureBoxDelProf5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxDelProf5->TabIndex = 1;
-			this->pictureBoxDelProf5->TabStop = false;
-			this->pictureBoxDelProf5->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf5_Click);
-			// 
-			// pictureBoxDelProf6
-			// 
-			this->pictureBoxDelProf6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf6.Image")));
-			this->pictureBoxDelProf6->Location = System::Drawing::Point(3, 479);
-			this->pictureBoxDelProf6->Name = L"pictureBoxDelProf6";
-			this->pictureBoxDelProf6->Size = System::Drawing::Size(19, 18);
-			this->pictureBoxDelProf6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxDelProf6->TabIndex = 1;
-			this->pictureBoxDelProf6->TabStop = false;
-			this->pictureBoxDelProf6->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf6_Click);
-			// 
-			// pictureBoxDelProf10
-			// 
-			this->pictureBoxDelProf10->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf10.Image")));
-			this->pictureBoxDelProf10->Location = System::Drawing::Point(3, 716);
-			this->pictureBoxDelProf10->Name = L"pictureBoxDelProf10";
-			this->pictureBoxDelProf10->Size = System::Drawing::Size(19, 18);
-			this->pictureBoxDelProf10->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxDelProf10->TabIndex = 1;
-			this->pictureBoxDelProf10->TabStop = false;
-			this->pictureBoxDelProf10->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf10_Click);
-			// 
-			// pictureBoxDelProf9
-			// 
-			this->pictureBoxDelProf9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf9.Image")));
-			this->pictureBoxDelProf9->Location = System::Drawing::Point(3, 661);
-			this->pictureBoxDelProf9->Name = L"pictureBoxDelProf9";
-			this->pictureBoxDelProf9->Size = System::Drawing::Size(19, 18);
-			this->pictureBoxDelProf9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxDelProf9->TabIndex = 1;
-			this->pictureBoxDelProf9->TabStop = false;
-			this->pictureBoxDelProf9->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf9_Click);
-			// 
-			// pictureBoxDelProf8
-			// 
-			this->pictureBoxDelProf8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf8.Image")));
-			this->pictureBoxDelProf8->Location = System::Drawing::Point(3, 601);
-			this->pictureBoxDelProf8->Name = L"pictureBoxDelProf8";
-			this->pictureBoxDelProf8->Size = System::Drawing::Size(19, 18);
-			this->pictureBoxDelProf8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxDelProf8->TabIndex = 1;
-			this->pictureBoxDelProf8->TabStop = false;
-			this->pictureBoxDelProf8->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf8_Click);
-			// 
-			// pictureBoxDelProf7
-			// 
-			this->pictureBoxDelProf7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf7.Image")));
-			this->pictureBoxDelProf7->Location = System::Drawing::Point(3, 539);
-			this->pictureBoxDelProf7->Name = L"pictureBoxDelProf7";
-			this->pictureBoxDelProf7->Size = System::Drawing::Size(19, 18);
-			this->pictureBoxDelProf7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxDelProf7->TabIndex = 1;
-			this->pictureBoxDelProf7->TabStop = false;
-			this->pictureBoxDelProf7->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf7_Click);
-			// 
-			// labelTitle
-			// 
-			this->labelTitle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelTitle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelTitle->Location = System::Drawing::Point(0, 3);
-			this->labelTitle->Name = L"labelTitle";
-			this->labelTitle->Size = System::Drawing::Size(892, 104);
-			this->labelTitle->TabIndex = 19;
-			this->labelTitle->Text = L"Profiles";
-			this->labelTitle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelColumnWebsite
-			// 
-			this->labelColumnWebsite->AutoSize = true;
-			this->labelColumnWebsite->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelColumnWebsite->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(76)),
-				static_cast<System::Int32>(static_cast<System::Byte>(144)), static_cast<System::Int32>(static_cast<System::Byte>(189)));
-			this->labelColumnWebsite->Location = System::Drawing::Point(45, 117);
-			this->labelColumnWebsite->Name = L"labelColumnWebsite";
-			this->labelColumnWebsite->Size = System::Drawing::Size(137, 29);
-			this->labelColumnWebsite->TabIndex = 23;
-			this->labelColumnWebsite->Text = L"WEBSITES";
-			// 
-			// labelColumnUsernames
-			// 
-			this->labelColumnUsernames->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->labelColumnUsernames->AutoSize = true;
-			this->labelColumnUsernames->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelColumnUsernames->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(76)),
-				static_cast<System::Int32>(static_cast<System::Byte>(144)), static_cast<System::Int32>(static_cast<System::Byte>(189)));
-			this->labelColumnUsernames->Location = System::Drawing::Point(374, 117);
-			this->labelColumnUsernames->Name = L"labelColumnUsernames";
-			this->labelColumnUsernames->Size = System::Drawing::Size(164, 29);
-			this->labelColumnUsernames->TabIndex = 22;
-			this->labelColumnUsernames->Text = L"USERNAMES";
-			// 
-			// labelColumnPasswords
-			// 
-			this->labelColumnPasswords->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->labelColumnPasswords->AutoSize = true;
-			this->labelColumnPasswords->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelColumnPasswords->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(76)),
-				static_cast<System::Int32>(static_cast<System::Byte>(144)), static_cast<System::Int32>(static_cast<System::Byte>(189)));
-			this->labelColumnPasswords->Location = System::Drawing::Point(703, 117);
-			this->labelColumnPasswords->Name = L"labelColumnPasswords";
-			this->labelColumnPasswords->Size = System::Drawing::Size(167, 29);
-			this->labelColumnPasswords->TabIndex = 21;
-			this->labelColumnPasswords->Text = L"PASSWORDS";
-			// 
-			// panelSeperationLine1
-			// 
-			this->panelSeperationLine1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->panelSeperationLine1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(48)),
-				static_cast<System::Int32>(static_cast<System::Byte>(48)), static_cast<System::Int32>(static_cast<System::Byte>(48)));
-			this->panelSeperationLine1->Location = System::Drawing::Point(98, 103);
-			this->panelSeperationLine1->Name = L"panelSeperationLine1";
-			this->panelSeperationLine1->Size = System::Drawing::Size(686, 2);
-			this->panelSeperationLine1->TabIndex = 20;
-			// 
-			// panel1
-			// 
-			this->panel1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
-				static_cast<System::Int32>(static_cast<System::Byte>(114)));
-			this->panel1->Controls->Add(this->labelProfilePassword1);
-			this->panel1->Controls->Add(this->labelProfileUsername1);
-			this->panel1->Controls->Add(this->labelProfileWebsite1);
-			this->panel1->Location = System::Drawing::Point(14, 162);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(878, 48);
-			this->panel1->TabIndex = 24;
-			// 
-			// labelProfilePassword1
-			// 
-			this->labelProfilePassword1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelProfilePassword1->ForeColor = System::Drawing::Color::White;
-			this->labelProfilePassword1->Location = System::Drawing::Point(625, 0);
-			this->labelProfilePassword1->Name = L"labelProfilePassword1";
-			this->labelProfilePassword1->Size = System::Drawing::Size(252, 48);
-			this->labelProfilePassword1->TabIndex = 0;
-			this->labelProfilePassword1->Text = L"-";
-			this->labelProfilePassword1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelProfileUsername1
-			// 
-			this->labelProfileUsername1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelProfileUsername1->ForeColor = System::Drawing::Color::White;
-			this->labelProfileUsername1->Location = System::Drawing::Point(303, 0);
-			this->labelProfileUsername1->Name = L"labelProfileUsername1";
-			this->labelProfileUsername1->Size = System::Drawing::Size(278, 48);
-			this->labelProfileUsername1->TabIndex = 0;
-			this->labelProfileUsername1->Text = L"-";
-			this->labelProfileUsername1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelProfileWebsite1
-			// 
-			this->labelProfileWebsite1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->labelProfileWebsite1->ForeColor = System::Drawing::Color::White;
-			this->labelProfileWebsite1->Location = System::Drawing::Point(1, 0);
-			this->labelProfileWebsite1->Name = L"labelProfileWebsite1";
-			this->labelProfileWebsite1->Size = System::Drawing::Size(274, 48);
-			this->labelProfileWebsite1->TabIndex = 0;
-			this->labelProfileWebsite1->Text = L"-";
-			this->labelProfileWebsite1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// panel2
-			// 
-			this->panel2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
-				static_cast<System::Int32>(static_cast<System::Byte>(114)));
-			this->panel2->Controls->Add(this->labelProfilePassword2);
-			this->panel2->Controls->Add(this->labelProfileUsername2);
-			this->panel2->Controls->Add(this->labelProfileWebsite2);
-			this->panel2->Location = System::Drawing::Point(13, 222);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(879, 48);
-			this->panel2->TabIndex = 25;
-			// 
-			// labelProfilePassword2
-			// 
-			this->labelProfilePassword2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelProfilePassword2->ForeColor = System::Drawing::Color::White;
-			this->labelProfilePassword2->Location = System::Drawing::Point(625, 0);
-			this->labelProfilePassword2->Name = L"labelProfilePassword2";
-			this->labelProfilePassword2->Size = System::Drawing::Size(253, 48);
-			this->labelProfilePassword2->TabIndex = 0;
-			this->labelProfilePassword2->Text = L"-";
-			this->labelProfilePassword2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelProfileUsername2
-			// 
-			this->labelProfileUsername2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelProfileUsername2->ForeColor = System::Drawing::Color::White;
-			this->labelProfileUsername2->Location = System::Drawing::Point(303, 0);
-			this->labelProfileUsername2->Name = L"labelProfileUsername2";
-			this->labelProfileUsername2->Size = System::Drawing::Size(279, 48);
-			this->labelProfileUsername2->TabIndex = 0;
-			this->labelProfileUsername2->Text = L"-";
-			this->labelProfileUsername2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelProfileWebsite2
-			// 
-			this->labelProfileWebsite2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->labelProfileWebsite2->ForeColor = System::Drawing::Color::White;
-			this->labelProfileWebsite2->Location = System::Drawing::Point(1, 0);
-			this->labelProfileWebsite2->Name = L"labelProfileWebsite2";
-			this->labelProfileWebsite2->Size = System::Drawing::Size(275, 48);
-			this->labelProfileWebsite2->TabIndex = 0;
-			this->labelProfileWebsite2->Text = L"-";
-			this->labelProfileWebsite2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// panel3
-			// 
-			this->panel3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->panel3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
-				static_cast<System::Int32>(static_cast<System::Byte>(114)));
-			this->panel3->Controls->Add(this->labelProfilePassword3);
-			this->panel3->Controls->Add(this->labelProfileUsername3);
-			this->panel3->Controls->Add(this->labelProfileWebsite3);
-			this->panel3->Location = System::Drawing::Point(13, 282);
-			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(879, 48);
-			this->panel3->TabIndex = 26;
-			// 
-			// labelProfilePassword3
-			// 
-			this->labelProfilePassword3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelProfilePassword3->ForeColor = System::Drawing::Color::White;
-			this->labelProfilePassword3->Location = System::Drawing::Point(625, 0);
-			this->labelProfilePassword3->Name = L"labelProfilePassword3";
-			this->labelProfilePassword3->Size = System::Drawing::Size(253, 48);
-			this->labelProfilePassword3->TabIndex = 0;
-			this->labelProfilePassword3->Text = L"-";
-			this->labelProfilePassword3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelProfileUsername3
-			// 
-			this->labelProfileUsername3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelProfileUsername3->ForeColor = System::Drawing::Color::White;
-			this->labelProfileUsername3->Location = System::Drawing::Point(303, 0);
-			this->labelProfileUsername3->Name = L"labelProfileUsername3";
-			this->labelProfileUsername3->Size = System::Drawing::Size(279, 48);
-			this->labelProfileUsername3->TabIndex = 0;
-			this->labelProfileUsername3->Text = L"-";
-			this->labelProfileUsername3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelProfileWebsite3
-			// 
-			this->labelProfileWebsite3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->labelProfileWebsite3->ForeColor = System::Drawing::Color::White;
-			this->labelProfileWebsite3->Location = System::Drawing::Point(1, 0);
-			this->labelProfileWebsite3->Name = L"labelProfileWebsite3";
-			this->labelProfileWebsite3->Size = System::Drawing::Size(275, 48);
-			this->labelProfileWebsite3->TabIndex = 0;
-			this->labelProfileWebsite3->Text = L"-";
-			this->labelProfileWebsite3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// panel4
-			// 
-			this->panel4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->panel4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
-				static_cast<System::Int32>(static_cast<System::Byte>(114)));
-			this->panel4->Controls->Add(this->labelProfilePassword4);
-			this->panel4->Controls->Add(this->labelProfileUsername4);
-			this->panel4->Controls->Add(this->labelProfileWebsite4);
-			this->panel4->Location = System::Drawing::Point(13, 342);
-			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(879, 48);
-			this->panel4->TabIndex = 27;
-			// 
-			// labelProfilePassword4
-			// 
-			this->labelProfilePassword4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelProfilePassword4->ForeColor = System::Drawing::Color::White;
-			this->labelProfilePassword4->Location = System::Drawing::Point(625, 0);
-			this->labelProfilePassword4->Name = L"labelProfilePassword4";
-			this->labelProfilePassword4->Size = System::Drawing::Size(253, 48);
-			this->labelProfilePassword4->TabIndex = 0;
-			this->labelProfilePassword4->Text = L"-";
-			this->labelProfilePassword4->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelProfileUsername4
-			// 
-			this->labelProfileUsername4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelProfileUsername4->ForeColor = System::Drawing::Color::White;
-			this->labelProfileUsername4->Location = System::Drawing::Point(303, 0);
-			this->labelProfileUsername4->Name = L"labelProfileUsername4";
-			this->labelProfileUsername4->Size = System::Drawing::Size(279, 48);
-			this->labelProfileUsername4->TabIndex = 0;
-			this->labelProfileUsername4->Text = L"-";
-			this->labelProfileUsername4->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelProfileWebsite4
-			// 
-			this->labelProfileWebsite4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->labelProfileWebsite4->ForeColor = System::Drawing::Color::White;
-			this->labelProfileWebsite4->Location = System::Drawing::Point(1, 0);
-			this->labelProfileWebsite4->Name = L"labelProfileWebsite4";
-			this->labelProfileWebsite4->Size = System::Drawing::Size(275, 48);
-			this->labelProfileWebsite4->TabIndex = 0;
-			this->labelProfileWebsite4->Text = L"-";
-			this->labelProfileWebsite4->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// panel5
-			// 
-			this->panel5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->panel5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
-				static_cast<System::Int32>(static_cast<System::Byte>(114)));
-			this->panel5->Controls->Add(this->labelProfilePassword5);
-			this->panel5->Controls->Add(this->labelProfileUsername5);
-			this->panel5->Controls->Add(this->labelProfileWebsite5);
-			this->panel5->Location = System::Drawing::Point(13, 402);
-			this->panel5->Name = L"panel5";
-			this->panel5->Size = System::Drawing::Size(879, 48);
-			this->panel5->TabIndex = 31;
-			// 
-			// labelProfilePassword5
-			// 
-			this->labelProfilePassword5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelProfilePassword5->ForeColor = System::Drawing::Color::White;
-			this->labelProfilePassword5->Location = System::Drawing::Point(625, 0);
-			this->labelProfilePassword5->Name = L"labelProfilePassword5";
-			this->labelProfilePassword5->Size = System::Drawing::Size(253, 48);
-			this->labelProfilePassword5->TabIndex = 0;
-			this->labelProfilePassword5->Text = L"-";
-			this->labelProfilePassword5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelProfileUsername5
-			// 
-			this->labelProfileUsername5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelProfileUsername5->ForeColor = System::Drawing::Color::White;
-			this->labelProfileUsername5->Location = System::Drawing::Point(303, 0);
-			this->labelProfileUsername5->Name = L"labelProfileUsername5";
-			this->labelProfileUsername5->Size = System::Drawing::Size(279, 48);
-			this->labelProfileUsername5->TabIndex = 0;
-			this->labelProfileUsername5->Text = L"-";
-			this->labelProfileUsername5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelProfileWebsite5
-			// 
-			this->labelProfileWebsite5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->labelProfileWebsite5->ForeColor = System::Drawing::Color::White;
-			this->labelProfileWebsite5->Location = System::Drawing::Point(1, 0);
-			this->labelProfileWebsite5->Name = L"labelProfileWebsite5";
-			this->labelProfileWebsite5->Size = System::Drawing::Size(275, 48);
-			this->labelProfileWebsite5->TabIndex = 0;
-			this->labelProfileWebsite5->Text = L"-";
-			this->labelProfileWebsite5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// panel6
-			// 
-			this->panel6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->panel6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
-				static_cast<System::Int32>(static_cast<System::Byte>(114)));
-			this->panel6->Controls->Add(this->labelProfilePassword6);
-			this->panel6->Controls->Add(this->labelProfileUsername6);
-			this->panel6->Controls->Add(this->labelProfileWebsite6);
-			this->panel6->Location = System::Drawing::Point(13, 462);
-			this->panel6->Name = L"panel6";
-			this->panel6->Size = System::Drawing::Size(879, 48);
-			this->panel6->TabIndex = 32;
-			// 
-			// labelProfilePassword6
-			// 
-			this->labelProfilePassword6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelProfilePassword6->ForeColor = System::Drawing::Color::White;
-			this->labelProfilePassword6->Location = System::Drawing::Point(625, 0);
-			this->labelProfilePassword6->Name = L"labelProfilePassword6";
-			this->labelProfilePassword6->Size = System::Drawing::Size(253, 48);
-			this->labelProfilePassword6->TabIndex = 0;
-			this->labelProfilePassword6->Text = L"-";
-			this->labelProfilePassword6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelProfileUsername6
-			// 
-			this->labelProfileUsername6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelProfileUsername6->ForeColor = System::Drawing::Color::White;
-			this->labelProfileUsername6->Location = System::Drawing::Point(303, 0);
-			this->labelProfileUsername6->Name = L"labelProfileUsername6";
-			this->labelProfileUsername6->Size = System::Drawing::Size(279, 48);
-			this->labelProfileUsername6->TabIndex = 0;
-			this->labelProfileUsername6->Text = L"-";
-			this->labelProfileUsername6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelProfileWebsite6
-			// 
-			this->labelProfileWebsite6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->labelProfileWebsite6->ForeColor = System::Drawing::Color::White;
-			this->labelProfileWebsite6->Location = System::Drawing::Point(1, 0);
-			this->labelProfileWebsite6->Name = L"labelProfileWebsite6";
-			this->labelProfileWebsite6->Size = System::Drawing::Size(275, 48);
-			this->labelProfileWebsite6->TabIndex = 0;
-			this->labelProfileWebsite6->Text = L"-";
-			this->labelProfileWebsite6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// panel7
-			// 
-			this->panel7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->panel7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
-				static_cast<System::Int32>(static_cast<System::Byte>(114)));
-			this->panel7->Controls->Add(this->labelProfilePassword7);
-			this->panel7->Controls->Add(this->labelProfileUsername7);
-			this->panel7->Controls->Add(this->labelProfileWebsite7);
-			this->panel7->Location = System::Drawing::Point(13, 522);
-			this->panel7->Name = L"panel7";
-			this->panel7->Size = System::Drawing::Size(879, 48);
-			this->panel7->TabIndex = 33;
-			// 
-			// labelProfilePassword7
-			// 
-			this->labelProfilePassword7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelProfilePassword7->ForeColor = System::Drawing::Color::White;
-			this->labelProfilePassword7->Location = System::Drawing::Point(625, 0);
-			this->labelProfilePassword7->Name = L"labelProfilePassword7";
-			this->labelProfilePassword7->Size = System::Drawing::Size(253, 48);
-			this->labelProfilePassword7->TabIndex = 0;
-			this->labelProfilePassword7->Text = L"-";
-			this->labelProfilePassword7->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelProfileUsername7
-			// 
-			this->labelProfileUsername7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelProfileUsername7->ForeColor = System::Drawing::Color::White;
-			this->labelProfileUsername7->Location = System::Drawing::Point(303, 0);
-			this->labelProfileUsername7->Name = L"labelProfileUsername7";
-			this->labelProfileUsername7->Size = System::Drawing::Size(279, 48);
-			this->labelProfileUsername7->TabIndex = 0;
-			this->labelProfileUsername7->Text = L"-";
-			this->labelProfileUsername7->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelProfileWebsite7
-			// 
-			this->labelProfileWebsite7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->labelProfileWebsite7->ForeColor = System::Drawing::Color::White;
-			this->labelProfileWebsite7->Location = System::Drawing::Point(1, 0);
-			this->labelProfileWebsite7->Name = L"labelProfileWebsite7";
-			this->labelProfileWebsite7->Size = System::Drawing::Size(275, 48);
-			this->labelProfileWebsite7->TabIndex = 0;
-			this->labelProfileWebsite7->Text = L"-";
-			this->labelProfileWebsite7->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// panel8
-			// 
-			this->panel8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->panel8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
-				static_cast<System::Int32>(static_cast<System::Byte>(114)));
-			this->panel8->Controls->Add(this->labelProfilePassword8);
-			this->panel8->Controls->Add(this->labelProfileUsername8);
-			this->panel8->Controls->Add(this->labelProfileWebsite8);
-			this->panel8->Location = System::Drawing::Point(13, 582);
-			this->panel8->Name = L"panel8";
-			this->panel8->Size = System::Drawing::Size(879, 48);
-			this->panel8->TabIndex = 29;
-			// 
-			// labelProfilePassword8
-			// 
-			this->labelProfilePassword8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelProfilePassword8->ForeColor = System::Drawing::Color::White;
-			this->labelProfilePassword8->Location = System::Drawing::Point(625, 0);
-			this->labelProfilePassword8->Name = L"labelProfilePassword8";
-			this->labelProfilePassword8->Size = System::Drawing::Size(253, 48);
-			this->labelProfilePassword8->TabIndex = 0;
-			this->labelProfilePassword8->Text = L"-";
-			this->labelProfilePassword8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelProfileUsername8
-			// 
-			this->labelProfileUsername8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelProfileUsername8->ForeColor = System::Drawing::Color::White;
-			this->labelProfileUsername8->Location = System::Drawing::Point(303, 0);
-			this->labelProfileUsername8->Name = L"labelProfileUsername8";
-			this->labelProfileUsername8->Size = System::Drawing::Size(279, 48);
-			this->labelProfileUsername8->TabIndex = 0;
-			this->labelProfileUsername8->Text = L"-";
-			this->labelProfileUsername8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelProfileWebsite8
-			// 
-			this->labelProfileWebsite8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->labelProfileWebsite8->ForeColor = System::Drawing::Color::White;
-			this->labelProfileWebsite8->Location = System::Drawing::Point(1, 0);
-			this->labelProfileWebsite8->Name = L"labelProfileWebsite8";
-			this->labelProfileWebsite8->Size = System::Drawing::Size(275, 48);
-			this->labelProfileWebsite8->TabIndex = 0;
-			this->labelProfileWebsite8->Text = L"-";
-			this->labelProfileWebsite8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// panel9
-			// 
-			this->panel9->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->panel9->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
-				static_cast<System::Int32>(static_cast<System::Byte>(114)));
-			this->panel9->Controls->Add(this->labelProfilePassword9);
-			this->panel9->Controls->Add(this->labelProfileUsername9);
-			this->panel9->Controls->Add(this->labelProfileWebsite9);
-			this->panel9->Location = System::Drawing::Point(13, 642);
-			this->panel9->Name = L"panel9";
-			this->panel9->Size = System::Drawing::Size(879, 48);
-			this->panel9->TabIndex = 30;
-			// 
-			// labelProfilePassword9
-			// 
-			this->labelProfilePassword9->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelProfilePassword9->ForeColor = System::Drawing::Color::White;
-			this->labelProfilePassword9->Location = System::Drawing::Point(625, 0);
-			this->labelProfilePassword9->Name = L"labelProfilePassword9";
-			this->labelProfilePassword9->Size = System::Drawing::Size(253, 48);
-			this->labelProfilePassword9->TabIndex = 0;
-			this->labelProfilePassword9->Text = L"-";
-			this->labelProfilePassword9->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelProfileUsername9
-			// 
-			this->labelProfileUsername9->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelProfileUsername9->ForeColor = System::Drawing::Color::White;
-			this->labelProfileUsername9->Location = System::Drawing::Point(303, 0);
-			this->labelProfileUsername9->Name = L"labelProfileUsername9";
-			this->labelProfileUsername9->Size = System::Drawing::Size(279, 48);
-			this->labelProfileUsername9->TabIndex = 0;
-			this->labelProfileUsername9->Text = L"-";
-			this->labelProfileUsername9->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelProfileWebsite9
-			// 
-			this->labelProfileWebsite9->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->labelProfileWebsite9->ForeColor = System::Drawing::Color::White;
-			this->labelProfileWebsite9->Location = System::Drawing::Point(1, 0);
-			this->labelProfileWebsite9->Name = L"labelProfileWebsite9";
-			this->labelProfileWebsite9->Size = System::Drawing::Size(275, 48);
-			this->labelProfileWebsite9->TabIndex = 0;
-			this->labelProfileWebsite9->Text = L"-";
-			this->labelProfileWebsite9->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// panel10
-			// 
-			this->panel10->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->panel10->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
-				static_cast<System::Int32>(static_cast<System::Byte>(114)));
-			this->panel10->Controls->Add(this->labelProfilePassword10);
-			this->panel10->Controls->Add(this->labelProfileUsername10);
-			this->panel10->Controls->Add(this->labelProfileWebsite10);
-			this->panel10->Location = System::Drawing::Point(13, 702);
-			this->panel10->Name = L"panel10";
-			this->panel10->Size = System::Drawing::Size(879, 48);
-			this->panel10->TabIndex = 28;
-			// 
-			// labelProfilePassword10
-			// 
-			this->labelProfilePassword10->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelProfilePassword10->ForeColor = System::Drawing::Color::White;
-			this->labelProfilePassword10->Location = System::Drawing::Point(625, 0);
-			this->labelProfilePassword10->Name = L"labelProfilePassword10";
-			this->labelProfilePassword10->Size = System::Drawing::Size(253, 48);
-			this->labelProfilePassword10->TabIndex = 0;
-			this->labelProfilePassword10->Text = L"-";
-			this->labelProfilePassword10->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelProfileUsername10
-			// 
-			this->labelProfileUsername10->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelProfileUsername10->ForeColor = System::Drawing::Color::White;
-			this->labelProfileUsername10->Location = System::Drawing::Point(303, 0);
-			this->labelProfileUsername10->Name = L"labelProfileUsername10";
-			this->labelProfileUsername10->Size = System::Drawing::Size(279, 48);
-			this->labelProfileUsername10->TabIndex = 0;
-			this->labelProfileUsername10->Text = L"-";
-			this->labelProfileUsername10->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelProfileWebsite10
-			// 
-			this->labelProfileWebsite10->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->labelProfileWebsite10->ForeColor = System::Drawing::Color::White;
-			this->labelProfileWebsite10->Location = System::Drawing::Point(1, 0);
-			this->labelProfileWebsite10->Name = L"labelProfileWebsite10";
-			this->labelProfileWebsite10->Size = System::Drawing::Size(275, 48);
-			this->labelProfileWebsite10->TabIndex = 0;
-			this->labelProfileWebsite10->Text = L"-";
-			this->labelProfileWebsite10->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// panelSidebar
 			// 
@@ -1263,22 +654,742 @@ private: System::Windows::Forms::Label^ labelAppName;
 			this->labelAppName->Text = L"Pass Unite";
 			this->labelAppName->Click += gcnew System::EventHandler(this, &ProfilesForm::labelAppName_Click);
 			// 
+			// panelContent
+			// 
+			this->panelContent->AutoScroll = true;
+			this->panelContent->AutoSize = true;
+			this->panelContent->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->panelContent->Controls->Add(this->pictureBoxDelProf1);
+			this->panelContent->Controls->Add(this->pictureBoxDelProf2);
+			this->panelContent->Controls->Add(this->pictureBoxDelProf3);
+			this->panelContent->Controls->Add(this->pictureBoxDelProf4);
+			this->panelContent->Controls->Add(this->pictureBoxDelProf5);
+			this->panelContent->Controls->Add(this->pictureBoxDelProf6);
+			this->panelContent->Controls->Add(this->pictureBoxDelProf10);
+			this->panelContent->Controls->Add(this->pictureBoxDelProf9);
+			this->panelContent->Controls->Add(this->pictureBoxDelProf8);
+			this->panelContent->Controls->Add(this->pictureBoxDelProf7);
+			this->panelContent->Controls->Add(this->labelTitle);
+			this->panelContent->Controls->Add(this->labelColumnWebsite);
+			this->panelContent->Controls->Add(this->labelColumnUsernames);
+			this->panelContent->Controls->Add(this->labelColumnPasswords);
+			this->panelContent->Controls->Add(this->panelSeperationLine1);
+			this->panelContent->Controls->Add(this->panel1);
+			this->panelContent->Controls->Add(this->panel2);
+			this->panelContent->Controls->Add(this->panel3);
+			this->panelContent->Controls->Add(this->panel4);
+			this->panelContent->Controls->Add(this->panel5);
+			this->panelContent->Controls->Add(this->panel6);
+			this->panelContent->Controls->Add(this->panel7);
+			this->panelContent->Controls->Add(this->panel8);
+			this->panelContent->Controls->Add(this->panel9);
+			this->panelContent->Controls->Add(this->panel10);
+			this->panelContent->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->panelContent->Location = System::Drawing::Point(75, 75);
+			this->panelContent->Name = L"panelContent";
+			this->panelContent->Size = System::Drawing::Size(909, 436);
+			this->panelContent->TabIndex = 12;
+			// 
+			// pictureBoxDelProf1
+			// 
+			this->pictureBoxDelProf1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf1.Image")));
+			this->pictureBoxDelProf1->Location = System::Drawing::Point(3, 177);
+			this->pictureBoxDelProf1->Name = L"pictureBoxDelProf1";
+			this->pictureBoxDelProf1->Size = System::Drawing::Size(19, 18);
+			this->pictureBoxDelProf1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxDelProf1->TabIndex = 1;
+			this->pictureBoxDelProf1->TabStop = false;
+			// 
+			// pictureBoxDelProf2
+			// 
+			this->pictureBoxDelProf2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf2.Image")));
+			this->pictureBoxDelProf2->Location = System::Drawing::Point(3, 238);
+			this->pictureBoxDelProf2->Name = L"pictureBoxDelProf2";
+			this->pictureBoxDelProf2->Size = System::Drawing::Size(19, 18);
+			this->pictureBoxDelProf2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxDelProf2->TabIndex = 1;
+			this->pictureBoxDelProf2->TabStop = false;
+			// 
+			// pictureBoxDelProf3
+			// 
+			this->pictureBoxDelProf3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf3.Image")));
+			this->pictureBoxDelProf3->Location = System::Drawing::Point(3, 302);
+			this->pictureBoxDelProf3->Name = L"pictureBoxDelProf3";
+			this->pictureBoxDelProf3->Size = System::Drawing::Size(19, 18);
+			this->pictureBoxDelProf3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxDelProf3->TabIndex = 1;
+			this->pictureBoxDelProf3->TabStop = false;
+			// 
+			// pictureBoxDelProf4
+			// 
+			this->pictureBoxDelProf4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf4.Image")));
+			this->pictureBoxDelProf4->Location = System::Drawing::Point(3, 361);
+			this->pictureBoxDelProf4->Name = L"pictureBoxDelProf4";
+			this->pictureBoxDelProf4->Size = System::Drawing::Size(19, 18);
+			this->pictureBoxDelProf4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxDelProf4->TabIndex = 1;
+			this->pictureBoxDelProf4->TabStop = false;
+			// 
+			// pictureBoxDelProf5
+			// 
+			this->pictureBoxDelProf5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf5.Image")));
+			this->pictureBoxDelProf5->Location = System::Drawing::Point(3, 420);
+			this->pictureBoxDelProf5->Name = L"pictureBoxDelProf5";
+			this->pictureBoxDelProf5->Size = System::Drawing::Size(19, 18);
+			this->pictureBoxDelProf5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxDelProf5->TabIndex = 1;
+			this->pictureBoxDelProf5->TabStop = false;
+			// 
+			// pictureBoxDelProf6
+			// 
+			this->pictureBoxDelProf6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf6.Image")));
+			this->pictureBoxDelProf6->Location = System::Drawing::Point(3, 479);
+			this->pictureBoxDelProf6->Name = L"pictureBoxDelProf6";
+			this->pictureBoxDelProf6->Size = System::Drawing::Size(19, 18);
+			this->pictureBoxDelProf6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxDelProf6->TabIndex = 1;
+			this->pictureBoxDelProf6->TabStop = false;
+			// 
+			// pictureBoxDelProf10
+			// 
+			this->pictureBoxDelProf10->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf10.Image")));
+			this->pictureBoxDelProf10->Location = System::Drawing::Point(3, 716);
+			this->pictureBoxDelProf10->Name = L"pictureBoxDelProf10";
+			this->pictureBoxDelProf10->Size = System::Drawing::Size(19, 18);
+			this->pictureBoxDelProf10->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxDelProf10->TabIndex = 1;
+			this->pictureBoxDelProf10->TabStop = false;
+			// 
+			// pictureBoxDelProf9
+			// 
+			this->pictureBoxDelProf9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf9.Image")));
+			this->pictureBoxDelProf9->Location = System::Drawing::Point(3, 661);
+			this->pictureBoxDelProf9->Name = L"pictureBoxDelProf9";
+			this->pictureBoxDelProf9->Size = System::Drawing::Size(19, 18);
+			this->pictureBoxDelProf9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxDelProf9->TabIndex = 1;
+			this->pictureBoxDelProf9->TabStop = false;
+			// 
+			// pictureBoxDelProf8
+			// 
+			this->pictureBoxDelProf8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf8.Image")));
+			this->pictureBoxDelProf8->Location = System::Drawing::Point(3, 601);
+			this->pictureBoxDelProf8->Name = L"pictureBoxDelProf8";
+			this->pictureBoxDelProf8->Size = System::Drawing::Size(19, 18);
+			this->pictureBoxDelProf8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxDelProf8->TabIndex = 1;
+			this->pictureBoxDelProf8->TabStop = false;
+			// 
+			// pictureBoxDelProf7
+			// 
+			this->pictureBoxDelProf7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxDelProf7.Image")));
+			this->pictureBoxDelProf7->Location = System::Drawing::Point(3, 539);
+			this->pictureBoxDelProf7->Name = L"pictureBoxDelProf7";
+			this->pictureBoxDelProf7->Size = System::Drawing::Size(19, 18);
+			this->pictureBoxDelProf7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxDelProf7->TabIndex = 1;
+			this->pictureBoxDelProf7->TabStop = false;
+			// 
+			// labelTitle
+			// 
+			this->labelTitle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelTitle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelTitle->Location = System::Drawing::Point(0, 3);
+			this->labelTitle->Name = L"labelTitle";
+			this->labelTitle->Size = System::Drawing::Size(889, 93);
+			this->labelTitle->TabIndex = 19;
+			this->labelTitle->Text = L"Profiles";
+			this->labelTitle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelColumnWebsite
+			// 
+			this->labelColumnWebsite->AutoSize = true;
+			this->labelColumnWebsite->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelColumnWebsite->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(76)),
+				static_cast<System::Int32>(static_cast<System::Byte>(144)), static_cast<System::Int32>(static_cast<System::Byte>(189)));
+			this->labelColumnWebsite->Location = System::Drawing::Point(65, 117);
+			this->labelColumnWebsite->Name = L"labelColumnWebsite";
+			this->labelColumnWebsite->Size = System::Drawing::Size(137, 29);
+			this->labelColumnWebsite->TabIndex = 23;
+			this->labelColumnWebsite->Text = L"WEBSITES";
+			// 
+			// labelColumnUsernames
+			// 
+			this->labelColumnUsernames->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->labelColumnUsernames->AutoSize = true;
+			this->labelColumnUsernames->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->labelColumnUsernames->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(76)),
+				static_cast<System::Int32>(static_cast<System::Byte>(144)), static_cast<System::Int32>(static_cast<System::Byte>(189)));
+			this->labelColumnUsernames->Location = System::Drawing::Point(353, 117);
+			this->labelColumnUsernames->Name = L"labelColumnUsernames";
+			this->labelColumnUsernames->Size = System::Drawing::Size(164, 29);
+			this->labelColumnUsernames->TabIndex = 22;
+			this->labelColumnUsernames->Text = L"USERNAMES";
+			// 
+			// labelColumnPasswords
+			// 
+			this->labelColumnPasswords->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->labelColumnPasswords->AutoSize = true;
+			this->labelColumnPasswords->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->labelColumnPasswords->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(76)),
+				static_cast<System::Int32>(static_cast<System::Byte>(144)), static_cast<System::Int32>(static_cast<System::Byte>(189)));
+			this->labelColumnPasswords->Location = System::Drawing::Point(650, 117);
+			this->labelColumnPasswords->Name = L"labelColumnPasswords";
+			this->labelColumnPasswords->Size = System::Drawing::Size(167, 29);
+			this->labelColumnPasswords->TabIndex = 21;
+			this->labelColumnPasswords->Text = L"PASSWORDS";
+			// 
+			// panelSeperationLine1
+			// 
+			this->panelSeperationLine1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->panelSeperationLine1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(48)),
+				static_cast<System::Int32>(static_cast<System::Byte>(48)), static_cast<System::Int32>(static_cast<System::Byte>(48)));
+			this->panelSeperationLine1->Location = System::Drawing::Point(98, 99);
+			this->panelSeperationLine1->Name = L"panelSeperationLine1";
+			this->panelSeperationLine1->Size = System::Drawing::Size(694, 2);
+			this->panelSeperationLine1->TabIndex = 20;
+			// 
+			// panel1
+			// 
+			this->panel1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
+				static_cast<System::Int32>(static_cast<System::Byte>(114)));
+			this->panel1->Controls->Add(this->labelProfilePassword1);
+			this->panel1->Controls->Add(this->labelProfileUsername1);
+			this->panel1->Controls->Add(this->labelProfileWebsite1);
+			this->panel1->Location = System::Drawing::Point(20, 162);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(860, 48);
+			this->panel1->TabIndex = 24;
+			// 
+			// labelProfilePassword1
+			// 
+			this->labelProfilePassword1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfilePassword1->ForeColor = System::Drawing::Color::White;
+			this->labelProfilePassword1->Location = System::Drawing::Point(532, 0);
+			this->labelProfilePassword1->Name = L"labelProfilePassword1";
+			this->labelProfilePassword1->Size = System::Drawing::Size(252, 48);
+			this->labelProfilePassword1->TabIndex = 0;
+			this->labelProfilePassword1->Text = L"-";
+			this->labelProfilePassword1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileUsername1
+			// 
+			this->labelProfileUsername1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfileUsername1->ForeColor = System::Drawing::Color::White;
+			this->labelProfileUsername1->Location = System::Drawing::Point(303, 0);
+			this->labelProfileUsername1->Name = L"labelProfileUsername1";
+			this->labelProfileUsername1->Size = System::Drawing::Size(185, 48);
+			this->labelProfileUsername1->TabIndex = 0;
+			this->labelProfileUsername1->Text = L"-";
+			this->labelProfileUsername1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileWebsite1
+			// 
+			this->labelProfileWebsite1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->labelProfileWebsite1->ForeColor = System::Drawing::Color::White;
+			this->labelProfileWebsite1->Location = System::Drawing::Point(1, 0);
+			this->labelProfileWebsite1->Name = L"labelProfileWebsite1";
+			this->labelProfileWebsite1->Size = System::Drawing::Size(274, 48);
+			this->labelProfileWebsite1->TabIndex = 0;
+			this->labelProfileWebsite1->Text = L"-";
+			this->labelProfileWebsite1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// panel2
+			// 
+			this->panel2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
+				static_cast<System::Int32>(static_cast<System::Byte>(114)));
+			this->panel2->Controls->Add(this->labelProfilePassword2);
+			this->panel2->Controls->Add(this->labelProfileUsername2);
+			this->panel2->Controls->Add(this->labelProfileWebsite2);
+			this->panel2->Location = System::Drawing::Point(20, 222);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(860, 48);
+			this->panel2->TabIndex = 25;
+			// 
+			// labelProfilePassword2
+			// 
+			this->labelProfilePassword2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfilePassword2->ForeColor = System::Drawing::Color::White;
+			this->labelProfilePassword2->Location = System::Drawing::Point(531, 0);
+			this->labelProfilePassword2->Name = L"labelProfilePassword2";
+			this->labelProfilePassword2->Size = System::Drawing::Size(253, 48);
+			this->labelProfilePassword2->TabIndex = 0;
+			this->labelProfilePassword2->Text = L"-";
+			this->labelProfilePassword2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileUsername2
+			// 
+			this->labelProfileUsername2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfileUsername2->ForeColor = System::Drawing::Color::White;
+			this->labelProfileUsername2->Location = System::Drawing::Point(303, 0);
+			this->labelProfileUsername2->Name = L"labelProfileUsername2";
+			this->labelProfileUsername2->Size = System::Drawing::Size(185, 48);
+			this->labelProfileUsername2->TabIndex = 0;
+			this->labelProfileUsername2->Text = L"-";
+			this->labelProfileUsername2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileWebsite2
+			// 
+			this->labelProfileWebsite2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->labelProfileWebsite2->ForeColor = System::Drawing::Color::White;
+			this->labelProfileWebsite2->Location = System::Drawing::Point(1, 0);
+			this->labelProfileWebsite2->Name = L"labelProfileWebsite2";
+			this->labelProfileWebsite2->Size = System::Drawing::Size(275, 48);
+			this->labelProfileWebsite2->TabIndex = 0;
+			this->labelProfileWebsite2->Text = L"-";
+			this->labelProfileWebsite2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// panel3
+			// 
+			this->panel3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->panel3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
+				static_cast<System::Int32>(static_cast<System::Byte>(114)));
+			this->panel3->Controls->Add(this->labelProfilePassword3);
+			this->panel3->Controls->Add(this->labelProfileUsername3);
+			this->panel3->Controls->Add(this->labelProfileWebsite3);
+			this->panel3->Location = System::Drawing::Point(20, 282);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(860, 48);
+			this->panel3->TabIndex = 26;
+			// 
+			// labelProfilePassword3
+			// 
+			this->labelProfilePassword3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfilePassword3->ForeColor = System::Drawing::Color::White;
+			this->labelProfilePassword3->Location = System::Drawing::Point(531, 0);
+			this->labelProfilePassword3->Name = L"labelProfilePassword3";
+			this->labelProfilePassword3->Size = System::Drawing::Size(253, 48);
+			this->labelProfilePassword3->TabIndex = 0;
+			this->labelProfilePassword3->Text = L"-";
+			this->labelProfilePassword3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileUsername3
+			// 
+			this->labelProfileUsername3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfileUsername3->ForeColor = System::Drawing::Color::White;
+			this->labelProfileUsername3->Location = System::Drawing::Point(303, 0);
+			this->labelProfileUsername3->Name = L"labelProfileUsername3";
+			this->labelProfileUsername3->Size = System::Drawing::Size(185, 48);
+			this->labelProfileUsername3->TabIndex = 0;
+			this->labelProfileUsername3->Text = L"-";
+			this->labelProfileUsername3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileWebsite3
+			// 
+			this->labelProfileWebsite3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->labelProfileWebsite3->ForeColor = System::Drawing::Color::White;
+			this->labelProfileWebsite3->Location = System::Drawing::Point(1, 0);
+			this->labelProfileWebsite3->Name = L"labelProfileWebsite3";
+			this->labelProfileWebsite3->Size = System::Drawing::Size(275, 48);
+			this->labelProfileWebsite3->TabIndex = 0;
+			this->labelProfileWebsite3->Text = L"-";
+			this->labelProfileWebsite3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// panel4
+			// 
+			this->panel4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->panel4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
+				static_cast<System::Int32>(static_cast<System::Byte>(114)));
+			this->panel4->Controls->Add(this->labelProfilePassword4);
+			this->panel4->Controls->Add(this->labelProfileUsername4);
+			this->panel4->Controls->Add(this->labelProfileWebsite4);
+			this->panel4->Location = System::Drawing::Point(20, 342);
+			this->panel4->Name = L"panel4";
+			this->panel4->Size = System::Drawing::Size(860, 48);
+			this->panel4->TabIndex = 27;
+			// 
+			// labelProfilePassword4
+			// 
+			this->labelProfilePassword4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfilePassword4->ForeColor = System::Drawing::Color::White;
+			this->labelProfilePassword4->Location = System::Drawing::Point(531, 0);
+			this->labelProfilePassword4->Name = L"labelProfilePassword4";
+			this->labelProfilePassword4->Size = System::Drawing::Size(253, 48);
+			this->labelProfilePassword4->TabIndex = 0;
+			this->labelProfilePassword4->Text = L"-";
+			this->labelProfilePassword4->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileUsername4
+			// 
+			this->labelProfileUsername4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfileUsername4->ForeColor = System::Drawing::Color::White;
+			this->labelProfileUsername4->Location = System::Drawing::Point(303, 0);
+			this->labelProfileUsername4->Name = L"labelProfileUsername4";
+			this->labelProfileUsername4->Size = System::Drawing::Size(185, 48);
+			this->labelProfileUsername4->TabIndex = 0;
+			this->labelProfileUsername4->Text = L"-";
+			this->labelProfileUsername4->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileWebsite4
+			// 
+			this->labelProfileWebsite4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->labelProfileWebsite4->ForeColor = System::Drawing::Color::White;
+			this->labelProfileWebsite4->Location = System::Drawing::Point(1, 0);
+			this->labelProfileWebsite4->Name = L"labelProfileWebsite4";
+			this->labelProfileWebsite4->Size = System::Drawing::Size(275, 48);
+			this->labelProfileWebsite4->TabIndex = 0;
+			this->labelProfileWebsite4->Text = L"-";
+			this->labelProfileWebsite4->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// panel5
+			// 
+			this->panel5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->panel5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
+				static_cast<System::Int32>(static_cast<System::Byte>(114)));
+			this->panel5->Controls->Add(this->labelProfilePassword5);
+			this->panel5->Controls->Add(this->labelProfileUsername5);
+			this->panel5->Controls->Add(this->labelProfileWebsite5);
+			this->panel5->Location = System::Drawing::Point(20, 402);
+			this->panel5->Name = L"panel5";
+			this->panel5->Size = System::Drawing::Size(860, 48);
+			this->panel5->TabIndex = 31;
+			// 
+			// labelProfilePassword5
+			// 
+			this->labelProfilePassword5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfilePassword5->ForeColor = System::Drawing::Color::White;
+			this->labelProfilePassword5->Location = System::Drawing::Point(531, 0);
+			this->labelProfilePassword5->Name = L"labelProfilePassword5";
+			this->labelProfilePassword5->Size = System::Drawing::Size(253, 48);
+			this->labelProfilePassword5->TabIndex = 0;
+			this->labelProfilePassword5->Text = L"-";
+			this->labelProfilePassword5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileUsername5
+			// 
+			this->labelProfileUsername5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfileUsername5->ForeColor = System::Drawing::Color::White;
+			this->labelProfileUsername5->Location = System::Drawing::Point(303, 0);
+			this->labelProfileUsername5->Name = L"labelProfileUsername5";
+			this->labelProfileUsername5->Size = System::Drawing::Size(185, 48);
+			this->labelProfileUsername5->TabIndex = 0;
+			this->labelProfileUsername5->Text = L"-";
+			this->labelProfileUsername5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileWebsite5
+			// 
+			this->labelProfileWebsite5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->labelProfileWebsite5->ForeColor = System::Drawing::Color::White;
+			this->labelProfileWebsite5->Location = System::Drawing::Point(1, 0);
+			this->labelProfileWebsite5->Name = L"labelProfileWebsite5";
+			this->labelProfileWebsite5->Size = System::Drawing::Size(275, 48);
+			this->labelProfileWebsite5->TabIndex = 0;
+			this->labelProfileWebsite5->Text = L"-";
+			this->labelProfileWebsite5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// panel6
+			// 
+			this->panel6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->panel6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
+				static_cast<System::Int32>(static_cast<System::Byte>(114)));
+			this->panel6->Controls->Add(this->labelProfilePassword6);
+			this->panel6->Controls->Add(this->labelProfileUsername6);
+			this->panel6->Controls->Add(this->labelProfileWebsite6);
+			this->panel6->Location = System::Drawing::Point(20, 462);
+			this->panel6->Name = L"panel6";
+			this->panel6->Size = System::Drawing::Size(860, 48);
+			this->panel6->TabIndex = 32;
+			// 
+			// labelProfilePassword6
+			// 
+			this->labelProfilePassword6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfilePassword6->ForeColor = System::Drawing::Color::White;
+			this->labelProfilePassword6->Location = System::Drawing::Point(531, 0);
+			this->labelProfilePassword6->Name = L"labelProfilePassword6";
+			this->labelProfilePassword6->Size = System::Drawing::Size(253, 48);
+			this->labelProfilePassword6->TabIndex = 0;
+			this->labelProfilePassword6->Text = L"-";
+			this->labelProfilePassword6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileUsername6
+			// 
+			this->labelProfileUsername6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfileUsername6->ForeColor = System::Drawing::Color::White;
+			this->labelProfileUsername6->Location = System::Drawing::Point(303, 0);
+			this->labelProfileUsername6->Name = L"labelProfileUsername6";
+			this->labelProfileUsername6->Size = System::Drawing::Size(185, 48);
+			this->labelProfileUsername6->TabIndex = 0;
+			this->labelProfileUsername6->Text = L"-";
+			this->labelProfileUsername6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileWebsite6
+			// 
+			this->labelProfileWebsite6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->labelProfileWebsite6->ForeColor = System::Drawing::Color::White;
+			this->labelProfileWebsite6->Location = System::Drawing::Point(1, 0);
+			this->labelProfileWebsite6->Name = L"labelProfileWebsite6";
+			this->labelProfileWebsite6->Size = System::Drawing::Size(275, 48);
+			this->labelProfileWebsite6->TabIndex = 0;
+			this->labelProfileWebsite6->Text = L"-";
+			this->labelProfileWebsite6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// panel7
+			// 
+			this->panel7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->panel7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
+				static_cast<System::Int32>(static_cast<System::Byte>(114)));
+			this->panel7->Controls->Add(this->labelProfilePassword7);
+			this->panel7->Controls->Add(this->labelProfileUsername7);
+			this->panel7->Controls->Add(this->labelProfileWebsite7);
+			this->panel7->Location = System::Drawing::Point(20, 522);
+			this->panel7->Name = L"panel7";
+			this->panel7->Size = System::Drawing::Size(860, 48);
+			this->panel7->TabIndex = 33;
+			// 
+			// labelProfilePassword7
+			// 
+			this->labelProfilePassword7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfilePassword7->ForeColor = System::Drawing::Color::White;
+			this->labelProfilePassword7->Location = System::Drawing::Point(531, 0);
+			this->labelProfilePassword7->Name = L"labelProfilePassword7";
+			this->labelProfilePassword7->Size = System::Drawing::Size(253, 48);
+			this->labelProfilePassword7->TabIndex = 0;
+			this->labelProfilePassword7->Text = L"-";
+			this->labelProfilePassword7->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileUsername7
+			// 
+			this->labelProfileUsername7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfileUsername7->ForeColor = System::Drawing::Color::White;
+			this->labelProfileUsername7->Location = System::Drawing::Point(303, 0);
+			this->labelProfileUsername7->Name = L"labelProfileUsername7";
+			this->labelProfileUsername7->Size = System::Drawing::Size(185, 48);
+			this->labelProfileUsername7->TabIndex = 0;
+			this->labelProfileUsername7->Text = L"-";
+			this->labelProfileUsername7->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileWebsite7
+			// 
+			this->labelProfileWebsite7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->labelProfileWebsite7->ForeColor = System::Drawing::Color::White;
+			this->labelProfileWebsite7->Location = System::Drawing::Point(1, 0);
+			this->labelProfileWebsite7->Name = L"labelProfileWebsite7";
+			this->labelProfileWebsite7->Size = System::Drawing::Size(275, 48);
+			this->labelProfileWebsite7->TabIndex = 0;
+			this->labelProfileWebsite7->Text = L"-";
+			this->labelProfileWebsite7->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// panel8
+			// 
+			this->panel8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->panel8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
+				static_cast<System::Int32>(static_cast<System::Byte>(114)));
+			this->panel8->Controls->Add(this->labelProfilePassword8);
+			this->panel8->Controls->Add(this->labelProfileUsername8);
+			this->panel8->Controls->Add(this->labelProfileWebsite8);
+			this->panel8->Location = System::Drawing::Point(20, 582);
+			this->panel8->Name = L"panel8";
+			this->panel8->Size = System::Drawing::Size(860, 48);
+			this->panel8->TabIndex = 29;
+			// 
+			// labelProfilePassword8
+			// 
+			this->labelProfilePassword8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfilePassword8->ForeColor = System::Drawing::Color::White;
+			this->labelProfilePassword8->Location = System::Drawing::Point(531, 0);
+			this->labelProfilePassword8->Name = L"labelProfilePassword8";
+			this->labelProfilePassword8->Size = System::Drawing::Size(253, 48);
+			this->labelProfilePassword8->TabIndex = 0;
+			this->labelProfilePassword8->Text = L"-";
+			this->labelProfilePassword8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileUsername8
+			// 
+			this->labelProfileUsername8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfileUsername8->ForeColor = System::Drawing::Color::White;
+			this->labelProfileUsername8->Location = System::Drawing::Point(303, 0);
+			this->labelProfileUsername8->Name = L"labelProfileUsername8";
+			this->labelProfileUsername8->Size = System::Drawing::Size(185, 48);
+			this->labelProfileUsername8->TabIndex = 0;
+			this->labelProfileUsername8->Text = L"-";
+			this->labelProfileUsername8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileWebsite8
+			// 
+			this->labelProfileWebsite8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->labelProfileWebsite8->ForeColor = System::Drawing::Color::White;
+			this->labelProfileWebsite8->Location = System::Drawing::Point(1, 0);
+			this->labelProfileWebsite8->Name = L"labelProfileWebsite8";
+			this->labelProfileWebsite8->Size = System::Drawing::Size(275, 48);
+			this->labelProfileWebsite8->TabIndex = 0;
+			this->labelProfileWebsite8->Text = L"-";
+			this->labelProfileWebsite8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// panel9
+			// 
+			this->panel9->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->panel9->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
+				static_cast<System::Int32>(static_cast<System::Byte>(114)));
+			this->panel9->Controls->Add(this->labelProfilePassword9);
+			this->panel9->Controls->Add(this->labelProfileUsername9);
+			this->panel9->Controls->Add(this->labelProfileWebsite9);
+			this->panel9->Location = System::Drawing::Point(20, 642);
+			this->panel9->Name = L"panel9";
+			this->panel9->Size = System::Drawing::Size(860, 48);
+			this->panel9->TabIndex = 30;
+			// 
+			// labelProfilePassword9
+			// 
+			this->labelProfilePassword9->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfilePassword9->ForeColor = System::Drawing::Color::White;
+			this->labelProfilePassword9->Location = System::Drawing::Point(531, 0);
+			this->labelProfilePassword9->Name = L"labelProfilePassword9";
+			this->labelProfilePassword9->Size = System::Drawing::Size(253, 48);
+			this->labelProfilePassword9->TabIndex = 0;
+			this->labelProfilePassword9->Text = L"-";
+			this->labelProfilePassword9->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileUsername9
+			// 
+			this->labelProfileUsername9->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfileUsername9->ForeColor = System::Drawing::Color::White;
+			this->labelProfileUsername9->Location = System::Drawing::Point(303, 0);
+			this->labelProfileUsername9->Name = L"labelProfileUsername9";
+			this->labelProfileUsername9->Size = System::Drawing::Size(185, 48);
+			this->labelProfileUsername9->TabIndex = 0;
+			this->labelProfileUsername9->Text = L"-";
+			this->labelProfileUsername9->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileWebsite9
+			// 
+			this->labelProfileWebsite9->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->labelProfileWebsite9->ForeColor = System::Drawing::Color::White;
+			this->labelProfileWebsite9->Location = System::Drawing::Point(1, 0);
+			this->labelProfileWebsite9->Name = L"labelProfileWebsite9";
+			this->labelProfileWebsite9->Size = System::Drawing::Size(275, 48);
+			this->labelProfileWebsite9->TabIndex = 0;
+			this->labelProfileWebsite9->Text = L"-";
+			this->labelProfileWebsite9->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// panel10
+			// 
+			this->panel10->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->panel10->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(87)), static_cast<System::Int32>(static_cast<System::Byte>(99)),
+				static_cast<System::Int32>(static_cast<System::Byte>(114)));
+			this->panel10->Controls->Add(this->labelProfilePassword10);
+			this->panel10->Controls->Add(this->labelProfileUsername10);
+			this->panel10->Controls->Add(this->labelProfileWebsite10);
+			this->panel10->Location = System::Drawing::Point(20, 702);
+			this->panel10->Name = L"panel10";
+			this->panel10->Size = System::Drawing::Size(860, 48);
+			this->panel10->TabIndex = 28;
+			// 
+			// labelProfilePassword10
+			// 
+			this->labelProfilePassword10->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfilePassword10->ForeColor = System::Drawing::Color::White;
+			this->labelProfilePassword10->Location = System::Drawing::Point(531, 0);
+			this->labelProfilePassword10->Name = L"labelProfilePassword10";
+			this->labelProfilePassword10->Size = System::Drawing::Size(253, 48);
+			this->labelProfilePassword10->TabIndex = 0;
+			this->labelProfilePassword10->Text = L"-";
+			this->labelProfilePassword10->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileUsername10
+			// 
+			this->labelProfileUsername10->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelProfileUsername10->ForeColor = System::Drawing::Color::White;
+			this->labelProfileUsername10->Location = System::Drawing::Point(303, 0);
+			this->labelProfileUsername10->Name = L"labelProfileUsername10";
+			this->labelProfileUsername10->Size = System::Drawing::Size(185, 48);
+			this->labelProfileUsername10->TabIndex = 0;
+			this->labelProfileUsername10->Text = L"-";
+			this->labelProfileUsername10->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelProfileWebsite10
+			// 
+			this->labelProfileWebsite10->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->labelProfileWebsite10->ForeColor = System::Drawing::Color::White;
+			this->labelProfileWebsite10->Location = System::Drawing::Point(1, 0);
+			this->labelProfileWebsite10->Name = L"labelProfileWebsite10";
+			this->labelProfileWebsite10->Size = System::Drawing::Size(275, 48);
+			this->labelProfileWebsite10->TabIndex = 0;
+			this->labelProfileWebsite10->Text = L"-";
+			this->labelProfileWebsite10->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
 			// ProfilesForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(16, 31);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScroll = true;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(49)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(82)));
 			this->ClientSize = System::Drawing::Size(984, 511);
+			this->Controls->Add(this->panelContent);
 			this->Controls->Add(this->panelSidebar);
 			this->Controls->Add(this->panelTopbar);
-			this->Controls->Add(this->panelContent);
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->Name = L"ProfilesForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Profiles";
+			this->panelSidebar->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxProfiles))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxSettings))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxGeneratePassword))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxAddProfile))->EndInit();
+			this->panelTopbar->ResumeLayout(false);
+			this->panelTopbar->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->EndInit();
 			this->panelContent->ResumeLayout(false);
 			this->panelContent->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf1))->EndInit();
@@ -1301,15 +1412,8 @@ private: System::Windows::Forms::Label^ labelAppName;
 			this->panel8->ResumeLayout(false);
 			this->panel9->ResumeLayout(false);
 			this->panel10->ResumeLayout(false);
-			this->panelSidebar->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxProfiles))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxSettings))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxGeneratePassword))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxAddProfile))->EndInit();
-			this->panelTopbar->ResumeLayout(false);
-			this->panelTopbar->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->EndInit();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
