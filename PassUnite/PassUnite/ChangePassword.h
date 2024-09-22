@@ -1,4 +1,5 @@
 #pragma once
+#include "User.h"
 
 namespace PassUnite {
 
@@ -15,12 +16,13 @@ namespace PassUnite {
 	public ref class ChangePassword : public System::Windows::Forms::Form
 	{
 	public:
-		ChangePassword(void)
+		ChangePassword(User^ _user)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+			user = _user;
 		}
 
 	protected:
@@ -57,7 +59,7 @@ namespace PassUnite {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -151,7 +153,7 @@ namespace PassUnite {
 			this->textBoxNewPassword->Margin = System::Windows::Forms::Padding(2);
 			this->textBoxNewPassword->Name = L"textBoxNewPassword";
 			this->textBoxNewPassword->Size = System::Drawing::Size(268, 31);
-			this->textBoxNewPassword->TabIndex = 1;
+			this->textBoxNewPassword->TabIndex = 2;
 			this->textBoxNewPassword->UseSystemPasswordChar = true;
 			// 
 			// textBoxConfirmPassword
@@ -163,7 +165,7 @@ namespace PassUnite {
 			this->textBoxConfirmPassword->Margin = System::Windows::Forms::Padding(2);
 			this->textBoxConfirmPassword->Name = L"textBoxConfirmPassword";
 			this->textBoxConfirmPassword->Size = System::Drawing::Size(268, 31);
-			this->textBoxConfirmPassword->TabIndex = 1;
+			this->textBoxConfirmPassword->TabIndex = 3;
 			this->textBoxConfirmPassword->UseSystemPasswordChar = true;
 			// 
 			// pictureBoxReturn
@@ -187,7 +189,7 @@ namespace PassUnite {
 			this->buttonOK->Location = System::Drawing::Point(133, 282);
 			this->buttonOK->Name = L"buttonOK";
 			this->buttonOK->Size = System::Drawing::Size(165, 35);
-			this->buttonOK->TabIndex = 3;
+			this->buttonOK->TabIndex = 4;
 			this->buttonOK->Text = L"OK";
 			this->buttonOK->UseVisualStyleBackColor = false;
 			this->buttonOK->Click += gcnew System::EventHandler(this, &ChangePassword::buttonOK_Click);
@@ -202,17 +204,19 @@ namespace PassUnite {
 			this->buttonCancel->Location = System::Drawing::Point(403, 282);
 			this->buttonCancel->Name = L"buttonCancel";
 			this->buttonCancel->Size = System::Drawing::Size(165, 35);
-			this->buttonCancel->TabIndex = 3;
+			this->buttonCancel->TabIndex = 5;
 			this->buttonCancel->Text = L"Cancel";
 			this->buttonCancel->UseVisualStyleBackColor = false;
 			this->buttonCancel->Click += gcnew System::EventHandler(this, &ChangePassword::buttonCancel_Click);
 			// 
 			// ChangePassword
 			// 
+			this->AcceptButton = this->buttonOK;
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(170)), static_cast<System::Int32>(static_cast<System::Byte>(188)),
 				static_cast<System::Int32>(static_cast<System::Byte>(205)));
+			this->CancelButton = this->buttonCancel;
 			this->ClientSize = System::Drawing::Size(707, 365);
 			this->Controls->Add(this->buttonCancel);
 			this->Controls->Add(this->buttonOK);
@@ -237,7 +241,36 @@ namespace PassUnite {
 
 		}
 #pragma endregion
+	public: User^ user = nullptr;
+
 	private: System::Void buttonOK_Click(System::Object^ sender, System::EventArgs^ e) {
+		// textbox checks
+		{
+			// check current password
+			if (textBoxCurrentPassword->Text != user->password)
+			{
+				// provide error message
+				MessageBox::Show("Current Password is incorrect",
+					"Incorrect Password", MessageBoxButtons::OK);
+				return;
+			}
+			// check if password textboxes empty
+			if (textBoxNewPassword->Text == "")
+			{
+				// provide error message
+				MessageBox::Show("Important fields cannot be left empty",
+					"Empty Fields", MessageBoxButtons::OK);
+				return;
+			}
+			// check if password textboxes match
+			if (textBoxNewPassword->Text != textBoxConfirmPassword->Text)
+			{
+				// provide error message
+				MessageBox::Show("New Password and Confirm Password does not match",
+					"Passwords Do Not Match", MessageBoxButtons::OK);
+				return;
+			}
+		}
 		// update current user password in login database
 
 		// clear textboxes
@@ -248,18 +281,18 @@ namespace PassUnite {
 		// close this overlay
 		this->Close();
 	}
-private: System::Void buttonCancel_Click(System::Object^ sender, System::EventArgs^ e) {
-	// clear textboxes
-	textBoxCurrentPassword->Text = "";
-	textBoxNewPassword->Text = "";
-	textBoxConfirmPassword->Text = "";
+	private: System::Void buttonCancel_Click(System::Object^ sender, System::EventArgs^ e) {
+		// clear textboxes
+		textBoxCurrentPassword->Text = "";
+		textBoxNewPassword->Text = "";
+		textBoxConfirmPassword->Text = "";
 
-	// close this overlay
-	this->Close();
-}
-private: System::Void pictureBoxReturn_Click(System::Object^ sender, System::EventArgs^ e) {
-	// close this overlay
-	this->Close();
-}
-};
+		// close this overlay
+		this->Close();
+	}
+	private: System::Void pictureBoxReturn_Click(System::Object^ sender, System::EventArgs^ e) {
+		// close this overlay
+		this->Close();
+	}
+	};
 }

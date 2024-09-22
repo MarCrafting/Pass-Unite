@@ -201,7 +201,7 @@ namespace PassUnite {
 #pragma endregion
 	public: PageProperties pageProps;
 
-	public: User^ user;
+	public: User^ user = nullptr;
 
 	public: bool logUserOut = false;
 
@@ -211,7 +211,7 @@ namespace PassUnite {
 	}
 	private: System::Void labelChangePass_Click(System::Object^ sender, System::EventArgs^ e) {
 		// open "Change Password" overlay
-		PassUnite::ChangePassword changePassOverlay;
+		PassUnite::ChangePassword changePassOverlay(user);
 		changePassOverlay.ShowDialog();
 	}
 	private: System::Void labelClearProfiles_Click(System::Object^ sender, System::EventArgs^ e) {

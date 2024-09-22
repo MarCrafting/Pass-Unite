@@ -136,6 +136,7 @@ namespace PassUnite {
 			this->textBoxPass->PasswordChar = '*';
 			this->textBoxPass->Size = System::Drawing::Size(268, 35);
 			this->textBoxPass->TabIndex = 2;
+			this->textBoxPass->TextChanged += gcnew System::EventHandler(this, &Login::textBoxPass_TextChanged);
 			// 
 			// linkLabelRegister
 			// 
@@ -198,16 +199,22 @@ namespace PassUnite {
 			this->Name = L"Login";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Login";
+			this->Activated += gcnew System::EventHandler(this, &Login::Login_Activated);
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &Login::Login_FormClosing);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	public: User^ user = nullptr;
-
 	public: PageProperties pageProps;
 
+	public: User^ user = nullptr;
+
 	public: bool switchToRegister = false;
+
+	private: bool clearPass = false;
+
+	public: bool loggedOut = true;
 
 	private: System::Void buttonOK_Click(System::Object^ sender, System::EventArgs^ e) {
 		switchToRegister = false;
@@ -247,17 +254,14 @@ namespace PassUnite {
 				user->id = reader->GetInt32(0);
 				user->username = reader->GetString(1);
 				user->password = reader->GetString(2);
-
-				// redirect to homepage
-				pageProps.page = 1;
-
-				// close login to proceed
-				this->Close();
 			}
 			else
 			{
 				MessageBox::Show("Username of password is incorrect",
 					"Username or Password Error", MessageBoxButtons::OK);
+
+				clearPass = true;
+				return;
 			}
 
 		}
@@ -272,6 +276,12 @@ namespace PassUnite {
 
 		// point to home page
 		pageProps.page = 1;
+
+		// update signed in flag
+		loggedOut = false;
+
+		// close to redirect
+		this->Close();
 	}
 	private: System::Void buttonCancel_Click(System::Object^ sender, System::EventArgs^ e) {
 		// point to terminate condition
@@ -285,5 +295,28 @@ namespace PassUnite {
 		switchToRegister = true;
 		this->Close();
 	}
-	};
+	private: System::Void Login_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
+		// check if textfields empty
+		if (loggedOut || (textBoxUser->Text == "" && textBoxPass->Text == ""))
+			pageProps.page = -1;
+	}
+	private: System::Void textBoxPass_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (clearPass)
+		{
+			textBoxPass->Text = "";
+			clearPass = false;
+		}
+	}
+private: System::Void Login_Activated(System::Object^ sender, System::EventArgs^ e) {
+	// clear text fields
+	textBoxUser->Text = "";
+	textBoxPass->Text = "";
+
+	// focus username field
+	textBoxUser->Focus();
+	
+	// update loggedOut flag
+	loggedOut = true;
+}
+};
 }
