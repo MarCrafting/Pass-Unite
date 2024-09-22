@@ -366,6 +366,7 @@ private: System::Windows::Forms::Label^ labelAppName;
 			this->buttonGen->TabIndex = 4;
 			this->buttonGen->Text = L"Generate";
 			this->buttonGen->UseVisualStyleBackColor = false;
+			this->buttonGen->Visible = false;
 			// 
 			// buttonAdd
 			// 
@@ -717,6 +718,8 @@ private: System::Windows::Forms::Label^ labelAppName;
 		// open Generator overlay
 		PassUnite::Generator generatorOverlay;
 		generatorOverlay.ShowDialog();
+
+		textBoxPassword->Text = generatorOverlay.randString;
 	}
 };
 }

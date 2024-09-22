@@ -199,6 +199,8 @@ namespace PassUnite {
 
 		}
 #pragma endregion
+	public: String^ randString;
+
 	private: System::Void buttonGenerator_Click(System::Object^ sender, System::EventArgs^ e) {
 		std::string characters;
 
@@ -246,13 +248,15 @@ namespace PassUnite {
 			textBoxRandomText->Text = rString;
 		}
 	}
-	private: System::Void buttonSave_Click(System::Object^ sender, System::EventArgs^ e) {
-		// save generated string to clipboard
-		//Clipboard::SetText(textBoxRandomText-Text);
-		//Clipboard::SetData(System::Windows::Forms::Control::Text, textBoxRandomText->Text);
+	private: Void buttonSave_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (textBoxRandomText->Text != "...")
+		{
+			// save random string
+			randString = textBoxRandomText->Text;
+		}
 
 		// close popup
 		this->Close();
 	}
-};
+	};
 }
