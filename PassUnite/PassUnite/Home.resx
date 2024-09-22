@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelAboutParagraph2.Text" xml:space="preserve">
+    <value>The user interface is simple, making it friendly for users of all ages. Your data is fully encrypted in storage leaving anyone who lays eyes on it unable to recognize it as data. Lastly, there's no extra features to distract you or have you feel as though you aren't using the app to its full potential. Simply save your user information for the chosen site(s), then retrieve it whenever you please. Now you can SAFELY remember one login, that's all there is to it!</value>
+  </data>
+  <data name="labelAboutParagraph1.Text" xml:space="preserve">
+    <value>Pass Unite is a Password Manager application, allowing its users to save user information of custom created profiles based on what they choose to provide as input. There are plenty of sites and apps that we use throughout our daily lives, and because it's more convenient to create a single password for all platforms, most of the time we do. Though as technology grows more powerful, so does malicious users Having many different passwords on multiple platforms drastically lowers the chances of getting compromised on all platforms.</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBoxMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

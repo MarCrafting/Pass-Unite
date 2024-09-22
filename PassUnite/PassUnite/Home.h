@@ -76,6 +76,12 @@ namespace PassUnite {
 	private: System::Windows::Forms::PictureBox^ pictureBoxSettings;
 	private: System::Windows::Forms::PictureBox^ pictureBoxProfiles;
 	private: System::Windows::Forms::Panel^ panelSidebar;
+	private: System::Windows::Forms::Label^ labelAboutHeader1;
+	private: System::Windows::Forms::Label^ labelAboutParagraph1;
+	private: System::Windows::Forms::Label^ labelAboutParagraph2;
+	private: System::Windows::Forms::Label^ labelAboutHeader2;
+
+
 
 
 
@@ -118,7 +124,12 @@ namespace PassUnite {
 			this->pictureBoxSettings = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBoxProfiles = (gcnew System::Windows::Forms::PictureBox());
 			this->panelSidebar = (gcnew System::Windows::Forms::Panel());
+			this->labelAboutHeader1 = (gcnew System::Windows::Forms::Label());
+			this->labelAboutParagraph1 = (gcnew System::Windows::Forms::Label());
+			this->labelAboutHeader2 = (gcnew System::Windows::Forms::Label());
+			this->labelAboutParagraph2 = (gcnew System::Windows::Forms::Label());
 			this->panelContent->SuspendLayout();
+			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->BeginInit();
 			this->panelTopbar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxAddProfile))->BeginInit();
@@ -146,12 +157,15 @@ namespace PassUnite {
 			// 
 			this->panel2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(200)), static_cast<System::Int32>(static_cast<System::Byte>(200)),
-				static_cast<System::Int32>(static_cast<System::Byte>(200)));
-			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(210)), static_cast<System::Int32>(static_cast<System::Byte>(210)),
+				static_cast<System::Int32>(static_cast<System::Byte>(210)));
+			this->panel2->Controls->Add(this->labelAboutParagraph2);
+			this->panel2->Controls->Add(this->labelAboutHeader2);
+			this->panel2->Controls->Add(this->labelAboutParagraph1);
+			this->panel2->Controls->Add(this->labelAboutHeader1);
 			this->panel2->Location = System::Drawing::Point(24, 160);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(859, 371);
+			this->panel2->Size = System::Drawing::Size(856, 420);
 			this->panel2->TabIndex = 5;
 			// 
 			// labelTitle
@@ -162,7 +176,7 @@ namespace PassUnite {
 				static_cast<System::Byte>(129)));
 			this->labelTitle->Location = System::Drawing::Point(6, 5);
 			this->labelTitle->Name = L"labelTitle";
-			this->labelTitle->Size = System::Drawing::Size(891, 116);
+			this->labelTitle->Size = System::Drawing::Size(874, 116);
 			this->labelTitle->TabIndex = 3;
 			this->labelTitle->Text = L"Welcome to Pass Unite";
 			this->labelTitle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -174,9 +188,9 @@ namespace PassUnite {
 			this->panel1->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(48)), static_cast<System::Int32>(static_cast<System::Byte>(48)),
 				static_cast<System::Int32>(static_cast<System::Byte>(48)));
-			this->panel1->Location = System::Drawing::Point(68, 123);
+			this->panel1->Location = System::Drawing::Point(68, 115);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(767, 2);
+			this->panel1->Size = System::Drawing::Size(771, 2);
 			this->panel1->TabIndex = 6;
 			// 
 			// labelAppName
@@ -273,11 +287,62 @@ namespace PassUnite {
 			this->panelSidebar->Size = System::Drawing::Size(75, 436);
 			this->panelSidebar->TabIndex = 0;
 			// 
+			// labelAboutHeader1
+			// 
+			this->labelAboutHeader1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelAboutHeader1->Font = (gcnew System::Drawing::Font(L"Gadugi", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelAboutHeader1->Location = System::Drawing::Point(64, 0);
+			this->labelAboutHeader1->Name = L"labelAboutHeader1";
+			this->labelAboutHeader1->Size = System::Drawing::Size(738, 69);
+			this->labelAboutHeader1->TabIndex = 0;
+			this->labelAboutHeader1->Text = L"About Pass Unite";
+			this->labelAboutHeader1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelAboutParagraph1
+			// 
+			this->labelAboutParagraph1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelAboutParagraph1->Font = (gcnew System::Drawing::Font(L"Gadugi", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelAboutParagraph1->Location = System::Drawing::Point(64, 44);
+			this->labelAboutParagraph1->Name = L"labelAboutParagraph1";
+			this->labelAboutParagraph1->Size = System::Drawing::Size(738, 169);
+			this->labelAboutParagraph1->TabIndex = 1;
+			this->labelAboutParagraph1->Text = resources->GetString(L"labelAboutParagraph1.Text");
+			this->labelAboutParagraph1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelAboutHeader2
+			// 
+			this->labelAboutHeader2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelAboutHeader2->Font = (gcnew System::Drawing::Font(L"Gadugi", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelAboutHeader2->Location = System::Drawing::Point(64, 213);
+			this->labelAboutHeader2->Name = L"labelAboutHeader2";
+			this->labelAboutHeader2->Size = System::Drawing::Size(738, 69);
+			this->labelAboutHeader2->TabIndex = 2;
+			this->labelAboutHeader2->Text = L"Why Use Pass Unite\?";
+			this->labelAboutHeader2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelAboutParagraph2
+			// 
+			this->labelAboutParagraph2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelAboutParagraph2->Font = (gcnew System::Drawing::Font(L"Gadugi", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelAboutParagraph2->Location = System::Drawing::Point(60, 255);
+			this->labelAboutParagraph2->Name = L"labelAboutParagraph2";
+			this->labelAboutParagraph2->Size = System::Drawing::Size(742, 147);
+			this->labelAboutParagraph2->TabIndex = 3;
+			this->labelAboutParagraph2->Text = resources->GetString(L"labelAboutParagraph2.Text");
+			this->labelAboutParagraph2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
 			// Home
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->AutoScroll = true;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(69)), static_cast<System::Int32>(static_cast<System::Byte>(85)),
 				static_cast<System::Int32>(static_cast<System::Byte>(76)));
 			this->ClientSize = System::Drawing::Size(1001, 511);
@@ -288,6 +353,7 @@ namespace PassUnite {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Pass Unite";
 			this->panelContent->ResumeLayout(false);
+			this->panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->EndInit();
 			this->panelTopbar->ResumeLayout(false);
 			this->panelTopbar->PerformLayout();
