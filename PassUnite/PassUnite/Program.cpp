@@ -30,52 +30,51 @@ void main(array<String^>^ args)
 		}
 
 		// initialize pages
-		PassUnite::Home homePage(loginPage.user);			// Page 1
-		PassUnite::AddProfiles addProfilesPage(loginPage.user);	// Page 2
-		PassUnite::ProfilesForm profilesPage(loginPage.user, addProfilesPage.profile, addProfilesPage.profileCount);	// Page 3
+		PassUnite::Home^ homePage = nullptr;
+		PassUnite::AddProfiles^ addProfilesPage = nullptr;
+		PassUnite::ProfilesForm^ profilesPage = nullptr;
+
 		// set starting screen
 		PageProperties pageProps;
-		pageProps.page = 1;
+		pageProps.page = loginPage.pageProps.page;
 
-		// run application until logout or close
-		while (true)
+		// run application until logout or terminate request
+		while (pageProps.page > 0)
 		{
+			// update pages
+			PassUnite::Home home(loginPage.user);
+			homePage = % home;
+
+			PassUnite::AddProfiles addProfiles(loginPage.user);
+			PassUnite::ProfilesForm profiles(loginPage.user, addProfiles.profile, addProfiles.profileCount);
+			addProfilesPage = % addProfiles;
+			profilesPage = % profiles;
+
 			// switch between pages
 			switch (pageProps.page)
 			{
 			case 1:
 				// display page
-				homePage.ShowDialog();
+				homePage->ShowDialog();
 
 				// save next page
-				pageProps.page = homePage.pageProps.page;
-
+				pageProps.page = homePage->pageProps.page;
 				break;
 			case 2:
 				// display page
-				addProfilesPage.ShowDialog();
+				addProfilesPage->ShowDialog();
 
 				// save next page
-				pageProps.page = addProfilesPage.pageProps.page;
-
+				pageProps.page = addProfilesPage->pageProps.page;
 				break;
 			case 3:
 				// display page
-				profilesPage.ShowDialog();
+				profilesPage->ShowDialog();
 
 				// save next page
-				pageProps.page = profilesPage.pageProps.page;
-				break;
-			case 0:
-				// if page = 0, show login form
-				break;
-			case -1:
-				// if page = -1, terminate application
+				pageProps.page = profilesPage->pageProps.page;
 				break;
 			}
-			// exit cases
-			if (pageProps.page == 0 || pageProps.page == -1)
-				break;
 		}
 		// closing application
 		if (pageProps.page == -1)

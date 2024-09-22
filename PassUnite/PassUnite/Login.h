@@ -265,9 +265,18 @@ namespace PassUnite {
 		{
 			MessageBox::Show("Failed to connect to database",
 				"Database Connection Error", MessageBoxButtons::OK);
+
+			// exit function
+			return;
 		}
+
+		// point to home page
+		pageProps.page = 1;
 	}
 	private: System::Void buttonCancel_Click(System::Object^ sender, System::EventArgs^ e) {
+		// point to terminate condition
+		pageProps.page = -1;
+
 		// close app
 		this->Close();
 	}

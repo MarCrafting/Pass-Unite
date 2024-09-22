@@ -1,5 +1,4 @@
 #pragma once
-#include "PageProperties.h"
 
 namespace PassUnite {
 

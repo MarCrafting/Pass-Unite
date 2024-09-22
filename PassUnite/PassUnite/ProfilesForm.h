@@ -699,6 +699,7 @@ private: System::Windows::Forms::Label^ labelProfileWebsite10;
 			this->pictureBoxDelProf1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxDelProf1->TabIndex = 1;
 			this->pictureBoxDelProf1->TabStop = false;
+			this->pictureBoxDelProf1->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf1_Click);
 			// 
 			// pictureBoxDelProf2
 			// 
@@ -709,6 +710,7 @@ private: System::Windows::Forms::Label^ labelProfileWebsite10;
 			this->pictureBoxDelProf2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxDelProf2->TabIndex = 1;
 			this->pictureBoxDelProf2->TabStop = false;
+			this->pictureBoxDelProf2->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf2_Click);
 			// 
 			// pictureBoxDelProf3
 			// 
@@ -719,6 +721,7 @@ private: System::Windows::Forms::Label^ labelProfileWebsite10;
 			this->pictureBoxDelProf3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxDelProf3->TabIndex = 1;
 			this->pictureBoxDelProf3->TabStop = false;
+			this->pictureBoxDelProf3->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf3_Click);
 			// 
 			// pictureBoxDelProf4
 			// 
@@ -729,6 +732,7 @@ private: System::Windows::Forms::Label^ labelProfileWebsite10;
 			this->pictureBoxDelProf4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxDelProf4->TabIndex = 1;
 			this->pictureBoxDelProf4->TabStop = false;
+			this->pictureBoxDelProf4->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf4_Click);
 			// 
 			// pictureBoxDelProf5
 			// 
@@ -739,6 +743,7 @@ private: System::Windows::Forms::Label^ labelProfileWebsite10;
 			this->pictureBoxDelProf5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxDelProf5->TabIndex = 1;
 			this->pictureBoxDelProf5->TabStop = false;
+			this->pictureBoxDelProf5->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf5_Click);
 			// 
 			// pictureBoxDelProf6
 			// 
@@ -749,6 +754,7 @@ private: System::Windows::Forms::Label^ labelProfileWebsite10;
 			this->pictureBoxDelProf6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxDelProf6->TabIndex = 1;
 			this->pictureBoxDelProf6->TabStop = false;
+			this->pictureBoxDelProf6->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf6_Click);
 			// 
 			// pictureBoxDelProf10
 			// 
@@ -759,6 +765,7 @@ private: System::Windows::Forms::Label^ labelProfileWebsite10;
 			this->pictureBoxDelProf10->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxDelProf10->TabIndex = 1;
 			this->pictureBoxDelProf10->TabStop = false;
+			this->pictureBoxDelProf10->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf10_Click);
 			// 
 			// pictureBoxDelProf9
 			// 
@@ -769,6 +776,7 @@ private: System::Windows::Forms::Label^ labelProfileWebsite10;
 			this->pictureBoxDelProf9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxDelProf9->TabIndex = 1;
 			this->pictureBoxDelProf9->TabStop = false;
+			this->pictureBoxDelProf9->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf9_Click);
 			// 
 			// pictureBoxDelProf8
 			// 
@@ -779,6 +787,7 @@ private: System::Windows::Forms::Label^ labelProfileWebsite10;
 			this->pictureBoxDelProf8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxDelProf8->TabIndex = 1;
 			this->pictureBoxDelProf8->TabStop = false;
+			this->pictureBoxDelProf8->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf8_Click);
 			// 
 			// pictureBoxDelProf7
 			// 
@@ -789,6 +798,7 @@ private: System::Windows::Forms::Label^ labelProfileWebsite10;
 			this->pictureBoxDelProf7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxDelProf7->TabIndex = 1;
 			this->pictureBoxDelProf7->TabStop = false;
+			this->pictureBoxDelProf7->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf7_Click);
 			// 
 			// labelTitle
 			// 
@@ -1868,7 +1878,9 @@ private: System::Windows::Forms::Label^ labelProfileWebsite10;
 		}
 		catch (Exception^ ex)
 		{
-			MessageBox::Show(ex->Message);		// for troubleshooting
+			//MessageBox::Show(ex->Message);		// for troubleshooting
+			MessageBox::Show("Failed to connect to database",
+				"Database Connection Error", MessageBoxButtons::OK);
 		}
 
 		// decrement profile count
