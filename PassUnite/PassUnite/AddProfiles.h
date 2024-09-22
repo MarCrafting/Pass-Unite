@@ -53,7 +53,7 @@ namespace PassUnite {
 					profile = gcnew Profiles();
 
 					profile->id = profileCount + 1;
-					
+
 					// Website
 					try
 					{
@@ -105,7 +105,7 @@ namespace PassUnite {
 						nextProfile = gcnew Profiles();
 
 						nextProfile->id = profileCount + 1;
-						
+
 						// Website
 						try
 						{
@@ -201,26 +201,26 @@ namespace PassUnite {
 
 
 
-private: System::Windows::Forms::Panel^ panelSidebar;
-private: System::Windows::Forms::PictureBox^ pictureBoxProfiles;
-private: System::Windows::Forms::PictureBox^ pictureBoxSettings;
-private: System::Windows::Forms::PictureBox^ pictureBoxGeneratePassword;
-private: System::Windows::Forms::PictureBox^ pictureBoxAddProfile;
-private: System::Windows::Forms::Panel^ panelTopbar;
-private: System::Windows::Forms::PictureBox^ pictureBoxMenu;
-private: System::Windows::Forms::Label^ labelAppName;
-private: System::Windows::Forms::Panel^ panel1;
-private: System::Windows::Forms::PictureBox^ pictureBoxShowingPass;
-private: System::Windows::Forms::PictureBox^ pictureBoxHidingPass;
-private: System::Windows::Forms::Button^ buttonAdd;
-private: System::Windows::Forms::Button^ buttonGen;
-private: System::Windows::Forms::Label^ labelPassword;
-private: System::Windows::Forms::Label^ labelUsername;
-private: System::Windows::Forms::Label^ labelWebsite;
-private: System::Windows::Forms::TextBox^ textBoxPassword;
-private: System::Windows::Forms::Label^ labelTitle;
-private: System::Windows::Forms::TextBox^ textBoxUsername;
-private: System::Windows::Forms::TextBox^ textBoxWebsite;
+	private: System::Windows::Forms::Panel^ panelSidebar;
+	private: System::Windows::Forms::PictureBox^ pictureBoxProfiles;
+	private: System::Windows::Forms::PictureBox^ pictureBoxSettings;
+	private: System::Windows::Forms::PictureBox^ pictureBoxGeneratePassword;
+	private: System::Windows::Forms::PictureBox^ pictureBoxAddProfile;
+	private: System::Windows::Forms::Panel^ panelTopbar;
+	private: System::Windows::Forms::PictureBox^ pictureBoxMenu;
+	private: System::Windows::Forms::Label^ labelAppName;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::PictureBox^ pictureBoxShowingPass;
+	private: System::Windows::Forms::PictureBox^ pictureBoxHidingPass;
+	private: System::Windows::Forms::Button^ buttonAdd;
+	private: System::Windows::Forms::Button^ buttonGen;
+	private: System::Windows::Forms::Label^ labelPassword;
+	private: System::Windows::Forms::Label^ labelUsername;
+	private: System::Windows::Forms::Label^ labelWebsite;
+	private: System::Windows::Forms::TextBox^ textBoxPassword;
+	private: System::Windows::Forms::Label^ labelTitle;
+	private: System::Windows::Forms::TextBox^ textBoxUsername;
+	private: System::Windows::Forms::TextBox^ textBoxWebsite;
 
 
 

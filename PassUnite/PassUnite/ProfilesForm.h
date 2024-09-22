@@ -162,7 +162,7 @@ namespace PassUnite {
 			// Link Panel 9 & 10
 			panel->next = nextPanel;
 			nextPanel->prev = panel;
-			
+
 			// LAST PANEL
 			nextPanel->next = nullptr;
 
@@ -315,70 +315,70 @@ namespace PassUnite {
 
 
 
-private: System::Windows::Forms::Panel^ panelSidebar;
-private: System::Windows::Forms::PictureBox^ pictureBoxProfiles;
-private: System::Windows::Forms::PictureBox^ pictureBoxSettings;
-private: System::Windows::Forms::PictureBox^ pictureBoxGeneratePassword;
-private: System::Windows::Forms::PictureBox^ pictureBoxAddProfile;
-private: System::Windows::Forms::Panel^ panelTopbar;
-private: System::Windows::Forms::PictureBox^ pictureBoxMenu;
-private: System::Windows::Forms::Label^ labelAppName;
-private: System::Windows::Forms::Panel^ panelContent;
-private: System::Windows::Forms::PictureBox^ pictureBoxDelProf1;
-private: System::Windows::Forms::PictureBox^ pictureBoxDelProf2;
-private: System::Windows::Forms::PictureBox^ pictureBoxDelProf3;
-private: System::Windows::Forms::PictureBox^ pictureBoxDelProf4;
-private: System::Windows::Forms::PictureBox^ pictureBoxDelProf5;
-private: System::Windows::Forms::PictureBox^ pictureBoxDelProf6;
-private: System::Windows::Forms::PictureBox^ pictureBoxDelProf10;
-private: System::Windows::Forms::PictureBox^ pictureBoxDelProf9;
-private: System::Windows::Forms::PictureBox^ pictureBoxDelProf8;
-private: System::Windows::Forms::PictureBox^ pictureBoxDelProf7;
-private: System::Windows::Forms::Label^ labelTitle;
-private: System::Windows::Forms::Label^ labelColumnWebsite;
-private: System::Windows::Forms::Label^ labelColumnUsernames;
-private: System::Windows::Forms::Label^ labelColumnPasswords;
-private: System::Windows::Forms::Panel^ panelSeperationLine1;
-private: System::Windows::Forms::Panel^ panel1;
-private: System::Windows::Forms::Label^ labelProfilePassword1;
-private: System::Windows::Forms::Label^ labelProfileUsername1;
-private: System::Windows::Forms::Label^ labelProfileWebsite1;
-private: System::Windows::Forms::Panel^ panel2;
-private: System::Windows::Forms::Label^ labelProfilePassword2;
-private: System::Windows::Forms::Label^ labelProfileUsername2;
-private: System::Windows::Forms::Label^ labelProfileWebsite2;
-private: System::Windows::Forms::Panel^ panel3;
-private: System::Windows::Forms::Label^ labelProfilePassword3;
-private: System::Windows::Forms::Label^ labelProfileUsername3;
-private: System::Windows::Forms::Label^ labelProfileWebsite3;
-private: System::Windows::Forms::Panel^ panel4;
-private: System::Windows::Forms::Label^ labelProfilePassword4;
-private: System::Windows::Forms::Label^ labelProfileUsername4;
-private: System::Windows::Forms::Label^ labelProfileWebsite4;
-private: System::Windows::Forms::Panel^ panel5;
-private: System::Windows::Forms::Label^ labelProfilePassword5;
-private: System::Windows::Forms::Label^ labelProfileUsername5;
-private: System::Windows::Forms::Label^ labelProfileWebsite5;
-private: System::Windows::Forms::Panel^ panel6;
-private: System::Windows::Forms::Label^ labelProfilePassword6;
-private: System::Windows::Forms::Label^ labelProfileUsername6;
-private: System::Windows::Forms::Label^ labelProfileWebsite6;
-private: System::Windows::Forms::Panel^ panel7;
-private: System::Windows::Forms::Label^ labelProfilePassword7;
-private: System::Windows::Forms::Label^ labelProfileUsername7;
-private: System::Windows::Forms::Label^ labelProfileWebsite7;
-private: System::Windows::Forms::Panel^ panel8;
-private: System::Windows::Forms::Label^ labelProfilePassword8;
-private: System::Windows::Forms::Label^ labelProfileUsername8;
-private: System::Windows::Forms::Label^ labelProfileWebsite8;
-private: System::Windows::Forms::Panel^ panel9;
-private: System::Windows::Forms::Label^ labelProfilePassword9;
-private: System::Windows::Forms::Label^ labelProfileUsername9;
-private: System::Windows::Forms::Label^ labelProfileWebsite9;
-private: System::Windows::Forms::Panel^ panel10;
-private: System::Windows::Forms::Label^ labelProfilePassword10;
-private: System::Windows::Forms::Label^ labelProfileUsername10;
-private: System::Windows::Forms::Label^ labelProfileWebsite10;
+	private: System::Windows::Forms::Panel^ panelSidebar;
+	private: System::Windows::Forms::PictureBox^ pictureBoxProfiles;
+	private: System::Windows::Forms::PictureBox^ pictureBoxSettings;
+	private: System::Windows::Forms::PictureBox^ pictureBoxGeneratePassword;
+	private: System::Windows::Forms::PictureBox^ pictureBoxAddProfile;
+	private: System::Windows::Forms::Panel^ panelTopbar;
+	private: System::Windows::Forms::PictureBox^ pictureBoxMenu;
+	private: System::Windows::Forms::Label^ labelAppName;
+	private: System::Windows::Forms::Panel^ panelContent;
+	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf1;
+	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf2;
+	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf3;
+	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf4;
+	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf5;
+	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf6;
+	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf10;
+	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf9;
+	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf8;
+	private: System::Windows::Forms::PictureBox^ pictureBoxDelProf7;
+	private: System::Windows::Forms::Label^ labelTitle;
+	private: System::Windows::Forms::Label^ labelColumnWebsite;
+	private: System::Windows::Forms::Label^ labelColumnUsernames;
+	private: System::Windows::Forms::Label^ labelColumnPasswords;
+	private: System::Windows::Forms::Panel^ panelSeperationLine1;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Label^ labelProfilePassword1;
+	private: System::Windows::Forms::Label^ labelProfileUsername1;
+	private: System::Windows::Forms::Label^ labelProfileWebsite1;
+	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::Label^ labelProfilePassword2;
+	private: System::Windows::Forms::Label^ labelProfileUsername2;
+	private: System::Windows::Forms::Label^ labelProfileWebsite2;
+	private: System::Windows::Forms::Panel^ panel3;
+	private: System::Windows::Forms::Label^ labelProfilePassword3;
+	private: System::Windows::Forms::Label^ labelProfileUsername3;
+	private: System::Windows::Forms::Label^ labelProfileWebsite3;
+	private: System::Windows::Forms::Panel^ panel4;
+	private: System::Windows::Forms::Label^ labelProfilePassword4;
+	private: System::Windows::Forms::Label^ labelProfileUsername4;
+	private: System::Windows::Forms::Label^ labelProfileWebsite4;
+	private: System::Windows::Forms::Panel^ panel5;
+	private: System::Windows::Forms::Label^ labelProfilePassword5;
+	private: System::Windows::Forms::Label^ labelProfileUsername5;
+	private: System::Windows::Forms::Label^ labelProfileWebsite5;
+	private: System::Windows::Forms::Panel^ panel6;
+	private: System::Windows::Forms::Label^ labelProfilePassword6;
+	private: System::Windows::Forms::Label^ labelProfileUsername6;
+	private: System::Windows::Forms::Label^ labelProfileWebsite6;
+	private: System::Windows::Forms::Panel^ panel7;
+	private: System::Windows::Forms::Label^ labelProfilePassword7;
+	private: System::Windows::Forms::Label^ labelProfileUsername7;
+	private: System::Windows::Forms::Label^ labelProfileWebsite7;
+	private: System::Windows::Forms::Panel^ panel8;
+	private: System::Windows::Forms::Label^ labelProfilePassword8;
+	private: System::Windows::Forms::Label^ labelProfileUsername8;
+	private: System::Windows::Forms::Label^ labelProfileWebsite8;
+	private: System::Windows::Forms::Panel^ panel9;
+	private: System::Windows::Forms::Label^ labelProfilePassword9;
+	private: System::Windows::Forms::Label^ labelProfileUsername9;
+	private: System::Windows::Forms::Label^ labelProfileWebsite9;
+	private: System::Windows::Forms::Panel^ panel10;
+	private: System::Windows::Forms::Label^ labelProfilePassword10;
+	private: System::Windows::Forms::Label^ labelProfileUsername10;
+	private: System::Windows::Forms::Label^ labelProfileWebsite10;
 
 
 
@@ -1427,11 +1427,11 @@ private: System::Windows::Forms::Label^ labelProfileWebsite10;
 
 		}
 #pragma endregion
+	public: PageProperties pageProps;
+
 	private:  System::Drawing::Point firstPanelPoint;
 
 	public: int profileCount;
-
-	public: PageProperties pageProps;
 
 	public: User^ user = nullptr;
 
@@ -1887,25 +1887,25 @@ private: System::Windows::Forms::Label^ labelProfileWebsite10;
 		profileCount--;
 	}
 
-	//private: void RefreshProfiles(Profiles^% _profile) {
+		   //private: void RefreshProfiles(Profiles^% _profile) {
 
-	//}
+		   //}
 
-	//private: void CleanupProfiles()
-	//{
-	//	// loop from first to last profile
-	//	while (profile->prev != nullptr)
-	//		profile = profile->prev;
+		   //private: void CleanupProfiles()
+		   //{
+		   //	// loop from first to last profile
+		   //	while (profile->prev != nullptr)
+		   //		profile = profile->prev;
 
-	//	while (true)
-	//	{
-	//		// verify next node's id = 1 + curr->id
-	//		if (profile->next == nullptr)
-	//			break;
-	//	}
-	//}
+		   //	while (true)
+		   //	{
+		   //		// verify next node's id = 1 + curr->id
+		   //		if (profile->next == nullptr)
+		   //			break;
+		   //	}
+		   //}
 
-	private: void RefreshLabels(Panels^ %_panel)
+	private: void RefreshLabels(Panels^% _panel)
 	{
 		while (true)
 		{
@@ -1928,5 +1928,5 @@ private: System::Windows::Forms::Label^ labelProfileWebsite10;
 				panel = panel->next;
 		}
 	}
-	};
+};
 }

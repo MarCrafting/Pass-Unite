@@ -15,6 +15,8 @@ void main(array<String^>^ args)
 	Application::SetCompatibleTextRenderingDefault(false);
 	PassUnite::Login loginPage;
 
+	System::Windows::Forms::FormWindowState windowState = System::Windows::Forms::FormWindowState::Normal;
+
 	while (true)
 	{
 		loginPage.ShowDialog();
@@ -55,24 +57,30 @@ void main(array<String^>^ args)
 			{
 			case 1:
 				// display page
+				homePage->WindowState = windowState;
 				homePage->ShowDialog();
 
 				// save next page
 				pageProps.page = homePage->pageProps.page;
+				windowState = homePage->WindowState;
 				break;
 			case 2:
 				// display page
+				addProfilesPage->WindowState = windowState;
 				addProfilesPage->ShowDialog();
 
 				// save next page
 				pageProps.page = addProfilesPage->pageProps.page;
+				windowState = addProfilesPage->WindowState;
 				break;
 			case 3:
 				// display page
+				profilesPage->WindowState = windowState;
 				profilesPage->ShowDialog();
 
 				// save next page
 				pageProps.page = profilesPage->pageProps.page;
+				windowState = profilesPage->WindowState;
 				break;
 			}
 		}

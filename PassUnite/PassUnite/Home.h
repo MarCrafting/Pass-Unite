@@ -123,6 +123,12 @@ namespace PassUnite {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Home::typeid));
 			this->panelContent = (gcnew System::Windows::Forms::Panel());
+			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->labelContactParagraph2 = (gcnew System::Windows::Forms::Label());
+			this->labelContactEmail = (gcnew System::Windows::Forms::Label());
+			this->labelContactParagraph1 = (gcnew System::Windows::Forms::Label());
+			this->labelContactHeader1 = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->labelAboutParagraph2 = (gcnew System::Windows::Forms::Label());
@@ -138,13 +144,8 @@ namespace PassUnite {
 			this->pictureBoxSettings = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBoxProfiles = (gcnew System::Windows::Forms::PictureBox());
 			this->panelSidebar = (gcnew System::Windows::Forms::Panel());
-			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->labelContactEmail = (gcnew System::Windows::Forms::Label());
-			this->labelContactParagraph1 = (gcnew System::Windows::Forms::Label());
-			this->labelContactHeader1 = (gcnew System::Windows::Forms::Label());
-			this->panel4 = (gcnew System::Windows::Forms::Panel());
-			this->labelContactParagraph2 = (gcnew System::Windows::Forms::Label());
 			this->panelContent->SuspendLayout();
+			this->panel3->SuspendLayout();
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->BeginInit();
 			this->panelTopbar->SuspendLayout();
@@ -153,7 +154,6 @@ namespace PassUnite {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxSettings))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxProfiles))->BeginInit();
 			this->panelSidebar->SuspendLayout();
-			this->panel3->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panelContent
@@ -171,6 +171,87 @@ namespace PassUnite {
 			this->panelContent->Name = L"panelContent";
 			this->panelContent->Size = System::Drawing::Size(926, 436);
 			this->panelContent->TabIndex = 3;
+			// 
+			// panel4
+			// 
+			this->panel4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->panel4->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->panel4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(48)), static_cast<System::Int32>(static_cast<System::Byte>(48)),
+				static_cast<System::Int32>(static_cast<System::Byte>(48)));
+			this->panel4->Location = System::Drawing::Point(69, 632);
+			this->panel4->Name = L"panel4";
+			this->panel4->Size = System::Drawing::Size(771, 2);
+			this->panel4->TabIndex = 8;
+			// 
+			// panel3
+			// 
+			this->panel3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->panel3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(210)), static_cast<System::Int32>(static_cast<System::Byte>(210)),
+				static_cast<System::Int32>(static_cast<System::Byte>(210)));
+			this->panel3->Controls->Add(this->labelContactParagraph2);
+			this->panel3->Controls->Add(this->labelContactEmail);
+			this->panel3->Controls->Add(this->labelContactParagraph1);
+			this->panel3->Controls->Add(this->labelContactHeader1);
+			this->panel3->Location = System::Drawing::Point(88, 688);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(738, 297);
+			this->panel3->TabIndex = 7;
+			// 
+			// labelContactParagraph2
+			// 
+			this->labelContactParagraph2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelContactParagraph2->Font = (gcnew System::Drawing::Font(L"Gadugi", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelContactParagraph2->Location = System::Drawing::Point(21, 142);
+			this->labelContactParagraph2->Name = L"labelContactParagraph2";
+			this->labelContactParagraph2->Size = System::Drawing::Size(699, 71);
+			this->labelContactParagraph2->TabIndex = 3;
+			this->labelContactParagraph2->Text = L"Any reports and suggestions towards improving this app are welcome, feel free to "
+				L"reach out to me by the email below!";
+			this->labelContactParagraph2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelContactEmail
+			// 
+			this->labelContactEmail->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelContactEmail->Font = (gcnew System::Drawing::Font(L"Gadugi", 14.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->labelContactEmail->Location = System::Drawing::Point(64, 213);
+			this->labelContactEmail->Name = L"labelContactEmail";
+			this->labelContactEmail->Size = System::Drawing::Size(620, 69);
+			this->labelContactEmail->TabIndex = 2;
+			this->labelContactEmail->Text = L"marcuslaguerre11@gmail.com";
+			this->labelContactEmail->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelContactParagraph1
+			// 
+			this->labelContactParagraph1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelContactParagraph1->Font = (gcnew System::Drawing::Font(L"Gadugi", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelContactParagraph1->Location = System::Drawing::Point(25, 69);
+			this->labelContactParagraph1->Name = L"labelContactParagraph1";
+			this->labelContactParagraph1->Size = System::Drawing::Size(695, 71);
+			this->labelContactParagraph1->TabIndex = 1;
+			this->labelContactParagraph1->Text = L"Hello, my name is Marcus Laguerre and I am currently a full-time student at Full "
+				L"Sail University enrolled for the Bachelor\'s of Computer Science online course.";
+			this->labelContactParagraph1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelContactHeader1
+			// 
+			this->labelContactHeader1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelContactHeader1->Font = (gcnew System::Drawing::Font(L"Gadugi", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelContactHeader1->Location = System::Drawing::Point(64, 0);
+			this->labelContactHeader1->Name = L"labelContactHeader1";
+			this->labelContactHeader1->Size = System::Drawing::Size(620, 69);
+			this->labelContactHeader1->TabIndex = 0;
+			this->labelContactHeader1->Text = L"Contact Me";
+			this->labelContactHeader1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// panel1
 			// 
@@ -358,87 +439,6 @@ namespace PassUnite {
 			this->panelSidebar->Size = System::Drawing::Size(75, 436);
 			this->panelSidebar->TabIndex = 0;
 			// 
-			// panel3
-			// 
-			this->panel3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->panel3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(210)), static_cast<System::Int32>(static_cast<System::Byte>(210)),
-				static_cast<System::Int32>(static_cast<System::Byte>(210)));
-			this->panel3->Controls->Add(this->labelContactParagraph2);
-			this->panel3->Controls->Add(this->labelContactEmail);
-			this->panel3->Controls->Add(this->labelContactParagraph1);
-			this->panel3->Controls->Add(this->labelContactHeader1);
-			this->panel3->Location = System::Drawing::Point(88, 688);
-			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(738, 297);
-			this->panel3->TabIndex = 7;
-			// 
-			// labelContactEmail
-			// 
-			this->labelContactEmail->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelContactEmail->Font = (gcnew System::Drawing::Font(L"Gadugi", 14.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelContactEmail->Location = System::Drawing::Point(64, 213);
-			this->labelContactEmail->Name = L"labelContactEmail";
-			this->labelContactEmail->Size = System::Drawing::Size(620, 69);
-			this->labelContactEmail->TabIndex = 2;
-			this->labelContactEmail->Text = L"marcuslaguerre11@gmail.com";
-			this->labelContactEmail->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelContactParagraph1
-			// 
-			this->labelContactParagraph1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelContactParagraph1->Font = (gcnew System::Drawing::Font(L"Gadugi", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelContactParagraph1->Location = System::Drawing::Point(25, 69);
-			this->labelContactParagraph1->Name = L"labelContactParagraph1";
-			this->labelContactParagraph1->Size = System::Drawing::Size(695, 71);
-			this->labelContactParagraph1->TabIndex = 1;
-			this->labelContactParagraph1->Text = L"Hello, my name is Marcus Laguerre and I am currently a full-time student at Full "
-				L"Sail University enrolled for the Bachelor\'s of Computer Science online course.";
-			this->labelContactParagraph1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelContactHeader1
-			// 
-			this->labelContactHeader1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelContactHeader1->Font = (gcnew System::Drawing::Font(L"Gadugi", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelContactHeader1->Location = System::Drawing::Point(64, 0);
-			this->labelContactHeader1->Name = L"labelContactHeader1";
-			this->labelContactHeader1->Size = System::Drawing::Size(620, 69);
-			this->labelContactHeader1->TabIndex = 0;
-			this->labelContactHeader1->Text = L"Contact Me";
-			this->labelContactHeader1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// panel4
-			// 
-			this->panel4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->panel4->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-			this->panel4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(48)), static_cast<System::Int32>(static_cast<System::Byte>(48)),
-				static_cast<System::Int32>(static_cast<System::Byte>(48)));
-			this->panel4->Location = System::Drawing::Point(69, 632);
-			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(771, 2);
-			this->panel4->TabIndex = 8;
-			// 
-			// labelContactParagraph2
-			// 
-			this->labelContactParagraph2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->labelContactParagraph2->Font = (gcnew System::Drawing::Font(L"Gadugi", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->labelContactParagraph2->Location = System::Drawing::Point(21, 142);
-			this->labelContactParagraph2->Name = L"labelContactParagraph2";
-			this->labelContactParagraph2->Size = System::Drawing::Size(699, 71);
-			this->labelContactParagraph2->TabIndex = 3;
-			this->labelContactParagraph2->Text = L"Any reports and suggestions towards improving this app are welcome, feel free to "
-				L"reach out to me by the email below!";
-			this->labelContactParagraph2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
 			// Home
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -453,6 +453,7 @@ namespace PassUnite {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Pass Unite";
 			this->panelContent->ResumeLayout(false);
+			this->panel3->ResumeLayout(false);
 			this->panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->EndInit();
 			this->panelTopbar->ResumeLayout(false);
@@ -462,7 +463,6 @@ namespace PassUnite {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxSettings))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxProfiles))->EndInit();
 			this->panelSidebar->ResumeLayout(false);
-			this->panel3->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -514,5 +514,5 @@ namespace PassUnite {
 	{
 		// open side bar
 	}
-	};
+};
 }
