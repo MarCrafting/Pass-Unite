@@ -100,7 +100,7 @@ namespace PassUnite {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->labelUser->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelUser->Location = System::Drawing::Point(134, 203);
+			this->labelUser->Location = System::Drawing::Point(134, 195);
 			this->labelUser->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->labelUser->Name = L"labelUser";
 			this->labelUser->Size = System::Drawing::Size(185, 35);
@@ -109,7 +109,7 @@ namespace PassUnite {
 			// 
 			// textBoxUser
 			// 
-			this->textBoxUser->Location = System::Drawing::Point(331, 203);
+			this->textBoxUser->Location = System::Drawing::Point(331, 195);
 			this->textBoxUser->Margin = System::Windows::Forms::Padding(6);
 			this->textBoxUser->Name = L"textBoxUser";
 			this->textBoxUser->Size = System::Drawing::Size(268, 35);
@@ -146,14 +146,15 @@ namespace PassUnite {
 			this->linkLabelRegister->TabIndex = 5;
 			this->linkLabelRegister->TabStop = true;
 			this->linkLabelRegister->Text = L"Register";
+			this->linkLabelRegister->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &Login::linkLabelRegister_LinkClicked);
 			// 
 			// buttonOK
 			// 
 			this->buttonOK->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->buttonOK->Location = System::Drawing::Point(443, 285);
+			this->buttonOK->Location = System::Drawing::Point(433, 285);
 			this->buttonOK->Name = L"buttonOK";
-			this->buttonOK->Size = System::Drawing::Size(75, 23);
+			this->buttonOK->Size = System::Drawing::Size(80, 31);
 			this->buttonOK->TabIndex = 3;
 			this->buttonOK->Text = L"OK";
 			this->buttonOK->UseVisualStyleBackColor = true;
@@ -161,11 +162,12 @@ namespace PassUnite {
 			// 
 			// buttonCancel
 			// 
+			this->buttonCancel->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->buttonCancel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->buttonCancel->Location = System::Drawing::Point(524, 285);
+			this->buttonCancel->Location = System::Drawing::Point(519, 285);
 			this->buttonCancel->Name = L"buttonCancel";
-			this->buttonCancel->Size = System::Drawing::Size(75, 23);
+			this->buttonCancel->Size = System::Drawing::Size(80, 31);
 			this->buttonCancel->TabIndex = 4;
 			this->buttonCancel->Text = L"Cancel";
 			this->buttonCancel->UseVisualStyleBackColor = true;
@@ -205,7 +207,11 @@ namespace PassUnite {
 
 	public: PageProperties pageProps;
 
+	public: bool switchToRegister = false;
+
 	private: System::Void buttonOK_Click(System::Object^ sender, System::EventArgs^ e) {
+		switchToRegister = false;
+
 		// check if either textbox is empty
 		String^ username = textBoxUser->Text;
 		String^ password = textBoxPass->Text;
@@ -228,7 +234,7 @@ namespace PassUnite {
 			// create SQL query, with placeholders
 			String^ sqlQuery = "SELECT * FROM accountUsers WHERE username=@user AND password=@pass;";
 
-			// swap placeholders with appropriate variables
+			// swap placeholders
 			SqlCommand command(sqlQuery, % sqlConn);
 			command.Parameters->AddWithValue("user", username);
 			command.Parameters->AddWithValue("pass", password);
@@ -263,6 +269,11 @@ namespace PassUnite {
 	}
 	private: System::Void buttonCancel_Click(System::Object^ sender, System::EventArgs^ e) {
 		// close app
+		this->Close();
+	}
+
+	private: System::Void linkLabelRegister_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+		switchToRegister = true;
 		this->Close();
 	}
 	};

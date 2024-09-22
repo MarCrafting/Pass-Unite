@@ -1,4 +1,5 @@
 #include "Login.h"
+#include "Register.h"
 #include "Home.h"
 #include "AddProfiles.h"
 #include "ProfilesForm.h"
@@ -18,8 +19,15 @@ void main(array<String^>^ args)
 	{
 		loginPage.ShowDialog();
 
-		if (loginPage.pageProps.page != 1)
-			break;
+		if (loginPage.switchToRegister)
+		{
+			// open register form
+			PassUnite::Register registerPage;
+			registerPage.ShowDialog();
+
+			if (registerPage.switchToLogin)
+				continue;
+		}
 
 		// initialize pages
 		PassUnite::Home homePage(loginPage.user);			// Page 1
