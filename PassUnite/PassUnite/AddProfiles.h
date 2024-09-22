@@ -176,21 +176,21 @@ namespace PassUnite {
 
 	protected:
 	private: System::Windows::Forms::Label^ labelTitle;
-	private: System::Windows::Forms::Panel^ panelSidebar;
-	private: System::Windows::Forms::PictureBox^ pictureBoxMenu;
-	private: System::Windows::Forms::PictureBox^ pictureBoxProfiles;
-
-
-	private: System::Windows::Forms::PictureBox^ pictureBoxSettings;
-	private: System::Windows::Forms::PictureBox^ pictureBoxGeneratePassword;
 
 
 
-	private: System::Windows::Forms::PictureBox^ pictureBoxAddProfile;
 
 
-	private: System::Windows::Forms::Panel^ panelTopbar;
-	private: System::Windows::Forms::Label^ labelAppName;
+
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Label^ labelWebsite;
 	private: System::Windows::Forms::TextBox^ textBoxUsername;
 
@@ -201,6 +201,30 @@ namespace PassUnite {
 	private: System::Windows::Forms::Button^ buttonAdd;
 	private: System::Windows::Forms::PictureBox^ pictureBoxHidingPass;
 	private: System::Windows::Forms::PictureBox^ pictureBoxShowingPass;
+private: System::Windows::Forms::Panel^ panelSidebar;
+private: System::Windows::Forms::PictureBox^ pictureBoxProfiles;
+private: System::Windows::Forms::PictureBox^ pictureBoxSettings;
+private: System::Windows::Forms::PictureBox^ pictureBoxGeneratePassword;
+private: System::Windows::Forms::PictureBox^ pictureBoxAddProfile;
+private: System::Windows::Forms::Panel^ panelTopbar;
+private: System::Windows::Forms::PictureBox^ pictureBoxMenu;
+private: System::Windows::Forms::Label^ labelAppName;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -233,14 +257,6 @@ namespace PassUnite {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(AddProfiles::typeid));
 			this->textBoxWebsite = (gcnew System::Windows::Forms::TextBox());
 			this->labelTitle = (gcnew System::Windows::Forms::Label());
-			this->panelSidebar = (gcnew System::Windows::Forms::Panel());
-			this->pictureBoxMenu = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxProfiles = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxSettings = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxGeneratePassword = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxAddProfile = (gcnew System::Windows::Forms::PictureBox());
-			this->panelTopbar = (gcnew System::Windows::Forms::Panel());
-			this->labelAppName = (gcnew System::Windows::Forms::Label());
 			this->labelWebsite = (gcnew System::Windows::Forms::Label());
 			this->textBoxUsername = (gcnew System::Windows::Forms::TextBox());
 			this->labelUsername = (gcnew System::Windows::Forms::Label());
@@ -250,22 +266,30 @@ namespace PassUnite {
 			this->buttonAdd = (gcnew System::Windows::Forms::Button());
 			this->pictureBoxHidingPass = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBoxShowingPass = (gcnew System::Windows::Forms::PictureBox());
+			this->panelSidebar = (gcnew System::Windows::Forms::Panel());
+			this->pictureBoxProfiles = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxSettings = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxGeneratePassword = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxAddProfile = (gcnew System::Windows::Forms::PictureBox());
+			this->panelTopbar = (gcnew System::Windows::Forms::Panel());
+			this->pictureBoxMenu = (gcnew System::Windows::Forms::PictureBox());
+			this->labelAppName = (gcnew System::Windows::Forms::Label());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingPass))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingPass))->BeginInit();
 			this->panelSidebar->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxProfiles))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxSettings))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxGeneratePassword))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxAddProfile))->BeginInit();
 			this->panelTopbar->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingPass))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingPass))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// textBoxWebsite
 			// 
 			this->textBoxWebsite->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(78)), static_cast<System::Int32>(static_cast<System::Byte>(95)),
 				static_cast<System::Int32>(static_cast<System::Byte>(114)));
-			this->textBoxWebsite->Location = System::Drawing::Point(484, 229);
+			this->textBoxWebsite->Location = System::Drawing::Point(462, 216);
 			this->textBoxWebsite->Name = L"textBoxWebsite";
 			this->textBoxWebsite->Size = System::Drawing::Size(316, 38);
 			this->textBoxWebsite->TabIndex = 0;
@@ -283,105 +307,10 @@ namespace PassUnite {
 			this->labelTitle->Text = L"Add a Profile";
 			this->labelTitle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// panelSidebar
-			// 
-			this->panelSidebar->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left));
-			this->panelSidebar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(48)), static_cast<System::Int32>(static_cast<System::Byte>(48)),
-				static_cast<System::Int32>(static_cast<System::Byte>(48)));
-			this->panelSidebar->Controls->Add(this->pictureBoxMenu);
-			this->panelSidebar->Controls->Add(this->pictureBoxProfiles);
-			this->panelSidebar->Controls->Add(this->pictureBoxSettings);
-			this->panelSidebar->Controls->Add(this->pictureBoxGeneratePassword);
-			this->panelSidebar->Controls->Add(this->pictureBoxAddProfile);
-			this->panelSidebar->Location = System::Drawing::Point(0, -1);
-			this->panelSidebar->Name = L"panelSidebar";
-			this->panelSidebar->Size = System::Drawing::Size(75, 515);
-			this->panelSidebar->TabIndex = 5;
-			// 
-			// pictureBoxMenu
-			// 
-			this->pictureBoxMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxMenu.Image")));
-			this->pictureBoxMenu->Location = System::Drawing::Point(20, 21);
-			this->pictureBoxMenu->Name = L"pictureBoxMenu";
-			this->pictureBoxMenu->Size = System::Drawing::Size(35, 35);
-			this->pictureBoxMenu->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxMenu->TabIndex = 1;
-			this->pictureBoxMenu->TabStop = false;
-			// 
-			// pictureBoxProfiles
-			// 
-			this->pictureBoxProfiles->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxProfiles.Image")));
-			this->pictureBoxProfiles->Location = System::Drawing::Point(20, 351);
-			this->pictureBoxProfiles->Name = L"pictureBoxProfiles";
-			this->pictureBoxProfiles->Size = System::Drawing::Size(35, 35);
-			this->pictureBoxProfiles->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxProfiles->TabIndex = 0;
-			this->pictureBoxProfiles->TabStop = false;
-			this->pictureBoxProfiles->Click += gcnew System::EventHandler(this, &AddProfiles::pictureBoxProfiles_Click);
-			// 
-			// pictureBoxSettings
-			// 
-			this->pictureBoxSettings->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxSettings.Image")));
-			this->pictureBoxSettings->Location = System::Drawing::Point(20, 231);
-			this->pictureBoxSettings->Name = L"pictureBoxSettings";
-			this->pictureBoxSettings->Size = System::Drawing::Size(35, 35);
-			this->pictureBoxSettings->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxSettings->TabIndex = 0;
-			this->pictureBoxSettings->TabStop = false;
-			this->pictureBoxSettings->Click += gcnew System::EventHandler(this, &AddProfiles::pictureBoxSettings_Click);
-			// 
-			// pictureBoxGeneratePassword
-			// 
-			this->pictureBoxGeneratePassword->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxGeneratePassword.Image")));
-			this->pictureBoxGeneratePassword->Location = System::Drawing::Point(20, 171);
-			this->pictureBoxGeneratePassword->Name = L"pictureBoxGeneratePassword";
-			this->pictureBoxGeneratePassword->Size = System::Drawing::Size(35, 35);
-			this->pictureBoxGeneratePassword->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxGeneratePassword->TabIndex = 0;
-			this->pictureBoxGeneratePassword->TabStop = false;
-			this->pictureBoxGeneratePassword->Click += gcnew System::EventHandler(this, &AddProfiles::pictureBoxGeneratePassword_Click);
-			// 
-			// pictureBoxAddProfile
-			// 
-			this->pictureBoxAddProfile->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxAddProfile.Image")));
-			this->pictureBoxAddProfile->Location = System::Drawing::Point(20, 111);
-			this->pictureBoxAddProfile->Name = L"pictureBoxAddProfile";
-			this->pictureBoxAddProfile->Size = System::Drawing::Size(35, 35);
-			this->pictureBoxAddProfile->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxAddProfile->TabIndex = 0;
-			this->pictureBoxAddProfile->TabStop = false;
-			// 
-			// panelTopbar
-			// 
-			this->panelTopbar->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->panelTopbar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(48)), static_cast<System::Int32>(static_cast<System::Byte>(48)),
-				static_cast<System::Int32>(static_cast<System::Byte>(48)));
-			this->panelTopbar->Controls->Add(this->labelAppName);
-			this->panelTopbar->Location = System::Drawing::Point(0, -1);
-			this->panelTopbar->Name = L"panelTopbar";
-			this->panelTopbar->Size = System::Drawing::Size(985, 75);
-			this->panelTopbar->TabIndex = 6;
-			// 
-			// labelAppName
-			// 
-			this->labelAppName->AutoSize = true;
-			this->labelAppName->Font = (gcnew System::Drawing::Font(L"Yet R", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(129)));
-			this->labelAppName->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(135)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
-				static_cast<System::Int32>(static_cast<System::Byte>(135)));
-			this->labelAppName->Location = System::Drawing::Point(100, 24);
-			this->labelAppName->Name = L"labelAppName";
-			this->labelAppName->Size = System::Drawing::Size(152, 28);
-			this->labelAppName->TabIndex = 0;
-			this->labelAppName->Text = L"Pass Unite";
-			this->labelAppName->Click += gcnew System::EventHandler(this, &AddProfiles::labelAppName_Click);
-			// 
 			// labelWebsite
 			// 
 			this->labelWebsite->AutoSize = true;
-			this->labelWebsite->Location = System::Drawing::Point(290, 232);
+			this->labelWebsite->Location = System::Drawing::Point(268, 219);
 			this->labelWebsite->Name = L"labelWebsite";
 			this->labelWebsite->Size = System::Drawing::Size(128, 31);
 			this->labelWebsite->TabIndex = 7;
@@ -391,7 +320,7 @@ namespace PassUnite {
 			// 
 			this->textBoxUsername->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(78)), static_cast<System::Int32>(static_cast<System::Byte>(95)),
 				static_cast<System::Int32>(static_cast<System::Byte>(114)));
-			this->textBoxUsername->Location = System::Drawing::Point(484, 297);
+			this->textBoxUsername->Location = System::Drawing::Point(462, 284);
 			this->textBoxUsername->Name = L"textBoxUsername";
 			this->textBoxUsername->Size = System::Drawing::Size(316, 38);
 			this->textBoxUsername->TabIndex = 1;
@@ -399,7 +328,7 @@ namespace PassUnite {
 			// labelUsername
 			// 
 			this->labelUsername->AutoSize = true;
-			this->labelUsername->Location = System::Drawing::Point(290, 300);
+			this->labelUsername->Location = System::Drawing::Point(268, 287);
 			this->labelUsername->Name = L"labelUsername";
 			this->labelUsername->Size = System::Drawing::Size(147, 31);
 			this->labelUsername->TabIndex = 7;
@@ -409,7 +338,7 @@ namespace PassUnite {
 			// 
 			this->textBoxPassword->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(78)), static_cast<System::Int32>(static_cast<System::Byte>(95)),
 				static_cast<System::Int32>(static_cast<System::Byte>(114)));
-			this->textBoxPassword->Location = System::Drawing::Point(484, 345);
+			this->textBoxPassword->Location = System::Drawing::Point(462, 332);
 			this->textBoxPassword->Name = L"textBoxPassword";
 			this->textBoxPassword->Size = System::Drawing::Size(316, 38);
 			this->textBoxPassword->TabIndex = 2;
@@ -418,7 +347,7 @@ namespace PassUnite {
 			// labelPassword
 			// 
 			this->labelPassword->AutoSize = true;
-			this->labelPassword->Location = System::Drawing::Point(290, 348);
+			this->labelPassword->Location = System::Drawing::Point(268, 335);
 			this->labelPassword->Name = L"labelPassword";
 			this->labelPassword->Size = System::Drawing::Size(142, 31);
 			this->labelPassword->TabIndex = 7;
@@ -431,7 +360,7 @@ namespace PassUnite {
 			this->buttonGen->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->buttonGen->ForeColor = System::Drawing::Color::Black;
-			this->buttonGen->Location = System::Drawing::Point(608, 389);
+			this->buttonGen->Location = System::Drawing::Point(586, 376);
 			this->buttonGen->Name = L"buttonGen";
 			this->buttonGen->Size = System::Drawing::Size(90, 28);
 			this->buttonGen->TabIndex = 4;
@@ -445,7 +374,7 @@ namespace PassUnite {
 			this->buttonAdd->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->buttonAdd->ForeColor = System::Drawing::Color::White;
-			this->buttonAdd->Location = System::Drawing::Point(710, 389);
+			this->buttonAdd->Location = System::Drawing::Point(688, 376);
 			this->buttonAdd->Name = L"buttonAdd";
 			this->buttonAdd->Size = System::Drawing::Size(90, 28);
 			this->buttonAdd->TabIndex = 3;
@@ -456,7 +385,7 @@ namespace PassUnite {
 			// pictureBoxHidingPass
 			// 
 			this->pictureBoxHidingPass->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingPass.Image")));
-			this->pictureBoxHidingPass->Location = System::Drawing::Point(808, 353);
+			this->pictureBoxHidingPass->Location = System::Drawing::Point(786, 340);
 			this->pictureBoxHidingPass->Name = L"pictureBoxHidingPass";
 			this->pictureBoxHidingPass->Size = System::Drawing::Size(20, 20);
 			this->pictureBoxHidingPass->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -467,7 +396,7 @@ namespace PassUnite {
 			// pictureBoxShowingPass
 			// 
 			this->pictureBoxShowingPass->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingPass.Image")));
-			this->pictureBoxShowingPass->Location = System::Drawing::Point(808, 353);
+			this->pictureBoxShowingPass->Location = System::Drawing::Point(786, 340);
 			this->pictureBoxShowingPass->Name = L"pictureBoxShowingPass";
 			this->pictureBoxShowingPass->Size = System::Drawing::Size(20, 20);
 			this->pictureBoxShowingPass->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -475,6 +404,99 @@ namespace PassUnite {
 			this->pictureBoxShowingPass->TabStop = false;
 			this->pictureBoxShowingPass->Visible = false;
 			this->pictureBoxShowingPass->Click += gcnew System::EventHandler(this, &AddProfiles::pictureBoxShowingPass_Click);
+			// 
+			// panelSidebar
+			// 
+			this->panelSidebar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(48)), static_cast<System::Int32>(static_cast<System::Byte>(48)),
+				static_cast<System::Int32>(static_cast<System::Byte>(48)));
+			this->panelSidebar->Controls->Add(this->pictureBoxProfiles);
+			this->panelSidebar->Controls->Add(this->pictureBoxSettings);
+			this->panelSidebar->Controls->Add(this->pictureBoxGeneratePassword);
+			this->panelSidebar->Controls->Add(this->pictureBoxAddProfile);
+			this->panelSidebar->Dock = System::Windows::Forms::DockStyle::Left;
+			this->panelSidebar->Location = System::Drawing::Point(0, 75);
+			this->panelSidebar->Name = L"panelSidebar";
+			this->panelSidebar->Size = System::Drawing::Size(75, 436);
+			this->panelSidebar->TabIndex = 10;
+			// 
+			// pictureBoxProfiles
+			// 
+			this->pictureBoxProfiles->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxProfiles.Image")));
+			this->pictureBoxProfiles->Location = System::Drawing::Point(20, 278);
+			this->pictureBoxProfiles->Name = L"pictureBoxProfiles";
+			this->pictureBoxProfiles->Size = System::Drawing::Size(35, 35);
+			this->pictureBoxProfiles->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxProfiles->TabIndex = 0;
+			this->pictureBoxProfiles->TabStop = false;
+			this->pictureBoxProfiles->Click += gcnew System::EventHandler(this, &AddProfiles::pictureBoxProfiles_Click);
+			// 
+			// pictureBoxSettings
+			// 
+			this->pictureBoxSettings->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxSettings.Image")));
+			this->pictureBoxSettings->Location = System::Drawing::Point(20, 158);
+			this->pictureBoxSettings->Name = L"pictureBoxSettings";
+			this->pictureBoxSettings->Size = System::Drawing::Size(35, 35);
+			this->pictureBoxSettings->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxSettings->TabIndex = 0;
+			this->pictureBoxSettings->TabStop = false;
+			this->pictureBoxSettings->Click += gcnew System::EventHandler(this, &AddProfiles::pictureBoxSettings_Click);
+			// 
+			// pictureBoxGeneratePassword
+			// 
+			this->pictureBoxGeneratePassword->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxGeneratePassword.Image")));
+			this->pictureBoxGeneratePassword->Location = System::Drawing::Point(20, 98);
+			this->pictureBoxGeneratePassword->Name = L"pictureBoxGeneratePassword";
+			this->pictureBoxGeneratePassword->Size = System::Drawing::Size(35, 35);
+			this->pictureBoxGeneratePassword->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxGeneratePassword->TabIndex = 0;
+			this->pictureBoxGeneratePassword->TabStop = false;
+			this->pictureBoxGeneratePassword->Click += gcnew System::EventHandler(this, &AddProfiles::pictureBoxGeneratePassword_Click);
+			// 
+			// pictureBoxAddProfile
+			// 
+			this->pictureBoxAddProfile->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxAddProfile.Image")));
+			this->pictureBoxAddProfile->Location = System::Drawing::Point(20, 38);
+			this->pictureBoxAddProfile->Name = L"pictureBoxAddProfile";
+			this->pictureBoxAddProfile->Size = System::Drawing::Size(35, 35);
+			this->pictureBoxAddProfile->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxAddProfile->TabIndex = 0;
+			this->pictureBoxAddProfile->TabStop = false;
+			// 
+			// panelTopbar
+			// 
+			this->panelTopbar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(48)), static_cast<System::Int32>(static_cast<System::Byte>(48)),
+				static_cast<System::Int32>(static_cast<System::Byte>(48)));
+			this->panelTopbar->Controls->Add(this->pictureBoxMenu);
+			this->panelTopbar->Controls->Add(this->labelAppName);
+			this->panelTopbar->Dock = System::Windows::Forms::DockStyle::Top;
+			this->panelTopbar->Location = System::Drawing::Point(0, 0);
+			this->panelTopbar->Name = L"panelTopbar";
+			this->panelTopbar->Size = System::Drawing::Size(984, 75);
+			this->panelTopbar->TabIndex = 11;
+			// 
+			// pictureBoxMenu
+			// 
+			this->pictureBoxMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxMenu.Image")));
+			this->pictureBoxMenu->Location = System::Drawing::Point(20, 20);
+			this->pictureBoxMenu->Name = L"pictureBoxMenu";
+			this->pictureBoxMenu->Size = System::Drawing::Size(35, 35);
+			this->pictureBoxMenu->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxMenu->TabIndex = 1;
+			this->pictureBoxMenu->TabStop = false;
+			// 
+			// labelAppName
+			// 
+			this->labelAppName->AutoSize = true;
+			this->labelAppName->Font = (gcnew System::Drawing::Font(L"Yet R", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(129)));
+			this->labelAppName->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(135)), static_cast<System::Int32>(static_cast<System::Byte>(135)),
+				static_cast<System::Int32>(static_cast<System::Byte>(135)));
+			this->labelAppName->Location = System::Drawing::Point(100, 23);
+			this->labelAppName->Name = L"labelAppName";
+			this->labelAppName->Size = System::Drawing::Size(152, 28);
+			this->labelAppName->TabIndex = 0;
+			this->labelAppName->Text = L"Pass Unite";
+			this->labelAppName->Click += gcnew System::EventHandler(this, &AddProfiles::labelAppName_Click);
 			// 
 			// AddProfiles
 			// 
@@ -484,6 +506,8 @@ namespace PassUnite {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(78)), static_cast<System::Int32>(static_cast<System::Byte>(95)),
 				static_cast<System::Int32>(static_cast<System::Byte>(114)));
 			this->ClientSize = System::Drawing::Size(984, 511);
+			this->Controls->Add(this->panelSidebar);
+			this->Controls->Add(this->panelTopbar);
 			this->Controls->Add(this->pictureBoxShowingPass);
 			this->Controls->Add(this->pictureBoxHidingPass);
 			this->Controls->Add(this->buttonAdd);
@@ -491,8 +515,6 @@ namespace PassUnite {
 			this->Controls->Add(this->labelPassword);
 			this->Controls->Add(this->labelUsername);
 			this->Controls->Add(this->labelWebsite);
-			this->Controls->Add(this->panelSidebar);
-			this->Controls->Add(this->panelTopbar);
 			this->Controls->Add(this->textBoxPassword);
 			this->Controls->Add(this->labelTitle);
 			this->Controls->Add(this->textBoxUsername);
@@ -503,16 +525,16 @@ namespace PassUnite {
 			this->Name = L"AddProfiles";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Pass Unite";
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingPass))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingPass))->EndInit();
 			this->panelSidebar->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxProfiles))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxSettings))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxGeneratePassword))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxAddProfile))->EndInit();
 			this->panelTopbar->ResumeLayout(false);
 			this->panelTopbar->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingPass))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingPass))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
