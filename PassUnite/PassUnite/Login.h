@@ -257,7 +257,7 @@ namespace PassUnite {
 			}
 			else
 			{
-				MessageBox::Show("Username of password is incorrect",
+				MessageBox::Show("Username or password is incorrect",
 					"Username or Password Error", MessageBoxButtons::OK);
 
 				clearPass = true;
