@@ -165,6 +165,7 @@ namespace PassUnite {
 			// 
 			this->buttonNo->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(3)),
 				static_cast<System::Int32>(static_cast<System::Byte>(3)));
+			this->buttonNo->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->buttonNo->FlatAppearance->BorderSize = 0;
 			this->buttonNo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->buttonNo->ForeColor = System::Drawing::Color::White;
@@ -189,10 +190,12 @@ namespace PassUnite {
 			// 
 			// ClearProfiles
 			// 
+			this->AcceptButton = this->buttonYes;
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(170)), static_cast<System::Int32>(static_cast<System::Byte>(188)),
 				static_cast<System::Int32>(static_cast<System::Byte>(205)));
+			this->CancelButton = this->buttonNo;
 			this->ClientSize = System::Drawing::Size(707, 365);
 			this->Controls->Add(this->labelPassIncorrect);
 			this->Controls->Add(this->buttonNo);
@@ -267,7 +270,9 @@ namespace PassUnite {
 		}
 		catch (Exception^ ex)
 		{
-			MessageBox::Show(ex->Message);			// for troubleshooting
+			//MessageBox::Show(ex->Message);			// for troubleshooting
+			MessageBox::Show("Failed to connect to database",
+				"Database Connection Error", MessageBoxButtons::OK);
 		}
 	}
 	};

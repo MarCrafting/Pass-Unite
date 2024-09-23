@@ -215,6 +215,7 @@ namespace PassUnite {
 			// 
 			// buttonCancel
 			// 
+			this->buttonCancel->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->buttonCancel->Location = System::Drawing::Point(593, 408);
 			this->buttonCancel->Name = L"buttonCancel";
 			this->buttonCancel->Size = System::Drawing::Size(135, 45);
@@ -236,9 +237,11 @@ namespace PassUnite {
 			// 
 			// Register
 			// 
+			this->AcceptButton = this->buttonOK;
 			this->AutoScaleDimensions = System::Drawing::SizeF(14, 29);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->CancelButton = this->buttonCancel;
 			this->ClientSize = System::Drawing::Size(777, 529);
 			this->Controls->Add(this->linkLabelLogin);
 			this->Controls->Add(this->buttonCancel);

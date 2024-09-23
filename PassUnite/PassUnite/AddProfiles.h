@@ -546,6 +546,7 @@ namespace PassUnite {
 			// 
 			// AddProfiles
 			// 
+			this->AcceptButton = this->buttonAdd;
 			this->AutoScaleDimensions = System::Drawing::SizeF(16, 31);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(78)), static_cast<System::Int32>(static_cast<System::Byte>(95)),
