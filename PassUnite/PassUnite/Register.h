@@ -271,28 +271,31 @@ namespace PassUnite {
 	public: bool switchToLogin = false;
 
 	private: System::Void buttonOK_Click(System::Object^ sender, System::EventArgs^ e) {
-		switchToLogin = false;
 
 		// check if any fields are blank
 		if (textBoxName->Text == "" || textBoxEmail->Text == "" || textBoxUser->Text == "" || textBoxPass->Text == "")
 		{
 			MessageBox::Show("Please fill in every field",
 				"Field Left Empty", MessageBoxButtons::OK);
-
+				
+			switchToLogin = false;
 			return;
 		}
-		// check password textboxes
+		// check password textboxes miss-match
 		if (textBoxPass->Text != textBoxPassConfirm->Text)
 		{
 			// provide error message
 			MessageBox::Show("Password and Confirm Password do not match",
 				"Password Error", MessageBoxButtons::OK);
+				
+			switchToLogin = false;
 		}
 		else
 		{
 			String^ username = textBoxUser->Text;
 			String^ password = textBoxPass->Text;
 
+			// insert new user into database
 			CreateAccount(username, password);
 
 			// clear textboxes
@@ -301,6 +304,10 @@ namespace PassUnite {
 			textBoxUser->Text = "";
 			textBoxPass->Text = "";
 			textBoxPassConfirm->Text = "";
+			
+			// redirect to login
+			switchToLogin = true;
+			this->Close();
 		}
 	}
 	private: void CreateAccount(String^ _user, String^ _pass)
