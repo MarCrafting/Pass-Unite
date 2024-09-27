@@ -136,7 +136,6 @@ namespace PassUnite {
 			this->textBoxPass->PasswordChar = '*';
 			this->textBoxPass->Size = System::Drawing::Size(268, 35);
 			this->textBoxPass->TabIndex = 2;
-			this->textBoxPass->TextChanged += gcnew System::EventHandler(this, &Login::textBoxPass_TextChanged);
 			// 
 			// linkLabelRegister
 			// 
@@ -212,8 +211,6 @@ namespace PassUnite {
 
 	public: bool switchToRegister = false;
 
-	private: bool clearPass = false;
-
 	public: bool loggedOut = true;
 
 	private: System::Void buttonOK_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -260,7 +257,7 @@ namespace PassUnite {
 				MessageBox::Show("Username or password is incorrect",
 					"Username or Password Error", MessageBoxButtons::OK);
 
-				clearPass = true;
+				textBoxPass->Text = "";
 				return;
 			}
 
@@ -297,19 +294,11 @@ namespace PassUnite {
 	}
 	private: System::Void Login_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
 		// check if textfields empty
-		if (loggedOut || (textBoxUser->Text == "" && textBoxPass->Text == ""))
+		if (loggedOut || (textBoxPass->Text == ""))
 			pageProps.page = -1;
 	}
-	private: System::Void textBoxPass_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (clearPass)
-		{
-			textBoxPass->Text = "";
-			clearPass = false;
-		}
-	}
 private: System::Void Login_Activated(System::Object^ sender, System::EventArgs^ e) {
-	// clear text fields
-	textBoxUser->Text = "";
+	// clear password
 	textBoxPass->Text = "";
 
 	// focus username field

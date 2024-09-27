@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelAboutParagraph2.Text" xml:space="preserve">
-    <value>The user interface is simple, making it friendly for users of all ages. Your data is fully encrypted in storage leaving anyone who lays eyes on it unable to recognize it as data. Lastly, there's no extra features to distract you or have you feel as though you aren't using the app to its full potential. Simply save your user information for the chosen site(s), then retrieve it whenever you please. Now you can SAFELY remember one login, that's all there is to it!</value>
-  </data>
-  <data name="labelAboutParagraph1.Text" xml:space="preserve">
-    <value>Pass Unite is a Password Manager application, allowing its users to save user information of custom created profiles based on what they choose to provide as input. There are plenty of sites and apps that we use throughout our daily lives, and because it's more convenient to create a single password for all platforms, most of the time we do. Though as technology grows more powerful, so does malicious users Having many different passwords on multiple platforms drastically lowers the chances of getting compromised on all platforms.</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBoxMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -242,48 +236,6 @@
         xVW75OTkVFzfxqIDnifVYJSGVsR8x68fYO6Ez7ANLrvqfkZgmAQlESizy0+HPMmGVef4fQae6qwW2Fxw
         PQOjxK67U0MvNQj6BwbXt7HoAPMkjNQwalNGbngPn2EbXHbt3M8ITOypp/4P8ruurGc6Xt4AAAAASUVO
         RK5CYII=
-</value>
-  </data>
-  <data name="pictureBoxGeneratePassword.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
 </value>
   </data>
   <data name="pictureBoxSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -432,5 +384,11 @@
         kuELj1yOuLi41vv379+BJ7HhCQkisUYl4kXcGFW1bdsW/5FHSQYeYNOsu+R/TgwiKoK8mfABfjQ7cCtx
         eyKexIZviEisUYl4ETdGVd5zS7UJEyZMmDBhwoQJEw3FCy/8HxfhA601RsmbAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="labelAboutParagraph2.Text" xml:space="preserve">
+    <value>The user interface is simple, making it friendly for users of all ages. Your data is fully encrypted in storage leaving anyone who lays eyes on it unable to recognize it as data. Lastly, there's no extra features to distract you or have you feel as though you aren't using the app to its full potential. Simply save your user information for the chosen site(s), then retrieve it whenever you please. Now you can SAFELY remember one login, that's all there is to it!</value>
+  </data>
+  <data name="labelAboutParagraph1.Text" xml:space="preserve">
+    <value>Pass Unite is a Password Manager application, allowing its users to save user information of custom created profiles based on what they choose to provide as input. There are plenty of sites and apps that we use throughout our daily lives, and because it's more convenient to create a single password for all platforms, most of the time we do. Though as technology grows more powerful, so does malicious users Having many different passwords on multiple platforms drastically lowers the chances of getting compromised on all platforms.</value>
   </data>
 </root>

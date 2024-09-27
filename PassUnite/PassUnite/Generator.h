@@ -192,7 +192,7 @@ namespace PassUnite {
 			this->Controls->Add(this->buttonGenerator);
 			this->Name = L"Generator";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
-			this->Text = L"Generator";
+			this->Text = L"Password Builder";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownStringLength))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();

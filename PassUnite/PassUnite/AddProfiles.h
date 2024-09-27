@@ -204,7 +204,7 @@ namespace PassUnite {
 	private: System::Windows::Forms::Panel^ panelSidebar;
 	private: System::Windows::Forms::PictureBox^ pictureBoxProfiles;
 	private: System::Windows::Forms::PictureBox^ pictureBoxSettings;
-	private: System::Windows::Forms::PictureBox^ pictureBoxGeneratePassword;
+
 	private: System::Windows::Forms::PictureBox^ pictureBoxAddProfile;
 	private: System::Windows::Forms::Panel^ panelTopbar;
 	private: System::Windows::Forms::PictureBox^ pictureBoxMenu;
@@ -272,7 +272,6 @@ namespace PassUnite {
 			this->panelSidebar = (gcnew System::Windows::Forms::Panel());
 			this->pictureBoxProfiles = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBoxSettings = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxGeneratePassword = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBoxAddProfile = (gcnew System::Windows::Forms::PictureBox());
 			this->panelTopbar = (gcnew System::Windows::Forms::Panel());
 			this->pictureBoxMenu = (gcnew System::Windows::Forms::PictureBox());
@@ -292,7 +291,6 @@ namespace PassUnite {
 			this->panelSidebar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxProfiles))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxSettings))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxGeneratePassword))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxAddProfile))->BeginInit();
 			this->panelTopbar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->BeginInit();
@@ -307,7 +305,6 @@ namespace PassUnite {
 				static_cast<System::Int32>(static_cast<System::Byte>(48)));
 			this->panelSidebar->Controls->Add(this->pictureBoxProfiles);
 			this->panelSidebar->Controls->Add(this->pictureBoxSettings);
-			this->panelSidebar->Controls->Add(this->pictureBoxGeneratePassword);
 			this->panelSidebar->Controls->Add(this->pictureBoxAddProfile);
 			this->panelSidebar->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panelSidebar->Location = System::Drawing::Point(0, 75);
@@ -318,7 +315,7 @@ namespace PassUnite {
 			// pictureBoxProfiles
 			// 
 			this->pictureBoxProfiles->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxProfiles.Image")));
-			this->pictureBoxProfiles->Location = System::Drawing::Point(20, 278);
+			this->pictureBoxProfiles->Location = System::Drawing::Point(20, 98);
 			this->pictureBoxProfiles->Name = L"pictureBoxProfiles";
 			this->pictureBoxProfiles->Size = System::Drawing::Size(35, 35);
 			this->pictureBoxProfiles->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -329,24 +326,13 @@ namespace PassUnite {
 			// pictureBoxSettings
 			// 
 			this->pictureBoxSettings->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxSettings.Image")));
-			this->pictureBoxSettings->Location = System::Drawing::Point(20, 158);
+			this->pictureBoxSettings->Location = System::Drawing::Point(20, 338);
 			this->pictureBoxSettings->Name = L"pictureBoxSettings";
 			this->pictureBoxSettings->Size = System::Drawing::Size(35, 35);
 			this->pictureBoxSettings->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxSettings->TabIndex = 0;
 			this->pictureBoxSettings->TabStop = false;
 			this->pictureBoxSettings->Click += gcnew System::EventHandler(this, &AddProfiles::pictureBoxSettings_Click);
-			// 
-			// pictureBoxGeneratePassword
-			// 
-			this->pictureBoxGeneratePassword->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxGeneratePassword.Image")));
-			this->pictureBoxGeneratePassword->Location = System::Drawing::Point(20, 98);
-			this->pictureBoxGeneratePassword->Name = L"pictureBoxGeneratePassword";
-			this->pictureBoxGeneratePassword->Size = System::Drawing::Size(35, 35);
-			this->pictureBoxGeneratePassword->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxGeneratePassword->TabIndex = 0;
-			this->pictureBoxGeneratePassword->TabStop = false;
-			this->pictureBoxGeneratePassword->Click += gcnew System::EventHandler(this, &AddProfiles::pictureBoxGeneratePassword_Click);
 			// 
 			// pictureBoxAddProfile
 			// 
@@ -468,7 +454,7 @@ namespace PassUnite {
 			this->buttonGen->TabIndex = 14;
 			this->buttonGen->Text = L"Generate";
 			this->buttonGen->UseVisualStyleBackColor = false;
-			this->buttonGen->Visible = false;
+			this->buttonGen->Click += gcnew System::EventHandler(this, &AddProfiles::buttonGen_Click);
 			// 
 			// labelPassword
 			// 
@@ -564,7 +550,6 @@ namespace PassUnite {
 			this->panelSidebar->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxProfiles))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxSettings))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxGeneratePassword))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxAddProfile))->EndInit();
 			this->panelTopbar->ResumeLayout(false);
 			this->panelTopbar->PerformLayout();
@@ -757,5 +742,12 @@ namespace PassUnite {
 
 		textBoxPassword->Text = generatorOverlay.randString;
 	}
+private: System::Void buttonGen_Click(System::Object^ sender, System::EventArgs^ e) {
+	// open Generator overlay
+	PassUnite::Generator generatorOverlay;
+	generatorOverlay.ShowDialog();
+
+	textBoxPassword->Text = generatorOverlay.randString;
+}
 };
 }

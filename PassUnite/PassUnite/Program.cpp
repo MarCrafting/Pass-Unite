@@ -28,7 +28,10 @@ void main(array<String^>^ args)
 			registerPage.ShowDialog();
 
 			if (registerPage.switchToLogin)
+			{
+				loginPage.switchToRegister = false;
 				continue;
+			}
 		}
 
 		// initialize pages

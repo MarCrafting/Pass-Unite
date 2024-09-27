@@ -128,6 +128,7 @@
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="Profiles.cpp" />
     <ClCompile Include="Program.cpp" />
+    <ClCompile Include="Register.cpp" />
     <ClCompile Include="Settings.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +154,9 @@
     <ClInclude Include="Panels.h" />
     <ClInclude Include="Profiles.h" />
     <ClInclude Include="ProfilesForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Register.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Settings.h">
@@ -181,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProfilesForm.resx">
       <DependentUpon>ProfilesForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.h</DependentUpon>
