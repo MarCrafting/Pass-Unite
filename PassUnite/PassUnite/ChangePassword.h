@@ -198,6 +198,7 @@ namespace PassUnite {
 			// 
 			this->buttonCancel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(3)),
 				static_cast<System::Int32>(static_cast<System::Byte>(3)));
+			this->buttonCancel->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->buttonCancel->FlatAppearance->BorderSize = 0;
 			this->buttonCancel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->buttonCancel->ForeColor = System::Drawing::Color::White;

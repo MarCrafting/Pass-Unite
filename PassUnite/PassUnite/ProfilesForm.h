@@ -379,6 +379,10 @@ namespace PassUnite {
 	private: System::Windows::Forms::Label^ labelProfilePassword10;
 	private: System::Windows::Forms::Label^ labelProfileUsername10;
 	private: System::Windows::Forms::Label^ labelProfileWebsite10;
+	private: System::Windows::Forms::Panel^ panelSidebarExtend;
+	private: System::Windows::Forms::Label^ labelSidebarSettings;
+	private: System::Windows::Forms::Label^ labelSidebarViewProfiles;
+	private: System::Windows::Forms::Label^ labelSidebarAddProfiles;
 
 
 
@@ -530,6 +534,10 @@ namespace PassUnite {
 			this->labelProfilePassword10 = (gcnew System::Windows::Forms::Label());
 			this->labelProfileUsername10 = (gcnew System::Windows::Forms::Label());
 			this->labelProfileWebsite10 = (gcnew System::Windows::Forms::Label());
+			this->panelSidebarExtend = (gcnew System::Windows::Forms::Panel());
+			this->labelSidebarSettings = (gcnew System::Windows::Forms::Label());
+			this->labelSidebarViewProfiles = (gcnew System::Windows::Forms::Label());
+			this->labelSidebarAddProfiles = (gcnew System::Windows::Forms::Label());
 			this->panelSidebar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxProfiles))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxSettings))->BeginInit();
@@ -557,6 +565,7 @@ namespace PassUnite {
 			this->panel8->SuspendLayout();
 			this->panel9->SuspendLayout();
 			this->panel10->SuspendLayout();
+			this->panelSidebarExtend->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panelSidebar
@@ -575,9 +584,9 @@ namespace PassUnite {
 			// pictureBoxProfiles
 			// 
 			this->pictureBoxProfiles->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxProfiles.Image")));
-			this->pictureBoxProfiles->Location = System::Drawing::Point(20, 98);
+			this->pictureBoxProfiles->Location = System::Drawing::Point(18, 98);
 			this->pictureBoxProfiles->Name = L"pictureBoxProfiles";
-			this->pictureBoxProfiles->Size = System::Drawing::Size(35, 35);
+			this->pictureBoxProfiles->Size = System::Drawing::Size(40, 40);
 			this->pictureBoxProfiles->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxProfiles->TabIndex = 0;
 			this->pictureBoxProfiles->TabStop = false;
@@ -585,9 +594,9 @@ namespace PassUnite {
 			// pictureBoxSettings
 			// 
 			this->pictureBoxSettings->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxSettings.Image")));
-			this->pictureBoxSettings->Location = System::Drawing::Point(20, 338);
+			this->pictureBoxSettings->Location = System::Drawing::Point(18, 338);
 			this->pictureBoxSettings->Name = L"pictureBoxSettings";
-			this->pictureBoxSettings->Size = System::Drawing::Size(35, 35);
+			this->pictureBoxSettings->Size = System::Drawing::Size(40, 40);
 			this->pictureBoxSettings->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxSettings->TabIndex = 0;
 			this->pictureBoxSettings->TabStop = false;
@@ -596,9 +605,9 @@ namespace PassUnite {
 			// pictureBoxAddProfile
 			// 
 			this->pictureBoxAddProfile->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxAddProfile.Image")));
-			this->pictureBoxAddProfile->Location = System::Drawing::Point(20, 38);
+			this->pictureBoxAddProfile->Location = System::Drawing::Point(18, 38);
 			this->pictureBoxAddProfile->Name = L"pictureBoxAddProfile";
-			this->pictureBoxAddProfile->Size = System::Drawing::Size(35, 35);
+			this->pictureBoxAddProfile->Size = System::Drawing::Size(40, 40);
 			this->pictureBoxAddProfile->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxAddProfile->TabIndex = 0;
 			this->pictureBoxAddProfile->TabStop = false;
@@ -619,9 +628,9 @@ namespace PassUnite {
 			// pictureBoxMenu
 			// 
 			this->pictureBoxMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxMenu.Image")));
-			this->pictureBoxMenu->Location = System::Drawing::Point(20, 20);
+			this->pictureBoxMenu->Location = System::Drawing::Point(18, 20);
 			this->pictureBoxMenu->Name = L"pictureBoxMenu";
-			this->pictureBoxMenu->Size = System::Drawing::Size(35, 35);
+			this->pictureBoxMenu->Size = System::Drawing::Size(40, 40);
 			this->pictureBoxMenu->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxMenu->TabIndex = 1;
 			this->pictureBoxMenu->TabStop = false;
@@ -1361,6 +1370,61 @@ namespace PassUnite {
 			this->labelProfileWebsite10->Text = L"-";
 			this->labelProfileWebsite10->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
+			// panelSidebarExtend
+			// 
+			this->panelSidebarExtend->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)),
+				static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(65)));
+			this->panelSidebarExtend->Controls->Add(this->labelSidebarSettings);
+			this->panelSidebarExtend->Controls->Add(this->labelSidebarViewProfiles);
+			this->panelSidebarExtend->Controls->Add(this->labelSidebarAddProfiles);
+			this->panelSidebarExtend->Location = System::Drawing::Point(75, 75);
+			this->panelSidebarExtend->Name = L"panelSidebarExtend";
+			this->panelSidebarExtend->Size = System::Drawing::Size(177, 436);
+			this->panelSidebarExtend->TabIndex = 13;
+			this->panelSidebarExtend->Visible = false;
+			// 
+			// labelSidebarSettings
+			// 
+			this->labelSidebarSettings->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Left | System::Windows::Forms::AnchorStyles::Right));
+			this->labelSidebarSettings->Enabled = false;
+			this->labelSidebarSettings->Font = (gcnew System::Drawing::Font(L"Segoe Print", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelSidebarSettings->ForeColor = System::Drawing::SystemColors::ControlDark;
+			this->labelSidebarSettings->Location = System::Drawing::Point(0, 330);
+			this->labelSidebarSettings->Name = L"labelSidebarSettings";
+			this->labelSidebarSettings->Size = System::Drawing::Size(177, 54);
+			this->labelSidebarSettings->TabIndex = 14;
+			this->labelSidebarSettings->Text = L"Settings";
+			this->labelSidebarSettings->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelSidebarViewProfiles
+			// 
+			this->labelSidebarViewProfiles->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Left | System::Windows::Forms::AnchorStyles::Right));
+			this->labelSidebarViewProfiles->Enabled = false;
+			this->labelSidebarViewProfiles->Font = (gcnew System::Drawing::Font(L"Segoe Print", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelSidebarViewProfiles->ForeColor = System::Drawing::SystemColors::ControlDark;
+			this->labelSidebarViewProfiles->Location = System::Drawing::Point(0, 90);
+			this->labelSidebarViewProfiles->Name = L"labelSidebarViewProfiles";
+			this->labelSidebarViewProfiles->Size = System::Drawing::Size(177, 54);
+			this->labelSidebarViewProfiles->TabIndex = 13;
+			this->labelSidebarViewProfiles->Text = L"View Profiles";
+			this->labelSidebarViewProfiles->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelSidebarAddProfiles
+			// 
+			this->labelSidebarAddProfiles->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Left | System::Windows::Forms::AnchorStyles::Right));
+			this->labelSidebarAddProfiles->Enabled = false;
+			this->labelSidebarAddProfiles->Font = (gcnew System::Drawing::Font(L"Segoe Print", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelSidebarAddProfiles->ForeColor = System::Drawing::SystemColors::ControlDark;
+			this->labelSidebarAddProfiles->Location = System::Drawing::Point(0, 30);
+			this->labelSidebarAddProfiles->Name = L"labelSidebarAddProfiles";
+			this->labelSidebarAddProfiles->Size = System::Drawing::Size(177, 54);
+			this->labelSidebarAddProfiles->TabIndex = 12;
+			this->labelSidebarAddProfiles->Text = L"Add Profiles";
+			this->labelSidebarAddProfiles->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
 			// ProfilesForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(16, 31);
@@ -1369,6 +1433,7 @@ namespace PassUnite {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(49)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(82)));
 			this->ClientSize = System::Drawing::Size(984, 511);
+			this->Controls->Add(this->panelSidebarExtend);
 			this->Controls->Add(this->panelContent);
 			this->Controls->Add(this->panelSidebar);
 			this->Controls->Add(this->panelTopbar);
@@ -1407,6 +1472,7 @@ namespace PassUnite {
 			this->panel8->ResumeLayout(false);
 			this->panel9->ResumeLayout(false);
 			this->panel10->ResumeLayout(false);
+			this->panelSidebarExtend->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1908,5 +1974,5 @@ namespace PassUnite {
 				panel = panel->next;
 		}
 	}
-};
+	};
 }
