@@ -590,6 +590,8 @@ namespace PassUnite {
 			this->pictureBoxProfiles->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxProfiles->TabIndex = 0;
 			this->pictureBoxProfiles->TabStop = false;
+			this->pictureBoxProfiles->MouseEnter += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxIcons_MouseEnter);
+			this->pictureBoxProfiles->MouseLeave += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxIcons_MouseLeave);
 			// 
 			// pictureBoxSettings
 			// 
@@ -601,6 +603,8 @@ namespace PassUnite {
 			this->pictureBoxSettings->TabIndex = 0;
 			this->pictureBoxSettings->TabStop = false;
 			this->pictureBoxSettings->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxSettings_Click);
+			this->pictureBoxSettings->MouseEnter += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxIcons_MouseEnter);
+			this->pictureBoxSettings->MouseLeave += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxIcons_MouseLeave);
 			// 
 			// pictureBoxAddProfile
 			// 
@@ -612,6 +616,8 @@ namespace PassUnite {
 			this->pictureBoxAddProfile->TabIndex = 0;
 			this->pictureBoxAddProfile->TabStop = false;
 			this->pictureBoxAddProfile->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxAddProfile_Click);
+			this->pictureBoxAddProfile->MouseEnter += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxIcons_MouseEnter);
+			this->pictureBoxAddProfile->MouseLeave += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxIcons_MouseLeave);
 			// 
 			// panelTopbar
 			// 
@@ -634,6 +640,7 @@ namespace PassUnite {
 			this->pictureBoxMenu->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxMenu->TabIndex = 1;
 			this->pictureBoxMenu->TabStop = false;
+			this->pictureBoxMenu->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxMenu_Click);
 			// 
 			// labelAppName
 			// 
@@ -1973,6 +1980,18 @@ namespace PassUnite {
 			else
 				panel = panel->next;
 		}
+	}
+	private: System::Void pictureBoxMenu_Click(System::Object^ sender, System::EventArgs^ e) {
+		// toggle extended sidebar
+		panelSidebarExtend->Visible = !panelSidebarExtend->Visible;
+	}
+	private: System::Void pictureBoxIcons_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+		// show extended sidebar
+		panelSidebarExtend->Visible = true;
+	}
+	private: System::Void pictureBoxIcons_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		// hide extended sidebar
+		panelSidebarExtend->Visible = false;
 	}
 	};
 }

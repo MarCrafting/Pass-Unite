@@ -244,6 +244,7 @@ namespace PassUnite {
 	private: System::Windows::Forms::Label^ labelSidebarViewProfiles;
 	private: System::Windows::Forms::Label^ labelSidebarAddProfiles;
 	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Label^ labelSuccess;
 
 
 
@@ -322,6 +323,7 @@ namespace PassUnite {
 			this->labelSidebarViewProfiles = (gcnew System::Windows::Forms::Label());
 			this->labelSidebarAddProfiles = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->labelSuccess = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxAddProfile))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxSettings))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxProfiles))->BeginInit();
@@ -343,6 +345,8 @@ namespace PassUnite {
 			this->pictureBoxAddProfile->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxAddProfile->TabIndex = 0;
 			this->pictureBoxAddProfile->TabStop = false;
+			this->pictureBoxAddProfile->MouseEnter += gcnew System::EventHandler(this, &AddProfiles::pictureBoxIcons_MouseEnter);
+			this->pictureBoxAddProfile->MouseLeave += gcnew System::EventHandler(this, &AddProfiles::pictureBoxIcons_MouseLeave);
 			// 
 			// pictureBoxSettings
 			// 
@@ -354,6 +358,8 @@ namespace PassUnite {
 			this->pictureBoxSettings->TabIndex = 0;
 			this->pictureBoxSettings->TabStop = false;
 			this->pictureBoxSettings->Click += gcnew System::EventHandler(this, &AddProfiles::pictureBoxSettings_Click);
+			this->pictureBoxSettings->MouseEnter += gcnew System::EventHandler(this, &AddProfiles::pictureBoxIcons_MouseEnter);
+			this->pictureBoxSettings->MouseLeave += gcnew System::EventHandler(this, &AddProfiles::pictureBoxIcons_MouseLeave);
 			// 
 			// pictureBoxProfiles
 			// 
@@ -365,6 +371,8 @@ namespace PassUnite {
 			this->pictureBoxProfiles->TabIndex = 0;
 			this->pictureBoxProfiles->TabStop = false;
 			this->pictureBoxProfiles->Click += gcnew System::EventHandler(this, &AddProfiles::pictureBoxProfiles_Click);
+			this->pictureBoxProfiles->MouseEnter += gcnew System::EventHandler(this, &AddProfiles::pictureBoxIcons_MouseEnter);
+			this->pictureBoxProfiles->MouseLeave += gcnew System::EventHandler(this, &AddProfiles::pictureBoxIcons_MouseLeave);
 			// 
 			// panelSidebar
 			// 
@@ -402,6 +410,7 @@ namespace PassUnite {
 			this->pictureBoxMenu->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxMenu->TabIndex = 1;
 			this->pictureBoxMenu->TabStop = false;
+			this->pictureBoxMenu->Click += gcnew System::EventHandler(this, &AddProfiles::pictureBoxMenu_Click);
 			// 
 			// panelTopbar
 			// 
@@ -424,6 +433,7 @@ namespace PassUnite {
 			this->textBoxWebsite->Name = L"textBoxWebsite";
 			this->textBoxWebsite->Size = System::Drawing::Size(316, 38);
 			this->textBoxWebsite->TabIndex = 10;
+			this->textBoxWebsite->Enter += gcnew System::EventHandler(this, &AddProfiles::textBoxWebsite_Enter);
 			// 
 			// textBoxUsername
 			// 
@@ -434,6 +444,7 @@ namespace PassUnite {
 			this->textBoxUsername->Name = L"textBoxUsername";
 			this->textBoxUsername->Size = System::Drawing::Size(316, 38);
 			this->textBoxUsername->TabIndex = 11;
+			this->textBoxUsername->Enter += gcnew System::EventHandler(this, &AddProfiles::textBoxUsername_Enter);
 			// 
 			// labelTitle
 			// 
@@ -458,6 +469,7 @@ namespace PassUnite {
 			this->textBoxPassword->Size = System::Drawing::Size(316, 38);
 			this->textBoxPassword->TabIndex = 12;
 			this->textBoxPassword->UseSystemPasswordChar = true;
+			this->textBoxPassword->Enter += gcnew System::EventHandler(this, &AddProfiles::textBoxPassword_Enter);
 			// 
 			// labelWebsite
 			// 
@@ -604,6 +616,7 @@ namespace PassUnite {
 			// 
 			// panel1
 			// 
+			this->panel1->Controls->Add(this->labelSuccess);
 			this->panel1->Controls->Add(this->pictureBoxShowingPass);
 			this->panel1->Controls->Add(this->pictureBoxHidingPass);
 			this->panel1->Controls->Add(this->buttonAdd);
@@ -620,6 +633,21 @@ namespace PassUnite {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(909, 436);
 			this->panel1->TabIndex = 12;
+			// 
+			// labelSuccess
+			// 
+			this->labelSuccess->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->labelSuccess->Font = (gcnew System::Drawing::Font(L"Rockwell", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelSuccess->ForeColor = System::Drawing::SystemColors::Highlight;
+			this->labelSuccess->Location = System::Drawing::Point(384, 109);
+			this->labelSuccess->Name = L"labelSuccess";
+			this->labelSuccess->Size = System::Drawing::Size(316, 29);
+			this->labelSuccess->TabIndex = 21;
+			this->labelSuccess->Text = L"Successfully Added!";
+			this->labelSuccess->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->labelSuccess->Visible = false;
 			// 
 			// AddProfiles
 			// 
@@ -767,6 +795,9 @@ namespace PassUnite {
 
 			// close connection
 			sqlConn.Close();
+
+			// show successful execution indicator
+			labelSuccess->Visible = true;
 		}
 		catch (Exception^ ex)
 		{
@@ -842,5 +873,29 @@ namespace PassUnite {
 
 		textBoxPassword->Text = generatorOverlay.randString;
 	}
-};
+	private: System::Void pictureBoxMenu_Click(System::Object^ sender, System::EventArgs^ e) {
+		// toggle extended sidebar
+		panelSidebarExtend->Visible = !panelSidebarExtend->Visible;
+	}
+	private: System::Void pictureBoxIcons_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+		// show extended sidebar
+		panelSidebarExtend->Visible = true;
+	}
+	private: System::Void pictureBoxIcons_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		// hide extended sidebar
+		panelSidebarExtend->Visible = false;
+	}
+	private: System::Void textBoxWebsite_Enter(System::Object^ sender, System::EventArgs^ e) {
+		// hide success label
+		labelSuccess->Visible = false;
+	}
+	private: System::Void textBoxUsername_Enter(System::Object^ sender, System::EventArgs^ e) {
+		// hide success label
+		labelSuccess->Visible = false;
+	}
+	private: System::Void textBoxPassword_Enter(System::Object^ sender, System::EventArgs^ e) {
+		// hide success label
+		labelSuccess->Visible = false;
+	}
+	};
 }
