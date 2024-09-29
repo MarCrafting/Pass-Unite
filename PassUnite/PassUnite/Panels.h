@@ -7,8 +7,8 @@ public:
 	int id;
 	System::Windows::Forms::Panel^ panel = nullptr;
 	System::Windows::Forms::Label^ labelProfileWebsite = nullptr;
-	System::Windows::Forms::Label^ labelProfileUsername = nullptr;
-	System::Windows::Forms::Label^ labelProfilePassword = nullptr;
+	System::Windows::Forms::TextBox^ textBoxProfileUsername = nullptr;
+	System::Windows::Forms::TextBox^ textBoxProfilePassword = nullptr;
 	Panels^ next = nullptr;
 	Panels^ prev = nullptr;
 };
