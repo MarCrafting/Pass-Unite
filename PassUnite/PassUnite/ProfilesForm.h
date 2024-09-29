@@ -4,7 +4,7 @@
 #include "Generator.h"
 #include "Settings.h"
 #include "Profiles.h"
-#include "Panels.h"
+#include "Slots.h"
 
 namespace PassUnite {
 
@@ -39,140 +39,162 @@ namespace PassUnite {
 			trashProfile->username = "-";
 			trashProfile->password = "-";
 
-			// save panels into a list in order to access them
-			// Panel 1
-			panel = gcnew Panels();							// create pointer
-			panel->panel = panel1;									// assign pointer to panel1
-			panel->id = 1;											// ID
-			panel->labelProfileWebsite = labelProfileWebsite1;		// assign website label
-			panel->textBoxProfileUsername = textBoxProfileUsername1;	// assign username label
-			panel->textBoxProfilePassword = textBoxProfilePassword1;	// assign password label
-			// Panel 2
-			Panels^ nextPanel = gcnew Panels();						// create pointer
-			nextPanel->panel = panel2;								// assign pointer to panel2
-			nextPanel->id = 2;										// ID
-			nextPanel->panel->Visible = false;						// hide panel by default
-			nextPanel->labelProfileWebsite = labelProfileWebsite2;	// assign website label
-			nextPanel->textBoxProfileUsername = textBoxProfileUsername2;// assign username label
-			nextPanel->textBoxProfilePassword = textBoxProfilePassword2;// assign password label
-			// Link Panel 1 & 2
-			panel->next = nextPanel;								// create link between pointers
-			nextPanel->prev = panel;
+			// save slots into a list in order to access them
+			// Slot 1
+			slot = gcnew Slots();										// create pointer
+			slot->id = 1;												// assign slot1 ID
+			slot->panel = panel1;										// assign panel in slot1
+			slot->labelProfileWebsite = labelProfileWebsite1;			// assign to website label
+			slot->textBoxProfileUsername = textBoxProfileUsername1;		// assign to username textbox
+			slot->textBoxProfilePassword = textBoxProfilePassword1;		// assign to password textbox
+			slot->hide = pictureBoxHideSlot1;							// hide slot info
+			slot->show = pictureBoxShowSlot1;							// show slot info
+			slot->clear = pictureBoxDelProf1;							// clear slot info
+			// Slot 2
+			Slots^ nextSlot = gcnew Slots();							// create pointer
+			nextSlot->id = 2;											// assign slot2 ID
+			nextSlot->panel = panel2;									// assign panel in slot2
+			nextSlot->labelProfileWebsite = labelProfileWebsite2;		// assign to website label
+			nextSlot->textBoxProfileUsername = textBoxProfileUsername2;	// assign to username textbox
+			nextSlot->textBoxProfilePassword = textBoxProfilePassword2;	// assign to password textbox
+			nextSlot->hide = pictureBoxHideSlot2;						// hide slot info
+			nextSlot->show = pictureBoxShowSlot2;						// show slot info
+			nextSlot->clear = pictureBoxDelProf2;						// clear slot info
+			// Link Slots 1 & 2
+			slot->next = nextSlot;										// create link between pointers
+			nextSlot->prev = slot;
 
-			panel = nextPanel;										// traverse through node list
-			// Panel 3
-			nextPanel = gcnew Panels();								// create pointer
-			nextPanel->panel = panel3;								// assign pointer to panel3
-			nextPanel->id = 3;										// ID
-			nextPanel->panel->Visible = false;						// hide panel by default
-			nextPanel->labelProfileWebsite = labelProfileWebsite3;	// assign website label
-			nextPanel->textBoxProfileUsername = textBoxProfileUsername3;// assign username label
-			nextPanel->textBoxProfilePassword = textBoxProfilePassword3;// assign password label
-			// Link Panel 2 & 3
-			panel->next = nextPanel;
-			nextPanel->prev = panel;								// create link between pointers
+			slot = nextSlot;											// traverse through node list
+			// Slot 3
+			nextSlot = gcnew Slots();
+			nextSlot->id = 3;
+			nextSlot->panel = panel3;
+			nextSlot->labelProfileWebsite = labelProfileWebsite3;
+			nextSlot->textBoxProfileUsername = textBoxProfileUsername3;
+			nextSlot->textBoxProfilePassword = textBoxProfilePassword3;
+			nextSlot->hide = pictureBoxHideSlot3;
+			nextSlot->show = pictureBoxShowSlot3;
+			nextSlot->clear = pictureBoxDelProf3;
+			// Link Slots 2 & 3
+			slot->next = nextSlot;
+			nextSlot->prev = slot;
 
-			panel = nextPanel;										// traverse through node list
-			// Panel 4
-			nextPanel = gcnew Panels();								// create a pointer
-			nextPanel->panel = panel4;								// assign pointer to panel4
-			nextPanel->id = 4;										// ID
-			nextPanel->panel->Visible = false;						// hide panel by default
-			nextPanel->labelProfileWebsite = labelProfileWebsite4;	// assign website label
-			nextPanel->textBoxProfileUsername = textBoxProfileUsername4;// assign username label
-			nextPanel->textBoxProfilePassword = textBoxProfilePassword4;// assign password label
-			// Link Panel 3 & 4
-			panel->next = nextPanel;
-			nextPanel->prev = panel;
+			slot = nextSlot;
+			// Slot 4
+			nextSlot = gcnew Slots();
+			nextSlot->id = 4;
+			nextSlot->panel = panel4;
+			nextSlot->labelProfileWebsite = labelProfileWebsite4;
+			nextSlot->textBoxProfileUsername = textBoxProfileUsername4;
+			nextSlot->textBoxProfilePassword = textBoxProfilePassword4;
+			nextSlot->hide = pictureBoxHideSlot4;
+			nextSlot->show = pictureBoxShowSlot4;
+			nextSlot->clear = pictureBoxDelProf4;
+			// Link Slots 3 & 4
+			slot->next = nextSlot;
+			nextSlot->prev = slot;
 
-			panel = nextPanel;										// traverse through node list
-			// Panel 5
-			nextPanel = gcnew Panels();								// create pointer
-			nextPanel->panel = panel5;								// assign pointer to panel5
-			nextPanel->id = 5;										// ID
-			nextPanel->panel->Visible = false;						// hide by default
-			nextPanel->labelProfileWebsite = labelProfileWebsite5;	// assign website label
-			nextPanel->textBoxProfileUsername = textBoxProfileUsername5;// assign username label
-			nextPanel->textBoxProfilePassword = textBoxProfilePassword5;// assign password label
-			// Link Panel 4 & 5
-			panel->next = nextPanel;
-			nextPanel->prev = panel;
+			slot = nextSlot;
+			// Slot 5
+			nextSlot = gcnew Slots();
+			nextSlot->id = 5;
+			nextSlot->panel = panel5;
+			nextSlot->labelProfileWebsite = labelProfileWebsite5;
+			nextSlot->textBoxProfileUsername = textBoxProfileUsername5;
+			nextSlot->textBoxProfilePassword = textBoxProfilePassword5;
+			nextSlot->hide = pictureBoxHideSlot5;
+			nextSlot->show = pictureBoxShowSlot5;
+			nextSlot->clear = pictureBoxDelProf5;
+			// Link Slots 4 & 5
+			slot->next = nextSlot;
+			nextSlot->prev = slot;
 
-			panel = nextPanel;										// traverse through node list
-			// Panel 6
-			nextPanel = gcnew Panels();								// create pointer
-			nextPanel->panel = panel6;								// assign pointer to panel6
-			nextPanel->id = 6;										// ID
-			nextPanel->panel->Visible = false;						// hide panel by default
-			nextPanel->labelProfileWebsite = labelProfileWebsite6;	// assign website label
-			nextPanel->textBoxProfileUsername = textBoxProfileUsername6;// assign username label
-			nextPanel->textBoxProfilePassword = textBoxProfilePassword6;// assign password label
-			// Link Panel 5 & 6
-			panel->next = nextPanel;
-			nextPanel->prev = panel;
+			slot = nextSlot;
+			// Slot 6
+			nextSlot = gcnew Slots();
+			nextSlot->id = 6;
+			nextSlot->panel = panel6;
+			nextSlot->labelProfileWebsite = labelProfileWebsite6;
+			nextSlot->textBoxProfileUsername = textBoxProfileUsername6;
+			nextSlot->textBoxProfilePassword = textBoxProfilePassword6;
+			nextSlot->hide = pictureBoxHideSlot6;
+			nextSlot->show = pictureBoxShowSlot6;
+			nextSlot->clear = pictureBoxDelProf6;
+			// Link Slot 5 & 6
+			slot->next = nextSlot;
+			nextSlot->prev = slot;
 
-			panel = nextPanel;										// traverse through node list
-			// Panel 7
-			nextPanel = gcnew Panels();								// create pointer
-			nextPanel->panel = panel7;								// assign pointer to panel7
-			nextPanel->id = 7;										// ID
-			nextPanel->panel->Visible = false;						// hide by default
-			nextPanel->labelProfileWebsite = labelProfileWebsite7;	// assign website label
-			nextPanel->textBoxProfileUsername = textBoxProfileUsername7;// assign username label
-			nextPanel->textBoxProfilePassword = textBoxProfilePassword7;// assign password label
-			// Link Panel 6 & 7
-			panel->next = nextPanel;
-			nextPanel->prev = panel;
+			slot = nextSlot;
+			// Slot 7
+			nextSlot = gcnew Slots();
+			nextSlot->id = 7;
+			nextSlot->panel = panel7;
+			nextSlot->labelProfileWebsite = labelProfileWebsite7;
+			nextSlot->textBoxProfileUsername = textBoxProfileUsername7;
+			nextSlot->textBoxProfilePassword = textBoxProfilePassword7;
+			nextSlot->hide = pictureBoxHideSlot7;
+			nextSlot->show = pictureBoxShowSlot7;
+			nextSlot->clear = pictureBoxDelProf7;
+			// Link Slot 6 & 7
+			slot->next = nextSlot;
+			nextSlot->prev = slot;
 
-			panel = nextPanel;										// traverse through node list
-			// Panel 8
-			nextPanel = gcnew Panels();								// create pointer
-			nextPanel->panel = panel8;								// assign pointer to panel8
-			nextPanel->id = 8;										// ID
-			nextPanel->panel->Visible = false;						// hide by default
-			nextPanel->labelProfileWebsite = labelProfileWebsite8;	// assign website label
-			nextPanel->textBoxProfileUsername = textBoxProfileUsername8;// assign username label
-			nextPanel->textBoxProfilePassword = textBoxProfilePassword8;// assign password label
-			// Link Panel 7 & 8
-			panel->next = nextPanel;
-			nextPanel->prev = panel;
+			slot = nextSlot;
+			// Slot 8
+			nextSlot = gcnew Slots();
+			nextSlot->id = 8;
+			nextSlot->panel = panel8;
+			nextSlot->labelProfileWebsite = labelProfileWebsite8;
+			nextSlot->textBoxProfileUsername = textBoxProfileUsername8;
+			nextSlot->textBoxProfilePassword = textBoxProfilePassword8;
+			nextSlot->hide = pictureBoxHideSlot8;
+			nextSlot->show = pictureBoxShowSlot8;
+			nextSlot->clear = pictureBoxDelProf8;
+			// Link 7 & 8
+			slot->next = nextSlot;
+			nextSlot->prev = slot;
 
-			panel = nextPanel;										// traverse through node list
-			// Panel 9
-			nextPanel = gcnew Panels();								// create pointer
-			nextPanel->panel = panel9;								// assign pointer to panel9
-			nextPanel->id = 9;										// ID
-			nextPanel->panel->Visible = false;						// hide by default
-			nextPanel->labelProfileWebsite = labelProfileWebsite9;	// assign website label
-			nextPanel->textBoxProfileUsername = textBoxProfileUsername9;// assign username label
-			nextPanel->textBoxProfilePassword = textBoxProfilePassword9;// assign password label
-			// Link Panel 8 & 9
-			panel->next = nextPanel;
-			nextPanel->prev = panel;
+			slot = nextSlot;
+			// Slot 9
+			nextSlot = gcnew Slots();
+			nextSlot->id = 9;
+			nextSlot->panel = panel9;
+			nextSlot->labelProfileWebsite = labelProfileWebsite9;
+			nextSlot->textBoxProfileUsername = textBoxProfileUsername9;
+			nextSlot->textBoxProfilePassword = textBoxProfilePassword9;
+			nextSlot->hide = pictureBoxHideSlot9;
+			nextSlot->show = pictureBoxShowSlot9;
+			nextSlot->clear = pictureBoxDelProf9;
+			// Link 8 & 9
+			slot->next = nextSlot;
+			nextSlot->prev = slot;
 
-			panel = nextPanel;										// traverse through node list
-			// Panel 10
-			nextPanel = gcnew Panels();								// create pointer
-			nextPanel->panel = panel10;								// assign pointer to panel10
-			nextPanel->id = 10;										// ID
-			nextPanel->panel->Visible = false;						// hide by default
-			nextPanel->labelProfileWebsite = labelProfileWebsite10;	// assign website label
-			nextPanel->textBoxProfileUsername = textBoxProfileUsername10;// assign username label
-			nextPanel->textBoxProfilePassword = textBoxProfilePassword10;// assign password label
-			// Link Panel 9 & 10
-			panel->next = nextPanel;
-			nextPanel->prev = panel;
+			slot = nextSlot;
+			// Slot 10
+			nextSlot = gcnew Slots();
+			nextSlot->id = 10;
+			nextSlot->panel = panel5;
+			nextSlot->labelProfileWebsite = labelProfileWebsite10;
+			nextSlot->textBoxProfileUsername = textBoxProfileUsername10;
+			nextSlot->textBoxProfilePassword = textBoxProfilePassword10;
+			nextSlot->hide = pictureBoxHideSlot10;
+			nextSlot->show = pictureBoxShowSlot10;
+			nextSlot->clear = pictureBoxDelProf10;
+			// Link Slots 9 & 10
+			slot->next = nextSlot;
+			nextSlot->prev = slot;
 
-			// LAST PANEL
-			nextPanel->next = nullptr;
+			// LAST SLOT
+			nextSlot->next = nullptr;
+			////////////////////////////////////////////////////////////////////////////////////////////
 
-			// set panel pointer to first node
-			while (panel->prev != nullptr)
+			// set slot pointer to first node
+			while (slot->prev != nullptr)
 			{
-				panel = panel->prev;
+				slot = slot->prev;
 			}
 			// traversal node
-			Panels^ currPanel = panel;
+			Slots^ currSlot = slot;
 
 			// while there's a valid profile
 			if (profile != nullptr)
@@ -184,51 +206,53 @@ namespace PassUnite {
 					// if next profile isn't null
 					if (profile->next != nullptr)
 					{
-						// make next panel visible
-						currPanel->next->panel->Visible = true;
+						// make next slot visible
+						currSlot->next->panel->Visible = true;
+						currSlot->next->show->Visible = true;
+						currSlot->next->clear->Visible = true;
 
-						// copy label values into next panel
-						currPanel->next->labelProfileWebsite->Text = currPanel->labelProfileWebsite->Text;
-						currPanel->next->textBoxProfileUsername->Text = currPanel->textBoxProfileUsername->Text;
-						currPanel->next->textBoxProfilePassword->Text = currPanel->textBoxProfilePassword->Text;
+						// copy label values into next slot
+						currSlot->next->labelProfileWebsite->Text = currSlot->labelProfileWebsite->Text;
+						currSlot->next->textBoxProfileUsername->Text = currSlot->textBoxProfileUsername->Text;
+						currSlot->next->textBoxProfilePassword->Text = currSlot->textBoxProfilePassword->Text;
 
-						if (currPanel != panel)
+						if (currSlot != slot)
 						{
-							// copy previous panels to their next panel
+							// copy previous slots to their next slot
 							int i = 0;						// back jump counter
-							while (currPanel->prev != panel)
+							while (currSlot->prev != slot)
 							{
-								currPanel = currPanel->prev;	// back jump
-								i++;							// increment back jump
+								currSlot = currSlot->prev;	// back jump
+								i++;						// increment back jump
 
 								// assigns next slot to the current slot values
-								currPanel->next->labelProfileWebsite->Text = currPanel->labelProfileWebsite->Text;
-								currPanel->next->textBoxProfileUsername->Text = currPanel->textBoxProfileUsername->Text;
-								currPanel->next->textBoxProfilePassword->Text = currPanel->textBoxProfilePassword->Text;
+								currSlot->next->labelProfileWebsite->Text = currSlot->labelProfileWebsite->Text;
+								currSlot->next->textBoxProfileUsername->Text = currSlot->textBoxProfileUsername->Text;
+								currSlot->next->textBoxProfilePassword->Text = currSlot->textBoxProfilePassword->Text;
 							}
 
-							if (currPanel->prev == panel)
+							if (currSlot->prev == slot)
 							{
 								// assigns current slot to the previous slot values
-								currPanel->labelProfileWebsite->Text = currPanel->prev->labelProfileWebsite->Text;
-								currPanel->textBoxProfileUsername->Text = currPanel->prev->textBoxProfileUsername->Text;
-								currPanel->textBoxProfilePassword->Text = currPanel->prev->textBoxProfilePassword->Text;
+								currSlot->labelProfileWebsite->Text = currSlot->prev->labelProfileWebsite->Text;
+								currSlot->textBoxProfileUsername->Text = currSlot->prev->textBoxProfileUsername->Text;
+								currSlot->textBoxProfilePassword->Text = currSlot->prev->textBoxProfilePassword->Text;
 							}
 
 							// jump forward to correct position
 							for (int j = 0; j < i; j++)
-								currPanel = currPanel->next;
+								currSlot = currSlot->next;
 						}
 
-						if (currPanel->next != nullptr)
-							currPanel = currPanel->next;
+						if (currSlot->next != nullptr)
+							currSlot = currSlot->next;
 
 					}
 
-					// update first panel labels
-					panel->labelProfileWebsite->Text = profile->website;
-					panel->textBoxProfileUsername->Text = profile->username;
-					panel->textBoxProfilePassword->Text = profile->password;
+					// update first slot
+					slot->labelProfileWebsite->Text = profile->website;
+					slot->textBoxProfileUsername->Text = profile->username;
+					slot->textBoxProfilePassword->Text = profile->password;
 
 					if (profile->prev == nullptr)
 						break;
@@ -328,40 +352,64 @@ namespace PassUnite {
 	private: System::Windows::Forms::TextBox^ textBoxProfileUsername10;
 	private: System::Windows::Forms::TextBox^ textBoxProfilePassword10;
 
-	private: System::Windows::Forms::Panel^ panelSidebarExtend;
-	private: System::Windows::Forms::Label^ labelSidebarSettings;
-	private: System::Windows::Forms::Label^ labelSidebarViewProfiles;
-	private: System::Windows::Forms::Label^ labelSidebarAddProfiles;
 
-	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot1;
 
-	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot2;
-	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot2;
 
-	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot3;
-	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot3;
 
-	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot4;
-	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot4;
+	private: System::Windows::Forms::PictureBox^ pictureBoxHideSlot1;
+	private: System::Windows::Forms::PictureBox^ pictureBoxShowSlot2;
 
-	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot5;
-	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot5;
 
-	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot6;
-	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot6;
 
-	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot7;
-	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot7;
 
-	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot8;
-	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot8;
+	private: System::Windows::Forms::PictureBox^ pictureBoxHideSlot2;
+	private: System::Windows::Forms::PictureBox^ pictureBoxShowSlot3;
 
-	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot9;
-	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot9;
 
-	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot10;
-	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot10;
-	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot1;
+
+	private: System::Windows::Forms::PictureBox^ pictureBoxHideSlot3;
+	private: System::Windows::Forms::PictureBox^ pictureBoxShowSlot4;
+
+
+
+	private: System::Windows::Forms::PictureBox^ pictureBoxHideSlot4;
+	private: System::Windows::Forms::PictureBox^ pictureBoxShowSlot5;
+
+
+
+	private: System::Windows::Forms::PictureBox^ pictureBoxHideSlot5;
+	private: System::Windows::Forms::PictureBox^ pictureBoxShowSlot6;
+
+
+
+	private: System::Windows::Forms::PictureBox^ pictureBoxHideSlot6;
+	private: System::Windows::Forms::PictureBox^ pictureBoxShowSlot7;
+
+
+
+	private: System::Windows::Forms::PictureBox^ pictureBoxHideSlot7;
+	private: System::Windows::Forms::PictureBox^ pictureBoxShowSlot8;
+
+
+
+	private: System::Windows::Forms::PictureBox^ pictureBoxHideSlot8;
+	private: System::Windows::Forms::PictureBox^ pictureBoxShowSlot9;
+
+
+
+	private: System::Windows::Forms::PictureBox^ pictureBoxHideSlot9;
+	private: System::Windows::Forms::PictureBox^ pictureBoxShowSlot10;
+
+
+
+	private: System::Windows::Forms::PictureBox^ pictureBoxHideSlot10;
+
+	private: System::Windows::Forms::PictureBox^ pictureBoxShowSlot1;
+private: System::Windows::Forms::Panel^ panelSidebarExtend;
+private: System::Windows::Forms::Label^ labelSidebarSettings;
+private: System::Windows::Forms::Label^ labelSidebarViewProfiles;
+private: System::Windows::Forms::Label^ labelSidebarAddProfiles;
+
 
 
 
@@ -390,26 +438,26 @@ namespace PassUnite {
 			this->pictureBoxMenu = (gcnew System::Windows::Forms::PictureBox());
 			this->labelAppName = (gcnew System::Windows::Forms::Label());
 			this->panelContent = (gcnew System::Windows::Forms::Panel());
-			this->pictureBoxShowingSlot10 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxHidingSlot10 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxShowingSlot9 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxHidingSlot9 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxShowingSlot8 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxHidingSlot8 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxShowingSlot7 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxHidingSlot7 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxShowingSlot6 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxHidingSlot6 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxShowingSlot5 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxHidingSlot5 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxShowingSlot4 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxHidingSlot4 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxShowingSlot3 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxHidingSlot3 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxShowingSlot2 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxHidingSlot2 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxShowingSlot1 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxHidingSlot1 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxHideSlot10 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxShowSlot10 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxHideSlot9 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxShowSlot9 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxHideSlot8 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxShowSlot8 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxHideSlot7 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxShowSlot7 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxHideSlot6 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxShowSlot6 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxHideSlot5 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxShowSlot5 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxHideSlot4 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxShowSlot4 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxHideSlot3 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxShowSlot3 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxHideSlot2 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxShowSlot2 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxHideSlot1 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxShowSlot1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBoxDelProf1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBoxDelProf2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBoxDelProf3 = (gcnew System::Windows::Forms::PictureBox());
@@ -476,26 +524,26 @@ namespace PassUnite {
 			this->panelTopbar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->BeginInit();
 			this->panelContent->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingSlot10))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingSlot10))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingSlot9))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingSlot9))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingSlot8))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingSlot8))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingSlot7))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingSlot7))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingSlot6))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingSlot6))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingSlot5))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingSlot5))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingSlot4))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingSlot4))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingSlot3))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingSlot3))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingSlot2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingSlot2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingSlot1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingSlot1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot10))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot10))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot9))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot9))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot8))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot8))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot7))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot7))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot6))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot6))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot5))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot5))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf3))->BeginInit();
@@ -612,26 +660,26 @@ namespace PassUnite {
 			this->panelContent->AutoScroll = true;
 			this->panelContent->AutoSize = true;
 			this->panelContent->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-			this->panelContent->Controls->Add(this->pictureBoxShowingSlot10);
-			this->panelContent->Controls->Add(this->pictureBoxHidingSlot10);
-			this->panelContent->Controls->Add(this->pictureBoxShowingSlot9);
-			this->panelContent->Controls->Add(this->pictureBoxHidingSlot9);
-			this->panelContent->Controls->Add(this->pictureBoxShowingSlot8);
-			this->panelContent->Controls->Add(this->pictureBoxHidingSlot8);
-			this->panelContent->Controls->Add(this->pictureBoxShowingSlot7);
-			this->panelContent->Controls->Add(this->pictureBoxHidingSlot7);
-			this->panelContent->Controls->Add(this->pictureBoxShowingSlot6);
-			this->panelContent->Controls->Add(this->pictureBoxHidingSlot6);
-			this->panelContent->Controls->Add(this->pictureBoxShowingSlot5);
-			this->panelContent->Controls->Add(this->pictureBoxHidingSlot5);
-			this->panelContent->Controls->Add(this->pictureBoxShowingSlot4);
-			this->panelContent->Controls->Add(this->pictureBoxHidingSlot4);
-			this->panelContent->Controls->Add(this->pictureBoxShowingSlot3);
-			this->panelContent->Controls->Add(this->pictureBoxHidingSlot3);
-			this->panelContent->Controls->Add(this->pictureBoxShowingSlot2);
-			this->panelContent->Controls->Add(this->pictureBoxHidingSlot2);
-			this->panelContent->Controls->Add(this->pictureBoxShowingSlot1);
-			this->panelContent->Controls->Add(this->pictureBoxHidingSlot1);
+			this->panelContent->Controls->Add(this->pictureBoxHideSlot10);
+			this->panelContent->Controls->Add(this->pictureBoxShowSlot10);
+			this->panelContent->Controls->Add(this->pictureBoxHideSlot9);
+			this->panelContent->Controls->Add(this->pictureBoxShowSlot9);
+			this->panelContent->Controls->Add(this->pictureBoxHideSlot8);
+			this->panelContent->Controls->Add(this->pictureBoxShowSlot8);
+			this->panelContent->Controls->Add(this->pictureBoxHideSlot7);
+			this->panelContent->Controls->Add(this->pictureBoxShowSlot7);
+			this->panelContent->Controls->Add(this->pictureBoxHideSlot6);
+			this->panelContent->Controls->Add(this->pictureBoxShowSlot6);
+			this->panelContent->Controls->Add(this->pictureBoxHideSlot5);
+			this->panelContent->Controls->Add(this->pictureBoxShowSlot5);
+			this->panelContent->Controls->Add(this->pictureBoxHideSlot4);
+			this->panelContent->Controls->Add(this->pictureBoxShowSlot4);
+			this->panelContent->Controls->Add(this->pictureBoxHideSlot3);
+			this->panelContent->Controls->Add(this->pictureBoxShowSlot3);
+			this->panelContent->Controls->Add(this->pictureBoxHideSlot2);
+			this->panelContent->Controls->Add(this->pictureBoxShowSlot2);
+			this->panelContent->Controls->Add(this->pictureBoxHideSlot1);
+			this->panelContent->Controls->Add(this->pictureBoxShowSlot1);
 			this->panelContent->Controls->Add(this->pictureBoxDelProf1);
 			this->panelContent->Controls->Add(this->pictureBoxDelProf2);
 			this->panelContent->Controls->Add(this->pictureBoxDelProf3);
@@ -663,255 +711,264 @@ namespace PassUnite {
 			this->panelContent->Size = System::Drawing::Size(909, 436);
 			this->panelContent->TabIndex = 12;
 			// 
-			// pictureBoxShowingSlot10
+			// pictureBoxHideSlot10
 			// 
-			this->pictureBoxShowingSlot10->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxShowingSlot10->Enabled = false;
-			this->pictureBoxShowingSlot10->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingSlot10.Image")));
-			this->pictureBoxShowingSlot10->Location = System::Drawing::Point(869, 718);
-			this->pictureBoxShowingSlot10->Name = L"pictureBoxShowingSlot10";
-			this->pictureBoxShowingSlot10->Size = System::Drawing::Size(20, 20);
-			this->pictureBoxShowingSlot10->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxShowingSlot10->TabIndex = 39;
-			this->pictureBoxShowingSlot10->TabStop = false;
-			this->pictureBoxShowingSlot10->Visible = false;
+			this->pictureBoxHideSlot10->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxHideSlot10->Enabled = false;
+			this->pictureBoxHideSlot10->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHideSlot10.Image")));
+			this->pictureBoxHideSlot10->Location = System::Drawing::Point(869, 718);
+			this->pictureBoxHideSlot10->Name = L"pictureBoxHideSlot10";
+			this->pictureBoxHideSlot10->Size = System::Drawing::Size(20, 20);
+			this->pictureBoxHideSlot10->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxHideSlot10->TabIndex = 39;
+			this->pictureBoxHideSlot10->TabStop = false;
+			this->pictureBoxHideSlot10->Visible = false;
 			// 
-			// pictureBoxHidingSlot10
+			// pictureBoxShowSlot10
 			// 
-			this->pictureBoxHidingSlot10->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxHidingSlot10->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingSlot10.Image")));
-			this->pictureBoxHidingSlot10->Location = System::Drawing::Point(869, 718);
-			this->pictureBoxHidingSlot10->Name = L"pictureBoxHidingSlot10";
-			this->pictureBoxHidingSlot10->Size = System::Drawing::Size(20, 20);
-			this->pictureBoxHidingSlot10->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxHidingSlot10->TabIndex = 40;
-			this->pictureBoxHidingSlot10->TabStop = false;
-			this->pictureBoxHidingSlot10->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot10_Click);
+			this->pictureBoxShowSlot10->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowSlot10->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowSlot10.Image")));
+			this->pictureBoxShowSlot10->Location = System::Drawing::Point(869, 718);
+			this->pictureBoxShowSlot10->Name = L"pictureBoxShowSlot10";
+			this->pictureBoxShowSlot10->Size = System::Drawing::Size(20, 20);
+			this->pictureBoxShowSlot10->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxShowSlot10->TabIndex = 40;
+			this->pictureBoxShowSlot10->TabStop = false;
+			this->pictureBoxShowSlot10->Visible = false;
+			this->pictureBoxShowSlot10->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot10_Click);
 			// 
-			// pictureBoxShowingSlot9
+			// pictureBoxHideSlot9
 			// 
-			this->pictureBoxShowingSlot9->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxShowingSlot9->Enabled = false;
-			this->pictureBoxShowingSlot9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingSlot9.Image")));
-			this->pictureBoxShowingSlot9->Location = System::Drawing::Point(869, 656);
-			this->pictureBoxShowingSlot9->Name = L"pictureBoxShowingSlot9";
-			this->pictureBoxShowingSlot9->Size = System::Drawing::Size(20, 20);
-			this->pictureBoxShowingSlot9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxShowingSlot9->TabIndex = 37;
-			this->pictureBoxShowingSlot9->TabStop = false;
-			this->pictureBoxShowingSlot9->Visible = false;
+			this->pictureBoxHideSlot9->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxHideSlot9->Enabled = false;
+			this->pictureBoxHideSlot9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHideSlot9.Image")));
+			this->pictureBoxHideSlot9->Location = System::Drawing::Point(869, 656);
+			this->pictureBoxHideSlot9->Name = L"pictureBoxHideSlot9";
+			this->pictureBoxHideSlot9->Size = System::Drawing::Size(20, 20);
+			this->pictureBoxHideSlot9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxHideSlot9->TabIndex = 37;
+			this->pictureBoxHideSlot9->TabStop = false;
+			this->pictureBoxHideSlot9->Visible = false;
 			// 
-			// pictureBoxHidingSlot9
+			// pictureBoxShowSlot9
 			// 
-			this->pictureBoxHidingSlot9->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxHidingSlot9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingSlot9.Image")));
-			this->pictureBoxHidingSlot9->Location = System::Drawing::Point(869, 656);
-			this->pictureBoxHidingSlot9->Name = L"pictureBoxHidingSlot9";
-			this->pictureBoxHidingSlot9->Size = System::Drawing::Size(20, 20);
-			this->pictureBoxHidingSlot9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxHidingSlot9->TabIndex = 38;
-			this->pictureBoxHidingSlot9->TabStop = false;
-			this->pictureBoxHidingSlot9->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot9_Click);
+			this->pictureBoxShowSlot9->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowSlot9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowSlot9.Image")));
+			this->pictureBoxShowSlot9->Location = System::Drawing::Point(869, 656);
+			this->pictureBoxShowSlot9->Name = L"pictureBoxShowSlot9";
+			this->pictureBoxShowSlot9->Size = System::Drawing::Size(20, 20);
+			this->pictureBoxShowSlot9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxShowSlot9->TabIndex = 38;
+			this->pictureBoxShowSlot9->TabStop = false;
+			this->pictureBoxShowSlot9->Visible = false;
+			this->pictureBoxShowSlot9->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot9_Click);
 			// 
-			// pictureBoxShowingSlot8
+			// pictureBoxHideSlot8
 			// 
-			this->pictureBoxShowingSlot8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxShowingSlot8->Enabled = false;
-			this->pictureBoxShowingSlot8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingSlot8.Image")));
-			this->pictureBoxShowingSlot8->Location = System::Drawing::Point(869, 596);
-			this->pictureBoxShowingSlot8->Name = L"pictureBoxShowingSlot8";
-			this->pictureBoxShowingSlot8->Size = System::Drawing::Size(20, 20);
-			this->pictureBoxShowingSlot8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxShowingSlot8->TabIndex = 35;
-			this->pictureBoxShowingSlot8->TabStop = false;
-			this->pictureBoxShowingSlot8->Visible = false;
+			this->pictureBoxHideSlot8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxHideSlot8->Enabled = false;
+			this->pictureBoxHideSlot8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHideSlot8.Image")));
+			this->pictureBoxHideSlot8->Location = System::Drawing::Point(869, 596);
+			this->pictureBoxHideSlot8->Name = L"pictureBoxHideSlot8";
+			this->pictureBoxHideSlot8->Size = System::Drawing::Size(20, 20);
+			this->pictureBoxHideSlot8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxHideSlot8->TabIndex = 35;
+			this->pictureBoxHideSlot8->TabStop = false;
+			this->pictureBoxHideSlot8->Visible = false;
 			// 
-			// pictureBoxHidingSlot8
+			// pictureBoxShowSlot8
 			// 
-			this->pictureBoxHidingSlot8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxHidingSlot8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingSlot8.Image")));
-			this->pictureBoxHidingSlot8->Location = System::Drawing::Point(869, 596);
-			this->pictureBoxHidingSlot8->Name = L"pictureBoxHidingSlot8";
-			this->pictureBoxHidingSlot8->Size = System::Drawing::Size(20, 20);
-			this->pictureBoxHidingSlot8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxHidingSlot8->TabIndex = 36;
-			this->pictureBoxHidingSlot8->TabStop = false;
-			this->pictureBoxHidingSlot8->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot8_Click);
+			this->pictureBoxShowSlot8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowSlot8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowSlot8.Image")));
+			this->pictureBoxShowSlot8->Location = System::Drawing::Point(869, 596);
+			this->pictureBoxShowSlot8->Name = L"pictureBoxShowSlot8";
+			this->pictureBoxShowSlot8->Size = System::Drawing::Size(20, 20);
+			this->pictureBoxShowSlot8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxShowSlot8->TabIndex = 36;
+			this->pictureBoxShowSlot8->TabStop = false;
+			this->pictureBoxShowSlot8->Visible = false;
+			this->pictureBoxShowSlot8->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot8_Click);
 			// 
-			// pictureBoxShowingSlot7
+			// pictureBoxHideSlot7
 			// 
-			this->pictureBoxShowingSlot7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxShowingSlot7->Enabled = false;
-			this->pictureBoxShowingSlot7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingSlot7.Image")));
-			this->pictureBoxShowingSlot7->Location = System::Drawing::Point(869, 537);
-			this->pictureBoxShowingSlot7->Name = L"pictureBoxShowingSlot7";
-			this->pictureBoxShowingSlot7->Size = System::Drawing::Size(20, 20);
-			this->pictureBoxShowingSlot7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxShowingSlot7->TabIndex = 33;
-			this->pictureBoxShowingSlot7->TabStop = false;
-			this->pictureBoxShowingSlot7->Visible = false;
+			this->pictureBoxHideSlot7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxHideSlot7->Enabled = false;
+			this->pictureBoxHideSlot7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHideSlot7.Image")));
+			this->pictureBoxHideSlot7->Location = System::Drawing::Point(869, 537);
+			this->pictureBoxHideSlot7->Name = L"pictureBoxHideSlot7";
+			this->pictureBoxHideSlot7->Size = System::Drawing::Size(20, 20);
+			this->pictureBoxHideSlot7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxHideSlot7->TabIndex = 33;
+			this->pictureBoxHideSlot7->TabStop = false;
+			this->pictureBoxHideSlot7->Visible = false;
 			// 
-			// pictureBoxHidingSlot7
+			// pictureBoxShowSlot7
 			// 
-			this->pictureBoxHidingSlot7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxHidingSlot7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingSlot7.Image")));
-			this->pictureBoxHidingSlot7->Location = System::Drawing::Point(869, 537);
-			this->pictureBoxHidingSlot7->Name = L"pictureBoxHidingSlot7";
-			this->pictureBoxHidingSlot7->Size = System::Drawing::Size(20, 20);
-			this->pictureBoxHidingSlot7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxHidingSlot7->TabIndex = 34;
-			this->pictureBoxHidingSlot7->TabStop = false;
-			this->pictureBoxHidingSlot7->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot7_Click);
+			this->pictureBoxShowSlot7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowSlot7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowSlot7.Image")));
+			this->pictureBoxShowSlot7->Location = System::Drawing::Point(869, 537);
+			this->pictureBoxShowSlot7->Name = L"pictureBoxShowSlot7";
+			this->pictureBoxShowSlot7->Size = System::Drawing::Size(20, 20);
+			this->pictureBoxShowSlot7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxShowSlot7->TabIndex = 34;
+			this->pictureBoxShowSlot7->TabStop = false;
+			this->pictureBoxShowSlot7->Visible = false;
+			this->pictureBoxShowSlot7->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot7_Click);
 			// 
-			// pictureBoxShowingSlot6
+			// pictureBoxHideSlot6
 			// 
-			this->pictureBoxShowingSlot6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxShowingSlot6->Enabled = false;
-			this->pictureBoxShowingSlot6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingSlot6.Image")));
-			this->pictureBoxShowingSlot6->Location = System::Drawing::Point(869, 477);
-			this->pictureBoxShowingSlot6->Name = L"pictureBoxShowingSlot6";
-			this->pictureBoxShowingSlot6->Size = System::Drawing::Size(20, 20);
-			this->pictureBoxShowingSlot6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxShowingSlot6->TabIndex = 31;
-			this->pictureBoxShowingSlot6->TabStop = false;
-			this->pictureBoxShowingSlot6->Visible = false;
+			this->pictureBoxHideSlot6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxHideSlot6->Enabled = false;
+			this->pictureBoxHideSlot6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHideSlot6.Image")));
+			this->pictureBoxHideSlot6->Location = System::Drawing::Point(869, 477);
+			this->pictureBoxHideSlot6->Name = L"pictureBoxHideSlot6";
+			this->pictureBoxHideSlot6->Size = System::Drawing::Size(20, 20);
+			this->pictureBoxHideSlot6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxHideSlot6->TabIndex = 31;
+			this->pictureBoxHideSlot6->TabStop = false;
+			this->pictureBoxHideSlot6->Visible = false;
 			// 
-			// pictureBoxHidingSlot6
+			// pictureBoxShowSlot6
 			// 
-			this->pictureBoxHidingSlot6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxHidingSlot6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingSlot6.Image")));
-			this->pictureBoxHidingSlot6->Location = System::Drawing::Point(869, 477);
-			this->pictureBoxHidingSlot6->Name = L"pictureBoxHidingSlot6";
-			this->pictureBoxHidingSlot6->Size = System::Drawing::Size(20, 20);
-			this->pictureBoxHidingSlot6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxHidingSlot6->TabIndex = 32;
-			this->pictureBoxHidingSlot6->TabStop = false;
-			this->pictureBoxHidingSlot6->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot6_Click);
+			this->pictureBoxShowSlot6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowSlot6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowSlot6.Image")));
+			this->pictureBoxShowSlot6->Location = System::Drawing::Point(869, 477);
+			this->pictureBoxShowSlot6->Name = L"pictureBoxShowSlot6";
+			this->pictureBoxShowSlot6->Size = System::Drawing::Size(20, 20);
+			this->pictureBoxShowSlot6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxShowSlot6->TabIndex = 32;
+			this->pictureBoxShowSlot6->TabStop = false;
+			this->pictureBoxShowSlot6->Visible = false;
+			this->pictureBoxShowSlot6->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot6_Click);
 			// 
-			// pictureBoxShowingSlot5
+			// pictureBoxHideSlot5
 			// 
-			this->pictureBoxShowingSlot5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxShowingSlot5->Enabled = false;
-			this->pictureBoxShowingSlot5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingSlot5.Image")));
-			this->pictureBoxShowingSlot5->Location = System::Drawing::Point(869, 417);
-			this->pictureBoxShowingSlot5->Name = L"pictureBoxShowingSlot5";
-			this->pictureBoxShowingSlot5->Size = System::Drawing::Size(20, 20);
-			this->pictureBoxShowingSlot5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxShowingSlot5->TabIndex = 29;
-			this->pictureBoxShowingSlot5->TabStop = false;
-			this->pictureBoxShowingSlot5->Visible = false;
+			this->pictureBoxHideSlot5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxHideSlot5->Enabled = false;
+			this->pictureBoxHideSlot5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHideSlot5.Image")));
+			this->pictureBoxHideSlot5->Location = System::Drawing::Point(869, 417);
+			this->pictureBoxHideSlot5->Name = L"pictureBoxHideSlot5";
+			this->pictureBoxHideSlot5->Size = System::Drawing::Size(20, 20);
+			this->pictureBoxHideSlot5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxHideSlot5->TabIndex = 29;
+			this->pictureBoxHideSlot5->TabStop = false;
+			this->pictureBoxHideSlot5->Visible = false;
 			// 
-			// pictureBoxHidingSlot5
+			// pictureBoxShowSlot5
 			// 
-			this->pictureBoxHidingSlot5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxHidingSlot5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingSlot5.Image")));
-			this->pictureBoxHidingSlot5->Location = System::Drawing::Point(869, 417);
-			this->pictureBoxHidingSlot5->Name = L"pictureBoxHidingSlot5";
-			this->pictureBoxHidingSlot5->Size = System::Drawing::Size(20, 20);
-			this->pictureBoxHidingSlot5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxHidingSlot5->TabIndex = 30;
-			this->pictureBoxHidingSlot5->TabStop = false;
-			this->pictureBoxHidingSlot5->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot5_Click);
+			this->pictureBoxShowSlot5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowSlot5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowSlot5.Image")));
+			this->pictureBoxShowSlot5->Location = System::Drawing::Point(869, 417);
+			this->pictureBoxShowSlot5->Name = L"pictureBoxShowSlot5";
+			this->pictureBoxShowSlot5->Size = System::Drawing::Size(20, 20);
+			this->pictureBoxShowSlot5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxShowSlot5->TabIndex = 30;
+			this->pictureBoxShowSlot5->TabStop = false;
+			this->pictureBoxShowSlot5->Visible = false;
+			this->pictureBoxShowSlot5->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot5_Click);
 			// 
-			// pictureBoxShowingSlot4
+			// pictureBoxHideSlot4
 			// 
-			this->pictureBoxShowingSlot4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxShowingSlot4->Enabled = false;
-			this->pictureBoxShowingSlot4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingSlot4.Image")));
-			this->pictureBoxShowingSlot4->Location = System::Drawing::Point(869, 355);
-			this->pictureBoxShowingSlot4->Name = L"pictureBoxShowingSlot4";
-			this->pictureBoxShowingSlot4->Size = System::Drawing::Size(20, 20);
-			this->pictureBoxShowingSlot4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxShowingSlot4->TabIndex = 27;
-			this->pictureBoxShowingSlot4->TabStop = false;
-			this->pictureBoxShowingSlot4->Visible = false;
+			this->pictureBoxHideSlot4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxHideSlot4->Enabled = false;
+			this->pictureBoxHideSlot4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHideSlot4.Image")));
+			this->pictureBoxHideSlot4->Location = System::Drawing::Point(869, 355);
+			this->pictureBoxHideSlot4->Name = L"pictureBoxHideSlot4";
+			this->pictureBoxHideSlot4->Size = System::Drawing::Size(20, 20);
+			this->pictureBoxHideSlot4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxHideSlot4->TabIndex = 27;
+			this->pictureBoxHideSlot4->TabStop = false;
+			this->pictureBoxHideSlot4->Visible = false;
 			// 
-			// pictureBoxHidingSlot4
+			// pictureBoxShowSlot4
 			// 
-			this->pictureBoxHidingSlot4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxHidingSlot4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingSlot4.Image")));
-			this->pictureBoxHidingSlot4->Location = System::Drawing::Point(869, 355);
-			this->pictureBoxHidingSlot4->Name = L"pictureBoxHidingSlot4";
-			this->pictureBoxHidingSlot4->Size = System::Drawing::Size(20, 20);
-			this->pictureBoxHidingSlot4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxHidingSlot4->TabIndex = 28;
-			this->pictureBoxHidingSlot4->TabStop = false;
-			this->pictureBoxHidingSlot4->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot4_Click);
+			this->pictureBoxShowSlot4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowSlot4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowSlot4.Image")));
+			this->pictureBoxShowSlot4->Location = System::Drawing::Point(869, 355);
+			this->pictureBoxShowSlot4->Name = L"pictureBoxShowSlot4";
+			this->pictureBoxShowSlot4->Size = System::Drawing::Size(20, 20);
+			this->pictureBoxShowSlot4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxShowSlot4->TabIndex = 28;
+			this->pictureBoxShowSlot4->TabStop = false;
+			this->pictureBoxShowSlot4->Visible = false;
+			this->pictureBoxShowSlot4->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot4_Click);
 			// 
-			// pictureBoxShowingSlot3
+			// pictureBoxHideSlot3
 			// 
-			this->pictureBoxShowingSlot3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxShowingSlot3->Enabled = false;
-			this->pictureBoxShowingSlot3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingSlot3.Image")));
-			this->pictureBoxShowingSlot3->Location = System::Drawing::Point(869, 295);
-			this->pictureBoxShowingSlot3->Name = L"pictureBoxShowingSlot3";
-			this->pictureBoxShowingSlot3->Size = System::Drawing::Size(20, 20);
-			this->pictureBoxShowingSlot3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxShowingSlot3->TabIndex = 25;
-			this->pictureBoxShowingSlot3->TabStop = false;
-			this->pictureBoxShowingSlot3->Visible = false;
+			this->pictureBoxHideSlot3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxHideSlot3->Enabled = false;
+			this->pictureBoxHideSlot3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHideSlot3.Image")));
+			this->pictureBoxHideSlot3->Location = System::Drawing::Point(869, 295);
+			this->pictureBoxHideSlot3->Name = L"pictureBoxHideSlot3";
+			this->pictureBoxHideSlot3->Size = System::Drawing::Size(20, 20);
+			this->pictureBoxHideSlot3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxHideSlot3->TabIndex = 25;
+			this->pictureBoxHideSlot3->TabStop = false;
+			this->pictureBoxHideSlot3->Visible = false;
 			// 
-			// pictureBoxHidingSlot3
+			// pictureBoxShowSlot3
 			// 
-			this->pictureBoxHidingSlot3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxHidingSlot3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingSlot3.Image")));
-			this->pictureBoxHidingSlot3->Location = System::Drawing::Point(869, 295);
-			this->pictureBoxHidingSlot3->Name = L"pictureBoxHidingSlot3";
-			this->pictureBoxHidingSlot3->Size = System::Drawing::Size(20, 20);
-			this->pictureBoxHidingSlot3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxHidingSlot3->TabIndex = 26;
-			this->pictureBoxHidingSlot3->TabStop = false;
-			this->pictureBoxHidingSlot3->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot3_Click);
+			this->pictureBoxShowSlot3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowSlot3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowSlot3.Image")));
+			this->pictureBoxShowSlot3->Location = System::Drawing::Point(869, 295);
+			this->pictureBoxShowSlot3->Name = L"pictureBoxShowSlot3";
+			this->pictureBoxShowSlot3->Size = System::Drawing::Size(20, 20);
+			this->pictureBoxShowSlot3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxShowSlot3->TabIndex = 26;
+			this->pictureBoxShowSlot3->TabStop = false;
+			this->pictureBoxShowSlot3->Visible = false;
+			this->pictureBoxShowSlot3->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot3_Click);
 			// 
-			// pictureBoxShowingSlot2
+			// pictureBoxHideSlot2
 			// 
-			this->pictureBoxShowingSlot2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxShowingSlot2->Enabled = false;
-			this->pictureBoxShowingSlot2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingSlot2.Image")));
-			this->pictureBoxShowingSlot2->Location = System::Drawing::Point(869, 236);
-			this->pictureBoxShowingSlot2->Name = L"pictureBoxShowingSlot2";
-			this->pictureBoxShowingSlot2->Size = System::Drawing::Size(20, 20);
-			this->pictureBoxShowingSlot2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxShowingSlot2->TabIndex = 23;
-			this->pictureBoxShowingSlot2->TabStop = false;
-			this->pictureBoxShowingSlot2->Visible = false;
+			this->pictureBoxHideSlot2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxHideSlot2->Enabled = false;
+			this->pictureBoxHideSlot2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHideSlot2.Image")));
+			this->pictureBoxHideSlot2->Location = System::Drawing::Point(869, 236);
+			this->pictureBoxHideSlot2->Name = L"pictureBoxHideSlot2";
+			this->pictureBoxHideSlot2->Size = System::Drawing::Size(20, 20);
+			this->pictureBoxHideSlot2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxHideSlot2->TabIndex = 23;
+			this->pictureBoxHideSlot2->TabStop = false;
+			this->pictureBoxHideSlot2->Visible = false;
 			// 
-			// pictureBoxHidingSlot2
+			// pictureBoxShowSlot2
 			// 
-			this->pictureBoxHidingSlot2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxHidingSlot2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingSlot2.Image")));
-			this->pictureBoxHidingSlot2->Location = System::Drawing::Point(869, 236);
-			this->pictureBoxHidingSlot2->Name = L"pictureBoxHidingSlot2";
-			this->pictureBoxHidingSlot2->Size = System::Drawing::Size(20, 20);
-			this->pictureBoxHidingSlot2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxHidingSlot2->TabIndex = 24;
-			this->pictureBoxHidingSlot2->TabStop = false;
-			this->pictureBoxHidingSlot2->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot2_Click);
+			this->pictureBoxShowSlot2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowSlot2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowSlot2.Image")));
+			this->pictureBoxShowSlot2->Location = System::Drawing::Point(869, 236);
+			this->pictureBoxShowSlot2->Name = L"pictureBoxShowSlot2";
+			this->pictureBoxShowSlot2->Size = System::Drawing::Size(20, 20);
+			this->pictureBoxShowSlot2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxShowSlot2->TabIndex = 24;
+			this->pictureBoxShowSlot2->TabStop = false;
+			this->pictureBoxShowSlot2->Visible = false;
+			this->pictureBoxShowSlot2->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot2_Click);
 			// 
-			// pictureBoxShowingSlot1
+			// pictureBoxHideSlot1
 			// 
-			this->pictureBoxShowingSlot1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxShowingSlot1->Enabled = false;
-			this->pictureBoxShowingSlot1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingSlot1.Image")));
-			this->pictureBoxShowingSlot1->Location = System::Drawing::Point(869, 176);
-			this->pictureBoxShowingSlot1->Name = L"pictureBoxShowingSlot1";
-			this->pictureBoxShowingSlot1->Size = System::Drawing::Size(20, 20);
-			this->pictureBoxShowingSlot1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxShowingSlot1->TabIndex = 21;
-			this->pictureBoxShowingSlot1->TabStop = false;
-			this->pictureBoxShowingSlot1->Visible = false;
+			this->pictureBoxHideSlot1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxHideSlot1->Enabled = false;
+			this->pictureBoxHideSlot1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHideSlot1.Image")));
+			this->pictureBoxHideSlot1->Location = System::Drawing::Point(869, 176);
+			this->pictureBoxHideSlot1->Name = L"pictureBoxHideSlot1";
+			this->pictureBoxHideSlot1->Size = System::Drawing::Size(20, 20);
+			this->pictureBoxHideSlot1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxHideSlot1->TabIndex = 21;
+			this->pictureBoxHideSlot1->TabStop = false;
+			this->pictureBoxHideSlot1->Visible = false;
 			// 
-			// pictureBoxHidingSlot1
+			// pictureBoxShowSlot1
 			// 
-			this->pictureBoxHidingSlot1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxHidingSlot1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingSlot1.Image")));
-			this->pictureBoxHidingSlot1->Location = System::Drawing::Point(869, 176);
-			this->pictureBoxHidingSlot1->Name = L"pictureBoxHidingSlot1";
-			this->pictureBoxHidingSlot1->Size = System::Drawing::Size(20, 20);
-			this->pictureBoxHidingSlot1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxHidingSlot1->TabIndex = 22;
-			this->pictureBoxHidingSlot1->TabStop = false;
-			this->pictureBoxHidingSlot1->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot1_Click);
+			this->pictureBoxShowSlot1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowSlot1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowSlot1.Image")));
+			this->pictureBoxShowSlot1->Location = System::Drawing::Point(869, 176);
+			this->pictureBoxShowSlot1->Name = L"pictureBoxShowSlot1";
+			this->pictureBoxShowSlot1->Size = System::Drawing::Size(20, 20);
+			this->pictureBoxShowSlot1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxShowSlot1->TabIndex = 22;
+			this->pictureBoxShowSlot1->TabStop = false;
+			this->pictureBoxShowSlot1->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot1_Click);
 			// 
 			// pictureBoxDelProf1
 			// 
@@ -933,6 +990,7 @@ namespace PassUnite {
 			this->pictureBoxDelProf2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxDelProf2->TabIndex = 1;
 			this->pictureBoxDelProf2->TabStop = false;
+			this->pictureBoxDelProf2->Visible = false;
 			this->pictureBoxDelProf2->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf2_Click);
 			// 
 			// pictureBoxDelProf3
@@ -944,6 +1002,7 @@ namespace PassUnite {
 			this->pictureBoxDelProf3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxDelProf3->TabIndex = 1;
 			this->pictureBoxDelProf3->TabStop = false;
+			this->pictureBoxDelProf3->Visible = false;
 			this->pictureBoxDelProf3->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf3_Click);
 			// 
 			// pictureBoxDelProf4
@@ -955,6 +1014,7 @@ namespace PassUnite {
 			this->pictureBoxDelProf4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxDelProf4->TabIndex = 1;
 			this->pictureBoxDelProf4->TabStop = false;
+			this->pictureBoxDelProf4->Visible = false;
 			this->pictureBoxDelProf4->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf4_Click);
 			// 
 			// pictureBoxDelProf5
@@ -966,6 +1026,7 @@ namespace PassUnite {
 			this->pictureBoxDelProf5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxDelProf5->TabIndex = 1;
 			this->pictureBoxDelProf5->TabStop = false;
+			this->pictureBoxDelProf5->Visible = false;
 			this->pictureBoxDelProf5->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf5_Click);
 			// 
 			// pictureBoxDelProf6
@@ -977,6 +1038,7 @@ namespace PassUnite {
 			this->pictureBoxDelProf6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxDelProf6->TabIndex = 1;
 			this->pictureBoxDelProf6->TabStop = false;
+			this->pictureBoxDelProf6->Visible = false;
 			this->pictureBoxDelProf6->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf6_Click);
 			// 
 			// pictureBoxDelProf10
@@ -988,6 +1050,7 @@ namespace PassUnite {
 			this->pictureBoxDelProf10->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxDelProf10->TabIndex = 1;
 			this->pictureBoxDelProf10->TabStop = false;
+			this->pictureBoxDelProf10->Visible = false;
 			this->pictureBoxDelProf10->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf10_Click);
 			// 
 			// pictureBoxDelProf9
@@ -999,6 +1062,7 @@ namespace PassUnite {
 			this->pictureBoxDelProf9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxDelProf9->TabIndex = 1;
 			this->pictureBoxDelProf9->TabStop = false;
+			this->pictureBoxDelProf9->Visible = false;
 			this->pictureBoxDelProf9->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf9_Click);
 			// 
 			// pictureBoxDelProf8
@@ -1010,6 +1074,7 @@ namespace PassUnite {
 			this->pictureBoxDelProf8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxDelProf8->TabIndex = 1;
 			this->pictureBoxDelProf8->TabStop = false;
+			this->pictureBoxDelProf8->Visible = false;
 			this->pictureBoxDelProf8->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf8_Click);
 			// 
 			// pictureBoxDelProf7
@@ -1021,6 +1086,7 @@ namespace PassUnite {
 			this->pictureBoxDelProf7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxDelProf7->TabIndex = 1;
 			this->pictureBoxDelProf7->TabStop = false;
+			this->pictureBoxDelProf7->Visible = false;
 			this->pictureBoxDelProf7->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxDelProf7_Click);
 			// 
 			// labelTitle
@@ -1166,6 +1232,7 @@ namespace PassUnite {
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(860, 48);
 			this->panel2->TabIndex = 0;
+			this->panel2->Visible = false;
 			// 
 			// textBoxProfilePassword2
 			// 
@@ -1231,6 +1298,7 @@ namespace PassUnite {
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(860, 48);
 			this->panel3->TabIndex = 0;
+			this->panel3->Visible = false;
 			// 
 			// textBoxProfilePassword3
 			// 
@@ -1296,6 +1364,7 @@ namespace PassUnite {
 			this->panel4->Name = L"panel4";
 			this->panel4->Size = System::Drawing::Size(860, 48);
 			this->panel4->TabIndex = 0;
+			this->panel4->Visible = false;
 			// 
 			// textBoxProfilePassword4
 			// 
@@ -1361,6 +1430,7 @@ namespace PassUnite {
 			this->panel5->Name = L"panel5";
 			this->panel5->Size = System::Drawing::Size(860, 48);
 			this->panel5->TabIndex = 0;
+			this->panel5->Visible = false;
 			// 
 			// textBoxProfilePassword5
 			// 
@@ -1426,6 +1496,7 @@ namespace PassUnite {
 			this->panel6->Name = L"panel6";
 			this->panel6->Size = System::Drawing::Size(860, 48);
 			this->panel6->TabIndex = 0;
+			this->panel6->Visible = false;
 			// 
 			// textBoxProfilePassword6
 			// 
@@ -1491,6 +1562,7 @@ namespace PassUnite {
 			this->panel7->Name = L"panel7";
 			this->panel7->Size = System::Drawing::Size(860, 48);
 			this->panel7->TabIndex = 0;
+			this->panel7->Visible = false;
 			// 
 			// textBoxProfilePassword7
 			// 
@@ -1556,6 +1628,7 @@ namespace PassUnite {
 			this->panel8->Name = L"panel8";
 			this->panel8->Size = System::Drawing::Size(860, 48);
 			this->panel8->TabIndex = 0;
+			this->panel8->Visible = false;
 			// 
 			// textBoxProfilePassword8
 			// 
@@ -1621,6 +1694,7 @@ namespace PassUnite {
 			this->panel9->Name = L"panel9";
 			this->panel9->Size = System::Drawing::Size(860, 48);
 			this->panel9->TabIndex = 0;
+			this->panel9->Visible = false;
 			// 
 			// textBoxProfilePassword9
 			// 
@@ -1686,6 +1760,7 @@ namespace PassUnite {
 			this->panel10->Name = L"panel10";
 			this->panel10->Size = System::Drawing::Size(860, 48);
 			this->panel10->TabIndex = 0;
+			this->panel10->Visible = false;
 			// 
 			// textBoxProfilePassword10
 			// 
@@ -1748,7 +1823,7 @@ namespace PassUnite {
 			this->panelSidebarExtend->Location = System::Drawing::Point(75, 75);
 			this->panelSidebarExtend->Name = L"panelSidebarExtend";
 			this->panelSidebarExtend->Size = System::Drawing::Size(177, 436);
-			this->panelSidebarExtend->TabIndex = 13;
+			this->panelSidebarExtend->TabIndex = 14;
 			this->panelSidebarExtend->Visible = false;
 			// 
 			// labelSidebarSettings
@@ -1820,26 +1895,26 @@ namespace PassUnite {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->EndInit();
 			this->panelContent->ResumeLayout(false);
 			this->panelContent->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingSlot10))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingSlot10))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingSlot9))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingSlot9))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingSlot8))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingSlot8))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingSlot7))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingSlot7))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingSlot6))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingSlot6))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingSlot5))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingSlot5))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingSlot4))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingSlot4))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingSlot3))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingSlot3))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingSlot2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingSlot2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowingSlot1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHidingSlot1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot10))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot10))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot9))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot9))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot8))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot8))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot7))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot7))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot6))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot6))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot5))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot5))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxDelProf3))->EndInit();
@@ -1887,7 +1962,7 @@ namespace PassUnite {
 	public: Profiles^ profile = nullptr;
 	public: Profiles^ trashProfile = nullptr;
 
-	private: Panels^ panel = nullptr;
+	private: Slots^ slot = nullptr;
 
 	private: System::Void labelAppName_Click(System::Object^ sender, System::EventArgs^ e) {
 		// redirect to "Home" page
@@ -1923,14 +1998,14 @@ namespace PassUnite {
 		if (labelProfileWebsite1->Text != "-" || textBoxProfileUsername1->Text != "-" || textBoxProfilePassword1->Text != "-")
 		{
 			// current slot
-			int slot = 1;
+			int profSlot = 1;
 			// traversal profile
 			Profiles^ currProfile = profile;
 
 			// go to current profile
-			while (currProfile->id != slot)
+			while (currProfile->id != profSlot)
 			{
-				if (currProfile->id < slot)
+				if (currProfile->id < profSlot)
 					currProfile = currProfile->next;
 				else
 					currProfile = currProfile->prev;
@@ -1940,18 +2015,15 @@ namespace PassUnite {
 			RemoveProfile(currProfile->website, currProfile->username, currProfile->password);
 
 			// go to current slot
-			while (panel->id != slot)
+			while (slot->id != profSlot)
 			{
-				if (panel->id < slot)
-					panel = panel->next;
+				if (slot->id < profSlot)
+					slot = slot->next;
 				else
-					panel = panel->prev;
+					slot = slot->prev;
 			}
 			// refresh slot labels
-			RefreshLabels(panel);
-
-			// hide slot
-			//panel->panel->Visible = false;
+			RefreshLabels(slot);
 		}
 	}
 	private: System::Void pictureBoxDelProf2_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1959,14 +2031,14 @@ namespace PassUnite {
 		if (labelProfileWebsite2->Text != "-" || textBoxProfileUsername2->Text != "-" || textBoxProfilePassword2->Text != "-")
 		{
 			// current slot
-			int slot = 2;
+			int profSlot = 2;
 			// traversal profile
 			Profiles^ currProfile = profile;
 
 			// go to current profile
-			while (currProfile->id != slot)
+			while (currProfile->id != profSlot)
 			{
-				if (currProfile->id < slot)
+				if (currProfile->id < profSlot)
 					currProfile = currProfile->next;
 				else
 					currProfile = currProfile->prev;
@@ -1976,18 +2048,15 @@ namespace PassUnite {
 			RemoveProfile(currProfile->website, currProfile->username, currProfile->password);
 
 			// go to current slot
-			while (panel->id != slot)
+			while (slot->id != profSlot)
 			{
-				if (panel->id < slot)
-					panel = panel->next;
+				if (slot->id < profSlot)
+					slot = slot->next;
 				else
-					panel = panel->prev;
+					slot = slot->prev;
 			}
 			// refresh slot labels
-			RefreshLabels(panel);
-
-			// hide slot
-			//panel->panel->Visible = false;
+			RefreshLabels(slot);
 		}
 	}
 	private: System::Void pictureBoxDelProf3_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1995,14 +2064,14 @@ namespace PassUnite {
 		if (labelProfileWebsite3->Text != "-" || textBoxProfileUsername3->Text != "-" || textBoxProfilePassword3->Text != "-")
 		{
 			// current slot
-			int slot = 3;
+			int profSlot = 3;
 			// traversal profile
 			Profiles^ currProfile = profile;
 
 			// go to current profile
-			while (currProfile->id != slot)
+			while (currProfile->id != profSlot)
 			{
-				if (currProfile->id < slot)
+				if (currProfile->id < profSlot)
 					currProfile = currProfile->next;
 				else
 					currProfile = currProfile->prev;
@@ -2012,18 +2081,15 @@ namespace PassUnite {
 			RemoveProfile(currProfile->website, currProfile->username, currProfile->password);
 
 			// go to current slot
-			while (panel->id != slot)
+			while (slot->id != profSlot)
 			{
-				if (panel->id < slot)
-					panel = panel->next;
+				if (slot->id < profSlot)
+					slot = slot->next;
 				else
-					panel = panel->prev;
+					slot = slot->prev;
 			}
 			// refresh slot labels
-			RefreshLabels(panel);
-
-			// hide slot
-			//panel->panel->Visible = false;
+			RefreshLabels(slot);
 		}
 	}
 	private: System::Void pictureBoxDelProf4_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2031,14 +2097,14 @@ namespace PassUnite {
 		if (labelProfileWebsite4->Text != "-" || textBoxProfileUsername4->Text != "-" || textBoxProfilePassword4->Text != "-")
 		{
 			// current slot
-			int slot = 4;
+			int profSlot = 4;
 			// traversal profile
 			Profiles^ currProfile = profile;
 
 			// go to current profile
-			while (currProfile->id != slot)
+			while (currProfile->id != profSlot)
 			{
-				if (currProfile->id < slot)
+				if (currProfile->id < profSlot)
 					currProfile = currProfile->next;
 				else
 					currProfile = currProfile->prev;
@@ -2048,18 +2114,15 @@ namespace PassUnite {
 			RemoveProfile(currProfile->website, currProfile->username, currProfile->password);
 
 			// go to current slot
-			while (panel->id != slot)
+			while (slot->id != profSlot)
 			{
-				if (panel->id < slot)
-					panel = panel->next;
+				if (slot->id < profSlot)
+					slot = slot->next;
 				else
-					panel = panel->prev;
+					slot = slot->prev;
 			}
 			// refresh slot labels
-			RefreshLabels(panel);
-
-			// hide slot
-			//panel->panel->Visible = false;
+			RefreshLabels(slot);
 		}
 	}
 	private: System::Void pictureBoxDelProf5_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2067,14 +2130,14 @@ namespace PassUnite {
 		if (labelProfileWebsite5->Text != "-" || textBoxProfileUsername5->Text != "-" || textBoxProfilePassword5->Text != "-")
 		{
 			// current slot
-			int slot = 5;
+			int profSlot = 5;
 			// traversal profile
 			Profiles^ currProfile = profile;
 
 			// go to current profile
-			while (currProfile->id != slot)
+			while (currProfile->id != profSlot)
 			{
-				if (currProfile->id < slot)
+				if (currProfile->id < profSlot)
 					currProfile = currProfile->next;
 				else
 					currProfile = currProfile->prev;
@@ -2084,18 +2147,15 @@ namespace PassUnite {
 			RemoveProfile(currProfile->website, currProfile->username, currProfile->password);
 
 			// go to current slot
-			while (panel->id != slot)
+			while (slot->id != profSlot)
 			{
-				if (panel->id < slot)
-					panel = panel->next;
+				if (slot->id < profSlot)
+					slot = slot->next;
 				else
-					panel = panel->prev;
+					slot = slot->prev;
 			}
 			// refresh slot labels
-			RefreshLabels(panel);
-
-			// hide slot
-			//panel->panel->Visible = false;
+			RefreshLabels(slot);
 		}
 	}
 	private: System::Void pictureBoxDelProf6_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2103,14 +2163,14 @@ namespace PassUnite {
 		if (labelProfileWebsite6->Text != "-" || textBoxProfileUsername6->Text != "-" || textBoxProfilePassword6->Text != "-")
 		{
 			// current slot
-			int slot = 6;
+			int profSlot = 6;
 			// traversal profile
 			Profiles^ currProfile = profile;
 
 			// go to current profile
-			while (currProfile->id != slot)
+			while (currProfile->id != profSlot)
 			{
-				if (currProfile->id < slot)
+				if (currProfile->id < profSlot)
 					currProfile = currProfile->next;
 				else
 					currProfile = currProfile->prev;
@@ -2120,18 +2180,15 @@ namespace PassUnite {
 			RemoveProfile(currProfile->website, currProfile->username, currProfile->password);
 
 			// go to current slot
-			while (panel->id != slot)
+			while (slot->id != profSlot)
 			{
-				if (panel->id < slot)
-					panel = panel->next;
+				if (slot->id < profSlot)
+					slot = slot->next;
 				else
-					panel = panel->prev;
+					slot = slot->prev;
 			}
 			// refresh slot labels
-			RefreshLabels(panel);
-
-			// hide slot
-			//panel->panel->Visible = false;
+			RefreshLabels(slot);
 		}
 	}
 	private: System::Void pictureBoxDelProf7_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2139,14 +2196,14 @@ namespace PassUnite {
 		if (labelProfileWebsite7->Text != "-" || textBoxProfileUsername7->Text != "-" || textBoxProfilePassword7->Text != "-")
 		{
 			// current slot
-			int slot = 7;
+			int profSlot = 7;
 			// traversal profile
 			Profiles^ currProfile = profile;
 
 			// go to current profile
-			while (currProfile->id != slot)
+			while (currProfile->id != profSlot)
 			{
-				if (currProfile->id < slot)
+				if (currProfile->id < profSlot)
 					currProfile = currProfile->next;
 				else
 					currProfile = currProfile->prev;
@@ -2156,18 +2213,15 @@ namespace PassUnite {
 			RemoveProfile(currProfile->website, currProfile->username, currProfile->password);
 
 			// go to current slot
-			while (panel->id != slot)
+			while (slot->id != profSlot)
 			{
-				if (panel->id < slot)
-					panel = panel->next;
+				if (slot->id < profSlot)
+					slot = slot->next;
 				else
-					panel = panel->prev;
+					slot = slot->prev;
 			}
 			// refresh slot labels
-			RefreshLabels(panel);
-
-			// hide slot
-			//panel->panel->Visible = false;
+			RefreshLabels(slot);
 		}
 	}
 	private: System::Void pictureBoxDelProf8_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2175,14 +2229,14 @@ namespace PassUnite {
 		if (labelProfileWebsite8->Text != "-" || textBoxProfileUsername8->Text != "-" || textBoxProfilePassword8->Text != "-")
 		{
 			// current slot
-			int slot = 8;
+			int profSlot = 8;
 			// traversal profile
 			Profiles^ currProfile = profile;
 
 			// go to current profile
-			while (currProfile->id != slot)
+			while (currProfile->id != profSlot)
 			{
-				if (currProfile->id < slot)
+				if (currProfile->id < profSlot)
 					currProfile = currProfile->next;
 				else
 					currProfile = currProfile->prev;
@@ -2192,18 +2246,15 @@ namespace PassUnite {
 			RemoveProfile(currProfile->website, currProfile->username, currProfile->password);
 
 			// go to current slot
-			while (panel->id != slot)
+			while (slot->id != profSlot)
 			{
-				if (panel->id < slot)
-					panel = panel->next;
+				if (slot->id < profSlot)
+					slot = slot->next;
 				else
-					panel = panel->prev;
+					slot = slot->prev;
 			}
 			// refresh slot labels
-			RefreshLabels(panel);
-
-			// hide slot
-			//panel->panel->Visible = false;
+			RefreshLabels(slot);
 		}
 	}
 	private: System::Void pictureBoxDelProf9_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2211,14 +2262,14 @@ namespace PassUnite {
 		if (labelProfileWebsite9->Text != "-" || textBoxProfileUsername9->Text != "-" || textBoxProfilePassword9->Text != "-")
 		{
 			// current slot
-			int slot = 9;
+			int profSlot = 9;
 			// traversal profile
 			Profiles^ currProfile = profile;
 
 			// go to current profile
-			while (currProfile->id != slot)
+			while (currProfile->id != profSlot)
 			{
-				if (currProfile->id < slot)
+				if (currProfile->id < profSlot)
 					currProfile = currProfile->next;
 				else
 					currProfile = currProfile->prev;
@@ -2228,18 +2279,15 @@ namespace PassUnite {
 			RemoveProfile(currProfile->website, currProfile->username, currProfile->password);
 
 			// go to current slot
-			while (panel->id != slot)
+			while (slot->id != profSlot)
 			{
-				if (panel->id < slot)
-					panel = panel->next;
+				if (slot->id < profSlot)
+					slot = slot->next;
 				else
-					panel = panel->prev;
+					slot = slot->prev;
 			}
 			// refresh slot labels
-			RefreshLabels(panel);
-
-			// hide slot
-			//panel->panel->Visible = false;
+			RefreshLabels(slot);
 		}
 	}
 	private: System::Void pictureBoxDelProf10_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2247,14 +2295,14 @@ namespace PassUnite {
 		if (labelProfileWebsite10->Text != "-" || textBoxProfileUsername10->Text != "-" || textBoxProfilePassword10->Text != "-")
 		{
 			// current slot
-			int slot = 10;
+			int profSlot = 10;
 			// traversal profile
 			Profiles^ currProfile = profile;
 
 			// go to current profile
-			while (currProfile->id != slot)
+			while (currProfile->id != profSlot)
 			{
-				if (currProfile->id < slot)
+				if (currProfile->id < profSlot)
 					currProfile = currProfile->next;
 				else
 					currProfile = currProfile->prev;
@@ -2264,18 +2312,15 @@ namespace PassUnite {
 			RemoveProfile(currProfile->website, currProfile->username, currProfile->password);
 
 			// go to current slot
-			while (panel->id != slot)
+			while (slot->id != profSlot)
 			{
-				if (panel->id < slot)
-					panel = panel->next;
+				if (slot->id < profSlot)
+					slot = slot->next;
 				else
-					panel = panel->prev;
+					slot = slot->prev;
 			}
 			// refresh slot labels
-			RefreshLabels(panel);
-
-			// hide slot
-			//panel->panel->Visible = false;
+			RefreshLabels(slot);
 		}
 	}
 
@@ -2349,27 +2394,27 @@ namespace PassUnite {
 		   //	}
 		   //}
 
-	private: void RefreshLabels(Panels^% _panel)
+	private: void RefreshLabels(Slots^% _slot)
 	{
 		while (true)
 		{
-			if (panel->id <= profileCount)
+			if (slot->id <= profileCount)
 			{
-				panel->labelProfileWebsite->Text = panel->next->labelProfileWebsite->Text;
-				panel->textBoxProfileUsername->Text = panel->next->textBoxProfileUsername->Text;
-				panel->textBoxProfilePassword->Text = panel->next->textBoxProfilePassword->Text;
+				slot->labelProfileWebsite->Text = slot->next->labelProfileWebsite->Text;
+				slot->textBoxProfileUsername->Text = slot->next->textBoxProfileUsername->Text;
+				slot->textBoxProfilePassword->Text = slot->next->textBoxProfilePassword->Text;
 			}
 			else
 			{
-				panel->labelProfileWebsite->Text = "-";
-				panel->textBoxProfileUsername->Text = "-";
-				panel->textBoxProfilePassword->Text = "-";
+				slot->labelProfileWebsite->Text = "-";
+				slot->textBoxProfileUsername->Text = "-";
+				slot->textBoxProfilePassword->Text = "-";
 			}
 
-			if (panel->next == nullptr)
+			if (slot->next == nullptr)
 				break;
 			else
-				panel = panel->next;
+				slot = slot->next;
 		}
 	}
 	private: System::Void pictureBoxMenu_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2389,31 +2434,31 @@ namespace PassUnite {
 		ToggleHideSlot(1);
 
 		// toggle showing picture
-		pictureBoxShowingSlot1->Visible = !pictureBoxShowingSlot1->Visible;
+		pictureBoxHideSlot1->Visible = !pictureBoxHideSlot1->Visible;
 	}
 	private: void ToggleHideSlot(int _slot)
 	{
 		// go to slot
-		while (panel->id != _slot)
+		while (slot->id != _slot)
 		{
-			if (panel->id > _slot)
-				panel = panel->prev;
+			if (slot->id > _slot)
+				slot = slot->prev;
 			else
-				panel = panel->next;
+				slot = slot->next;
 		}
 
 		// if hidden username
-		if (panel->textBoxProfileUsername->PasswordChar == '*')
+		if (slot->textBoxProfileUsername->PasswordChar == '*')
 		{
 			// show username and password
-			panel->textBoxProfileUsername->PasswordChar = false;
-			panel->textBoxProfilePassword->PasswordChar = false;
+			slot->textBoxProfileUsername->PasswordChar = false;
+			slot->textBoxProfilePassword->PasswordChar = false;
 		}
 		else
 		{
 			// hide username and password
-			panel->textBoxProfileUsername->PasswordChar = '*';
-			panel->textBoxProfilePassword->PasswordChar = '*';
+			slot->textBoxProfileUsername->PasswordChar = '*';
+			slot->textBoxProfilePassword->PasswordChar = '*';
 		}
 	}
 	private: System::Void pictureBoxToggleSlot2_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2421,63 +2466,63 @@ namespace PassUnite {
 		ToggleHideSlot(2);
 
 		// toggle showing picture
-		pictureBoxShowingSlot2->Visible = !pictureBoxShowingSlot2->Visible;
+		pictureBoxHideSlot2->Visible = !pictureBoxHideSlot2->Visible;
 	}
 	private: System::Void pictureBoxToggleSlot3_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		ToggleHideSlot(3);
 
 		// toggle showing picture
-		pictureBoxShowingSlot3->Visible = !pictureBoxShowingSlot3->Visible;
+		pictureBoxHideSlot3->Visible = !pictureBoxHideSlot3->Visible;
 	}
 	private: System::Void pictureBoxToggleSlot4_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		ToggleHideSlot(4);
 
 		// toggle showing picture
-		pictureBoxShowingSlot4->Visible = !pictureBoxShowingSlot4->Visible;
+		pictureBoxHideSlot4->Visible = !pictureBoxHideSlot4->Visible;
 	}
 	private: System::Void pictureBoxToggleSlot5_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		ToggleHideSlot(5);
 
 		// toggle showing picture
-		pictureBoxShowingSlot5->Visible = !pictureBoxShowingSlot5->Visible;
+		pictureBoxHideSlot5->Visible = !pictureBoxHideSlot5->Visible;
 	}
 	private: System::Void pictureBoxToggleSlot6_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		ToggleHideSlot(6);
 
 		// toggle showing picture
-		pictureBoxShowingSlot6->Visible = !pictureBoxShowingSlot6->Visible;
+		pictureBoxHideSlot6->Visible = !pictureBoxHideSlot6->Visible;
 	}
 	private: System::Void pictureBoxToggleSlot7_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		ToggleHideSlot(7);
 
 		// toggle showing picture
-		pictureBoxShowingSlot7->Visible = !pictureBoxShowingSlot7->Visible;
+		pictureBoxHideSlot7->Visible = !pictureBoxHideSlot7->Visible;
 	}
 	private: System::Void pictureBoxToggleSlot8_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		ToggleHideSlot(8);
 
 		// toggle showing picture
-		pictureBoxShowingSlot8->Visible = !pictureBoxShowingSlot8->Visible;
+		pictureBoxHideSlot8->Visible = !pictureBoxHideSlot8->Visible;
 	}
 	private: System::Void pictureBoxToggleSlot9_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		ToggleHideSlot(9);
 
 		// toggle showing picture
-		pictureBoxShowingSlot9->Visible = !pictureBoxShowingSlot9->Visible;
+		pictureBoxHideSlot9->Visible = !pictureBoxHideSlot9->Visible;
 	}
 	private: System::Void pictureBoxToggleSlot10_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		ToggleHideSlot(10);
 
 		// toggle showing picture
-		pictureBoxShowingSlot10->Visible = !pictureBoxShowingSlot10->Visible;
+		pictureBoxHideSlot10->Visible = !pictureBoxHideSlot10->Visible;
 	}
 	};
 }
