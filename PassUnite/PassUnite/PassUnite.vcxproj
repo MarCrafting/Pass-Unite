@@ -162,6 +162,7 @@
     <ClInclude Include="Settings.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Slots.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
