@@ -253,72 +253,9 @@ namespace PassUnite {
 
 	protected:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::Panel^ panelSidebar;
 	private: System::Windows::Forms::PictureBox^ pictureBoxProfiles;
 	private: System::Windows::Forms::PictureBox^ pictureBoxSettings;
-
 	private: System::Windows::Forms::PictureBox^ pictureBoxAddProfile;
 	private: System::Windows::Forms::Panel^ panelTopbar;
 	private: System::Windows::Forms::PictureBox^ pictureBoxMenu;
@@ -395,131 +332,40 @@ namespace PassUnite {
 	private: System::Windows::Forms::Label^ labelSidebarSettings;
 	private: System::Windows::Forms::Label^ labelSidebarViewProfiles;
 	private: System::Windows::Forms::Label^ labelSidebarAddProfiles;
+
 	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot1;
-	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot1;
-	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot2;
+
 	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot2;
-	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot10;
-	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot10;
+	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot2;
 
-
-
-
-
-
-
-
-
-
-	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot9;
-	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot9;
-
-
-	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot8;
-	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot8;
-
-
-	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot7;
-	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot7;
-
-
-	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot6;
-	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot6;
-
-
-	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot5;
-	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot5;
-
-
-	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot4;
-	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot4;
-
-
-
-	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot3;
 	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot3;
+	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot3;
 
+	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot4;
+	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot4;
 
+	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot5;
+	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot5;
 
+	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot6;
+	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot6;
 
+	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot7;
+	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot7;
 
+	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot8;
+	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot8;
 
+	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot9;
+	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot9;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot10;
+	private: System::Windows::Forms::PictureBox^ pictureBoxShowingSlot10;
+	private: System::Windows::Forms::PictureBox^ pictureBoxHidingSlot1;
 
 
 
 	protected:
-
 
 
 	private:
@@ -819,7 +665,8 @@ namespace PassUnite {
 			// 
 			// pictureBoxShowingSlot10
 			// 
-			this->pictureBoxShowingSlot10->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxShowingSlot10->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowingSlot10->Enabled = false;
 			this->pictureBoxShowingSlot10->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingSlot10.Image")));
 			this->pictureBoxShowingSlot10->Location = System::Drawing::Point(869, 718);
 			this->pictureBoxShowingSlot10->Name = L"pictureBoxShowingSlot10";
@@ -831,7 +678,7 @@ namespace PassUnite {
 			// 
 			// pictureBoxHidingSlot10
 			// 
-			this->pictureBoxHidingSlot10->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxHidingSlot10->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->pictureBoxHidingSlot10->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingSlot10.Image")));
 			this->pictureBoxHidingSlot10->Location = System::Drawing::Point(869, 718);
 			this->pictureBoxHidingSlot10->Name = L"pictureBoxHidingSlot10";
@@ -839,10 +686,12 @@ namespace PassUnite {
 			this->pictureBoxHidingSlot10->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxHidingSlot10->TabIndex = 40;
 			this->pictureBoxHidingSlot10->TabStop = false;
+			this->pictureBoxHidingSlot10->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot10_Click);
 			// 
 			// pictureBoxShowingSlot9
 			// 
-			this->pictureBoxShowingSlot9->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxShowingSlot9->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowingSlot9->Enabled = false;
 			this->pictureBoxShowingSlot9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingSlot9.Image")));
 			this->pictureBoxShowingSlot9->Location = System::Drawing::Point(869, 656);
 			this->pictureBoxShowingSlot9->Name = L"pictureBoxShowingSlot9";
@@ -854,7 +703,7 @@ namespace PassUnite {
 			// 
 			// pictureBoxHidingSlot9
 			// 
-			this->pictureBoxHidingSlot9->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxHidingSlot9->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->pictureBoxHidingSlot9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingSlot9.Image")));
 			this->pictureBoxHidingSlot9->Location = System::Drawing::Point(869, 656);
 			this->pictureBoxHidingSlot9->Name = L"pictureBoxHidingSlot9";
@@ -862,10 +711,12 @@ namespace PassUnite {
 			this->pictureBoxHidingSlot9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxHidingSlot9->TabIndex = 38;
 			this->pictureBoxHidingSlot9->TabStop = false;
+			this->pictureBoxHidingSlot9->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot9_Click);
 			// 
 			// pictureBoxShowingSlot8
 			// 
-			this->pictureBoxShowingSlot8->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxShowingSlot8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowingSlot8->Enabled = false;
 			this->pictureBoxShowingSlot8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingSlot8.Image")));
 			this->pictureBoxShowingSlot8->Location = System::Drawing::Point(869, 596);
 			this->pictureBoxShowingSlot8->Name = L"pictureBoxShowingSlot8";
@@ -877,7 +728,7 @@ namespace PassUnite {
 			// 
 			// pictureBoxHidingSlot8
 			// 
-			this->pictureBoxHidingSlot8->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxHidingSlot8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->pictureBoxHidingSlot8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingSlot8.Image")));
 			this->pictureBoxHidingSlot8->Location = System::Drawing::Point(869, 596);
 			this->pictureBoxHidingSlot8->Name = L"pictureBoxHidingSlot8";
@@ -885,10 +736,12 @@ namespace PassUnite {
 			this->pictureBoxHidingSlot8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxHidingSlot8->TabIndex = 36;
 			this->pictureBoxHidingSlot8->TabStop = false;
+			this->pictureBoxHidingSlot8->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot8_Click);
 			// 
 			// pictureBoxShowingSlot7
 			// 
-			this->pictureBoxShowingSlot7->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxShowingSlot7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowingSlot7->Enabled = false;
 			this->pictureBoxShowingSlot7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingSlot7.Image")));
 			this->pictureBoxShowingSlot7->Location = System::Drawing::Point(869, 537);
 			this->pictureBoxShowingSlot7->Name = L"pictureBoxShowingSlot7";
@@ -900,7 +753,7 @@ namespace PassUnite {
 			// 
 			// pictureBoxHidingSlot7
 			// 
-			this->pictureBoxHidingSlot7->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxHidingSlot7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->pictureBoxHidingSlot7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingSlot7.Image")));
 			this->pictureBoxHidingSlot7->Location = System::Drawing::Point(869, 537);
 			this->pictureBoxHidingSlot7->Name = L"pictureBoxHidingSlot7";
@@ -908,10 +761,12 @@ namespace PassUnite {
 			this->pictureBoxHidingSlot7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxHidingSlot7->TabIndex = 34;
 			this->pictureBoxHidingSlot7->TabStop = false;
+			this->pictureBoxHidingSlot7->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot7_Click);
 			// 
 			// pictureBoxShowingSlot6
 			// 
-			this->pictureBoxShowingSlot6->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxShowingSlot6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowingSlot6->Enabled = false;
 			this->pictureBoxShowingSlot6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingSlot6.Image")));
 			this->pictureBoxShowingSlot6->Location = System::Drawing::Point(869, 477);
 			this->pictureBoxShowingSlot6->Name = L"pictureBoxShowingSlot6";
@@ -923,7 +778,7 @@ namespace PassUnite {
 			// 
 			// pictureBoxHidingSlot6
 			// 
-			this->pictureBoxHidingSlot6->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxHidingSlot6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->pictureBoxHidingSlot6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingSlot6.Image")));
 			this->pictureBoxHidingSlot6->Location = System::Drawing::Point(869, 477);
 			this->pictureBoxHidingSlot6->Name = L"pictureBoxHidingSlot6";
@@ -931,10 +786,12 @@ namespace PassUnite {
 			this->pictureBoxHidingSlot6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxHidingSlot6->TabIndex = 32;
 			this->pictureBoxHidingSlot6->TabStop = false;
+			this->pictureBoxHidingSlot6->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot6_Click);
 			// 
 			// pictureBoxShowingSlot5
 			// 
-			this->pictureBoxShowingSlot5->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxShowingSlot5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowingSlot5->Enabled = false;
 			this->pictureBoxShowingSlot5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingSlot5.Image")));
 			this->pictureBoxShowingSlot5->Location = System::Drawing::Point(869, 417);
 			this->pictureBoxShowingSlot5->Name = L"pictureBoxShowingSlot5";
@@ -946,7 +803,7 @@ namespace PassUnite {
 			// 
 			// pictureBoxHidingSlot5
 			// 
-			this->pictureBoxHidingSlot5->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxHidingSlot5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->pictureBoxHidingSlot5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingSlot5.Image")));
 			this->pictureBoxHidingSlot5->Location = System::Drawing::Point(869, 417);
 			this->pictureBoxHidingSlot5->Name = L"pictureBoxHidingSlot5";
@@ -954,10 +811,12 @@ namespace PassUnite {
 			this->pictureBoxHidingSlot5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxHidingSlot5->TabIndex = 30;
 			this->pictureBoxHidingSlot5->TabStop = false;
+			this->pictureBoxHidingSlot5->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot5_Click);
 			// 
 			// pictureBoxShowingSlot4
 			// 
-			this->pictureBoxShowingSlot4->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxShowingSlot4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowingSlot4->Enabled = false;
 			this->pictureBoxShowingSlot4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingSlot4.Image")));
 			this->pictureBoxShowingSlot4->Location = System::Drawing::Point(869, 355);
 			this->pictureBoxShowingSlot4->Name = L"pictureBoxShowingSlot4";
@@ -969,7 +828,7 @@ namespace PassUnite {
 			// 
 			// pictureBoxHidingSlot4
 			// 
-			this->pictureBoxHidingSlot4->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxHidingSlot4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->pictureBoxHidingSlot4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingSlot4.Image")));
 			this->pictureBoxHidingSlot4->Location = System::Drawing::Point(869, 355);
 			this->pictureBoxHidingSlot4->Name = L"pictureBoxHidingSlot4";
@@ -977,10 +836,12 @@ namespace PassUnite {
 			this->pictureBoxHidingSlot4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxHidingSlot4->TabIndex = 28;
 			this->pictureBoxHidingSlot4->TabStop = false;
+			this->pictureBoxHidingSlot4->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot4_Click);
 			// 
 			// pictureBoxShowingSlot3
 			// 
-			this->pictureBoxShowingSlot3->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxShowingSlot3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowingSlot3->Enabled = false;
 			this->pictureBoxShowingSlot3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingSlot3.Image")));
 			this->pictureBoxShowingSlot3->Location = System::Drawing::Point(869, 295);
 			this->pictureBoxShowingSlot3->Name = L"pictureBoxShowingSlot3";
@@ -992,7 +853,7 @@ namespace PassUnite {
 			// 
 			// pictureBoxHidingSlot3
 			// 
-			this->pictureBoxHidingSlot3->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxHidingSlot3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->pictureBoxHidingSlot3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingSlot3.Image")));
 			this->pictureBoxHidingSlot3->Location = System::Drawing::Point(869, 295);
 			this->pictureBoxHidingSlot3->Name = L"pictureBoxHidingSlot3";
@@ -1000,10 +861,12 @@ namespace PassUnite {
 			this->pictureBoxHidingSlot3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxHidingSlot3->TabIndex = 26;
 			this->pictureBoxHidingSlot3->TabStop = false;
+			this->pictureBoxHidingSlot3->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot3_Click);
 			// 
 			// pictureBoxShowingSlot2
 			// 
-			this->pictureBoxShowingSlot2->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxShowingSlot2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowingSlot2->Enabled = false;
 			this->pictureBoxShowingSlot2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingSlot2.Image")));
 			this->pictureBoxShowingSlot2->Location = System::Drawing::Point(869, 236);
 			this->pictureBoxShowingSlot2->Name = L"pictureBoxShowingSlot2";
@@ -1015,7 +878,7 @@ namespace PassUnite {
 			// 
 			// pictureBoxHidingSlot2
 			// 
-			this->pictureBoxHidingSlot2->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxHidingSlot2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->pictureBoxHidingSlot2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingSlot2.Image")));
 			this->pictureBoxHidingSlot2->Location = System::Drawing::Point(869, 236);
 			this->pictureBoxHidingSlot2->Name = L"pictureBoxHidingSlot2";
@@ -1023,10 +886,12 @@ namespace PassUnite {
 			this->pictureBoxHidingSlot2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxHidingSlot2->TabIndex = 24;
 			this->pictureBoxHidingSlot2->TabStop = false;
+			this->pictureBoxHidingSlot2->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot2_Click);
 			// 
 			// pictureBoxShowingSlot1
 			// 
-			this->pictureBoxShowingSlot1->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxShowingSlot1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowingSlot1->Enabled = false;
 			this->pictureBoxShowingSlot1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowingSlot1.Image")));
 			this->pictureBoxShowingSlot1->Location = System::Drawing::Point(869, 176);
 			this->pictureBoxShowingSlot1->Name = L"pictureBoxShowingSlot1";
@@ -1035,11 +900,10 @@ namespace PassUnite {
 			this->pictureBoxShowingSlot1->TabIndex = 21;
 			this->pictureBoxShowingSlot1->TabStop = false;
 			this->pictureBoxShowingSlot1->Visible = false;
-			this->pictureBoxShowingSlot1->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxShowingSlot1_Click);
 			// 
 			// pictureBoxHidingSlot1
 			// 
-			this->pictureBoxHidingSlot1->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxHidingSlot1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->pictureBoxHidingSlot1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHidingSlot1.Image")));
 			this->pictureBoxHidingSlot1->Location = System::Drawing::Point(869, 176);
 			this->pictureBoxHidingSlot1->Name = L"pictureBoxHidingSlot1";
@@ -1047,7 +911,7 @@ namespace PassUnite {
 			this->pictureBoxHidingSlot1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBoxHidingSlot1->TabIndex = 22;
 			this->pictureBoxHidingSlot1->TabStop = false;
-			this->pictureBoxHidingSlot1->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxHidingSlot1_Click);
+			this->pictureBoxHidingSlot1->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxToggleSlot1_Click);
 			// 
 			// pictureBoxDelProf1
 			// 
@@ -2520,23 +2384,100 @@ namespace PassUnite {
 		// hide extended sidebar
 		panelSidebarExtend->Visible = false;
 	}
-	private: System::Void pictureBoxHidingSlot1_Click(System::Object^ sender, System::EventArgs^ e) {
-		// show slot 1
-		textBoxProfileUsername1->PasswordChar = false;
-		textBoxProfilePassword1->PasswordChar = false;
+	private: System::Void pictureBoxToggleSlot1_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		// toggle picture
-		pictureBoxHidingSlot1->Visible = false;
-		pictureBoxShowingSlot1->Visible = true;
+		ToggleHideSlot(1);
+
+		// toggle showing picture
+		pictureBoxShowingSlot1->Visible = !pictureBoxShowingSlot1->Visible;
 	}
-	private: System::Void pictureBoxShowingSlot1_Click(System::Object^ sender, System::EventArgs^ e) {
-		// hide slot 1
-		textBoxProfileUsername1->PasswordChar = '*';
-		textBoxProfilePassword1->PasswordChar = '*';
+	private: void ToggleHideSlot(int _slot)
+	{
+		// go to slot
+		while (panel->id != _slot)
+		{
+			if (panel->id > _slot)
+				panel = panel->prev;
+			else
+				panel = panel->next;
+		}
 
-		// toggle picture
-		pictureBoxShowingSlot1->Visible = false;
-		pictureBoxHidingSlot1->Visible = true;
+		// if hidden username
+		if (panel->textBoxProfileUsername->PasswordChar == '*')
+		{
+			// show username and password
+			panel->textBoxProfileUsername->PasswordChar = false;
+			panel->textBoxProfilePassword->PasswordChar = false;
+		}
+		else
+		{
+			// hide username and password
+			panel->textBoxProfileUsername->PasswordChar = '*';
+			panel->textBoxProfilePassword->PasswordChar = '*';
+		}
+	}
+	private: System::Void pictureBoxToggleSlot2_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		ToggleHideSlot(2);
+
+		// toggle showing picture
+		pictureBoxShowingSlot2->Visible = !pictureBoxShowingSlot2->Visible;
+	}
+	private: System::Void pictureBoxToggleSlot3_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		ToggleHideSlot(3);
+
+		// toggle showing picture
+		pictureBoxShowingSlot3->Visible = !pictureBoxShowingSlot3->Visible;
+	}
+	private: System::Void pictureBoxToggleSlot4_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		ToggleHideSlot(4);
+
+		// toggle showing picture
+		pictureBoxShowingSlot4->Visible = !pictureBoxShowingSlot4->Visible;
+	}
+	private: System::Void pictureBoxToggleSlot5_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		ToggleHideSlot(5);
+
+		// toggle showing picture
+		pictureBoxShowingSlot5->Visible = !pictureBoxShowingSlot5->Visible;
+	}
+	private: System::Void pictureBoxToggleSlot6_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		ToggleHideSlot(6);
+
+		// toggle showing picture
+		pictureBoxShowingSlot6->Visible = !pictureBoxShowingSlot6->Visible;
+	}
+	private: System::Void pictureBoxToggleSlot7_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		ToggleHideSlot(7);
+
+		// toggle showing picture
+		pictureBoxShowingSlot7->Visible = !pictureBoxShowingSlot7->Visible;
+	}
+	private: System::Void pictureBoxToggleSlot8_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		ToggleHideSlot(8);
+
+		// toggle showing picture
+		pictureBoxShowingSlot8->Visible = !pictureBoxShowingSlot8->Visible;
+	}
+	private: System::Void pictureBoxToggleSlot9_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		ToggleHideSlot(9);
+
+		// toggle showing picture
+		pictureBoxShowingSlot9->Visible = !pictureBoxShowingSlot9->Visible;
+	}
+	private: System::Void pictureBoxToggleSlot10_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		ToggleHideSlot(10);
+
+		// toggle showing picture
+		pictureBoxShowingSlot10->Visible = !pictureBoxShowingSlot10->Visible;
 	}
 	};
 }
