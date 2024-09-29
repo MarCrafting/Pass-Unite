@@ -1249,12 +1249,13 @@ namespace PassUnite {
 			this->textBoxProfilePassword1->ForeColor = System::Drawing::Color::White;
 			this->textBoxProfilePassword1->Location = System::Drawing::Point(537, 9);
 			this->textBoxProfilePassword1->Name = L"textBoxProfilePassword1";
+			this->textBoxProfilePassword1->PasswordChar = '*';
 			this->textBoxProfilePassword1->ReadOnly = true;
 			this->textBoxProfilePassword1->Size = System::Drawing::Size(247, 31);
 			this->textBoxProfilePassword1->TabIndex = 3;
+			this->textBoxProfilePassword1->TabStop = false;
 			this->textBoxProfilePassword1->Text = L"-";
 			this->textBoxProfilePassword1->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBoxProfilePassword1->UseSystemPasswordChar = true;
 			this->textBoxProfilePassword1->WordWrap = false;
 			// 
 			// textBoxProfileUsername1
@@ -1267,12 +1268,13 @@ namespace PassUnite {
 			this->textBoxProfileUsername1->ForeColor = System::Drawing::Color::White;
 			this->textBoxProfileUsername1->Location = System::Drawing::Point(309, 8);
 			this->textBoxProfileUsername1->Name = L"textBoxProfileUsername1";
+			this->textBoxProfileUsername1->PasswordChar = '*';
 			this->textBoxProfileUsername1->ReadOnly = true;
 			this->textBoxProfileUsername1->Size = System::Drawing::Size(179, 31);
 			this->textBoxProfileUsername1->TabIndex = 2;
+			this->textBoxProfileUsername1->TabStop = false;
 			this->textBoxProfileUsername1->Text = L"-";
 			this->textBoxProfileUsername1->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBoxProfileUsername1->UseSystemPasswordChar = true;
 			this->textBoxProfileUsername1->WordWrap = false;
 			// 
 			// labelProfileWebsite1
@@ -1312,12 +1314,13 @@ namespace PassUnite {
 			this->textBoxProfilePassword2->ForeColor = System::Drawing::Color::White;
 			this->textBoxProfilePassword2->Location = System::Drawing::Point(537, 9);
 			this->textBoxProfilePassword2->Name = L"textBoxProfilePassword2";
+			this->textBoxProfilePassword2->PasswordChar = '*';
 			this->textBoxProfilePassword2->ReadOnly = true;
 			this->textBoxProfilePassword2->Size = System::Drawing::Size(247, 31);
 			this->textBoxProfilePassword2->TabIndex = 6;
+			this->textBoxProfilePassword2->TabStop = false;
 			this->textBoxProfilePassword2->Text = L"-";
 			this->textBoxProfilePassword2->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBoxProfilePassword2->UseSystemPasswordChar = true;
 			this->textBoxProfilePassword2->WordWrap = false;
 			// 
 			// textBoxProfileUsername2
@@ -1330,12 +1333,13 @@ namespace PassUnite {
 			this->textBoxProfileUsername2->ForeColor = System::Drawing::Color::White;
 			this->textBoxProfileUsername2->Location = System::Drawing::Point(309, 9);
 			this->textBoxProfileUsername2->Name = L"textBoxProfileUsername2";
+			this->textBoxProfileUsername2->PasswordChar = '*';
 			this->textBoxProfileUsername2->ReadOnly = true;
 			this->textBoxProfileUsername2->Size = System::Drawing::Size(179, 31);
 			this->textBoxProfileUsername2->TabIndex = 5;
+			this->textBoxProfileUsername2->TabStop = false;
 			this->textBoxProfileUsername2->Text = L"-";
 			this->textBoxProfileUsername2->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBoxProfileUsername2->UseSystemPasswordChar = true;
 			this->textBoxProfileUsername2->WordWrap = false;
 			// 
 			// labelProfileWebsite2
@@ -1375,12 +1379,13 @@ namespace PassUnite {
 			this->textBoxProfilePassword3->ForeColor = System::Drawing::Color::White;
 			this->textBoxProfilePassword3->Location = System::Drawing::Point(537, 9);
 			this->textBoxProfilePassword3->Name = L"textBoxProfilePassword3";
+			this->textBoxProfilePassword3->PasswordChar = '*';
 			this->textBoxProfilePassword3->ReadOnly = true;
 			this->textBoxProfilePassword3->Size = System::Drawing::Size(247, 31);
 			this->textBoxProfilePassword3->TabIndex = 9;
+			this->textBoxProfilePassword3->TabStop = false;
 			this->textBoxProfilePassword3->Text = L"-";
 			this->textBoxProfilePassword3->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBoxProfilePassword3->UseSystemPasswordChar = true;
 			this->textBoxProfilePassword3->WordWrap = false;
 			// 
 			// textBoxProfileUsername3
@@ -1393,12 +1398,13 @@ namespace PassUnite {
 			this->textBoxProfileUsername3->ForeColor = System::Drawing::Color::White;
 			this->textBoxProfileUsername3->Location = System::Drawing::Point(309, 9);
 			this->textBoxProfileUsername3->Name = L"textBoxProfileUsername3";
+			this->textBoxProfileUsername3->PasswordChar = '*';
 			this->textBoxProfileUsername3->ReadOnly = true;
 			this->textBoxProfileUsername3->Size = System::Drawing::Size(179, 31);
 			this->textBoxProfileUsername3->TabIndex = 8;
+			this->textBoxProfileUsername3->TabStop = false;
 			this->textBoxProfileUsername3->Text = L"-";
 			this->textBoxProfileUsername3->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBoxProfileUsername3->UseSystemPasswordChar = true;
 			this->textBoxProfileUsername3->WordWrap = false;
 			// 
 			// labelProfileWebsite3
@@ -1438,12 +1444,13 @@ namespace PassUnite {
 			this->textBoxProfilePassword4->ForeColor = System::Drawing::Color::White;
 			this->textBoxProfilePassword4->Location = System::Drawing::Point(537, 6);
 			this->textBoxProfilePassword4->Name = L"textBoxProfilePassword4";
+			this->textBoxProfilePassword4->PasswordChar = '*';
 			this->textBoxProfilePassword4->ReadOnly = true;
 			this->textBoxProfilePassword4->Size = System::Drawing::Size(247, 31);
 			this->textBoxProfilePassword4->TabIndex = 12;
+			this->textBoxProfilePassword4->TabStop = false;
 			this->textBoxProfilePassword4->Text = L"-";
 			this->textBoxProfilePassword4->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBoxProfilePassword4->UseSystemPasswordChar = true;
 			this->textBoxProfilePassword4->WordWrap = false;
 			// 
 			// textBoxProfileUsername4
@@ -1456,12 +1463,13 @@ namespace PassUnite {
 			this->textBoxProfileUsername4->ForeColor = System::Drawing::Color::White;
 			this->textBoxProfileUsername4->Location = System::Drawing::Point(309, 9);
 			this->textBoxProfileUsername4->Name = L"textBoxProfileUsername4";
+			this->textBoxProfileUsername4->PasswordChar = '*';
 			this->textBoxProfileUsername4->ReadOnly = true;
 			this->textBoxProfileUsername4->Size = System::Drawing::Size(179, 31);
 			this->textBoxProfileUsername4->TabIndex = 11;
+			this->textBoxProfileUsername4->TabStop = false;
 			this->textBoxProfileUsername4->Text = L"-";
 			this->textBoxProfileUsername4->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBoxProfileUsername4->UseSystemPasswordChar = true;
 			this->textBoxProfileUsername4->WordWrap = false;
 			// 
 			// labelProfileWebsite4
@@ -1501,12 +1509,13 @@ namespace PassUnite {
 			this->textBoxProfilePassword5->ForeColor = System::Drawing::Color::White;
 			this->textBoxProfilePassword5->Location = System::Drawing::Point(537, 9);
 			this->textBoxProfilePassword5->Name = L"textBoxProfilePassword5";
+			this->textBoxProfilePassword5->PasswordChar = '*';
 			this->textBoxProfilePassword5->ReadOnly = true;
 			this->textBoxProfilePassword5->Size = System::Drawing::Size(247, 31);
 			this->textBoxProfilePassword5->TabIndex = 15;
+			this->textBoxProfilePassword5->TabStop = false;
 			this->textBoxProfilePassword5->Text = L"-";
 			this->textBoxProfilePassword5->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBoxProfilePassword5->UseSystemPasswordChar = true;
 			this->textBoxProfilePassword5->WordWrap = false;
 			// 
 			// textBoxProfileUsername5
@@ -1519,12 +1528,13 @@ namespace PassUnite {
 			this->textBoxProfileUsername5->ForeColor = System::Drawing::Color::White;
 			this->textBoxProfileUsername5->Location = System::Drawing::Point(309, 9);
 			this->textBoxProfileUsername5->Name = L"textBoxProfileUsername5";
+			this->textBoxProfileUsername5->PasswordChar = '*';
 			this->textBoxProfileUsername5->ReadOnly = true;
 			this->textBoxProfileUsername5->Size = System::Drawing::Size(179, 31);
 			this->textBoxProfileUsername5->TabIndex = 14;
+			this->textBoxProfileUsername5->TabStop = false;
 			this->textBoxProfileUsername5->Text = L"-";
 			this->textBoxProfileUsername5->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBoxProfileUsername5->UseSystemPasswordChar = true;
 			this->textBoxProfileUsername5->WordWrap = false;
 			// 
 			// labelProfileWebsite5
@@ -1564,12 +1574,13 @@ namespace PassUnite {
 			this->textBoxProfilePassword6->ForeColor = System::Drawing::Color::White;
 			this->textBoxProfilePassword6->Location = System::Drawing::Point(537, 9);
 			this->textBoxProfilePassword6->Name = L"textBoxProfilePassword6";
+			this->textBoxProfilePassword6->PasswordChar = '*';
 			this->textBoxProfilePassword6->ReadOnly = true;
 			this->textBoxProfilePassword6->Size = System::Drawing::Size(247, 31);
 			this->textBoxProfilePassword6->TabIndex = 18;
+			this->textBoxProfilePassword6->TabStop = false;
 			this->textBoxProfilePassword6->Text = L"-";
 			this->textBoxProfilePassword6->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBoxProfilePassword6->UseSystemPasswordChar = true;
 			this->textBoxProfilePassword6->WordWrap = false;
 			// 
 			// textBoxProfileUsername6
@@ -1582,12 +1593,13 @@ namespace PassUnite {
 			this->textBoxProfileUsername6->ForeColor = System::Drawing::Color::White;
 			this->textBoxProfileUsername6->Location = System::Drawing::Point(309, 9);
 			this->textBoxProfileUsername6->Name = L"textBoxProfileUsername6";
+			this->textBoxProfileUsername6->PasswordChar = '*';
 			this->textBoxProfileUsername6->ReadOnly = true;
 			this->textBoxProfileUsername6->Size = System::Drawing::Size(179, 31);
 			this->textBoxProfileUsername6->TabIndex = 17;
+			this->textBoxProfileUsername6->TabStop = false;
 			this->textBoxProfileUsername6->Text = L"-";
 			this->textBoxProfileUsername6->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBoxProfileUsername6->UseSystemPasswordChar = true;
 			this->textBoxProfileUsername6->WordWrap = false;
 			// 
 			// labelProfileWebsite6
@@ -1627,12 +1639,13 @@ namespace PassUnite {
 			this->textBoxProfilePassword7->ForeColor = System::Drawing::Color::White;
 			this->textBoxProfilePassword7->Location = System::Drawing::Point(537, 9);
 			this->textBoxProfilePassword7->Name = L"textBoxProfilePassword7";
+			this->textBoxProfilePassword7->PasswordChar = '*';
 			this->textBoxProfilePassword7->ReadOnly = true;
 			this->textBoxProfilePassword7->Size = System::Drawing::Size(247, 31);
 			this->textBoxProfilePassword7->TabIndex = 21;
+			this->textBoxProfilePassword7->TabStop = false;
 			this->textBoxProfilePassword7->Text = L"-";
 			this->textBoxProfilePassword7->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBoxProfilePassword7->UseSystemPasswordChar = true;
 			this->textBoxProfilePassword7->WordWrap = false;
 			// 
 			// textBoxProfileUsername7
@@ -1645,12 +1658,13 @@ namespace PassUnite {
 			this->textBoxProfileUsername7->ForeColor = System::Drawing::Color::White;
 			this->textBoxProfileUsername7->Location = System::Drawing::Point(309, 9);
 			this->textBoxProfileUsername7->Name = L"textBoxProfileUsername7";
+			this->textBoxProfileUsername7->PasswordChar = '*';
 			this->textBoxProfileUsername7->ReadOnly = true;
 			this->textBoxProfileUsername7->Size = System::Drawing::Size(179, 31);
 			this->textBoxProfileUsername7->TabIndex = 20;
+			this->textBoxProfileUsername7->TabStop = false;
 			this->textBoxProfileUsername7->Text = L"-";
 			this->textBoxProfileUsername7->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBoxProfileUsername7->UseSystemPasswordChar = true;
 			this->textBoxProfileUsername7->WordWrap = false;
 			// 
 			// labelProfileWebsite7
@@ -1690,12 +1704,13 @@ namespace PassUnite {
 			this->textBoxProfilePassword8->ForeColor = System::Drawing::Color::White;
 			this->textBoxProfilePassword8->Location = System::Drawing::Point(537, 9);
 			this->textBoxProfilePassword8->Name = L"textBoxProfilePassword8";
+			this->textBoxProfilePassword8->PasswordChar = '*';
 			this->textBoxProfilePassword8->ReadOnly = true;
 			this->textBoxProfilePassword8->Size = System::Drawing::Size(247, 31);
 			this->textBoxProfilePassword8->TabIndex = 24;
+			this->textBoxProfilePassword8->TabStop = false;
 			this->textBoxProfilePassword8->Text = L"-";
 			this->textBoxProfilePassword8->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBoxProfilePassword8->UseSystemPasswordChar = true;
 			this->textBoxProfilePassword8->WordWrap = false;
 			// 
 			// textBoxProfileUsername8
@@ -1708,12 +1723,13 @@ namespace PassUnite {
 			this->textBoxProfileUsername8->ForeColor = System::Drawing::Color::White;
 			this->textBoxProfileUsername8->Location = System::Drawing::Point(309, 9);
 			this->textBoxProfileUsername8->Name = L"textBoxProfileUsername8";
+			this->textBoxProfileUsername8->PasswordChar = '*';
 			this->textBoxProfileUsername8->ReadOnly = true;
 			this->textBoxProfileUsername8->Size = System::Drawing::Size(179, 31);
 			this->textBoxProfileUsername8->TabIndex = 23;
+			this->textBoxProfileUsername8->TabStop = false;
 			this->textBoxProfileUsername8->Text = L"-";
 			this->textBoxProfileUsername8->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBoxProfileUsername8->UseSystemPasswordChar = true;
 			this->textBoxProfileUsername8->WordWrap = false;
 			// 
 			// labelProfileWebsite8
@@ -1753,12 +1769,13 @@ namespace PassUnite {
 			this->textBoxProfilePassword9->ForeColor = System::Drawing::Color::White;
 			this->textBoxProfilePassword9->Location = System::Drawing::Point(537, 6);
 			this->textBoxProfilePassword9->Name = L"textBoxProfilePassword9";
+			this->textBoxProfilePassword9->PasswordChar = '*';
 			this->textBoxProfilePassword9->ReadOnly = true;
 			this->textBoxProfilePassword9->Size = System::Drawing::Size(247, 31);
 			this->textBoxProfilePassword9->TabIndex = 27;
+			this->textBoxProfilePassword9->TabStop = false;
 			this->textBoxProfilePassword9->Text = L"-";
 			this->textBoxProfilePassword9->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBoxProfilePassword9->UseSystemPasswordChar = true;
 			this->textBoxProfilePassword9->WordWrap = false;
 			// 
 			// textBoxProfileUsername9
@@ -1771,12 +1788,13 @@ namespace PassUnite {
 			this->textBoxProfileUsername9->ForeColor = System::Drawing::Color::White;
 			this->textBoxProfileUsername9->Location = System::Drawing::Point(309, 9);
 			this->textBoxProfileUsername9->Name = L"textBoxProfileUsername9";
+			this->textBoxProfileUsername9->PasswordChar = '*';
 			this->textBoxProfileUsername9->ReadOnly = true;
 			this->textBoxProfileUsername9->Size = System::Drawing::Size(179, 31);
 			this->textBoxProfileUsername9->TabIndex = 26;
+			this->textBoxProfileUsername9->TabStop = false;
 			this->textBoxProfileUsername9->Text = L"-";
 			this->textBoxProfileUsername9->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBoxProfileUsername9->UseSystemPasswordChar = true;
 			this->textBoxProfileUsername9->WordWrap = false;
 			// 
 			// labelProfileWebsite9
@@ -1816,12 +1834,13 @@ namespace PassUnite {
 			this->textBoxProfilePassword10->ForeColor = System::Drawing::Color::White;
 			this->textBoxProfilePassword10->Location = System::Drawing::Point(537, 9);
 			this->textBoxProfilePassword10->Name = L"textBoxProfilePassword10";
+			this->textBoxProfilePassword10->PasswordChar = '*';
 			this->textBoxProfilePassword10->ReadOnly = true;
 			this->textBoxProfilePassword10->Size = System::Drawing::Size(247, 31);
 			this->textBoxProfilePassword10->TabIndex = 30;
+			this->textBoxProfilePassword10->TabStop = false;
 			this->textBoxProfilePassword10->Text = L"-";
 			this->textBoxProfilePassword10->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBoxProfilePassword10->UseSystemPasswordChar = true;
 			this->textBoxProfilePassword10->WordWrap = false;
 			// 
 			// textBoxProfileUsername10
@@ -1834,12 +1853,13 @@ namespace PassUnite {
 			this->textBoxProfileUsername10->ForeColor = System::Drawing::Color::White;
 			this->textBoxProfileUsername10->Location = System::Drawing::Point(309, 9);
 			this->textBoxProfileUsername10->Name = L"textBoxProfileUsername10";
+			this->textBoxProfileUsername10->PasswordChar = '*';
 			this->textBoxProfileUsername10->ReadOnly = true;
 			this->textBoxProfileUsername10->Size = System::Drawing::Size(179, 31);
 			this->textBoxProfileUsername10->TabIndex = 29;
+			this->textBoxProfileUsername10->TabStop = false;
 			this->textBoxProfileUsername10->Text = L"-";
 			this->textBoxProfileUsername10->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBoxProfileUsername10->UseSystemPasswordChar = true;
 			this->textBoxProfileUsername10->WordWrap = false;
 			// 
 			// labelProfileWebsite10
@@ -2502,8 +2522,8 @@ namespace PassUnite {
 	}
 	private: System::Void pictureBoxHidingSlot1_Click(System::Object^ sender, System::EventArgs^ e) {
 		// show slot 1
-		textBoxProfileUsername1->UseSystemPasswordChar = false;
-		textBoxProfilePassword1->UseSystemPasswordChar = false;
+		textBoxProfileUsername1->PasswordChar = false;
+		textBoxProfilePassword1->PasswordChar = false;
 
 		// toggle picture
 		pictureBoxHidingSlot1->Visible = false;
@@ -2511,8 +2531,8 @@ namespace PassUnite {
 	}
 	private: System::Void pictureBoxShowingSlot1_Click(System::Object^ sender, System::EventArgs^ e) {
 		// hide slot 1
-		textBoxProfileUsername1->UseSystemPasswordChar = true;
-		textBoxProfilePassword1->UseSystemPasswordChar = true;
+		textBoxProfileUsername1->PasswordChar = '*';
+		textBoxProfilePassword1->PasswordChar = '*';
 
 		// toggle picture
 		pictureBoxShowingSlot1->Visible = false;
