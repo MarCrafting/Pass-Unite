@@ -1,9 +1,0 @@
-C:\Users\15617\source\repos\PassUnite\PassUnite\x64\Debug\PassUnite.vcxproj.AssemblyReference.cache
-C:\Users\15617\source\repos\PassUnite\PassUnite\x64\Debug\PassUnite.Login.resources
-C:\Users\15617\source\repos\PassUnite\PassUnite\x64\Debug\PassUnite.vcxproj.GenerateResource.cache
-C:\Users\15617\source\repos\PassUnite\PassUnite\x64\Debug\PassUnite.Home.resources
-C:\Users\15617\source\repos\PassUnite\PassUnite\x64\Debug\PassUnite.AddProfiles.resources
-C:\Users\15617\source\repos\PassUnite\PassUnite\x64\Debug\PassUnite.Settings.resources
-C:\Users\15617\source\repos\PassUnite\PassUnite\x64\Debug\PassUnite.Profiles.resources
-C:\Users\15617\source\repos\PassUnite\PassUnite\x64\Debug\PassUnite.ChangePassword.resources
-C:\Users\15617\source\repos\PassUnite\PassUnite\x64\Debug\PassUnite.ClearProfiles.resources
