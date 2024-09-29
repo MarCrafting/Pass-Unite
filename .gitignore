@@ -1,0 +1,10 @@
+*.vsidx
+*.resx
+*.obj
+*.suo
+*.db
+*.json
+*.ipch
+*.resources
+*.tlog
+PassUnite.exe
