@@ -409,6 +409,8 @@ private: System::Windows::Forms::PictureBox^ pictureBoxShowAll;
 			this->pictureBoxMenu = (gcnew System::Windows::Forms::PictureBox());
 			this->labelAppName = (gcnew System::Windows::Forms::Label());
 			this->panelContent = (gcnew System::Windows::Forms::Panel());
+			this->pictureBoxHideAll = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxShowAll = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBoxHideSlot10 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBoxShowSlot10 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBoxHideSlot9 = (gcnew System::Windows::Forms::PictureBox());
@@ -488,8 +490,6 @@ private: System::Windows::Forms::PictureBox^ pictureBoxShowAll;
 			this->labelSidebarSettings = (gcnew System::Windows::Forms::Label());
 			this->labelSidebarViewProfiles = (gcnew System::Windows::Forms::Label());
 			this->labelSidebarAddProfiles = (gcnew System::Windows::Forms::Label());
-			this->pictureBoxHideAll = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBoxShowAll = (gcnew System::Windows::Forms::PictureBox());
 			this->panelSidebar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxProfiles))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxSettings))->BeginInit();
@@ -497,6 +497,8 @@ private: System::Windows::Forms::PictureBox^ pictureBoxShowAll;
 			this->panelTopbar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->BeginInit();
 			this->panelContent->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideAll))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowAll))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot10))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot10))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot9))->BeginInit();
@@ -538,8 +540,6 @@ private: System::Windows::Forms::PictureBox^ pictureBoxShowAll;
 			this->panel9->SuspendLayout();
 			this->panel10->SuspendLayout();
 			this->panelSidebarExtend->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideAll))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowAll))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panelSidebar
@@ -687,6 +687,31 @@ private: System::Windows::Forms::PictureBox^ pictureBoxShowAll;
 			this->panelContent->Name = L"panelContent";
 			this->panelContent->Size = System::Drawing::Size(909, 436);
 			this->panelContent->TabIndex = 12;
+			// 
+			// pictureBoxHideAll
+			// 
+			this->pictureBoxHideAll->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxHideAll->Enabled = false;
+			this->pictureBoxHideAll->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHideAll.Image")));
+			this->pictureBoxHideAll->Location = System::Drawing::Point(522, 30);
+			this->pictureBoxHideAll->Name = L"pictureBoxHideAll";
+			this->pictureBoxHideAll->Size = System::Drawing::Size(43, 36);
+			this->pictureBoxHideAll->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxHideAll->TabIndex = 41;
+			this->pictureBoxHideAll->TabStop = false;
+			this->pictureBoxHideAll->Visible = false;
+			// 
+			// pictureBoxShowAll
+			// 
+			this->pictureBoxShowAll->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->pictureBoxShowAll->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowAll.Image")));
+			this->pictureBoxShowAll->Location = System::Drawing::Point(522, 30);
+			this->pictureBoxShowAll->Name = L"pictureBoxShowAll";
+			this->pictureBoxShowAll->Size = System::Drawing::Size(43, 36);
+			this->pictureBoxShowAll->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxShowAll->TabIndex = 42;
+			this->pictureBoxShowAll->TabStop = false;
+			this->pictureBoxShowAll->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxShowAll_Click);
 			// 
 			// pictureBoxHideSlot10
 			// 
@@ -1845,31 +1870,6 @@ private: System::Windows::Forms::PictureBox^ pictureBoxShowAll;
 			this->labelSidebarAddProfiles->Text = L"Add Profiles";
 			this->labelSidebarAddProfiles->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// pictureBoxHideAll
-			// 
-			this->pictureBoxHideAll->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxHideAll->Enabled = false;
-			this->pictureBoxHideAll->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHideAll.Image")));
-			this->pictureBoxHideAll->Location = System::Drawing::Point(522, 30);
-			this->pictureBoxHideAll->Name = L"pictureBoxHideAll";
-			this->pictureBoxHideAll->Size = System::Drawing::Size(43, 36);
-			this->pictureBoxHideAll->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxHideAll->TabIndex = 41;
-			this->pictureBoxHideAll->TabStop = false;
-			this->pictureBoxHideAll->Visible = false;
-			// 
-			// pictureBoxShowAll
-			// 
-			this->pictureBoxShowAll->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->pictureBoxShowAll->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowAll.Image")));
-			this->pictureBoxShowAll->Location = System::Drawing::Point(522, 30);
-			this->pictureBoxShowAll->Name = L"pictureBoxShowAll";
-			this->pictureBoxShowAll->Size = System::Drawing::Size(43, 36);
-			this->pictureBoxShowAll->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBoxShowAll->TabIndex = 42;
-			this->pictureBoxShowAll->TabStop = false;
-			this->pictureBoxShowAll->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxShowAll_Click);
-			// 
 			// ProfilesForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(16, 31);
@@ -1897,6 +1897,8 @@ private: System::Windows::Forms::PictureBox^ pictureBoxShowAll;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxMenu))->EndInit();
 			this->panelContent->ResumeLayout(false);
 			this->panelContent->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideAll))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowAll))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot10))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowSlot10))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideSlot9))->EndInit();
@@ -1948,8 +1950,6 @@ private: System::Windows::Forms::PictureBox^ pictureBoxShowAll;
 			this->panel10->ResumeLayout(false);
 			this->panel10->PerformLayout();
 			this->panelSidebarExtend->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideAll))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowAll))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1966,7 +1966,7 @@ private: System::Windows::Forms::PictureBox^ pictureBoxShowAll;
 	public: Profiles^ profile = nullptr;
 	public: Profiles^ trashProfile = nullptr;
 
-	private: Slots^ slot = nullptr;
+	public: Slots^ slot = nullptr;
 
 	private: System::Void labelAppName_Click(System::Object^ sender, System::EventArgs^ e) {
 		// redirect to "Home" page
@@ -2492,7 +2492,10 @@ private: System::Windows::Forms::PictureBox^ pictureBoxShowAll;
 		while (slot->id <= profileCount)
 		{
 			ToggleHideSlot(slot->id);
-			slot = slot->next;
+			if (slot->next != nullptr)
+				slot = slot->next;
+			else
+				break;
 		}
 
 		// toggle showing picture
