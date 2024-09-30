@@ -173,7 +173,7 @@ namespace PassUnite {
 			// Slot 10
 			nextSlot = gcnew Slots();
 			nextSlot->id = 10;
-			nextSlot->panel = panel5;
+			nextSlot->panel = panel10;
 			nextSlot->labelProfileWebsite = labelProfileWebsite10;
 			nextSlot->textBoxProfileUsername = textBoxProfileUsername10;
 			nextSlot->textBoxProfilePassword = textBoxProfilePassword10;
@@ -190,77 +190,43 @@ namespace PassUnite {
 
 			// set slot pointer to first node
 			while (slot->prev != nullptr)
-			{
 				slot = slot->prev;
-			}
+
+			// set profile pointer to first node
+			while (profile->prev != nullptr)
+				profile = profile->prev;
+
 			// traversal node
 			Slots^ currSlot = slot;
 
 			// while there's a valid profile
 			if (profile != nullptr)
 			{
-				// while there's an unchecked profile, continue
-				while (true)
-				{					
-					// (profile pointer starts at the end of the node list, traversing backwards)
-					// if next profile isn't null
-					if (profile->next != nullptr)
-					{
-						// make next slot visible
-						currSlot->next->panel->Visible = true;
-						currSlot->next->show->Visible = true;
-						currSlot->next->clear->Visible = true;
+				// copy profile values into slot
+				currSlot->labelProfileWebsite->Text = profile->website;
+				currSlot->textBoxProfileUsername->Text = profile->username;
+				currSlot->textBoxProfilePassword->Text = profile->password;
 
-						// copy slot values into next slot
-						currSlot->next->labelProfileWebsite->Text = currSlot->labelProfileWebsite->Text;
-						currSlot->next->textBoxProfileUsername->Text = currSlot->textBoxProfileUsername->Text;
-						currSlot->next->textBoxProfilePassword->Text = currSlot->textBoxProfilePassword->Text;
+				// while another profile exists
+				while (profile->next != nullptr)
+				{
+					// move to next profile
+					profile = profile->next;
 
-						if (currSlot != slot)
-						{
-							// copy previous slots to their next slot
-							int i = 0;						// jump back counter
-							while (currSlot->prev != slot)
-							{
-								currSlot = currSlot->prev;	// jump back
-								i++;						// increment back jump
+					// move to next slot
+					currSlot = currSlot->next;
 
-								// copies current slot values into next slot
-								currSlot->next->labelProfileWebsite->Text = currSlot->labelProfileWebsite->Text;
-								currSlot->next->textBoxProfileUsername->Text = currSlot->textBoxProfileUsername->Text;
-								currSlot->next->textBoxProfilePassword->Text = currSlot->textBoxProfilePassword->Text;
-							}
+					// copy profile values into slot
+					currSlot->labelProfileWebsite->Text = profile->website;
+					currSlot->textBoxProfileUsername->Text = profile->username;
+					currSlot->textBoxProfilePassword->Text = profile->password;
 
-							if (currSlot->prev == slot)
-							{
-								// copies previous slot values into current slot
-								currSlot->labelProfileWebsite->Text = currSlot->prev->labelProfileWebsite->Text;
-								currSlot->textBoxProfileUsername->Text = currSlot->prev->textBoxProfileUsername->Text;
-								currSlot->textBoxProfilePassword->Text = currSlot->prev->textBoxProfilePassword->Text;
-							}
-
-							// jump forward to correct position
-							for (int j = 0; j < i; j++)
-								currSlot = currSlot->next;
-						}
-
-						if (currSlot->next != nullptr)
-							currSlot = currSlot->next;
-
-					}
-
-					// copies profile values to slot
-					slot->labelProfileWebsite->Text = profile->website;
-					slot->textBoxProfileUsername->Text = profile->username;
-					slot->textBoxProfilePassword->Text = profile->password;
-
-					// if at end of profiles, break
-					if (profile->prev == nullptr)
-						break;
-
-					// move back one profile
-					profile = profile->prev;
+					// make slot visible
+					currSlot->panel->Visible = true;
+					currSlot->show->Visible = true;
+					currSlot->clear->Visible = true;
 				}
+				
 			}
 		}
 
