@@ -201,7 +201,7 @@ namespace PassUnite {
 			{
 				// while there's an unchecked profile, continue
 				while (true)
-				{
+				{					
 					// (profile pointer starts at the end of the node list, traversing backwards)
 					// if next profile isn't null
 					if (profile->next != nullptr)
@@ -211,7 +211,7 @@ namespace PassUnite {
 						currSlot->next->show->Visible = true;
 						currSlot->next->clear->Visible = true;
 
-						// copy label values into next slot
+						// copy slot values into next slot
 						currSlot->next->labelProfileWebsite->Text = currSlot->labelProfileWebsite->Text;
 						currSlot->next->textBoxProfileUsername->Text = currSlot->textBoxProfileUsername->Text;
 						currSlot->next->textBoxProfilePassword->Text = currSlot->textBoxProfilePassword->Text;
@@ -219,13 +219,13 @@ namespace PassUnite {
 						if (currSlot != slot)
 						{
 							// copy previous slots to their next slot
-							int i = 0;						// back jump counter
+							int i = 0;						// jump back counter
 							while (currSlot->prev != slot)
 							{
-								currSlot = currSlot->prev;	// back jump
+								currSlot = currSlot->prev;	// jump back
 								i++;						// increment back jump
 
-								// assigns next slot to the current slot values
+								// copies current slot values into next slot
 								currSlot->next->labelProfileWebsite->Text = currSlot->labelProfileWebsite->Text;
 								currSlot->next->textBoxProfileUsername->Text = currSlot->textBoxProfileUsername->Text;
 								currSlot->next->textBoxProfilePassword->Text = currSlot->textBoxProfilePassword->Text;
@@ -233,7 +233,7 @@ namespace PassUnite {
 
 							if (currSlot->prev == slot)
 							{
-								// assigns current slot to the previous slot values
+								// copies previous slot values into current slot
 								currSlot->labelProfileWebsite->Text = currSlot->prev->labelProfileWebsite->Text;
 								currSlot->textBoxProfileUsername->Text = currSlot->prev->textBoxProfileUsername->Text;
 								currSlot->textBoxProfilePassword->Text = currSlot->prev->textBoxProfilePassword->Text;
@@ -249,11 +249,12 @@ namespace PassUnite {
 
 					}
 
-					// update first slot
+					// copies profile values to slot
 					slot->labelProfileWebsite->Text = profile->website;
 					slot->textBoxProfileUsername->Text = profile->username;
 					slot->textBoxProfilePassword->Text = profile->password;
 
+					// if at end of profiles, break
 					if (profile->prev == nullptr)
 						break;
 
