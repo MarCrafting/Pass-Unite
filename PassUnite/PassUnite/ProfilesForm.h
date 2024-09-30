@@ -192,16 +192,16 @@ namespace PassUnite {
 			while (slot->prev != nullptr)
 				slot = slot->prev;
 
-			// set profile pointer to first node
-			while (profile->prev != nullptr)
-				profile = profile->prev;
-
 			// traversal node
 			Slots^ currSlot = slot;
 
 			// while there's a valid profile
 			if (profile != nullptr)
 			{
+				// set profile pointer to first node
+				while (profile->prev != nullptr)
+					profile = profile->prev;
+
 				// copy profile values into slot
 				currSlot->labelProfileWebsite->Text = profile->website;
 				currSlot->textBoxProfileUsername->Text = profile->username;
@@ -376,6 +376,10 @@ private: System::Windows::Forms::Panel^ panelSidebarExtend;
 private: System::Windows::Forms::Label^ labelSidebarSettings;
 private: System::Windows::Forms::Label^ labelSidebarViewProfiles;
 private: System::Windows::Forms::Label^ labelSidebarAddProfiles;
+private: System::Windows::Forms::PictureBox^ pictureBoxHideAll;
+private: System::Windows::Forms::PictureBox^ pictureBoxShowAll;
+
+
 
 
 
@@ -484,6 +488,8 @@ private: System::Windows::Forms::Label^ labelSidebarAddProfiles;
 			this->labelSidebarSettings = (gcnew System::Windows::Forms::Label());
 			this->labelSidebarViewProfiles = (gcnew System::Windows::Forms::Label());
 			this->labelSidebarAddProfiles = (gcnew System::Windows::Forms::Label());
+			this->pictureBoxHideAll = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxShowAll = (gcnew System::Windows::Forms::PictureBox());
 			this->panelSidebar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxProfiles))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxSettings))->BeginInit();
@@ -532,6 +538,8 @@ private: System::Windows::Forms::Label^ labelSidebarAddProfiles;
 			this->panel9->SuspendLayout();
 			this->panel10->SuspendLayout();
 			this->panelSidebarExtend->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideAll))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowAll))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panelSidebar
@@ -627,6 +635,8 @@ private: System::Windows::Forms::Label^ labelSidebarAddProfiles;
 			this->panelContent->AutoScroll = true;
 			this->panelContent->AutoSize = true;
 			this->panelContent->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->panelContent->Controls->Add(this->pictureBoxHideAll);
+			this->panelContent->Controls->Add(this->pictureBoxShowAll);
 			this->panelContent->Controls->Add(this->pictureBoxHideSlot10);
 			this->panelContent->Controls->Add(this->pictureBoxShowSlot10);
 			this->panelContent->Controls->Add(this->pictureBoxHideSlot9);
@@ -1835,6 +1845,31 @@ private: System::Windows::Forms::Label^ labelSidebarAddProfiles;
 			this->labelSidebarAddProfiles->Text = L"Add Profiles";
 			this->labelSidebarAddProfiles->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
+			// pictureBoxHideAll
+			// 
+			this->pictureBoxHideAll->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxHideAll->Enabled = false;
+			this->pictureBoxHideAll->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxHideAll.Image")));
+			this->pictureBoxHideAll->Location = System::Drawing::Point(522, 30);
+			this->pictureBoxHideAll->Name = L"pictureBoxHideAll";
+			this->pictureBoxHideAll->Size = System::Drawing::Size(43, 36);
+			this->pictureBoxHideAll->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxHideAll->TabIndex = 41;
+			this->pictureBoxHideAll->TabStop = false;
+			this->pictureBoxHideAll->Visible = false;
+			// 
+			// pictureBoxShowAll
+			// 
+			this->pictureBoxShowAll->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->pictureBoxShowAll->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxShowAll.Image")));
+			this->pictureBoxShowAll->Location = System::Drawing::Point(522, 30);
+			this->pictureBoxShowAll->Name = L"pictureBoxShowAll";
+			this->pictureBoxShowAll->Size = System::Drawing::Size(43, 36);
+			this->pictureBoxShowAll->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBoxShowAll->TabIndex = 42;
+			this->pictureBoxShowAll->TabStop = false;
+			this->pictureBoxShowAll->Click += gcnew System::EventHandler(this, &ProfilesForm::pictureBoxShowAll_Click);
+			// 
 			// ProfilesForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(16, 31);
@@ -1913,6 +1948,8 @@ private: System::Windows::Forms::Label^ labelSidebarAddProfiles;
 			this->panel10->ResumeLayout(false);
 			this->panel10->PerformLayout();
 			this->panelSidebarExtend->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxHideAll))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxShowAll))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -2343,24 +2380,6 @@ private: System::Windows::Forms::Label^ labelSidebarAddProfiles;
 		profileCount--;
 	}
 
-		   //private: void RefreshProfiles(Profiles^% _profile) {
-
-		   //}
-
-		   //private: void CleanupProfiles()
-		   //{
-		   //	// loop from first to last profile
-		   //	while (profile->prev != nullptr)
-		   //		profile = profile->prev;
-
-		   //	while (true)
-		   //	{
-		   //		// verify next node's id = 1 + curr->id
-		   //		if (profile->next == nullptr)
-		   //			break;
-		   //	}
-		   //}
-
 	private: void RefreshLabels(Slots^% _slot)
 	{
 		while (true)
@@ -2373,9 +2392,20 @@ private: System::Windows::Forms::Label^ labelSidebarAddProfiles;
 			}
 			else
 			{
+				// clear slot values
 				slot->labelProfileWebsite->Text = "-";
 				slot->textBoxProfileUsername->Text = "-";
 				slot->textBoxProfilePassword->Text = "-";
+
+				// if not slot 1
+				if (slot->id != 1)
+				{
+					// hide slot
+					slot->panel->Visible = false;
+					slot->hide->Visible = false;
+					slot->show->Visible = false;
+					slot->clear->Visible = false;
+				}
 			}
 
 			if (slot->next == nullptr)
@@ -2397,11 +2427,7 @@ private: System::Windows::Forms::Label^ labelSidebarAddProfiles;
 		panelSidebarExtend->Visible = false;
 	}
 	private: System::Void pictureBoxToggleSlot1_Click(System::Object^ sender, System::EventArgs^ e) {
-
 		ToggleHideSlot(1);
-
-		// toggle showing picture
-		pictureBoxHideSlot1->Visible = !pictureBoxHideSlot1->Visible;
 	}
 	private: void ToggleHideSlot(int _slot)
 	{
@@ -2427,69 +2453,50 @@ private: System::Windows::Forms::Label^ labelSidebarAddProfiles;
 			slot->textBoxProfileUsername->PasswordChar = '*';
 			slot->textBoxProfilePassword->PasswordChar = '*';
 		}
+
+		// toggle showing picture
+		slot->hide->Visible = !slot->hide->Visible;
 	}
 	private: System::Void pictureBoxToggleSlot2_Click(System::Object^ sender, System::EventArgs^ e) {
-
 		ToggleHideSlot(2);
-
-		// toggle showing picture
-		pictureBoxHideSlot2->Visible = !pictureBoxHideSlot2->Visible;
 	}
 	private: System::Void pictureBoxToggleSlot3_Click(System::Object^ sender, System::EventArgs^ e) {
-
 		ToggleHideSlot(3);
-
-		// toggle showing picture
-		pictureBoxHideSlot3->Visible = !pictureBoxHideSlot3->Visible;
 	}
 	private: System::Void pictureBoxToggleSlot4_Click(System::Object^ sender, System::EventArgs^ e) {
-
 		ToggleHideSlot(4);
-
-		// toggle showing picture
-		pictureBoxHideSlot4->Visible = !pictureBoxHideSlot4->Visible;
 	}
 	private: System::Void pictureBoxToggleSlot5_Click(System::Object^ sender, System::EventArgs^ e) {
-
 		ToggleHideSlot(5);
-
-		// toggle showing picture
-		pictureBoxHideSlot5->Visible = !pictureBoxHideSlot5->Visible;
 	}
 	private: System::Void pictureBoxToggleSlot6_Click(System::Object^ sender, System::EventArgs^ e) {
-
 		ToggleHideSlot(6);
-
-		// toggle showing picture
-		pictureBoxHideSlot6->Visible = !pictureBoxHideSlot6->Visible;
 	}
 	private: System::Void pictureBoxToggleSlot7_Click(System::Object^ sender, System::EventArgs^ e) {
-
 		ToggleHideSlot(7);
-
-		// toggle showing picture
-		pictureBoxHideSlot7->Visible = !pictureBoxHideSlot7->Visible;
 	}
 	private: System::Void pictureBoxToggleSlot8_Click(System::Object^ sender, System::EventArgs^ e) {
-
 		ToggleHideSlot(8);
-
-		// toggle showing picture
-		pictureBoxHideSlot8->Visible = !pictureBoxHideSlot8->Visible;
 	}
 	private: System::Void pictureBoxToggleSlot9_Click(System::Object^ sender, System::EventArgs^ e) {
-
 		ToggleHideSlot(9);
-
-		// toggle showing picture
-		pictureBoxHideSlot9->Visible = !pictureBoxHideSlot9->Visible;
 	}
 	private: System::Void pictureBoxToggleSlot10_Click(System::Object^ sender, System::EventArgs^ e) {
-
 		ToggleHideSlot(10);
+	}
+	private: System::Void pictureBoxShowAll_Click(System::Object^ sender, System::EventArgs^ e) {
+		// set to slot 1
+		while (slot->prev != nullptr)
+			slot = slot->prev;
+
+		while (slot->id <= profileCount)
+		{
+			ToggleHideSlot(slot->id);
+			slot = slot->next;
+		}
 
 		// toggle showing picture
-		pictureBoxHideSlot10->Visible = !pictureBoxHideSlot10->Visible;
+		pictureBoxHideAll->Visible = !pictureBoxHideAll->Visible;
 	}
-	};
+};
 }
